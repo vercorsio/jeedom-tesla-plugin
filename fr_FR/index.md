@@ -81,18 +81,19 @@ Les commandes d'info et d'action associées à chaque Tesla sont les suivantes
 
 Commandes de type **info**
 --
+
 | Commande   |   Description |
-| --- |---|
-| **Photo** | affiche une photo de la Tesla.|
-| **Info autonomie** | indique l'autonomie en km de la voiture.|
+| --- | --- |
+| **Photo** | affiche une photo de la Tesla.
+| **Info autonomie** | indique l'autonomie en km de la voiture.
 | **Info climatisation** | indique si la climatisation est allumée ou éteinte.
-| **Info recharge** | indique si la voiture est en train de charger ou non. Les valeurs possibles sont  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.|
+| **Info recharge** | indique si la voiture est en train de charger ou non. Les valeurs possibles sont  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.
 | **Info verouillage** | indique si la voiture est fermée ou ouverte.
 | **Info Odomètre** | indique la valeur du compteur kilométrique.
 | **Info véhicule** | affiche un titre et un sous titre correspondant à l'état actuel de la voiture. Par exemple _Conduite 67km_, _Recharge programmée à 22h50_, _Stationnée_, _Supercharge_, ...
 | **Détail autonomie** | affiche un graph de la batterie
 | **Détail de la recharge** | affiche les données issues de la recharge.
-| **Détail de la climatisation** | affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur).
+| **Détail de la climatisation** | affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur). 
 
 Commandes de type **action**
 --
