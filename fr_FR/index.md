@@ -95,3 +95,36 @@ Commandes de type **action**
 - **Contrôler le vérouillage** : Va permettre de vérouiller ou déverouiller la voiture.
 - **Rafraichir la tuile** : Mise à jour de la tuile sur clic de l'icone.
 
+
+Affichage du véhicule
+=======================
+
+La plupart des commandes listées ci-dessus a un template spécifique qui lui est attribué, et qui permet d'obtenir par défaut l'affichage d'un véhicule tel qu'illustré sur l'image:
+
+
+![config](../images/displayCar-1.png)
+
+Par exemple pour ne pas afficher la photo et les détails de climatisation, il suffit pour un véhicule donné de décocher `"Affichage"` dans la ligne correspondante de la configuration de ces commandes.
+
+L'odomètre est historisé, ce qui permet d'obtenir le graphique des km parcourus.
+
+Contrôler la climatisation
+--
+ ![config](../images/climOn.gif)![config](../images/climOff.png)
+ 
+Le bouton ventilateur permet d'allumer la climatisation.  
+ - Grisé: la climatisation est éteinte
+ - Bleu: la climatisation est active 
+
+Contrôler le vérouillage
+--
+ ![config](../images/lockOn.png)![config](../images/lockOff.png)
+
+Le bouton cadenas permet d'ouvrir/fermer le véhicule.  
+ - Grisé, la climatisation est éteinte
+ - Bleu, la climatisation est active 
+
+Contrôler la charge
+--
+Le bouton de charge permet de démarrer/arreter la recharge
+ 

@@ -2,7 +2,7 @@ Changelog
 =========
 
 10 nov 2018 - Version initiale
-===
+--
 
 -   New Features
 
