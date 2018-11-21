@@ -27,18 +27,22 @@ Les deux méthodes de connections sont les suivantes:
 > **Note**
 >
 > Vos identifiants ne sont utilisés que lors de la phase de connexion pour récupérer un jeton d'accès. 
-> Vos identifiants ne sont utilisés que lors de la phase de connexion pour récupérer un jeton d'accès. Vous pourrez après la première synchronisation, effacer les champs email/mot de passe si vous le souhaitez. Néanmoins, le jeton d'accès a une date d'expiration (environ 90 jours) au dela de laquelle il tentera de refaire une connection pour le rafraichir.
+> 
+>Vous pourrez après la première synchronisation, effacer les champs email/mot de passe si vous le souhaitez. Néanmoins, le jeton d'accès a une date d'expiration (environ 90 jours) au dela de laquelle il tentera de refaire une connection pour le rafraichir.
 
 ### 2) Avec un jeton d'accès:
 
 - **Jeton d'accès** : Jeton que vous pouvez, entre autre, vous procurer en executant le script php fourni avec le plugin:
 
-    $ php /var/www/html/plugins/tesla/scripts/tokenTesla.php mon.email@FAI.fr mot2passe
+```
+$ php /var/www/html/plugins/tesla/scripts/tokenTesla.php mon.email@FAI.fr mot2passe
 
-     Votre jeton d'accès à votre compte Tesla : 49329effb7d381c945fbf7e6b3e02691e746904f47ebdb2a3e54d49c93473e80
+Votre jeton d'accès à votre compte Tesla : 49329effb7d381c945fbf7e6b3e02691e746904f47ebdb2a3e54d49c93473e80
+```
  
   
 > **Note**
+>
 > Cette méthode permet d'éviter d'entrer ses identifiants dans la configuration du plugin.
 > Le plugin ne fonctionnera que pendant la durée de validité du jeton d'accès. 
 > Un bouton 'revoker mon jeton d'accès' permet d'informer le service Tesla que ce jeton ne permettra plus la connexion au service.
@@ -48,24 +52,25 @@ Le bouton __"Synchroniser mes voitures"__ permettra d'effectuer la recherche et 
 Tesla virtuelle
 --
 
-Pour tester le plugin sans connexion à votre compte Tesla, ou si vous n'avez pas (encore) de Tesla, le plugin offre la possibilité de créer des équipements virtuels correspondants a des Tesla __Model S__ et/ou __Model X__.
+Pour tester le plugin sans connexion à votre compte Tesla, ou si vous n'avez pas (encore) de Tesla, le plugin offre la possibilité de créer des équipements virtuels correspondants à des Tesla __Model S__ et/ou __Model X__.
 
-Il suffira de cliquer sur le bouton __"Ajouter des Tesla virtuelles"__. Des jeux de données correspondants à des véhicules rééls seront utilisés pour créer des équipements virtuels. Bien entendu toute action (chauffage/charge/dévérouillage) sur ces équipements sera sans effet.
+Il suffira de cliquer sur le bouton __"Ajouter des Tesla virtuelles"__. Des jeux de données correspondants à des véhicules réels seront utilisés pour créer des équipements virtuels. Bien entendu toute action (chauffage/charge/dévérouillage) sur ces équipements sera sans effet.
 
 Autres paramètres de configuration
 --
 
-- **Coût du kWh** (en euro) : Nécessaire pour calculer approximativement le cout d'une charge, le prix pour parcourir 100km et le nombre de km que l'on peut faire avec 1 euro. La valeur par défautl est 0.14.
+- **Coût du kWh** (en euro) : Nécessaire pour calculer approximativement le cout d'une charge, le prix pour parcourir 100km et le nombre de km que l'on peut faire avec 1 euro. La valeur par défaut est `0.14`.
 - **Tesla Client ID** et **Tesla Client Secret** : deux clefs publiques qui sont necessaires pour accéder à l'API du serveur des Tesla. Déjà renseignées, ces clefs peuvent être modifiées au cas où l'API requiert de nouvelles valeurs. 
 
 
-![config](../images/configPlugin-3.png)
 
 
 Configuration du véhicule
 =======================
 
 Une fois le plugin configuré, le ou les véhicules de votre compte tesla sont ajoutés. Il suffit de cliquer sur chacun pour l'activer, le rendre visible et l'attacher à un objet parent (ici le Garage) :
+
+![config](../images/configPlugin-3.png)
 
 ![config](../images/configCar-1.png)
 
@@ -76,24 +81,28 @@ Les commandes d'info et d'action associées à chaque Tesla sont les suivantes
 
 Commandes de type **info**
 --
-
-- **Photo** : affiche une photo de la Tesla.
-- **Info autonomie** : indique l'autonomie en km de la voiture.
-- **Info climatisation** : indique si la climatisation est allumée ou éteinte.
-- **Info recharge** : indique si la voiture est en train de charger ou non. Les valeurs possibles sont : { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.
-- **Info verouillage** : indique si la voiture est fermée ou ouverte.
-- **Info Odomètre** : indique la valeur du compteur kilométrique.
-- **Info véhicule** : affiche un titre et un sous titre correspondant à l'état actuel de la voiture. Par exemple : _Conduite 67km_, _Recharge programmée à 22h50_, _Stationnée_, _Supercharge_, ...
-- **Détail autonomie** : affiche un graph de la batterie
-- **Détail de la recharge** : affiche les données issues de la recharge.
-- **Détail de la climatisation** : affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur).
+| Commande   |   Description |
+| --- |---|
+| **Photo** | affiche une photo de la Tesla.|
+| **Info autonomie** | indique l'autonomie en km de la voiture.|
+| **Info climatisation** | indique si la climatisation est allumée ou éteinte.
+| **Info recharge** | indique si la voiture est en train de charger ou non. Les valeurs possibles sont  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.|
+| **Info verouillage** | indique si la voiture est fermée ou ouverte.
+| **Info Odomètre** | indique la valeur du compteur kilométrique.
+| **Info véhicule** | affiche un titre et un sous titre correspondant à l'état actuel de la voiture. Par exemple _Conduite 67km_, _Recharge programmée à 22h50_, _Stationnée_, _Supercharge_, ...
+| **Détail autonomie** | affiche un graph de la batterie
+| **Détail de la recharge** | affiche les données issues de la recharge.
+| **Détail de la climatisation** | affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur).
 
 Commandes de type **action**
 --
-- **Contrôler la recharge** : Va permettre de démarrer ou interrompre la charge si le cable de recharge est engagé.
-- **Contrôler la climatisation** : Va permettre d'allumer ou d'arreter la climatisation.
-- **Contrôler le vérouillage** : Va permettre de vérouiller ou déverouiller la voiture.
-- **Rafraichir la tuile** : Mise à jour de la tuile sur clic de l'icone.
+
+| Commande   |   Description |
+| --- | --- |
+| **Contrôler la recharge** | Va permettre de démarrer ou interrompre la charge si le cable de recharge est engagé.
+| **Contrôler la climatisation** | Va permettre d'allumer ou d'arreter la climatisation.
+| **Contrôler le vérouillage** | Va permettre de vérouiller ou déverouiller la voiture.
+| **Rafraichir la tuile** | Mise à jour de la tuile sur clic de l'icone.
 
 
 Affichage du véhicule
@@ -110,7 +119,7 @@ L'odomètre est historisé, ce qui permet d'obtenir le graphique des km parcouru
 
 Contrôler la climatisation
 --
- ![config](../images/climOn.gif)![config](../images/climOff.png)
+ ![clim on](../images/climOn.gif)![clim off](../images/climOff.png)
  
 Le bouton ventilateur permet d'allumer la climatisation.  
  - Grisé: la climatisation est éteinte
@@ -118,11 +127,11 @@ Le bouton ventilateur permet d'allumer la climatisation.
 
 Contrôler le vérouillage
 --
- ![config](../images/lockOn.png)![config](../images/lockOff.png)
+ ![locked](../images/lockOn.png)![unlocked](../images/lockOff.png)
 
 Le bouton cadenas permet d'ouvrir/fermer le véhicule.  
- - Grisé, la climatisation est éteinte
- - Bleu, la climatisation est active 
+ - Grisé, la voiture est fermée
+ - Bleu, la voiture est ouverte
 
 Contrôler la charge
 --

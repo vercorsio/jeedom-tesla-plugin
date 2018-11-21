@@ -7,7 +7,6 @@ Changelog
 -   New Features
 
     -   Contrôle et affichage de la recharge
-
     -   Contrôle et affichage de la climatisation
     -   Contrôle et affichage du vérouillage
 
