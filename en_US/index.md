@@ -121,6 +121,7 @@ By default, the odometer is historised. This can be useful to display a graph of
 
 Control HVAC
 --
+
 | Button | Description | A clic on this bouton will ... | 
 | --- | --- | --: |
 | ![clim off](../images/clim_off.png) | HVAC is stopped | _... start HVAC_ | 
