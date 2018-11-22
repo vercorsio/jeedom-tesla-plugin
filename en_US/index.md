@@ -130,14 +130,15 @@ Control HVAC
 Contrôler le vérouillage
 --
 
-| Button | Description | An clic on this bouton will ...|
+| Button | Description | An clic on this bouton will ... |
 | --- | --- | --: |
 | ![lockOn](../images/locked.png) | The car is locked | _... unlock the doors_ |
 | ![lockOff](../images/unlocked.png) | The car is unlocked | _... lock the doors_ |
 
 Contrôler la charge
 --
-| Button | Description | An clic on this bouton will ...|
+
+| Button | Description | An clic on this bouton will ... |
 | --- | --- | ---: |
 | ![lockOn](../images/charging_Disconnected.png) | The charging cable is not engaged | _... have no effect_
 | ![lockOn](../images/charging_Scheduled.png) | The charging is scheduled | _... start the charging_
@@ -150,4 +151,4 @@ Contrôler la charge
 FAQ:
 ==
 
-Please send any question trouble you have to <a mailto='vercors.io@gmail.com'>vercors.io@gmail.com</a> !
+Please send any question trouble you have to <a href='maito:vercors.io@gmail.com'>vercors.io@gmail.com</a> !

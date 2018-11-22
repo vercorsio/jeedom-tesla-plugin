@@ -134,14 +134,15 @@ Contrôler la climatisation
 Contrôler le vérouillage
 --
 
-| Bouton | Description |  Un clic sur ce bouton va ...|
+| Bouton | Description |  Un clic sur ce bouton va ... |
 | --- | --- | --: |
 | ![lockOn](../images/locked.png) | La voiture est fermée | _... dévérouiller les portes_ |
 | ![lockOff](../images/unlocked.png) | La voiture est ouverte | _... vérouiller les portes_ |
 
 Contrôler la charge
 --
-| Bouton | Description |  Un clic sur ce bouton va ...|
+
+| Bouton | Description |  Un clic sur ce bouton va ... |
 | --- | --- | ---: |
 | ![lockOn](../images/charging_Disconnected.png) | Le cable de charge n'est pas engagé | _... être sans effet_
 | ![lockOn](../images/charging_Scheduled.png) | La recharge est programéee | _... démarrer la recharge_
@@ -155,4 +156,4 @@ Contrôler la charge
 FAQ:
 ==
 
-Merci d'envoyer toute question à <a mailto='vercors.io@gmail.com'>vercors.io@gmail.com</a> !
+Merci d'envoyer toute question à <a href='maito:vercors.io@gmail.com'>vercors.io@gmail.com</a> !
