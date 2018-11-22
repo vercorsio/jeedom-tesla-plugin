@@ -1,4 +1,8 @@
-Avec le plugin Tesla l'utilisateur peut accéder à sa voiture Tesla, et d'intéragir avec les données remontées par celui ci à travers l'API proposée par Tesla.
+Introduction
+===
+Bienvenue sur la page de documentation du plugin Jeedom Tesla ! 
+
+Avec ce plugin, l'utilisateur peut accéder à sa voiture Tesla, et intéragir avec les données remontées par l'API proposée par Tesla.
 
 Configuration du plugin
 =======================
@@ -89,7 +93,7 @@ Commandes de type **info**
 | **Info climatisation** | indique si la climatisation est allumée ou éteinte.
 | **Info recharge** | indique si la voiture est en train de charger ou non. Les valeurs possibles sont  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.
 | **Info verouillage** | indique si la voiture est fermée ou ouverte.
-| **Info Odomètre** | indique la valeur du compteur kilométrique.
+| **Odomètre** | indique la valeur du compteur kilométrique.
 | **Info véhicule** | affiche un titre et un sous titre correspondant à l'état actuel de la voiture. Par exemple _Conduite 67km_, _Recharge programmée à 22h50_, _Stationnée_, _Supercharge_, ...
 | **Détail autonomie** | affiche un graph de la batterie
 | **Détail de la recharge** | affiche les données issues de la recharge.
@@ -103,7 +107,7 @@ Commandes de type **action**
 | **Contrôler la recharge** | Va permettre de démarrer ou interrompre la charge si le cable de recharge est engagé.
 | **Contrôler la climatisation** | Va permettre d'allumer ou d'arreter la climatisation.
 | **Contrôler le vérouillage** | Va permettre de vérouiller ou déverouiller la voiture.
-| **Rafraichir la tuile** | Mise à jour de la tuile sur clic de l'icone.
+| **Rafraichir** | Mise à jour de la tuile sur clic de l'icone.
 
 
 Affichage du véhicule
@@ -120,21 +124,35 @@ L'odomètre est historisé, ce qui permet d'obtenir le graphique des km parcouru
 
 Contrôler la climatisation
 --
- ![clim on](../images/climOn.gif)![clim off](../images/climOff.png)
- 
-Le bouton ventilateur permet d'allumer la climatisation.  
- - Grisé: la climatisation est éteinte
- - Bleu: la climatisation est active 
+
+| Bouton | Description | Un clic sur ce bouton va ... | 
+| --- | --- | --: |
+| ![clim off](../images/clim_off.png) | La climatisation est éteinte | _... allumer La climatisation_ | 
+| ![clim on](../images/clim_on.gif) | La climatisation est allumée | _... éteindre La climatisation_ |
+
 
 Contrôler le vérouillage
 --
- ![locked](../images/lockOn.png)![unlocked](../images/lockOff.png)
 
-Le bouton cadenas permet d'ouvrir/fermer le véhicule.  
- - Grisé, la voiture est fermée
- - Bleu, la voiture est ouverte
+| Bouton | Description |  Un clic sur ce bouton va ...|
+| --- | --- | --: |
+| ![lockOn](../images/locked.png) | La voiture est fermée | _... dévérouiller les portes_ |
+| ![lockOff](../images/unlocked.png) | La voiture est ouverte | _... vérouiller les portes_ |
 
 Contrôler la charge
 --
-Le bouton de charge permet de démarrer/arreter la recharge
+| Bouton | Description |  Un clic sur ce bouton va ...|
+| --- | --- | ---: |
+| ![lockOn](../images/charging_Disconnected.png) | Le cable de charge n'est pas engagé | _... être sans effet_
+| ![lockOn](../images/charging_Scheduled.png) | La recharge est programéee | _... démarrer la recharge_
+| ![lockOn](../images/charging_Charging.gif) | La recharge est en cours | _... stopper la recharge_
+| ![lockOn](../images/charging_Pause.png) | La recharge a été manuellement arrétée | _... reprendre la recharge_
+| ![lockOn](../images/charging_Complete.png) | La recharge est terminée | ... _être sans effet_
+| ![lockOn](../images/charging_Null.png) | Etat de recharge indéterminée | ... _être sans effet_
  
+
+
+FAQ:
+==
+
+Merci d'envoyer toute question à <a mailto='vercors.io@gmail.com'>vercors.io@gmail.com</a> !

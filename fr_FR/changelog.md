@@ -1,21 +1,19 @@
 Changelog
 =========
 
-10 nov 2018 - Version initiale
---
+<a name="0.2.0"></a>
+# 0.2.0 (2018-11-18)
+### Features
+* Mise à jour de la documentation
+* Ajout de l'anglais comme langue disponible
 
--   New Features
+<a name="0.1.0"></a>
+# 0.1.0 (2018-11-10)
 
-    -   Contrôle et affichage de la recharge
-    -   Contrôle et affichage de la climatisation
-    -   Contrôle et affichage du vérouillage
+### Highlights
+* Ceci est la première version publiée sur le market de Jeedom
 
-
--   Improvements/Enhancements
-
-  
-
--   Bug Fixes
-
-  
-
+### Features
+* Contrôle et affichage de la recharge
+* Contrôle et affichage de la climatisation
+* Contrôle et affichage du vérouillage
