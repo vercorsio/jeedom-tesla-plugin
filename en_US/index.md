@@ -31,8 +31,10 @@ The two methods to connect are::
 > **Note**
 >
 > Your credentials are only used for connexion phase to get an Access Token. 
+>
+> Given the Self Hosted features Jeedom is running on, your credential are only stored **locally** to the machine that ran your Jeedom.
 > 
-> You can remove email/password info after first sync, or keep them for the next time the plugin will require authentication (when Access Token expires).
+> However, you could want to remove email/password info after first sync, or keep them for the next time the plugin will require authentication (when Access Token expires).
 
 ### 2) With an Access Token:
 
@@ -86,8 +88,8 @@ Commands  **info**
 | Command   |   Description |
 | --- | --- |
 | **Photo** | Display a picture of the Tesla.
-| **Info range** | Provide value of range (km).
-| **Info HVAC** | Tells whether the HVAC is on or off si la climatisation est allumée ou éteinte.
+| **Info range** | Provide the range in km.
+| **Info HVAC** | Tells whether the HVAC is on or off
 | **Info charging** | Tells if the car is currently charging or not. Possible values are  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.
 | **Info lock** | Tells whether the car is locked or not.
 | **Odometer** | Provide value of odometer (km).
@@ -152,4 +154,4 @@ Contrôler la charge
 FAQ:
 ==
 
-Please send any question trouble you have to <a href='maito:vercors.io@gmail.com'>vercors.io@gmail.com</a> !
+Please send any question trouble you have to <a href='mailto:vercors.io@gmail.com?subject=About%20Jeedom%20Tesla%20plugin...'>vercors.io@gmail.com</a> !

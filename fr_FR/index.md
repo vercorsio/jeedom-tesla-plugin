@@ -32,7 +32,9 @@ Les deux méthodes de connections sont les suivantes:
 >
 > Vos identifiants ne sont utilisés que lors de la phase de connexion pour récupérer un jeton d'accès. 
 > 
->Vous pourrez après la première synchronisation, effacer les champs email/mot de passe si vous le souhaitez. Néanmoins, le jeton d'accès a une date d'expiration (environ 90 jours) au dela de laquelle il tentera de refaire une connection pour le rafraichir.
+> De part la nature de Jeedom qui est Self Hosted, vos identifiants sont stockés **localement** sur la machine qui héberge votre Jeedom. Malgré tout, si vous le souhaitez, vous pourriez après la première synchronisation, effacer les champs email/mot de passe.
+>
+> Néanmoins, le jeton d'accès a une date d'expiration (environ 90 jours) au dela de laquelle il tentera de refaire une connection pour le rafraichir. Il vous appartiendra de remettre vos identifiants et/ou coller un jeton d'accès (cf methode n°2)
 
 ### 2) Avec un jeton d'accès:
 
@@ -43,13 +45,12 @@ $ php /var/www/html/plugins/tesla/scripts/tokenTesla.php mon.email@FAI.fr mot2pa
 
 Votre jeton d'accès à votre compte Tesla : 49329effb7d381c945fbf7e6b3e02691e746904f47ebdb2a3e54d49c93473e80
 ```
- 
-  
+
 > **Note**
 >
 > Cette méthode permet d'éviter d'entrer ses identifiants dans la configuration du plugin.
 > Le plugin ne fonctionnera que pendant la durée de validité du jeton d'accès. 
-> Un bouton 'revoker mon jeton d'accès' permet d'informer le service Tesla que ce jeton ne permettra plus la connexion au service.
+> Un bouton `revoker mon jeton d'accès` permet d'informer le service Tesla que ce jeton ne permettra plus la connexion au service.
 
 Le bouton __"Synchroniser mes voitures"__ permettra d'effectuer la recherche et ajoutera un équipement Jeedom pour chaque véhicule Tesla non encore créé.
 
@@ -127,8 +128,8 @@ Contrôler la climatisation
 
 | Bouton | Description | Un clic sur ce bouton va ... | 
 | --- | --- | --: |
-| ![clim off](../images/clim_off.png) | La climatisation est éteinte | _... allumer La climatisation_ | 
-| ![clim on](../images/clim_on.gif) | La climatisation est allumée | _... éteindre La climatisation_ |
+| ![clim off](../images/clim_off.png) | La climatisation est éteinte | _... allumer la climatisation_ | 
+| ![clim on](../images/clim_on.gif) | La climatisation est allumée | _... éteindre la climatisation_ |
 
 
 Contrôler le vérouillage
@@ -156,4 +157,4 @@ Contrôler la charge
 FAQ:
 ==
 
-Merci d'envoyer toute question à <a href='maito:vercors.io@gmail.com'>vercors.io@gmail.com</a> !
+Merci d'envoyer toute question à <a href='mailto:vercors.io@gmail.com?subject=About%20Jeedom%20Tesla%20plugin...'>vercors.io@gmail.com</a> !
