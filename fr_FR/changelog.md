@@ -1,5 +1,19 @@
-Changelog
-=========
+<a name="0.2.0"></a>
+# 1.0.0 (2018-11-29)
+### Highlights
+* Ceci est la première version **stable** publiée sur le Jeedom market !
+* Les prochaines versions ajouteront de nouvelles fonctionalités (contrôle des temperatures, Contrôle de la limite de charge ...) !
+
+Un grand merci à l'équipe Jeedom  `Loic` and `Alexandre`, et aux béta-testeurs `carfnann` et `philippe` pour leurs tests et commentaires !
+
+<a name="0.3.0"></a>
+# 0.3.0 (2018-11-23)
+### Bug Fixes
+* Rafraichissement du bouton de recharge après avoir cliqué dessus.
+* Affichage du pourcentage de la batterie dans le graph.
+* Ajout d'un bouton pour supprimer les Tesla virtuelles.
+* Ajout de Model 3 et Roadster dans la liste des Tesla virtuelles.
+* Amélioration de la phase d'authentification (jeton d'accès et login).
 
 <a name="0.2.0"></a>
 # 0.2.0 (2018-11-18)
@@ -11,7 +25,7 @@ Changelog
 # 0.1.0 (2018-11-10)
 
 ### Highlights
-* Ceci est la première version publiée sur le market de Jeedom
+* Ceci est la première version **béta** publiée sur le market de Jeedom
 
 ### Features
 * Contrôle et affichage de la recharge
