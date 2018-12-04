@@ -129,27 +129,46 @@ Control HVAC
 | ![clim off](../images/clim_off.png) | HVAC is stopped | _... start HVAC_ | 
 | ![clim on](../images/clim_on.gif) | HVAC is started | _... stop HVAC_ |
 
+User can set the driver and passenger temperature using a specific widget, described in following animation:
 
-Contrôler le vérouillage
+![clim on](../images/setTemps.gif)
+> **Note**
+>
+> Due to a limitation in the current version of the Tesla API, we can set different temperatures to driver and passenger only if SYNC is unselected in the car.
+>
+
+Control locks, trunks and sunroof
 --
 
 | Button | Description | An clic on this bouton will ... |
 | --- | --- | --: |
 | ![lockOn](../images/locked.png) | The car is locked | _... unlock the doors_ |
 | ![lockOff](../images/unlocked.png) | The car is unlocked | _... lock the doors_ |
+| ![frunkOff](../images/frunk_off.png) | The front trunk is closed | _... unlock the frunk_ |
+| ![frunkOn](../images/frunk_on.png) | The front trunk is open | _...  have no effect_ |
+| ![trunkOff](../images/trunk_off.png) | The rear trunk is closed | _... unlock the trunk_ |
+| ![trunkOn](../images/trunk_on.png) | The rear trunk is open | _...  close the trunk_ |
+| ![panoOff](../images/pano_off.png) | The sunroof is closed | _... slightly open the sunroof_ |
+| ![panoOn](../images/pano_on.png) | The sunroof is open | _...  close the sunroof_ |
 
-Contrôler la charge
+Control the charging
 --
 
 | Button | Description | An clic on this bouton will ... |
 | --- | --- | ---: |
-| ![lockOn](../images/charging_Disconnected.png) | The charging cable is not engaged | _... have no effect_
-| ![lockOn](../images/charging_Scheduled.png) | The charging is scheduled | _... start the charging_
-| ![lockOn](../images/charging_Charging.gif) | The charging is running | _... stop the charging_
-| ![lockOn](../images/charging_Pause.png) | The charging has been manually stopped | _... resume the charging_
-| ![lockOn](../images/charging_Complete.png) | The charging is complete | ... _have no effect_
-| ![lockOn](../images/charging_Null.png) | the charging state is unknown | ... _have no effect_
+| ![charDis](../images/charging_Disconnected.png) | The charging cable is not engaged | _... have no effect_
+| ![charSch](../images/charging_Scheduled.png) | The charging is scheduled | _... start the charging_
+| ![charCha](../images/charging_Charging.gif) | The charging is running | _... stop the charging_
+| ![charPau](../images/charging_Pause.png) | The charging has been manually stopped | _... resume the charging_
+| ![charCom](../images/charging_Complete.png) | The charging is complete | ... _have no effect_
+| ![charNul](../images/charging_Null.png) | The charging state is unknown | ... _have no effect_
  
+
+
+User can set the charging limit using a specific widget, as described in following animation:
+
+![setLimit](../images/setChargingLimit.gif)
+
 
 FAQ:
 ==

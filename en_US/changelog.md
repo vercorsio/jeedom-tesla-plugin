@@ -1,4 +1,18 @@
-<a name="0.2.0"></a>
+<a name="1.1.0"></a>
+# 1.1.0 (2018-12-04)
+### Features
+* Control driver and passenger temperatures.
+* Control trunk, frunk and sunroof openings.
+* Control charging limit.
+
+## Improvements
+* Added hover effects on buttons.
+* Optimize and clean code (added a css file shared among templates, ...)
+
+### Known issues
+* [Temp settings] Due to a limitation in Tesla API, we cannot toggle from `SYNC` to `Not SYNC`. Thus we only can set passenger temp when `Not SYNC` is already selected in the car.
+
+<a name="1.0.0"></a>
 # 1.0.0 (2018-11-29)
 ### Highlights
 * This is the first **stable** version published on Jeedom market !

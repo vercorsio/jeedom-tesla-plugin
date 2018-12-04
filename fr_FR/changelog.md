@@ -1,4 +1,18 @@
-<a name="0.2.0"></a>
+<a name="1.1.0"></a>
+# 1.1.0 (2018-12-04)
+### Features
+* Contrôle des températures de climatisation pour le conducteur et le passager.
+* Contrôle des ouvrants (coffre avant, coffre arrière, toît ouvrant).
+* Contrôle de la limite de recharge.
+
+## Improvements
+* Ajout d'effets sur les boutons cliquables pour les rendre plus visibles.
+* Optimisation et nettoyage du code (utilisation d'une feuille de style unique partagée entre les différents templates, ...)
+
+### Known issues
+* [Temp settings] A cause d'une limitation sur l'API Tesla, il n'est pas possible de passer de `SYNC` à `Not SYNC`. En conséquence, il n'est possible de configurer la température du passager que si dans la voiture les températures ne sont pas synchronisées (`Not SYNC`)).
+
+<a name="1.0.0"></a>
 # 1.0.0 (2018-11-29)
 ### Highlights
 * Ceci est la première version **stable** publiée sur le Jeedom market !

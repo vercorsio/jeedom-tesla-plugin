@@ -131,28 +131,46 @@ Contrôler la climatisation
 | ![clim off](../images/clim_off.png) | La climatisation est éteinte | _... allumer la climatisation_ | 
 | ![clim on](../images/clim_on.gif) | La climatisation est allumée | _... éteindre la climatisation_ |
 
+Il est possible de modifier la température cible de la climatisation en utilisant un widget secifique, comme décrit dans l'animation ci-dessous:
 
-Contrôler le vérouillage
+![clim on](../images/setTemps.gif)
+> **Note**
+>
+> A cause d'une limitation dans l'API Tesla, il n'est possible de configurer des températures différentes pour le conducteur et le passager que lorsque les températures sont déjà non synchronisées dans le véhicule (SYNC désactivé).
+>
+
+
+Contrôler le vérouillage (portes, coffres et toît ouvrant)
 --
 
 | Bouton | Description |  Un clic sur ce bouton va ... |
 | --- | --- | --: |
 | ![lockOn](../images/locked.png) | La voiture est fermée | _... dévérouiller les portes_ |
 | ![lockOff](../images/unlocked.png) | La voiture est ouverte | _... vérouiller les portes_ |
+| ![frunkOff](../images/frunk_off.png) | Le coffre avant est fermé | _... dévérouille le frunk_ |
+| ![frunkOn](../images/frunk_on.png) | Le coffre avant est ouvert | _...  être sans effet_ |
+| ![trunkOff](../images/trunk_off.png) | Le coffre arrière est fermé | _... ouvre le coffre_ |
+| ![trunkOn](../images/trunk_on.png) | Le coffre arrière est ouvert | _...  ferme le coffre_ |
+| ![panoOff](../images/pano_off.png) | Le toît panoramique est fermé | _... ouvre le toît panoramique_ |
+| ![panoOn](../images/pano_on.png) | Le toît panoramique est ouvert | _...  ferme le toît panoramique_ |
 
 Contrôler la charge
 --
 
 | Bouton | Description |  Un clic sur ce bouton va ... |
 | --- | --- | ---: |
-| ![lockOn](../images/charging_Disconnected.png) | Le cable de charge n'est pas engagé | _... être sans effet_
-| ![lockOn](../images/charging_Scheduled.png) | La recharge est programéee | _... démarrer la recharge_
-| ![lockOn](../images/charging_Charging.gif) | La recharge est en cours | _... stopper la recharge_
-| ![lockOn](../images/charging_Pause.png) | La recharge a été manuellement arrétée | _... reprendre la recharge_
-| ![lockOn](../images/charging_Complete.png) | La recharge est terminée | ... _être sans effet_
-| ![lockOn](../images/charging_Null.png) | Etat de recharge indéterminée | ... _être sans effet_
+| ![charDis](../images/charging_Disconnected.png) | Le cable de charge n'est pas engagé | _... être sans effet_
+| ![charSch](../images/charging_Scheduled.png) | La recharge est programéee | _... démarrer la recharge_
+| ![charCha](../images/charging_Charging.gif) | La recharge est en cours | _... stopper la recharge_
+| ![charPau](../images/charging_Pause.png) | La recharge a été manuellement arrétée | _... reprendre la recharge_
+| ![charCom](../images/charging_Complete.png) | La recharge est terminée | ... _être sans effet_
+| ![charNul](../images/charging_Null.png) | Etat de recharge indéterminée | ... _être sans effet_
  
 
+
+Pour modifier depuis le dashboard la limite de charge, il suffit de délacer le curseur sur le graph de la batterie. Le pourcentage ainsi que le nombre approximatif de kilomètres seront affichés:
+
+![setLimit](../images/setChargingLimit.gif)
 
 FAQ:
 ==
