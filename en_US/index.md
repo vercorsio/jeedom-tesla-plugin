@@ -88,10 +88,16 @@ Commands  **info**
 | Command   |   Description |
 | --- | --- |
 | **Photo** | Display a picture of the Tesla.
-| **Info range** | Provide the range in km.
+| **Info ideal range** | Provide the ideal range (km or miles).
+| **Info rated range** | Provide the rated range (km or miles).
+| **Info range** | Provide the range in km or miles.
 | **Info HVAC** | Tells whether the HVAC is on or off
 | **Info charging** | Tells if the car is currently charging or not. Possible values are  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.
+| **Info charging limit** | Provide value of charging limit (%).
 | **Info lock** | Tells whether the car is locked or not.
+| **Info frunk** | Tells whether the frunk is locked or not.
+| **Info trunk** | Tells whether the trunk is open or not.
+| **Info sunroof** | Tells whether the sunroof is open or not.
 | **Odometer** | Provide value of odometer (km).
 | **Info car** | Display info (title and subtitle) about current. Exemple _Driving 68km/h_, _Charging scheduled at 22h50_, _Parked_, _Supercharge_, ...
 | **Range details** | Risplay a battery graph.
@@ -104,8 +110,13 @@ Commands **action**
 | Command   |   Description |
 | --- | --- |
 | **Control charging** | Start/stop charging when cable is engaged.
+| **Control the charging limit** | Set the charging limit (%).
 | **Control HVAC** | Start/stop HVAC.
+| **Control temperatures** | Set temperatures for driver and passenger.
 | **Control lock** | Lock/unlock the car doors.
+| **Control the frunk** | Lock/unlock the frunk.
+| **Control the trunk** | Lock/unlock the trunk.
+| **Control the sunroof** | Lock/unlock the sunroof.
 | **Refresh** | Refresh the jeedom panel.
 
 
@@ -115,7 +126,7 @@ Car display
 Most of the listed commands has a specific template. The default presentation for a car is as follow : :
 
 
-![config](../images/displayCar-1.png)
+![config](../images/displayCar-2.png)
 
 For example, if user does not want to display the picture and HVAC details, he/she needs to uncheck the `"Display"` toggle in car settings.
 
@@ -172,5 +183,17 @@ User can set the charging limit using a specific widget, as described in followi
 
 FAQ:
 ==
+
+1. How do I upgrade my equipmenent after a plugin upgrade ?
+
+   You simply need to click on `Synchronize my cars` button and the new Info and Action commands will be added to your vehicle and available on the dashboard.
+
+2. How do I switch from °C to °F, or km to miles ?
+   The Jeedom plugin reads the settings you made in your own car and displays temperatures, distance based on units sent by your car.
+
+   Also the choice to display rated range or ideal range is following the car settings
+
+----
+
 
 Please send any question trouble you have to <a href='mailto:vercors.io@gmail.com?subject=About%20Jeedom%20Tesla%20plugin...'>vercors.io@gmail.com</a> !

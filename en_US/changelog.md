@@ -1,5 +1,5 @@
 <a name="1.1.0"></a>
-# 1.1.0 (2018-12-04)
+# 1.1.0 (2018-12-06)
 ### Features
 * Control driver and passenger temperatures.
 * Control trunk, frunk and sunroof openings.
@@ -8,7 +8,7 @@
 * Display distances in `km` or `miles` following car settings
 
 
-## Improvements
+### Improvements
 * Added hover effects on buttons.
 * Optimize and clean code (added a css file shared among templates, ...)
 

@@ -1,5 +1,5 @@
 <a name="1.1.0"></a>
-# 1.1.0 (2018-12-04)
+# 1.1.0 (2018-12-06)
 ### Features
 * Contrôle des températures de climatisation pour le conducteur et le passager.
 * Contrôle des ouvrants (coffre avant, coffre arrière, toît ouvrant).
@@ -7,7 +7,7 @@
 * Affichage des températures en `°C` ou `°F` selon configuration du véhicule.
 * Affichage des distances en `km` ou `miles` selon configuration du véhicule.
 
-## Improvements
+### Improvements
 * Ajout d'effets sur les boutons cliquables pour les rendre plus visibles.
 * Optimisation et nettoyage du code (utilisation d'une feuille de style unique partagée entre les différents templates, ...)
 

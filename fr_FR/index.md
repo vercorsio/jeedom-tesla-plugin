@@ -89,16 +89,21 @@ Commandes de type **info**
 
 | Commande   |   Description |
 | --- | --- |
-| **Photo** | affiche une photo de la Tesla.
-| **Info autonomie** | indique l'autonomie en km de la voiture.
-| **Info climatisation** | indique si la climatisation est allumée ou éteinte.
-| **Info recharge** | indique si la voiture est en train de charger ou non. Les valeurs possibles sont  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.
-| **Info verouillage** | indique si la voiture est fermée ou ouverte.
-| **Odomètre** | indique la valeur du compteur kilométrique.
-| **Info véhicule** | affiche un titre et un sous titre correspondant à l'état actuel de la voiture. Par exemple _Conduite 67km_, _Recharge programmée à 22h50_, _Stationnée_, _Supercharge_, ...
-| **Détail autonomie** | affiche un graph de la batterie
-| **Détail de la recharge** | affiche les données issues de la recharge.
-| **Détail de la climatisation** | affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur). 
+| **Photo** | Affiche une photo de la Tesla.
+| **Info autonomie** | Indique l'autonomie typique (en km ou miles) de la voiture.
+| **Info autonomie nominale** | Indique l'autonomie nominale (en km ou miles) de la voiture.
+| **Info climatisation** | Indique si la climatisation est allumée ou éteinte.
+| **Info recharge** | Indique si la voiture est en train de charger ou non. Les valeurs possibles sont  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.
+| **Info limite de recharge** | Indique le pourcentage à atteindre à la fin d'un recharge.
+| **Info verouillage** | Indique si la voiture est fermée ou ouverte.
+| **Info frunk** | Indique si le coffre avant (frunk) est fermé ou ouvert.
+| **Info trunk** | Indique si le coffre arrière est fermé ou ouvert.
+| **Info toît ouvrant** | Indique si le toit panoramique est ouvert ou fermé.
+| **Odomètre** | Indique la valeur du compteur kilométrique (miles ou km).
+| **Info véhicule** | Affiche un titre et un sous titre correspondant à l'état actuel de la voiture. Par exemple _Conduite 67km_, _Recharge programmée à 22h50_, _Stationnée_, _Supercharge_, ...
+| **Détail autonomie** | Affiche un graph de la batterie
+| **Détail de la recharge** | Affiche les données issues de la recharge.
+| **Détail de la climatisation** | Affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur). 
 
 Commandes de type **action**
 --
@@ -106,8 +111,13 @@ Commandes de type **action**
 | Commande   |   Description |
 | --- | --- |
 | **Contrôler la recharge** | Va permettre de démarrer ou interrompre la charge si le cable de recharge est engagé.
+| **Contrôler la limite de charge** | Va permettre dedéfinir un pourcentage de charge a atteindre.
 | **Contrôler la climatisation** | Va permettre d'allumer ou d'arreter la climatisation.
+| **Contrôler la température** | Va permettre de définir une température dans l'habitacle (conducteur/passager).
 | **Contrôler le vérouillage** | Va permettre de vérouiller ou déverouiller la voiture.
+| **Contrôler le coffre avant** | Va permettre de vérouiller ou déverouiller le coffre avant (frunk).
+| **Contrôler le coffre arrière** | Va permettre de vérouiller ou déverouiller le coffre arrière (trunk).
+| **Contrôler le toit ouvrant** | Va permettre d'entrouvrir ou de fermer le toît panoramique.
 | **Rafraichir** | Mise à jour de la tuile sur clic de l'icone.
 
 
@@ -117,7 +127,7 @@ Affichage du véhicule
 La plupart des commandes listées ci-dessus a un template spécifique qui lui est attribué, et qui permet d'obtenir par défaut l'affichage d'un véhicule tel qu'illustré sur l'image:
 
 
-![config](../images/displayCar-1.png)
+![config](../images/displayCar-2.png)
 
 Par exemple pour ne pas afficher la photo et les détails de climatisation, il suffit pour un véhicule donné de décocher `"Affichage"` dans la ligne correspondante de la configuration de ces commandes.
 
@@ -174,5 +184,18 @@ Pour modifier depuis le dashboard la limite de charge, il suffit de délacer le 
 
 FAQ:
 ==
+
+1. Comment beneficier des nouvelles fonctionalités après mise à jour du plugin ?
+
+   Il suffit de cliquer sur le bouton `Synchroniser mes voitures` et les nouvelles commandes Info et Action seront ajoutées à l'équipement et visible sur le dashboard.
+
+2. Comment changer les unités de températures et de distance (°C / °F, km / miles) ?
+   
+   Le plugin tesla de Jeedom lit les paramètres que vous avez configuré dans votre voiture.
+
+   Idem pour l'affichage de l'autonomie typique ou nominale. 
+
+
+----
 
 Merci d'envoyer toute question à <a href='mailto:vercors.io@gmail.com?subject=About%20Jeedom%20Tesla%20plugin...'>vercors.io@gmail.com</a> !
