@@ -131,7 +131,7 @@ Control HVAC
 
 User can set the driver and passenger temperature using a specific widget, described in following animation:
 
-![clim on](../images/setTemps.gif)
+![clim on](../images/en_setTemps.gif)
 > **Note**
 >
 > Due to a limitation in the current version of the Tesla API, we can set different temperatures to driver and passenger only if SYNC is unselected in the car.
@@ -167,7 +167,7 @@ Control the charging
 
 User can set the charging limit using a specific widget, as described in following animation:
 
-![setLimit](../images/setChargingLimit.gif)
+![setLimit](../images/en_setChargingLimit.gif)
 
 
 FAQ:

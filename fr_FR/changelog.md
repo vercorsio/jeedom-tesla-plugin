@@ -4,6 +4,8 @@
 * Contrôle des températures de climatisation pour le conducteur et le passager.
 * Contrôle des ouvrants (coffre avant, coffre arrière, toît ouvrant).
 * Contrôle de la limite de recharge.
+* Affichage des températures en `°C` ou `°F` selon configuration du véhicule.
+* Affichage des distances en `km` ou `miles` selon configuration du véhicule.
 
 ## Improvements
 * Ajout d'effets sur les boutons cliquables pour les rendre plus visibles.

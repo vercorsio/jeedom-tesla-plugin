@@ -4,6 +4,9 @@
 * Control driver and passenger temperatures.
 * Control trunk, frunk and sunroof openings.
 * Control charging limit.
+* Display temperatures in `°C` or `°F` following car settings
+* Display distances in `km` or `miles` following car settings
+
 
 ## Improvements
 * Added hover effects on buttons.
