@@ -89,7 +89,7 @@ Commandes de type **info**
 
 | Commande   |   Description |
 | --- | --- |
-| **Photo** | Affiche une photo de la Tesla.
+| **Photo** | Affiche une photo de la Tesla, ainsi que le badge (70D, P85D, ...).
 | **Info autonomie** | Indique l'autonomie typique (en km ou miles) de la voiture.
 | **Info autonomie nominale** | Indique l'autonomie nominale (en km ou miles) de la voiture.
 | **Info climatisation** | Indique si la climatisation est allumée ou éteinte.
@@ -157,12 +157,12 @@ Contrôler le vérouillage (portes, coffres et toît ouvrant)
 | --- | --- | --: |
 | ![lockOn](../images/locked.png) | La voiture est fermée | _... dévérouiller les portes_ |
 | ![lockOff](../images/unlocked.png) | La voiture est ouverte | _... vérouiller les portes_ |
-| ![frunkOff](../images/frunk_off.png) | Le coffre avant est fermé | _... dévérouille le frunk_ |
+| ![frunkOff](../images/frunk_off.png) | Le coffre avant est fermé | _... dévérouiller le frunk_ |
 | ![frunkOn](../images/frunk_on.png) | Le coffre avant est ouvert | _...  être sans effet_ |
-| ![trunkOff](../images/trunk_off.png) | Le coffre arrière est fermé | _... ouvre le coffre_ |
-| ![trunkOn](../images/trunk_on.png) | Le coffre arrière est ouvert | _...  ferme le coffre_ |
-| ![panoOff](../images/pano_off.png) | Le toît panoramique est fermé | _... ouvre le toît panoramique_ |
-| ![panoOn](../images/pano_on.png) | Le toît panoramique est ouvert | _...  ferme le toît panoramique_ |
+| ![trunkOff](../images/trunk_off.png) | Le coffre arrière est fermé | _... ouvrir le coffre_ |
+| ![trunkOn](../images/trunk_on.png) | Le coffre arrière est ouvert | _...  fermer le coffre_ |
+| ![panoOff](../images/pano_off.png) | Le toît panoramique est fermé | _... ouvrir le toît panoramique_ |
+| ![panoOn](../images/pano_on.png) | Le toît panoramique est ouvert | _...  fermer le toît panoramique_ |
 
 Contrôler la charge
 --
@@ -185,13 +185,13 @@ Pour modifier depuis le dashboard la limite de charge, il suffit de délacer le 
 FAQ:
 ==
 
-1. Comment beneficier des nouvelles fonctionalités après mise à jour du plugin ?
+1. Comment béneficier des nouvelles fonctionalités après mise à jour du plugin ?
 
-   Il suffit de cliquer sur le bouton `Synchroniser mes voitures` et les nouvelles commandes Info et Action seront ajoutées à l'équipement et visible sur le dashboard.
+   Il suffit de cliquer sur le bouton `Synchroniser mes voitures` et les nouvelles commandes Info et Action seront ajoutées à l'équipement et visibles sur le dashboard.
 
 2. Comment changer les unités de températures et de distance (°C / °F, km / miles) ?
    
-   Le plugin tesla de Jeedom lit les paramètres que vous avez configuré dans votre voiture.
+   Le plugin Tesla de Jeedom lit et utilise les paramètres que vous avez configuré dans votre voiture.
 
    Idem pour l'affichage de l'autonomie typique ou nominale. 
 
