@@ -1,9 +1,9 @@
 <a name="1.1.0"></a>
-# 1.1.0 (2018-12-07)
+# 1.1.0 (2018-12-10)
 ### Features
 * Contrôle des températures de climatisation pour le conducteur et le passager.
 * Contrôle des ouvrants (coffre avant, coffre arrière, toît ouvrant).
-* Contrôle de la limite de recharge.
+* Contrôle de la limite de recharge via dashboard et scenario.
 * Affichage des températures en `°C` ou `°F` selon configuration du véhicule.
 * Affichage des distances en `km` ou `miles` selon configuration du véhicule.
 

@@ -3,7 +3,7 @@
 ### Features
 * Control driver and passenger temperatures.
 * Control trunk, frunk and sunroof openings.
-* Control charging limit.
+* Control charging limit using dashboard or scenario.
 * Display temperatures in `°C` or `°F` following car settings
 * Display distances in `km` or `miles` following car settings
 
