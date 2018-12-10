@@ -180,6 +180,12 @@ User can set the charging limit using a specific widget, as described in followi
 
 ![setLimit](../images/en_setChargingLimit.gif)
 
+Scenario
+==
+
+An exemple to show how to set the charging limit to 100% using a scernario :
+![setLimit](../images/scenario_setChargeLimit_100.png)
+
 
 FAQ:
 ==

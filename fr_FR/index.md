@@ -182,6 +182,13 @@ Pour modifier depuis le dashboard la limite de charge, il suffit de délacer le 
 
 ![setLimit](../images/setChargingLimit.gif)
 
+Scenario
+==
+
+Un exemple d'action dans un scenario qui va modifier le seuil de recharge à son maximum :
+![setLimit](../images/scenario_setChargeLimit_100.png)
+
+
 FAQ:
 ==
 
