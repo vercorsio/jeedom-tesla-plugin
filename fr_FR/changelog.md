@@ -1,5 +1,5 @@
 <a name="1.1.0"></a>
-# 1.1.0 (2018-12-06)
+# 1.1.0 (2018-12-07)
 ### Features
 * Contrôle des températures de climatisation pour le conducteur et le passager.
 * Contrôle des ouvrants (coffre avant, coffre arrière, toît ouvrant).

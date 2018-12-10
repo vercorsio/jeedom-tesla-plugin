@@ -1,5 +1,5 @@
 <a name="1.1.0"></a>
-# 1.1.0 (2018-12-06)
+# 1.1.0 (2018-12-07)
 ### Features
 * Control driver and passenger temperatures.
 * Control trunk, frunk and sunroof openings.
