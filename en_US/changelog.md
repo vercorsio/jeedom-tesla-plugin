@@ -1,3 +1,25 @@
+<a name="1.2.0"></a>
+# 1.2.0 (2018-12-19)
+### Features
+* Add Mobile widget.
+* Add Info command to retrieve the inside temparature (ex: useful for a scenario that triggers an HVAC start, ...).
+* Add a wakeup command that triggers 3 attempts (with 5 sec between two tries) to wake up the vehicle (3 et 5 can be configured in the plugin panel).
+* When plugin is upgrading, it re-synchronizes all configured vehicles.
+
+### Improvements
+* Most of the action commands can be used in Jeedom scenarios.
+* More english translations.
+
+### Fixes
+* Sunroof button is now working properly.
+
+### Known issues
+* The wake up function better works when the **Always connected** mode is activated in the car.
+ 
+
+Thank you to `Kim` for his feedback !
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2018-12-07)
 ### Features

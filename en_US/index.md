@@ -4,6 +4,8 @@ Welcome to the documentation page of the Jeedom Tesla plugin !
 
 Thanks to it, a Tesla owner can access to her/his car and interact with it, based on Tesla API.
 
+You will find the details of all versions in the [Change log](!https://vercorsio.github.io/jeedom-tesla-plugin/en_US/changelog).
+
 Plugin setup
 =======================
 
@@ -88,10 +90,12 @@ Commands  **info**
 | Command   |   Description |
 | --- | --- |
 | **Photo** | Display a picture of the Tesla.
+| **Info awake** | Tells whether the car is asleep (0) or online (1).
 | **Info ideal range** | Provide the ideal range (km or miles).
 | **Info rated range** | Provide the rated range (km or miles).
 | **Info range** | Provide the range in km or miles.
-| **Info HVAC** | Tells whether the HVAC is on or off
+| **Info HVAC** | Tells whether the HVAC is on or off.
+| **Info interior temp** | Provide temperature inside the car.
 | **Info charging** | Tells if the car is currently charging or not. Possible values are  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.
 | **Info charging limit** | Provide value of charging limit (%).
 | **Info lock** | Tells whether the car is locked or not.
@@ -118,6 +122,11 @@ Commands **action**
 | **Control the trunk** | Lock/unlock the trunk.
 | **Control the sunroof** | Lock/unlock the sunroof.
 | **Refresh** | Refresh the jeedom panel.
+| **Wake up** | Try (3 times with 5 sec between two attempts) to wake up the car. May be usefull in context of a scenario. Automatically update the value of **Info awake**.
+
+> **Tip**
+>
+> Each of these actions can be used in Jeedom scenarios.
 
 
 Car display
@@ -125,8 +134,14 @@ Car display
 
 Most of the listed commands has a specific template. The default presentation for a car is as follow : :
 
+### Desktop version:
 
 ![config](../images/displayCar-2.png)
+
+### Mobile version:
+
+![config](../images/mobileWidget.gif)
+
 
 For example, if user does not want to display the picture and HVAC details, he/she needs to uncheck the `"Display"` toggle in car settings.
 
@@ -183,22 +198,30 @@ User can set the charging limit using a specific widget, as described in followi
 Scenario
 ==
 
-An exemple to show how to set the charging limit to 100% using a scernario :
-![setLimit](../images/scenario_setChargeLimit_100.png)
+Scenario examples:
+* Set the charging limit to 100%:
+  ![setLimit](../images/scenario_setChargeLimit_100.png)
+
+* Once the car is online, set charge limit to 90% and set temp to 23°C and starts HVAC if inside temp is lower than 14°C:
+
+  ![climate](../images/scenario_Climate.png)
 
 
 FAQ:
 ==
 
-1. How do I upgrade my equipmenent after a plugin upgrade ?
+1. How do I upgrade my equipment after a plugin upgrade ?
 
-   You simply need to click on `Synchronize my cars` button and the new Info and Action commands will be added to your vehicle and available on the dashboard.
+   At plugin upgrade, the plugin automatically synchronizes your car(s). However, it might not properly work (car not available for example), thus you simply need to click on `Synchronize my cars` button and the new Info and Action commands will be added to your vehicle and available on the dashboard.
 
 2. How do I switch from °C to °F, or km to miles ?
    The Jeedom plugin reads the settings you made in your own car and displays temperatures, distance based on units sent by your car.
 
    Also the choice to display rated range or ideal range is following the car settings
 
+3. The 'wake up' action does not wake up the car.
+  
+   In the plugin configuration panel you can change the two following settings `Number of attempts to wakeup the car` and `Number of seconds between two attempts` to force the wake up. The `Wake up` action does better work when **Always connected** mode is activated in your car.
 ----
 
 

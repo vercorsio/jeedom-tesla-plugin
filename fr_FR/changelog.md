@@ -1,3 +1,25 @@
+<a name="1.2.0"></a>
+# 1.2.0 (2018-12-19)
+### Features
+* Ajout du widget Mobile.
+* Ajout d'une commande Info qui remonte la température intérieure (utile pour un scénario de mise en route de la clim par exemple).
+* Ajout d'une commande de réveil de la voiture qui effectue 3 tentatives de réveil espacées de 5 secondes (3 et 5 sont configurables au niveau du plugin).
+* Lors de la mise à jour du plugin, celui-ci synchronisera vos véhicules configurés.
+
+### Improvements
+* Les principales commandes d'actions peuvent être utilisées dans des scénarios.
+* Plus de traduction en anglais.
+
+### Fixes
+* Correction sur le bouton d'ouverture du toit ouvrant.
+
+
+### Known issues
+* La fonction de reveil marche mieux lorsque le mode **Connexion permanente** est activé dans la voiture.
+
+
+Un grand merci à `Kim` pour ses retours et suggestions d'améliorations !
+
 <a name="1.1.0"></a>
 # 1.1.0 (2018-12-10)
 ### Features

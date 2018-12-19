@@ -4,6 +4,9 @@ Bienvenue sur la page de documentation du plugin Jeedom Tesla !
 
 Avec ce plugin, l'utilisateur peut accéder à sa voiture Tesla, et intéragir avec les données remontées par l'API proposée par Tesla.
 
+Retrouvez la liste des nouveautés sur le [Change log](!https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog).
+
+
 Configuration du plugin
 =======================
 
@@ -90,9 +93,11 @@ Commandes de type **info**
 | Commande   |   Description |
 | --- | --- |
 | **Photo** | Affiche une photo de la Tesla, ainsi que le badge (70D, P85D, ...).
+| **Info réveillée** | Indique si le véhicule est en mode veille (0) ou en ligne (1).
 | **Info autonomie** | Indique l'autonomie typique (en km ou miles) de la voiture.
 | **Info autonomie nominale** | Indique l'autonomie nominale (en km ou miles) de la voiture.
 | **Info climatisation** | Indique si la climatisation est allumée ou éteinte.
+| **Info température habitacle** | Indique la température à l'intérieur du véhicule.
 | **Info recharge** | Indique si la voiture est en train de charger ou non. Les valeurs possibles sont  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.
 | **Info limite de recharge** | Indique le pourcentage à atteindre à la fin d'un recharge.
 | **Info verouillage** | Indique si la voiture est fermée ou ouverte.
@@ -100,7 +105,7 @@ Commandes de type **info**
 | **Info trunk** | Indique si le coffre arrière est fermé ou ouvert.
 | **Info toît ouvrant** | Indique si le toit panoramique est ouvert ou fermé.
 | **Odomètre** | Indique la valeur du compteur kilométrique (miles ou km).
-| **Info véhicule** | Affiche un titre et un sous titre correspondant à l'état actuel de la voiture. Par exemple _Conduite 67km_, _Recharge programmée à 22h50_, _Stationnée_, _Supercharge_, ...
+| **Info véhicule** | Affiche un titre et un sous titre correspondant à l'état actuel de la voiture. Par exemple _Conduite 67km_, _Recharge planifiée à 22h50_, _Stationnée_, _Supercharge_, ...
 | **Détail autonomie** | Affiche un graph de la batterie
 | **Détail de la recharge** | Affiche les données issues de la recharge.
 | **Détail de la climatisation** | Affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur). 
@@ -119,6 +124,11 @@ Commandes de type **action**
 | **Contrôler le coffre arrière** | Va permettre de vérouiller ou déverouiller le coffre arrière (trunk).
 | **Contrôler le toit ouvrant** | Va permettre d'entrouvrir ou de fermer le toît panoramique.
 | **Rafraichir** | Mise à jour de la tuile sur clic de l'icone.
+| **Réveiller** | Force le reveil de la voiture (3 tentatives espacées de 5s). Peut-être utile dans un scénario. Met à jour la valeur de **Info reveillée**.
+
+> **Tip**
+>
+> Chacune de ces actions peut être intégrée dans un scénario Jeedom.
 
 
 Affichage du véhicule
@@ -126,8 +136,13 @@ Affichage du véhicule
 
 La plupart des commandes listées ci-dessus a un template spécifique qui lui est attribué, et qui permet d'obtenir par défaut l'affichage d'un véhicule tel qu'illustré sur l'image:
 
+### Version Desktop:
 
 ![config](../images/displayCar-2.png)
+
+### Version Mobile:
+
+![config](../images/mobileWidget.gif)
 
 Par exemple pour ne pas afficher la photo et les détails de climatisation, il suffit pour un véhicule donné de décocher `"Affichage"` dans la ligne correspondante de la configuration de ces commandes.
 
@@ -185,22 +200,31 @@ Pour modifier depuis le dashboard la limite de charge, il suffit de délacer le 
 Scenario
 ==
 
-Un exemple d'action dans un scenario qui va modifier le seuil de recharge à son maximum :
-![setLimit](../images/scenario_setChargeLimit_100.png)
+Exemples de scénarios: 
 
+* Modifier le seuil de recharge à son maximum :
+  ![setLimit](../images/scenario_setChargeLimit_100.png)
+
+* Reveiller la voiture et mettre le seuil de charge à 90% et activer la climatisation si la température de l'habitacle est inférieur à 14°C :
+
+  ![climate](../images/scenario_Climate.png)
 
 FAQ:
 ==
 
 1. Comment béneficier des nouvelles fonctionalités après mise à jour du plugin ?
 
-   Il suffit de cliquer sur le bouton `Synchroniser mes voitures` et les nouvelles commandes Info et Action seront ajoutées à l'équipement et visibles sur le dashboard.
+   Lors de la mise à jour, le plugin synchronise automatiquement vos véhicules configurés avec la nouvelle version du plugin. Cependant, il se peut que la mise à jour ne se soit pas faite. Il suffira alors de cliquer sur le bouton `Synchroniser mes voitures` et les nouvelles commandes Info et Action seront ajoutées à l'équipement et visibles sur le dashboard.
 
 2. Comment changer les unités de températures et de distance (°C / °F, km / miles) ?
    
    Le plugin Tesla de Jeedom lit et utilise les paramètres que vous avez configuré dans votre voiture.
 
    Idem pour l'affichage de l'autonomie typique ou nominale. 
+
+3. La commande 'Réveiller' ne réveille pas la voiture.
+  
+   Depuis le panneau de configuration du plugin, vous pouvez modifier les deux paramètres `Nombre de tentatives pour reveiller le véhicule` et `Nombre de secondes entre deux tentatives` pour essayer de forcer le reveil. Les chances de succès du réveil sont plus grandes quand le mode **Connexion permanente** est activé dans les paramètres de votre voiture. 
 
 
 ----
