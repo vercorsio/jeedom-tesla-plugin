@@ -1,3 +1,8 @@
+<a name="1.2.1"></a>
+# 1.2.1 (2018-12-22)
+### Fixes
+* Le plugin est maintenant compatible avec PHP 5.6.
+
 <a name="1.2.0"></a>
 # 1.2.0 (2018-12-19)
 ### Features

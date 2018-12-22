@@ -1,3 +1,8 @@
+<a name="1.2.1"></a>
+# 1.2.1 (2018-12-22)
+### Fixes
+* Issues raised when Jeedom runs on top of php 5.6 have been fixed.
+
 <a name="1.2.0"></a>
 # 1.2.0 (2018-12-19)
 ### Features
