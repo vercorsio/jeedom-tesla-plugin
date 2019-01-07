@@ -1,3 +1,12 @@
+<a name="1.2.2"></a>
+# 1.2.2 (2019-01-07)
+
+### Improvements
+* Ajout d'une indication de la dernière date de mise à jour ("A l'instant", "Mise à jour il y a 2 mintues", ...).
+
+### Fixes
+* Suppression du message "Erreur d'accès au Seveur Tesla", lors du réveil de la voiture.
+
 <a name="1.2.1"></a>
 # 1.2.1 (2018-12-22)
 ### Fixes

@@ -1,3 +1,12 @@
+<a name="1.2.2"></a>
+# 1.2.2 (2019-01-07)
+
+### Improvements
+* Add an indication in the widget to tell when last update did occur ("Updated just now", "Updated 2 minutes ago" ...).
+
+### Fixes
+* Remove the message "Erreur d'accès au Seveur Tesla", when system tries to wake up the car.
+
 <a name="1.2.1"></a>
 # 1.2.1 (2018-12-22)
 ### Fixes
