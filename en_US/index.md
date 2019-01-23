@@ -27,6 +27,9 @@ The plugin will retrieve all Tesla associated with your account and automagicall
 > First check that the Tesla app on your smartphone is able to connect to it.
 
 
+User needs to check the following settings  `View the desktop panel` and `Show mobile panel` to have access to the **Range Tracking** panels:
+![config](../images/configPlugin-4.png)
+
 
 The two methods to connect are::
 
