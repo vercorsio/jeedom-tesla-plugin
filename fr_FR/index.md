@@ -4,7 +4,11 @@ Bienvenue sur la page de documentation du plugin Jeedom Tesla !
 
 Avec ce plugin, l'utilisateur peut accéder à sa voiture Tesla, et intéragir avec les données remontées par l'API proposée par Tesla.
 
-Depiusi la version 1.3, un panneau est disponible à la fois sur la version desktop et la version mobile, pour suivre l'évolution de l'autonomie au cours d'une journée, au gré des kilomètres parcourus, des recharges et des temps de parking. Il affiche un graphique et un tableau récapitulatif des différentes phases de la journée (trajet, recharge et parking). Le graphique va permettre de voir précisément les gains et pertes d'autonomie lors d'un trajet par exemple, en tenant compte de l'autonomie de départ et des kilomètres parcourus. Chaque ligne du tableau renseigne sur l'étape : sa durée, la distance parcourue, la vitesse moyenne, les pertes ou gains d'autonomie observés ainsi qu'un pourcentage d'efficience.
+Egalement, ce plugin propose un panneau pour suivre sur un graphique l'évolution de l'autonomie au cours d'une journée, au gré des kilomètres parcourus:
+
+
+![tracking-graph](../images/consoLow480.gif)
+
 
 Retrouvez la liste des nouveautés sur le [Change log](!https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog).
 
@@ -220,17 +224,17 @@ Suivi de consommation
 Principe
 --
 
-Le panneau **suivi de conso** permet au conducteur de comprendre l'influence de sa conduite et de l'environement sur l'autonomie du véhicule, pour chacune des Tesla activée dans votre Jeedom.
+Le panneau **suivi de conso** permet au conducteur de comprendre l'influence de sa conduite et de l'environement sur l'autonomie du véhicule, pour chacune des Tesla activées dans votre Jeedom.
 
 Cela permet de comprendre comment évolue l'autonomie restante au fil des trajets, des charges et temps de repos.
 
 Ce 'tracking' s'appuie sur des données acquises depuis les Servers Tesla via un cron qui est démarré et arrêté depuis le panneau. Les données sont stockées en local sur votre serveur Jeedom.
 
-Un graphique retrace l'évolution de l'autonomie au cours d'une journée. Un calendrier permet de consulter l'historique des graphiques.
+Un graphique retrace l'évolution de l'autonomie au cours d'une journée et un calendrier permet de consulter l'historique des graphiques.
 
 > **Note**
 >
-> La version mobile permet de suivre l'évolution de l'autonomie tout en conduisant.
+> Pratique, la version mobile permet de suivre l'évolution de l'autonomie tout en conduisant !
 
 Mise en place
 --
@@ -242,12 +246,13 @@ serviront à afficher des graphiques de suivi, identifier les différentes étap
 Un clic sur `Stop Recording` va stopper l'acquisition des données (arrêt du cron).
 
 > **Notes**
+>
 > Lors de l'acquisition et si le graph affiché est le graph du jour, il est possible de passer en mode `live`, ce qui permet d'afficher en temps réel les dernières données acquises (pratique pour suivre sa consommation lors d'un trajet).
 >
 > Au premier lancement, il peut se passer plusieurs minutes avant que des données soient
 effectivement disponibles pour l'affichage.
 
-Exemple:
+Exemple
 --
 L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui se découpe principalement en 4 segments : 
 - <code>km  0</code> à <code>km 15</code>: route départementale sur du plat - _altitude 'en haut': 1100m._
@@ -259,7 +264,7 @@ L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui s
 
 - En abscisse on trouve le temps
 - En ordonnée à gauche en <b>noir</b>, le kilométrage parcouru. <u>Note:</u> l'angle de la courbe est proportionel à la vitesse.
-- En ordonnée à gauche en <b style='color:#22C4FF'>bleu</b>, l'autonomie de départ en <b style="color:#3355FF">pointillé</b>, et l'évolution de l'autonomie en <b style='color:#22C4FF'>bleu</b>. Quand la climatisation est allumée, le trait est en <b style='color:blueviolet'>violet</b>
+- En ordonnée à gauche en <b style='color:#22C4FF'>bleu</b>, l'autonomie de départ en <b style="color:#3355FF">pointillé</b>, et l'évolution de l'autonomie en <b style='color:#22C4FF'>bleu</b>. Quand la climatisation est allumée, le trait est en <b style='color:blueviolet'>violet</b>.
  - En ordonnée à droite, la différence constatée entre l'<b style="color:#3355FF">autonomie initiale</b> et l'<b style='color:#22C4FF'>autonomie réelle</b> compte tenu des <b>kilomètres parcourus</b>. La courbe est <b style="color:#00FF00">verte</b> quand il y a un gain, <b style="color:#FFA500">orange</b> en cas de perte.
 
 
