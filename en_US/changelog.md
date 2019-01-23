@@ -1,3 +1,12 @@
+<a name="1.3.0"></a>
+# 1.3.0 (2019-01-23)
+
+### Improvements
+* Add the 'range tracking' panel to let user visualize on a graph the range evolution depending on what the car is 'doing': driving/charging/parking.
+
+### Known issues
+* The 'range tracking' panel is not translated in english yet.
+ 
 <a name="1.2.2"></a>
 # 1.2.2 (2019-01-07)
 

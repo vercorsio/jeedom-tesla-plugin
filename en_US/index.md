@@ -4,6 +4,10 @@ Welcome to the documentation page of the Jeedom Tesla plugin !
 
 Thanks to it, a Tesla owner can access to her/his car and interact with it, based on Tesla API.
 
+Also, this plugin provides a panel to track all day long (or on demand) on a graph the range of your vehicle:
+
+![tracking-graph](../images/consoLow480.gif)
+
 You will find the details of all versions in the [Change log](!https://vercorsio.github.io/jeedom-tesla-plugin/en_US/changelog).
 
 Plugin setup
@@ -206,6 +210,64 @@ Scenario examples:
 
   ![climate](../images/scenario_Climate.png)
 
+Range tracking
+==
+
+
+The `Range Tracking` panel provides all required info to the driver to help her/him understand how range evolves when she/he is driving the car. All enabled Teslas configured in Jeedom can be tracked.
+
+This tool retrieves data from Tesla servers via a cron job that is manually started/stopped from the panel. It provides statistics on each steps : **driving**, **charging** and **parking**. All retrieved data is stored on the local drive of your Jeedom server.
+
+A calendar allows user to display graphs from a specific day.
+
+> **Tips**
+>
+> The mobile version of the panel can be used while driving : a live mechanism updates the graph when new data arrives !
+
+Setup
+--
+By default, the cron job is not started.
+
+When user clics on `Start Recording` button, the cron job retrieves data every minute. These data will be used to create the graphs and will calculate statistics.
+
+When user clics on `Stop Recording` button, the cron job stops all data retrieval. You can still display recorded graphs but the activity with Tesla Server is donw.
+
+> **Notes**
+>
+> When recording is started and displayed graph is the graph of the day, user can click on `live` button to retrieve data on the fly and update the graph
+>
+> At first launch, it may takes several minutes before first points appear on the graph.
+
+Exemple
+--
+The example below corresponds to a real trip made on 2019, January the 5th. This trip is mainly split in 4 stages: 
+- <code>km  0</code> to <code>km 15</code>: road - _altitude: from 1100m to 1000m_. 
+- <code>km 15</code> to <code>km 30</code>: road - _altitude: from 1000m to 250m_.
+- <code>km 30</code> to <code>km 50</code>: highway - _altitude: from 250m to 400m_.
+- <code>km 50</code> to <code>km 65</code>: road - _altitude: from 400m to 500m_.
+
+![tracking-graph](../images/tracking-graph.png)
+
+- Horizontal axis is timeline.
+- The left vertical axis represents:
+   - the traveled milleage in <b>black</b>,  <u>Note:</u> the more the curve goes up, the faster the speed.
+   - the range at the beginning of the trip in <b style="color:#3355FF">dashed</b>
+   - the current evolution in <b style='color:#22C4FF'>blue</b>.
+   - When the HVAC is on, the curve turns to <b style='color:blueviolet'>violet</b>.
+- The right vertical axis represents the difference between the <b style="color:#3355FF">range at the beginning of the trip</b> and the <b style='color:#22C4FF'>current range</b> without <b>mileage traveled</b> removed. The curve is <b style="color:#00FF00">green</b> when there is a gain, and <b style="color:#FFA500">orange</b> when we observe a loss.
+
+
+The table below lists all the different stages of the day. User can clic a specific stage to zoom the graph. A clic on the footer resets the zoom and displays the whole day.
+
+![tracking-graph](../images/tracking-table.png)
+
+- The `efficiency` corresponds to the ratio between the gain/loss and the traveled mileage. In general small trips have bad efficency.
+- The 3 buttons on the top right of the table allow the user to filter the table. For example she/he can display only the parking stages to see how range evolves when car is not moving (_vampire drain_) 
+
+
+> **Notes**
+>
+> - You can avoid unintentional energy consumption by minimizing the range tracking. Keep it off when it is not needed (on nights or during long parking times)
 
 FAQ:
 ==
@@ -222,7 +284,7 @@ FAQ:
 3. The 'wake up' action does not wake up the car.
   
    In the plugin configuration panel you can change the two following settings `Number of attempts to wakeup the car` and `Number of seconds between two attempts` to force the wake up. The `Wake up` action does better work when **Always connected** mode is activated in your car.
-----
+
 
 
 Please send any question trouble you have to <a href='mailto:vercors.io@gmail.com?subject=About%20Jeedom%20Tesla%20plugin...'>vercors.io@gmail.com</a> !

@@ -1,3 +1,12 @@
+<a name="1.3.0"></a>
+# 1.3.0 (2019-01-23)
+
+### Improvements
+* Ajout d'un panneau de 'suivi de l'autonomie' qui opermet de visualiser sur un graphique, l'évolition de l'autonomie en fonction de l'éétat de la voiture : conduite, recharge et parking).
+
+### Known issues
+* Le panneau de 'suivi de l'autonomie' n'est pas encore traduit en anglais.
+
 <a name="1.2.2"></a>
 # 1.2.2 (2019-01-07)
 
