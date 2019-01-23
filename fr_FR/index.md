@@ -4,6 +4,8 @@ Bienvenue sur la page de documentation du plugin Jeedom Tesla !
 
 Avec ce plugin, l'utilisateur peut accéder à sa voiture Tesla, et intéragir avec les données remontées par l'API proposée par Tesla.
 
+Depiusi la version 1.3, un panneau est disponible à la fois sur la version desktop et la version mobile, pour suivre l'évolution de l'autonomie au cours d'une journée, au gré des kilomètres parcourus, des recharges et des temps de parking. Il affiche un graphique et un tableau récapitulatif des différentes phases de la journée (trajet, recharge et parking). Le graphique va permettre de voir précisément les gains et pertes d'autonomie lors d'un trajet par exemple, en tenant compte de l'autonomie de départ et des kilomètres parcourus. Chaque ligne du tableau renseigne sur l'étape : sa durée, la distance parcourue, la vitesse moyenne, les pertes ou gains d'autonomie observés ainsi qu'un pourcentage d'efficience.
+
 Retrouvez la liste des nouveautés sur le [Change log](!https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog).
 
 
@@ -23,6 +25,8 @@ Le plugin va rechercher la ou les Tesla associées à votre compte et créer les
 > Ce plugin nécessite que votre Tesla soit accessible sur le réseau pour ne pas provoquer d'erreur. 
 > Si l'application Tesla sur votre smartphone arrive à se connecter à votre Tesla, le plugin sera à même de configurer correctement votre Tesla dans Jeedom.
 
+Pour accéder au panneaux de suivi de consommation, il suffit de cocher `Afficher le panneau desktop` et `Afficher le panneau mobile`:  
+![config](../images/configPlugin-4.png)
 
 
 Les deux méthodes de connections sont les suivantes:
@@ -208,6 +212,69 @@ Exemples de scénarios:
 * Reveiller la voiture et mettre le seuil de charge à 90% et activer la climatisation si la température de l'habitacle est inférieur à 14°C :
 
   ![climate](../images/scenario_Climate.png)
+
+
+Suivi de consommation
+==
+
+Principe
+--
+
+Le panneau **suivi de conso** permet au conducteur de comprendre l'influence de sa conduite et de l'environement sur l'autonomie du véhicule, pour chacune des Tesla activée dans votre Jeedom.
+
+Cela permet de comprendre comment évolue l'autonomie restante au fil des trajets, des charges et temps de repos.
+
+Ce 'tracking' s'appuie sur des données acquises depuis les Servers Tesla via un cron qui est démarré et arrêté depuis le panneau. Les données sont stockées en local sur votre serveur Jeedom.
+
+Un graphique retrace l'évolution de l'autonomie au cours d'une journée. Un calendrier permet de consulter l'historique des graphiques.
+
+> **Note**
+>
+> La version mobile permet de suivre l'évolution de l'autonomie tout en conduisant.
+
+Mise en place
+--
+Par défaut, l'acquision n'est pas démarrée.
+
+Un clic sur `Start Recording` va démarrer le cron qui va récupérer à chaque minute les données qui
+serviront à afficher des graphiques de suivi, identifier les différentes étapes de la journée et proposer des statistiques.
+
+Un clic sur `Stop Recording` va stopper l'acquisition des données (arrêt du cron).
+
+> **Notes**
+> Lors de l'acquisition et si le graph affiché est le graph du jour, il est possible de passer en mode `live`, ce qui permet d'afficher en temps réel les dernières données acquises (pratique pour suivre sa consommation lors d'un trajet).
+>
+> Au premier lancement, il peut se passer plusieurs minutes avant que des données soient
+effectivement disponibles pour l'affichage.
+
+Exemple:
+--
+L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui se découpe principalement en 4 segments : 
+- <code>km  0</code> à <code>km 15</code>: route départementale sur du plat - _altitude 'en haut': 1100m._
+- <code>km 15</code> à <code>km 30</code>: route départementale en descente -  _altitude 'en bas': 250m._
+- <code>km 30</code> à <code>km 50</code>: autoroute.
+- <code>km 50</code> à <code>km 65</code>: route départementale - _altitude à l'arrivée: 500m._
+
+![tracking-graph](../images/tracking-graph.png)
+
+- En abscisse on trouve le temps
+- En ordonnée à gauche en <b>noir</b>, le kilométrage parcouru. <u>Note:</u> l'angle de la courbe est proportionel à la vitesse.
+- En ordonnée à gauche en <b style='color:#22C4FF'>bleu</b>, l'autonomie de départ en <b style="color:#3355FF">pointillé</b>, et l'évolution de l'autonomie en <b style='color:#22C4FF'>bleu</b>. Quand la climatisation est allumée, le trait est en <b style='color:blueviolet'>violet</b>
+ - En ordonnée à droite, la différence constatée entre l'<b style="color:#3355FF">autonomie initiale</b> et l'<b style='color:#22C4FF'>autonomie réelle</b> compte tenu des <b>kilomètres parcourus</b>. La courbe est <b style="color:#00FF00">verte</b> quand il y a un gain, <b style="color:#FFA500">orange</b> en cas de perte.
+
+
+
+Un tableau récapitulatif par journée est affiché et permet sur selection d'une ligne de zoomer sur le graph correspondant. Un clic sur la ligne "Total" va afficher la journée complète.
+
+![tracking-graph](../images/tracking-table.png)
+
+- L'`efficience` correspond au pourcentage de km gagnés/perdus par rapport à la longueur du trajet, ce qui permet de pondérer les résultats. Les petits trajets sont 'énergivores'.
+ - Les trois boutons en haut à droite du tableau permettent de filtrer par type d'étape et de pouvoir par exemple calculer les pertes liées aux seules étapes de type `parking`.
+ 
+> **Notes**
+>
+> - En dehors des plages de conduite, le graphique affiche l'évolution de l'autonomie à l'arrêt, et permet par exemple de tracer les pertes de type <i>"vampire drain"</i> et de voir les courbes lors des recharges.
+> - Activer en continu le recording peut conduire à une consommation d'énergie non souhaitée.
 
 FAQ:
 ==
