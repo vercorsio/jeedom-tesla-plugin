@@ -1,3 +1,14 @@
+<a name="1.3.1"></a>
+# 1.3.1 (2019-01-30)
+
+### Improvements
+* [**Range Tracking**] In live mode live, the range curve turns to violet when HVAC is activated.
+* [**Range Tracking**] It is now possible to display example graph for a fake Tesla.
+* Widget is doubled size in mobile mode, when device width is bigger than 500px.
+
+### Fixes
+* Cleanup.
+
 <a name="1.3.0"></a>
 # 1.3.0 (2019-01-23)
 

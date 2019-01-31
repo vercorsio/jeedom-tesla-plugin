@@ -1,3 +1,14 @@
+<a name="1.3.1"></a>
+# 1.3.1 (2019-01-30)
+
+### Improvements
+* [**Suivi de l'Autonomie**] En mode live la courbe d'autonomie devient violette quand le chauffage est activée.
+* [**Suivi de l'Autonomie**] Il est possible maintenant d'afficher un graph d'exemple sur une voiture virtuelle.
+* Augmentation du panel mobile (x2) quand la taille de l'écran le permet.
+
+### Fixes
+* Correctifs pour une meilleure stabilité et maintenabilité.
+
 <a name="1.3.0"></a>
 # 1.3.0 (2019-01-23)
 
