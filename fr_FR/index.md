@@ -9,6 +9,7 @@ Egalement, ce plugin propose un panneau pour suivre sur un graphique l'évolutio
 
 ![tracking-graph](../images/consoLow480.gif)
 
+<b style='font-size:1.3em; color:yellow'>Nouveau !</b> Vous souhaitez que votre voiture ait une charge de 90% à 6h55 ? Programmez via un scénario l'heure de départ de la charge !
 
 Retrouvez la liste des nouveautés sur le [Change log](!https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog).
 
@@ -112,6 +113,8 @@ Commandes de type **info**
 | **Info frunk** | Indique si le coffre avant (frunk) est fermé ou ouvert.
 | **Info trunk** | Indique si le coffre arrière est fermé ou ouvert.
 | **Info toît ouvrant** | Indique si le toit panoramique est ouvert ou fermé.
+| **Info heure de départ de recharge** | Indique l'heure (format Hmm) à laquelle la charge est censée débuter.
+| **Info heure de fin de recharge** | Indique l'heure (format Hmm) à laquelle la charge est censée se terminer.
 | **Odomètre** | Indique la valeur du compteur kilométrique (miles ou km).
 | **Info véhicule** | Affiche un titre et un sous titre correspondant à l'état actuel de la voiture. Par exemple _Conduite 67km_, _Recharge planifiée à 22h50_, _Stationnée_, _Supercharge_, ...
 | **Détail autonomie** | Affiche un graph de la batterie
@@ -124,20 +127,28 @@ Commandes de type **action**
 | Commande   |   Description |
 | --- | --- |
 | **Contrôler la recharge** | Va permettre de démarrer ou interrompre la charge si le cable de recharge est engagé.
-| **Contrôler la limite de charge** | Va permettre dedéfinir un pourcentage de charge a atteindre.
+| **Contrôler la limite de charge** | Va permettre de définir un pourcentage de charge a atteindre.
 | **Contrôler la climatisation** | Va permettre d'allumer ou d'arreter la climatisation.
 | **Contrôler la température** | Va permettre de définir une température dans l'habitacle (conducteur/passager).
 | **Contrôler le vérouillage** | Va permettre de vérouiller ou déverouiller la voiture.
 | **Contrôler le coffre avant** | Va permettre de vérouiller ou déverouiller le coffre avant (frunk).
 | **Contrôler le coffre arrière** | Va permettre de vérouiller ou déverouiller le coffre arrière (trunk).
 | **Contrôler le toit ouvrant** | Va permettre d'entrouvrir ou de fermer le toît panoramique.
+| **Contrôler l'heure de fin de recharge** | Va permettre de définir l'heure (format Hmm) à laquelle la charge devra se finir.
 | **Rafraichir** | Mise à jour de la tuile sur clic de l'icone.
 | **Réveiller** | Force le reveil de la voiture (3 tentatives espacées de 5s). Peut-être utile dans un scénario. Met à jour la valeur de **Info reveillée**.
 
 > **Tip**
 >
 > Chacune de ces actions peut être intégrée dans un scénario Jeedom.
-
+>
+> Le format **Hmm**, est utilisé dans les blocs d'action des scénarios qui permettent de programmer une heure de début d'action. Exemples: 
+>  - `2305` indique 23h05, 
+>  - `18` indique 00h18,
+>  - `1200` indique 12h00,
+>  - `1210`indique 12h10,
+>  - `121` indique 1h21
+> 
 
 Affichage du véhicule
 =======================
@@ -217,6 +228,22 @@ Exemples de scénarios:
 
   ![climate](../images/scenario_Climate.png)
 
+* Programmer le départ de la charge pour que la voiture ait 90% de batterie à 7h00 !
+  ![startTime](../images/scenario_getStartTime.png)
+
+> **Note** 
+>
+> Pour connaître l'heure de début de la recharge, il faut démarrer une courte charge qui va estimer le temps nécessaire pour la recharge. 
+>
+> Si la voiture n'est pas prète pour la charge, la commande **Info heure de départ de recharge** retourne `N/A`. 
+>
+> Si le temps estimé est inférieur au temps qui sépare le moment où la commande est lancée et l'heure de fin de recharge, la commande **Info heure de départ de recharge** retourne l'heure au format `Hmm` à laquelle la charge pourra être lancée.
+>
+> S'il n'y a pas assez de temps pour atteindre le pourcentage voulu à l'heure programmée, la commande **Info heure de départ de recharge** indique l'heure de départ précédé du signe `-`.
+>
+> Exemples si l'on souhaite avoir la voiture chargée à **90%**  pour **7h du matin** :
+> - il est 22h30, le scénario est lancé, la recharge demande **5 heures et 30 minutes** : la commande **Info heure de départ de recharge** retourne `130`  (soit démarrage de la charge conseillé à 1h30).
+> - il est 22h30, le scénario est lancé, la recharge demande **12 heures** : la commande **Info heure de départ de recharge** retourne `-1900`  (soit démarrage de la charge conseillé à 19h, mais il est trop tard !)
 
 Suivi de consommation
 ==

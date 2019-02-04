@@ -1,3 +1,9 @@
+<a name="1.4.0"></a>
+# 1.4.0 (2019-02-04)
+
+### Features
+* [**Scenario**] Ajout de la commande qui va retourner l'heure de départ de la charge, pour qu'elle soit chargée à x% à une heure donnée. Utilisable dans un scénario Jeedom (cf documentation).
+
 <a name="1.3.1"></a>
 # 1.3.1 (2019-01-30)
 

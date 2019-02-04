@@ -8,6 +8,11 @@ Also, this plugin provides a panel to track all day long (or on demand) on a gra
 
 ![tracking-graph](../images/consoLow480.gif)
 
+
+
+<b style='font-size:1.3em; color:yellow'>New !</b> You want your car 90% charged at 7AM ? 
+Create a scenario that will schedule the charge at the right time !
+
 You will find the details of all versions in the [Change log](!https://vercorsio.github.io/jeedom-tesla-plugin/en_US/changelog).
 
 Plugin setup
@@ -109,6 +114,8 @@ Commands  **info**
 | **Info frunk** | Tells whether the frunk is locked or not.
 | **Info trunk** | Tells whether the trunk is open or not.
 | **Info sunroof** | Tells whether the sunroof is open or not.
+| **Info heure de départ de recharge** | Tells when the charging needs to start (`Hmm` format).
+| **Info heure de fin de recharge** | Tells when the charging shall end  (`Hmm` format).
 | **Odometer** | Provide value of odometer (km).
 | **Info car** | Display info (title and subtitle) about current. Exemple _Driving 68km/h_, _Charging scheduled at 22h50_, _Parked_, _Supercharge_, ...
 | **Range details** | Risplay a battery graph.
@@ -128,6 +135,7 @@ Commands **action**
 | **Control the frunk** | Lock/unlock the frunk.
 | **Control the trunk** | Lock/unlock the trunk.
 | **Control the sunroof** | Lock/unlock the sunroof.
+| **Contrôler l'heure de fin de recharge** | Return the specific time to start the charging (format `Hmm`) or `N/A` if charging is not possible.
 | **Refresh** | Refresh the jeedom panel.
 | **Wake up** | Try (3 times with 5 sec between two attempts) to wake up the car. May be usefull in context of a scenario. Automatically update the value of **Info awake**.
 
@@ -212,6 +220,25 @@ Scenario examples:
 * Once the car is online, set charge limit to 90% and set temp to 23°C and starts HVAC if inside temp is lower than 14°C:
 
   ![climate](../images/scenario_Climate.png)
+
+
+* Set the charging start time to have **90%** charged at **7AM** !
+  ![startTime](../images/scenario_getStartTime.png)
+
+> **Note** 
+>
+> To return the specific starting time, a small charging needs to be ran. During it the charging estimates will be provided. 
+>
+> If the car is not ready for charging, the command **Info heure de départ de recharge** returns `N/A`. 
+>
+> If the charging duration is smaller than the difference between now and the charging end time, the command **Info heure de départ de recharge** returns the starting time (format `Hmm`) when charging can be scheduled.
+>
+>Otherwise the command **Info heure de départ de recharge** returns the starting time prefixed with `-`.
+>
+> Exemples we want to have car **90%** charged at **7AM**:
+> - It is 10:30PM when the scenario is launched. The charging duration is estimated to **5 hours and 30 minutes**. The command **Info heure de départ de recharge** returns `130` (i.e: start the charging at 1:30AM)).
+> - It is 10:30PM when the scenario is launched. The charging duration is estimated to **12 hours**. The command **Info heure de départ de recharge** returns `-1900`  (i.e: start the charging at 7PM, but it's too late !)
+> - It is 10:30PM when the scenario is launched, but the car is not plugged. The command **Info heure de départ de recharge** returns `N/A`.
 
 Range tracking
 ==

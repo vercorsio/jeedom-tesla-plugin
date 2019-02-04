@@ -1,3 +1,9 @@
+<a name="1.4.0"></a>
+# 1.4.0 (2019-02-04)
+
+### Features
+* [**Scenario**] Added the commands that based on the charging end time and the charging percentage will provide the specific time when the charging needs to start. This can be used in Jeedom scenario (cf doc).
+
 <a name="1.3.1"></a>
 # 1.3.1 (2019-01-30)
 
