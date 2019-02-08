@@ -1,3 +1,9 @@
+<a name="1.4.1"></a>
+# 1.4.1 (2019-02-08)
+
+### Improvements
+* [**Scenario**] The command 'Control the charging' has a new argument 'Estimer' that will start a short charging to calculate the starting time. Note: It simplifies the scenario to start a charging and make it more robust.
+
 <a name="1.4.0"></a>
 # 1.4.0 (2019-02-04)
 

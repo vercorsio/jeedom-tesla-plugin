@@ -1,3 +1,9 @@
+<a name="1.4.1"></a>
+# 1.4.1 (2019-02-08)
+
+### Improvements
+* [**Scenario**] La commande 'Contrôle de la recharge' admet un nouvel argument 'Estimer' qui va: démarrer une charge, attendre 2 minutes, calculer l'heure de départ et arréter la charge. Note: le scénario de départ de charge est simplifié.
+
 <a name="1.4.0"></a>
 # 1.4.0 (2019-02-04)
 

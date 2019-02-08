@@ -126,7 +126,7 @@ Commandes de type **action**
 
 | Commande   |   Description |
 | --- | --- |
-| **Contrôler la recharge** | Va permettre de démarrer ou interrompre la charge si le cable de recharge est engagé.
+| **Contrôler la recharge** | Va permettre de démarrer, interrompre, ou estimer la charge si le cable de recharge est engagé.
 | **Contrôler la limite de charge** | Va permettre de définir un pourcentage de charge a atteindre.
 | **Contrôler la climatisation** | Va permettre d'allumer ou d'arreter la climatisation.
 | **Contrôler la température** | Va permettre de définir une température dans l'habitacle (conducteur/passager).
@@ -233,7 +233,7 @@ Exemples de scénarios:
 
 > **Note** 
 >
-> Pour connaître l'heure de début de la recharge, il faut démarrer une courte charge qui va estimer le temps nécessaire pour la recharge. 
+> Pour connaître l'heure de début de la recharge, il faut démarrer la charge avec l'action 'estimer' qui va démarrer une courte charge pour estimer le temps nécessaire pour la recharge. 
 >
 > Si la voiture n'est pas prète pour la charge, la commande **Info heure de départ de recharge** retourne `N/A`. 
 >

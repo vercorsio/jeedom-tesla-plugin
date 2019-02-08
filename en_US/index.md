@@ -127,7 +127,7 @@ Commands **action**
 
 | Command   |   Description |
 | --- | --- |
-| **Control charging** | Start/stop charging when cable is engaged.
+| **Control charging** | Start/stop/estimate charging when cable is engaged.
 | **Control the charging limit** | Set the charging limit (%).
 | **Control HVAC** | Start/stop HVAC.
 | **Control temperatures** | Set temperatures for driver and passenger.
@@ -135,7 +135,7 @@ Commands **action**
 | **Control the frunk** | Lock/unlock the frunk.
 | **Control the trunk** | Lock/unlock the trunk.
 | **Control the sunroof** | Lock/unlock the sunroof.
-| **Contrôler l'heure de fin de recharge** | Return the specific time to start the charging (format `Hmm`) or `N/A` if charging is not possible.
+| **Contrôler l'heure de fin de recharge** | Set the time when the charging shall stop (format `Hmm`).
 | **Refresh** | Refresh the jeedom panel.
 | **Wake up** | Try (3 times with 5 sec between two attempts) to wake up the car. May be usefull in context of a scenario. Automatically update the value of **Info awake**.
 
