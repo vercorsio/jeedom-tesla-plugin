@@ -1,3 +1,13 @@
+<a name="1.4.2"></a>
+# 1.4.2 (2019-02-14)
+
+### Improvements
+* [**Suivi de l'Autonomie**] Une nouvelle commande 'Contrôler le suivi de l'autonomie' permet de démarrer/arrêter le suivi de l'autonomie depuis un scénario.
+* [**Widget**] Affiche un texte indiquant l'installation d'une mise à jour logicielle et le temps restant, le cas échéant.
+
+### Fixes
+* Correctif sur le texte d'info de dernière mise à jour qui pouvait afficher successivement plusieurs valeurs différentes.
+
 <a name="1.4.1"></a>
 # 1.4.1 (2019-02-08)
 

@@ -1,3 +1,13 @@
+<a name="1.4.2"></a>
+# 1.4.2 (2019-02-14)
+
+### Improvements
+* [**Range Tracking**] A new command 'Control the range tracking' allows to programatically start and stop the range tracking thru a scenario.
+* [**Widget**] Update title and subtitle when a software update is in progress.
+
+### Fixes
+* Fix issue with 'last seen text' in widgets that toggles multiple values.
+
 <a name="1.4.1"></a>
 # 1.4.1 (2019-02-08)
 

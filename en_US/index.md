@@ -117,7 +117,7 @@ Commands  **info**
 | **Info heure de départ de recharge** | Tells when the charging needs to start (`Hmm` format).
 | **Info heure de fin de recharge** | Tells when the charging shall end  (`Hmm` format).
 | **Odometer** | Provide value of odometer (km).
-| **Info car** | Display info (title and subtitle) about current. Exemple _Driving 68km/h_, _Charging scheduled at 22h50_, _Parked_, _Supercharge_, ...
+| **Info car** | Display info (title and subtitle) about current. Example _Driving 68km/h_, _Charging scheduled at 22h50_, _Parked_, _Supercharge_, ...
 | **Range details** | Risplay a battery graph.
 | **Charging details** | Risplay details about the charging.
 | **HVAC details** | Display details about HVAC (driver, passenger, inside and outside temperatures). 
@@ -136,6 +136,7 @@ Commands **action**
 | **Control the trunk** | Lock/unlock the trunk.
 | **Control the sunroof** | Lock/unlock the sunroof.
 | **Contrôler l'heure de fin de recharge** | Set the time when the charging shall stop (format `Hmm`).
+| **Control the range tracking** | Start/stop the range tracking.
 | **Refresh** | Refresh the jeedom panel.
 | **Wake up** | Try (3 times with 5 sec between two attempts) to wake up the car. May be usefull in context of a scenario. Automatically update the value of **Info awake**.
 
@@ -235,7 +236,7 @@ Scenario examples:
 >
 >Otherwise the command **Info heure de départ de recharge** returns the starting time prefixed with `-`.
 >
-> Exemples we want to have car **90%** charged at **7AM**:
+> Examples: we want to have car **90%** charged at **7AM**:
 > - It is 10:30PM when the scenario is launched. The charging duration is estimated to **5 hours and 30 minutes**. The command **Info heure de départ de recharge** returns `130` (i.e: start the charging at 1:30AM)).
 > - It is 10:30PM when the scenario is launched. The charging duration is estimated to **12 hours**. The command **Info heure de départ de recharge** returns `-1900`  (i.e: start the charging at 7PM, but it's too late !)
 > - It is 10:30PM when the scenario is launched, but the car is not plugged. The command **Info heure de départ de recharge** returns `N/A`.
@@ -253,6 +254,8 @@ A calendar allows user to display graphs from a specific day.
 > **Tips**
 >
 > The mobile version of the panel can be used while driving : a live mechanism updates the graph when new data arrives !
+>
+> The range tracking can be programmatically started and stopped thru scenarios
 
 Setup
 --
@@ -268,7 +271,7 @@ When user clics on `Stop Recording` button, the cron job stops all data retrieva
 >
 > At first launch, it may takes several minutes before first points appear on the graph.
 
-Exemple
+Example
 --
 The example below corresponds to a real trip made on 2019, January the 5th. This trip is mainly split in 4 stages: 
 - <code>km  0</code> to <code>km 15</code>: road - _altitude: from 1100m to 1000m_. 

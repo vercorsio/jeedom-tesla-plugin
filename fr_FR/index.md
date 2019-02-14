@@ -30,7 +30,7 @@ Le plugin va rechercher la ou les Tesla associées à votre compte et créer les
 > Ce plugin nécessite que votre Tesla soit accessible sur le réseau pour ne pas provoquer d'erreur. 
 > Si l'application Tesla sur votre smartphone arrive à se connecter à votre Tesla, le plugin sera à même de configurer correctement votre Tesla dans Jeedom.
 
-Pour accéder au panneaux de suivi de consommation, il suffit de cocher `Afficher le panneau desktop` et `Afficher le panneau mobile`:  
+Pour accéder au panneaux de suivi de l'autonomie, il suffit de cocher `Afficher le panneau desktop` et `Afficher le panneau mobile`:  
 ![config](../images/configPlugin-4.png)
 
 
@@ -135,6 +135,8 @@ Commandes de type **action**
 | **Contrôler le coffre arrière** | Va permettre de vérouiller ou déverouiller le coffre arrière (trunk).
 | **Contrôler le toit ouvrant** | Va permettre d'entrouvrir ou de fermer le toît panoramique.
 | **Contrôler l'heure de fin de recharge** | Va permettre de définir l'heure (format Hmm) à laquelle la charge devra se finir.
+| **Contrôler le suivi de l'autonomie** | Va permettre de démarrer ou arrêter le suivi de l'autonomie.
+
 | **Rafraichir** | Mise à jour de la tuile sur clic de l'icone.
 | **Réveiller** | Force le reveil de la voiture (3 tentatives espacées de 5s). Peut-être utile dans un scénario. Met à jour la valeur de **Info reveillée**.
 
@@ -245,13 +247,13 @@ Exemples de scénarios:
 > - il est 22h30, le scénario est lancé, la recharge demande **5 heures et 30 minutes** : la commande **Info heure de départ de recharge** retourne `130`  (soit démarrage de la charge conseillé à 1h30).
 > - il est 22h30, le scénario est lancé, la recharge demande **12 heures** : la commande **Info heure de départ de recharge** retourne `-1900`  (soit démarrage de la charge conseillé à 19h, mais il est trop tard !)
 
-Suivi de consommation
+Suivi de l'autonomie
 ==
 
 Principe
 --
 
-Le panneau **suivi de conso** permet au conducteur de comprendre l'influence de sa conduite et de l'environement sur l'autonomie du véhicule, pour chacune des Tesla activées dans votre Jeedom.
+Le panneau **suivi de l'autonomie** permet au conducteur de comprendre l'influence de sa conduite et de l'environement sur l'autonomie du véhicule, pour chacune des Tesla activées dans votre Jeedom.
 
 Cela permet de comprendre comment évolue l'autonomie restante au fil des trajets, des charges et temps de repos.
 
@@ -262,6 +264,8 @@ Un graphique retrace l'évolution de l'autonomie au cours d'une journée et un c
 > **Note**
 >
 > Pratique, la version mobile permet de suivre l'évolution de l'autonomie tout en conduisant !
+>
+> Le suivi de l'autonomie peut être programmé via un scénario.
 
 Mise en place
 --
