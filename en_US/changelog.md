@@ -1,3 +1,27 @@
+<a name="1.5.0"></a>
+# 1.5.0 (2019-03-14)
+
+### Features
+* [**Range Tracking**] It is now possible to switch from distance to energy. Some settings about battery is required on the vehicle configuration panel.
+
+### Improvements
+
+ * [**Range Tracking**] Live is automatically activated (last 5 min) when car is driving.
+ * [**Range Tracking**] "Live" checkbox has been moved to a new option `Live OFF` in the time window selector.
+ * [**Range Tracking**] Update curve extremes on the fly for a better rendering.
+ * [**Range Tracking**] In Mobile version, for a better readability on large devices (such as Tesla screens), the width of curve lines are now bigger.
+ * [**Widget**] Clicking on `trunk`, `frunk` and `lock` buttons now require user to confirm the action (modal window).
+ 
+### Fixes:
+ * [**Range Tracking**] Fix background color when HVAC is on.
+ * [**Widget**] On Model 3, car image displays now the right color and wheels, and the roof button has been remove.
+
+ ### Tips:
+* [**Range Tracking**] To automagically display the `Tesla` view on Mobile version, you can define `Tesla` as the default `Mobile` view in Jeedom profile configuration : `User menu` -> `Admin Profil` -> `Interface tab`.
+
+
+I want to thank `Bob Jouy` (https://twitter.com/bobjouy) for his feedback, suggestions and tests he made on his Model 3 !
+
 <a name="1.4.2"></a>
 # 1.4.2 (2019-02-14)
 

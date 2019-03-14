@@ -9,8 +9,7 @@ Also, this plugin provides a panel to track all day long (or on demand) on a gra
 ![tracking-graph](../images/consoLow480.gif)
 
 
-
-<b style='font-size:1.3em; color:yellow'>New !</b> You want your car 90% charged at 7AM ? 
+You want your car 90% charged at 7AM ? 
 Create a scenario that will schedule the charge at the right time !
 
 You will find the details of all versions in the [Change log](!https://vercorsio.github.io/jeedom-tesla-plugin/en_US/changelog).
@@ -90,9 +89,15 @@ Once the plugin is setup and the cars added, you can modify each of your cars: m
 ![config](../images/en_configPlugin-3.png)
 
 ![config](../images/en_configCar-1.png)
+The `energy` mode on the  __Range Tracking__ requires some info about the battery:
+
+ * __Capacité batterie__ : The capacity of the battery (kWh)
+ * __Autonomie__ : How many km the car can do at 100% of charge 
+ * __Consommation typique__ : In theroy, it is `Capacité batterie X 1000 / Autonomie`. Can be updated according to usage.
+ * __Affichage__ : The default display. Choices are: `Energie` or `Distance`. 
 
 
-Les commandes d'info et d'action associées à chaque Tesla sont les suivantes
+Info and action commands associated to each Tesla are the following:
 
 ![config](../images/en_configCar-2.png)
 
@@ -116,11 +121,14 @@ Commands  **info**
 | **Info sunroof** | Tells whether the sunroof is open or not.
 | **Info heure de départ de recharge** | Tells when the charging needs to start (`Hmm` format).
 | **Info heure de fin de recharge** | Tells when the charging shall end  (`Hmm` format).
-| **Odometer** | Provide value of odometer (km).
+| **Odometer** | Provide value of odometer (km/miles).
 | **Info car** | Display info (title and subtitle) about current. Example _Driving 68km/h_, _Charging scheduled at 22h50_, _Parked_, _Supercharge_, ...
-| **Range details** | Risplay a battery graph.
-| **Charging details** | Risplay details about the charging.
-| **HVAC details** | Display details about HVAC (driver, passenger, inside and outside temperatures). 
+| **Range details** | Display a battery graph.
+| **Charging details** | Display details about the charging.
+| **HVAC details** | Display details about HVAC (driver, passenger, inside and outside 
+| **Data details** | `For debugging purpose` - display a 64bits encoded buffer of the output of the car minus any personally identifiable info (VIN/id/GPS/...).  
+
+temperatures). 
 
 Commands **action**
 --
@@ -245,17 +253,19 @@ Range tracking
 ==
 
 
-The `Range Tracking` panel provides all required info to the driver to help her/him understand how range evolves when she/he is driving the car. All enabled Teslas configured in Jeedom can be tracked.
+The `Range Tracking` panel provides all required info to the driver to help her/him understand how range or energy evolves when she/he is driving the car. All enabled Teslas configured in Jeedom can be tracked.
 
-This tool retrieves data from Tesla servers via a cron job that is manually started/stopped from the panel. It provides statistics on each steps : **driving**, **charging** and **parking**. All retrieved data is stored on the local drive of your Jeedom server.
+This tool retrieves data from Tesla servers via a cron job that is manually started/stopped from the panel. It provides statistics on each steps : **driving**, **charging** and **parking**. All retrieved data is stored on the **local** drive of your Jeedom server.
 
 A calendar allows user to display graphs from a specific day.
 
 > **Tips**
 >
-> The mobile version of the panel can be used while driving : a live mechanism updates the graph when new data arrives !
+> * The mobile version of the panel can be used while driving : a live mechanism updates the graph when new data arrives !
 >
-> The range tracking can be programmatically started and stopped thru scenarios
+> * To automagically display the `Tesla` view on Mobile version, you can define `Tesla` as the default `Mobile` view in Jeedom profile configuration : `User menu` -> `Admin Profil` -> `Interface tab`.
+>
+> * The range tracking can be programmatically started and stopped thru scenarios
 
 Setup
 --
@@ -267,11 +277,11 @@ When user clics on `Stop Recording` button, the cron job stops all data retrieva
 
 > **Notes**
 >
-> When recording is started and displayed graph is the graph of the day, user can click on `live` button to retrieve data on the fly and update the graph
+> When recording is started and displayed graph is the graph of the day, the panel displays `live` data that are updated on the fly.
 >
 > At first launch, it may takes several minutes before first points appear on the graph.
 
-Example
+Example __Distance__
 --
 The example below corresponds to a real trip made on 2019, January the 5th. This trip is mainly split in 4 stages: 
 - <code>km  0</code> to <code>km 15</code>: road - _altitude: from 1100m to 1000m_. 
@@ -297,6 +307,18 @@ The table below lists all the different stages of the day. User can clic a speci
 - The `efficiency` corresponds to the ratio between the gain/loss and the traveled mileage. In general small trips have bad efficency.
 - The 3 buttons on the top right of the table allow the user to filter the table. For example she/he can display only the parking stages to see how range evolves when car is not moving (_vampire drain_) 
 
+
+Example __energy__
+--
+Since version `1.5.0`, user can switch from `distance` mode to `energy` mode clicking on the slider in the table.
+In this mode, the <b style="color:#00FF00">green</b>/<b style="color:#FFA500">orange</b> curve is replaced by another one that describes the energy consumption, with three zones:
+ * <b style="color:#FF0000">overconsumption</b> when energy is greater than typical range (here `220Wh/km`) ,
+ * <b style="color:#FFA500">underconsumption</b>
+ * <b style="color:#00FF00">production</b> when accumulated energy is negative.
+
+![tracking-graph](../images/tracking-graph-wh.png)
+
+The table describe info about energy:  in <b style="color:darkgreen">green</b> when average consumption of the trip was lower than typical range and <b style="color:#FF0000">red</b> otherwise.
 
 > **Notes**
 >

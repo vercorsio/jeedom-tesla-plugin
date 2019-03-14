@@ -1,15 +1,15 @@
 Introduction
 ===
-Bienvenue sur la page de documentation du plugin Jeedom Tesla ! 
+Bienvenue sur la page de documentation du plugin Tesla de Jeedom ! 
 
 Avec ce plugin, l'utilisateur peut accéder à sa voiture Tesla, et intéragir avec les données remontées par l'API proposée par Tesla.
 
-Egalement, ce plugin propose un panneau pour suivre sur un graphique l'évolution de l'autonomie au cours d'une journée, au gré des kilomètres parcourus:
+Egalement, ce plugin propose un panneau pour suivre sur un graphique l'évolution de l'autonomie et de l'énergie au cours d'une journée, au gré des kilomètres parcourus:
 
 
 ![tracking-graph](../images/consoLow480.gif)
 
-<b style='font-size:1.3em; color:yellow'>Nouveau !</b> Vous souhaitez que votre voiture ait une charge de 90% à 6h55 ? Programmez via un scénario l'heure de départ de la charge !
+Vous souhaitez que votre voiture ait une charge de 90% à 6h55 ? Programmez via un scénario l'heure de départ de la charge !
 
 Retrouvez la liste des nouveautés sur le [Change log](!https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog).
 
@@ -90,6 +90,12 @@ Une fois le plugin configuré, le ou les véhicules de votre compte tesla sont a
 ![config](../images/configPlugin-3.png)
 
 ![config](../images/configCar-1.png)
+Le __Suivi de l'autonomie__ en mode `énergie` nécessite quelques informations liées à la batterie, telle que:
+
+ * __Capacité batterie__ : La capacité "commerciale" de la batterie en kWh
+ * __Autonomie__ : le nombre de kilomètres qu'il est possible de parcourir avec 100% d'autonomie 
+ * __Consommation typique__ : En théorie, c'est le rapport entre `Capacité batterie X 1000 / Autonomie`. Ajustable selon ses propres constatations.
+ * __Affichage__ : L'affichage par défaut du Suivi de l'Autonomie. Choix : `Energie` ou `Distance`. 
 
 
 Les commandes d'info et d'action associées à chaque Tesla sont les suivantes
@@ -120,6 +126,7 @@ Commandes de type **info**
 | **Détail autonomie** | Affiche un graph de la batterie
 | **Détail de la recharge** | Affiche les données issues de la recharge.
 | **Détail de la climatisation** | Affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur). 
+| **Détail data** | Pour debug - affiche un buffer encode en 64bits débarassé de toute info personnelle (VIN/id/GPS/...).
 
 Commandes de type **action**
 --
@@ -255,35 +262,36 @@ Principe
 
 Le panneau **suivi de l'autonomie** permet au conducteur de comprendre l'influence de sa conduite et de l'environement sur l'autonomie du véhicule, pour chacune des Tesla activées dans votre Jeedom.
 
-Cela permet de comprendre comment évolue l'autonomie restante au fil des trajets, des charges et temps de repos.
+Cela permet de comprendre comment évolue l'autonomie restante au fil des trajets, des charges et temps de repos, ou de voir l'énérgie consommée lors des trajets, et l'énérgie emmagasinée lors de recharges.
 
-Ce 'tracking' s'appuie sur des données acquises depuis les Servers Tesla via un cron qui est démarré et arrêté depuis le panneau. Les données sont stockées en local sur votre serveur Jeedom.
+Ce 'tracking' s'appuie sur des données acquises depuis les Servers Tesla via un cron qui est démarré et arrêté depuis le panneau. Les données sont stockées en **local** sur votre serveur Jeedom.
 
-Un graphique retrace l'évolution de l'autonomie au cours d'une journée et un calendrier permet de consulter l'historique des graphiques.
+Un graphique retrace l'évolution de l'autonomie ou de l'énergie au cours d'une journée et un calendrier permet de consulter l'historique des graphiques.
 
-> **Note**
+> **Notes**
 >
-> Pratique, la version mobile permet de suivre l'évolution de l'autonomie tout en conduisant !
+> * Pratique, la version mobile permet de suivre l'évolution de l'autonomie ou de l'énérgie tout en conduisant !
+> 
+> * Pour accéder directement à la vue `Tesla` depuis la version Mobile sans jongler avec les menus, il est possible de définir `Tesla` comme vue "Mobile" par défaut dans la configuration du profil (Menu `User` -> `Profil Admin` -> Onglet `Interface`)
 >
-> Le suivi de l'autonomie peut être programmé via un scénario.
+> * Le suivi de l'autonomie peut être programmé via un scénario.
 
 Mise en place
 --
 Par défaut, l'acquision n'est pas démarrée.
 
-Un clic sur `Start Recording` va démarrer le cron qui va récupérer à chaque minute les données qui
-serviront à afficher des graphiques de suivi, identifier les différentes étapes de la journée et proposer des statistiques.
+Un clic sur `Start Recording` va démarrer le cron qui va récupérer à intervalles réguliers les données qui serviront à afficher des graphiques de suivi, identifier les différentes étapes de la journée et proposer des statistiques.
 
 Un clic sur `Stop Recording` va stopper l'acquisition des données (arrêt du cron).
 
 > **Notes**
 >
-> Lors de l'acquisition et si le graph affiché est le graph du jour, il est possible de passer en mode `live`, ce qui permet d'afficher en temps réel les dernières données acquises (pratique pour suivre sa consommation lors d'un trajet).
+> Lors de l'acquisition et si le graph affiché est le graph du jour, l'affichage bascule automatiquement en en mode `live`, et affiche en temps réel les dernières données acquises.
 >
 > Au premier lancement, il peut se passer plusieurs minutes avant que des données soient
 effectivement disponibles pour l'affichage.
 
-Exemple
+Exemple affichage __distance__
 --
 L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui se découpe principalement en 4 segments : 
 - <code>km  0</code> à <code>km 15</code>: route départementale sur du plat - _altitude 'en haut': 1100m._
@@ -307,6 +315,19 @@ Un tableau récapitulatif par journée est affiché et permet sur selection d'un
 - L'`efficience` correspond au pourcentage de km gagnés/perdus par rapport à la longueur du trajet, ce qui permet de pondérer les résultats. Les petits trajets sont 'énergivores'.
  - Les trois boutons en haut à droite du tableau permettent de filtrer par type d'étape et de pouvoir par exemple calculer les pertes liées aux seules étapes de type `parking`.
  
+
+Exemple affichage __énergie__
+--
+Depuis la version `1.5.0` du plugin, il est possible de permutter entre mode `distance` et `énergie` en cliquant sur le selecteur.
+Dans ce mode, la courbe <b style="color:#00FF00">verte</b>/<b style="color:#FFA500">orange</b> laisse place à une courbe qui décrit le cumul de l'énergie consommée/produite avec trois zones pour identifier :
+ * la <b style="color:#FF0000">sur-consommation</b> lorsque l'on dépasse l'autonomie typique (ici `220Wh/km`) ,
+* la <b style="color:#FFA500">sous consommation</b>
+*  et la <b style="color:#00FF00">production</b> lorsque le cumul de l'energie est négatif.
+
+![tracking-graph](../images/tracking-graph-wh.png)
+
+Le Tableau retranscrit les informations d'énergie. Les données sont affichées en <b style="color:darkgreen">vert</b> lorsque le voyage a consommé en moyenne moins que le typique et en <b style="color:#FF0000">rouge</b> sinon.
+
 > **Notes**
 >
 > - En dehors des plages de conduite, le graphique affiche l'évolution de l'autonomie à l'arrêt, et permet par exemple de tracer les pertes de type <i>"vampire drain"</i> et de voir les courbes lors des recharges.
