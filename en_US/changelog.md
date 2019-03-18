@@ -17,7 +17,7 @@
  * [**Range Tracking**] Fix background color when HVAC is on.
  * [**Widget**] On Model 3, car image displays now the right color and wheels, and the roof button has been remove.
 
- ### Tips:
+### Tips:
 * [**Range Tracking**] To automagically display the `Tesla` view on Mobile version, you can define `Tesla` as the default `Mobile` view in Jeedom profile configuration : `User menu` -> `Admin Profil` -> `Interface tab`.
 
 
