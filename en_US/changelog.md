@@ -20,6 +20,10 @@
 ### Tips:
 * [**Range Tracking**] To automagically display the `Tesla` view on Mobile version, you can define `Tesla` as the default `Mobile` view in Jeedom profile configuration : `User menu` -> `Admin Profil` -> `Interface tab`.
 
+### Known Issues
+* [**Range Tracking**] When a lot of data has been received on a single day (long trips), the plugin may take a long time to display the graph (or even cannot display it). This problem is under investigation.
+
+
 
 I want to thank `Bob Jouy` (https://twitter.com/bobjouy) for his feedback, suggestions and tests he made on his Model 3 !
 
