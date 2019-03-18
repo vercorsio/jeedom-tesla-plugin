@@ -11,6 +11,7 @@
  * [**Range Tracking**] Update curve extremes on the fly for a better rendering.
  * [**Range Tracking**] In Mobile version, for a better readability on large devices (such as Tesla screens), the width of curve lines are now bigger.
  * [**Widget**] Clicking on `trunk`, `frunk` and `lock` buttons now require user to confirm the action (modal window).
+ * Added a red Model Y in the fake cars.
  
 ### Fixes:
  * [**Range Tracking**] Fix background color when HVAC is on.

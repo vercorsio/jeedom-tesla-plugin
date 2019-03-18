@@ -11,6 +11,7 @@
  * [**Suivi de l'Autonomie**] Mise à jour des min/max des courbes selon les données affichées pour un meilleur rendu visuel.
  * [**Suivi de l'Autonomie**] Dans la version Mobile, sur un écran large, les courbes sont plus épaisses pour un meilleur rendu sur l'écran de la Tesla par exemple.
  * [**Widget**] Fenêtre modale de confirmation sur les boutons d'ouverture de portes et coffres.
+  * Ajout d'une Model Y rouge dans les Tesla virtuelles.
  
  
 ### Fixes:
