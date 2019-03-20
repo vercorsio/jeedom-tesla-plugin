@@ -113,7 +113,7 @@ Commands  **info**
 | **Info range** | Provide the range in km or miles.
 | **Info HVAC** | Tells whether the HVAC is on or off.
 | **Info interior temp** | Provide temperature inside the car.
-| **Info charging** | Tells if the car is currently charging or not. Possible values are  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.
+| **Info charging** | Tells if the car is currently charging or not. Possible values are  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled`, `Driving` }.
 | **Info charging limit** | Provide value of charging limit (%).
 | **Info lock** | Tells whether the car is locked or not.
 | **Info frunk** | Tells whether the frunk is locked or not.

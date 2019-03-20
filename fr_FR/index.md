@@ -113,7 +113,7 @@ Commandes de type **info**
 | **Info autonomie nominale** | Indique l'autonomie nominale (en km ou miles) de la voiture.
 | **Info climatisation** | Indique si la climatisation est allumée ou éteinte.
 | **Info température habitacle** | Indique la température à l'intérieur du véhicule.
-| **Info recharge** | Indique si la voiture est en train de charger ou non. Les valeurs possibles sont  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` }.
+| **Info recharge** | Indique si la voiture est en train de charger ou non. Les valeurs possibles sont  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled`, `Driving` }.
 | **Info limite de recharge** | Indique le pourcentage à atteindre à la fin d'un recharge.
 | **Info verouillage** | Indique si la voiture est fermée ou ouverte.
 | **Info frunk** | Indique si le coffre avant (frunk) est fermé ou ouvert.

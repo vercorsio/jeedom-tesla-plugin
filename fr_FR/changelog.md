@@ -1,3 +1,13 @@
+<a name="1.5.1"></a>
+# 1.5.1 (2019-03-20)
+
+### Improvements
+ * [**Range Tracking**] Amélioration des performances lors de l'affichage du graph.
+ * [**Command**] "Info Recharge" retourne 'Driving' quand la voiture se déplace.
+
+### Fixes
+ * [**Range Tracking**] Correctif au niveau de l'unité d'énergie (kW -> kWh).
+
 <a name="1.5.0"></a>
 # 1.5.0 (2019-03-14)
 
@@ -5,7 +15,6 @@
 * [**Suivi de l'Autonomie**] Il est maintenant possible de choisir entre l'affichage des kilomètres gagnés ou perdus et l'énergie consommée. Des informations sur la capacité de la batterie sont à renseigner au niveau de la configuration du véhicule.
 
 ### Improvements
-
  * [**Suivi de l'Autonomie**] Live activé par défaut sur les 5 dernières minutes quand la voiture est en marche.
  * [**Suivi de l'Autonomie**] Checkbox "Live" supprimée. Un choix "LIVE OFF" est intégré dans le sélecteur de la "largeur" du live
  * [**Suivi de l'Autonomie**] Mise à jour des min/max des courbes selon les données affichées pour un meilleur rendu visuel.

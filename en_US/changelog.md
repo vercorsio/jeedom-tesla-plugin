@@ -1,3 +1,13 @@
+<a name="1.5.1"></a>
+# 1.5.1 (2019-03-20)
+
+### Improvements
+ * [**Range Tracking**] Improve performance for graph rendering (6 times faster)
+ * [**Command**] "Info Charging" now returns 'Driving' when car is moving.
+
+### Fixes
+ * [**Range Tracking**] Fixed unit issue (kW -> kWh) 
+
 <a name="1.5.0"></a>
 # 1.5.0 (2019-03-14)
 
@@ -5,7 +15,6 @@
 * [**Range Tracking**] It is now possible to switch from distance to energy. Some settings about battery is required on the vehicle configuration panel.
 
 ### Improvements
-
  * [**Range Tracking**] Live is automatically activated (last 5 min) when car is driving.
  * [**Range Tracking**] "Live" checkbox has been moved to a new option `Live OFF` in the time window selector.
  * [**Range Tracking**] Update curve extremes on the fly for a better rendering.
