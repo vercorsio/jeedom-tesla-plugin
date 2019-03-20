@@ -2,11 +2,13 @@
 # 1.5.1 (2019-03-20)
 
 ### Improvements
- * [**Range Tracking**] Amélioration des performances lors de l'affichage du graph.
+ * [**Suivi de l'Autonomie**] Amélioration des performances lors de l'affichage du graph.
  * [**Command**] "Info Recharge" retourne 'Driving' quand la voiture se déplace.
 
 ### Fixes
- * [**Range Tracking**] Correctif au niveau de l'unité d'énergie (kW -> kWh).
+  * [**Widget**] Correctif au niveau de l'unité d'énergie (kW -> kWh).
+  * [**Suivi de l'Autonomie**] Le premier trajet de la journée pouvait être vu en état "Parking". Corrigé
+
 
 <a name="1.5.0"></a>
 # 1.5.0 (2019-03-14)
@@ -31,7 +33,7 @@
 * [**Suivi de l'Autonomie**] Pour accéder directement à la vue `Tesla` depuis la version Mobile sans jongler avec les menus, il est possible de définir `Tesla` comme vue "Mobile" par défaut dans la configuration du profil (Menu `User` -> `Profil Admin` -> Onglet `Interface`)
 
 ### Known Issues
-* [**Suivi de l'Autonomie**] Sur les journées où il y a eu beaucoup d'aquisition lors de long parcours, l'affichage peut être long, voire ne pas être possible (problème en cours d'analyse).
+* [**Suivi de l'Autonomie**] Sur les journées où il y a eu beaucoup d'aquisition lors de long parcours, l'affichage peut être long, voire ne pas être possible.
 
 
 Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et suggestions d'améliorations !

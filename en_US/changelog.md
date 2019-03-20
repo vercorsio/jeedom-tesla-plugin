@@ -6,7 +6,9 @@
  * [**Command**] "Info Charging" now returns 'Driving' when car is moving.
 
 ### Fixes
- * [**Range Tracking**] Fixed unit issue (kW -> kWh) 
+ * [**Widget**] Fixed unit issue (kW -> kWh) 
+ * [**Range Tracking**] First trip of the day was seen as parked. Fixed
+ 
 
 <a name="1.5.0"></a>
 # 1.5.0 (2019-03-14)
@@ -30,7 +32,7 @@
 * [**Range Tracking**] To automagically display the `Tesla` view on Mobile version, you can define `Tesla` as the default `Mobile` view in Jeedom profile configuration : `User menu` -> `Admin Profil` -> `Interface tab`.
 
 ### Known Issues
-* [**Range Tracking**] When a lot of data has been received on a single day (long trips), the plugin may take a long time to display the graph (or even cannot display it). This problem is under investigation.
+* [**Range Tracking**] When a lot of data has been received on a single day (long trips), the plugin may take a long time to display the graph (or even cannot display it).
 
 
 
