@@ -1,3 +1,23 @@
+<a name="1.5.2"></a>
+# 1.5.2 (2019-04-04)
+
+### Improvements
+
+ * [**Range Tracking**] Déplacement des fichiers de tracking dans le répertoire du plugin - migration transparente au moment de l'update du plugin.
+ * [**Command**] Meilleure gestion du calcul de l'heure de début de recharge.
+ * Prise en charge de l'heure UTC (donc fuseaux horaires et passages heure été/hiver).
+ * Plusieurs tentatives quand le serveur Tesla ne répond pas (Erreur 500) avant d'afficher un log d'erreur.
+ * Remise à plat de l'écriture des traces INFO et DEBUG dans le log `tesla`.
+ * [**Command**] Ajout de `Info niveau de batterie` qui indique le pourcentage de la batterie.
+
+### Fixes
+ * Pas d'accès aux équipements s'ils sont désactivés ou quand le plugin est lui même désactivé.
+ * [**Widget**] Affichage correct des jantes 20" et du pack Performance le cas échéant sur la Model3
+ * [**Widget**] Prise en compte des couleurs de carrosserie de la Model 3.
+ 
+### Known Issues
+ * [**Widget**] Sur certains navigateurs web, le curseur de la limite de charge peut s'afficher en blanc.
+
 <a name="1.5.1"></a>
 # 1.5.1 (2019-03-20)
 

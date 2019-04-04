@@ -1,3 +1,23 @@
+<a name="1.5.2"></a>
+# 1.5.2 (2019-04-04)
+
+### Improvements
+
+ * [**Range Tracking**] The tracking files are stored into the tesla plugin directory. They are moved while updating the plugin if old files were found in their previous location.
+ * [**Command**] The calculation of the charging start time has been improved.
+ * Use UTC time for time display (take in account the time zones and the sunlight saving).
+ * When Tesla server does not answer, the plugin makes multiple attempts until it finally fails.
+ * Imrpovement in `tesla` logs.
+ * [**Command**] Add a new Info command `Info batteryu level` that returns the percentage of the battery.
+
+### Fixes
+ * No access to tesla equipements when they are disabled of plugin is disabled.
+ * [**Widget**] Display wheels and perofmance pack on Model 3.
+ * [**Widget**] Display right colors on Model 3.
+ 
+### Known Issues
+ * [**Widget**] Some web browsers display white background for charging limit slider.
+
 <a name="1.5.1"></a>
 # 1.5.1 (2019-03-20)
 
