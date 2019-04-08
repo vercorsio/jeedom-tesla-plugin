@@ -1,5 +1,5 @@
 <a name="1.5.2"></a>
-# 1.5.2 (2019-04-04)
+# 1.5.2 (2019-04-08)
 
 ### Improvements
 
@@ -14,9 +14,10 @@
  * No access to tesla equipements when they are disabled of plugin is disabled.
  * [**Widget**] Display wheels and perofmance pack on Model 3.
  * [**Widget**] Display right colors on Model 3.
+ * [**Widget**] Some web browsers display white background for charging limit slider. Fixed
  
 ### Known Issues
- * [**Widget**] Some web browsers display white background for charging limit slider.
+ * [**Scnario**] In the night, a trace in tesla log may indicate that the charging was not possible. However, the Tesla server may trigger it when car is awake. It is recommanded to add an awake command before starting the charge.
 
 <a name="1.5.1"></a>
 # 1.5.1 (2019-03-20)

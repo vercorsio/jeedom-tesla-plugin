@@ -1,5 +1,5 @@
 <a name="1.5.2"></a>
-# 1.5.2 (2019-04-04)
+# 1.5.2 (2019-04-08)
 
 ### Improvements
 
@@ -14,9 +14,10 @@
  * Pas d'accès aux équipements s'ils sont désactivés ou quand le plugin est lui même désactivé.
  * [**Widget**] Affichage correct des jantes 20" et du pack Performance le cas échéant sur la Model3
  * [**Widget**] Prise en compte des couleurs de carrosserie de la Model 3.
+ * [**Widget**] Sur certains navigateurs web, le curseur de la limite de charge pouvait s'afficher en blanc. Corrigé.
  
 ### Known Issues
- * [**Widget**] Sur certains navigateurs web, le curseur de la limite de charge peut s'afficher en blanc.
+ * [**Scenario**] La nuit, une trace peut indiquer que la charge est impossible a démarrer, mais elle pourra être démarrer en asynchrone par le serveur. Il est recommandé d'ajouter dans le scénario une commande de réveil de la voiture.
 
 <a name="1.5.1"></a>
 # 1.5.1 (2019-03-20)
