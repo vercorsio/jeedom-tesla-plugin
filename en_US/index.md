@@ -191,7 +191,7 @@ User can set the driver and passenger temperature using a specific widget, descr
 Control locks, trunks and sunroof
 --
 
-| Button | Description | An clic on this bouton will ... |
+| Button | Description | A clic on this bouton will ... |
 | --- | --- | --: |
 | ![lockOn](../images/locked.png) | The car is locked | _... unlock the doors_ |
 | ![lockOff](../images/unlocked.png) | The car is unlocked | _... lock the doors_ |
@@ -205,7 +205,7 @@ Control locks, trunks and sunroof
 Control the charging
 --
 
-| Button | Description | An clic on this bouton will ... |
+| Button | Description | A clic on this bouton will ... |
 | --- | --- | ---: |
 | ![charDis](../images/charging_Disconnected.png) | The charging cable is not engaged | _... have no effect_
 | ![charSch](../images/charging_Scheduled.png) | The charging is scheduled | _... start the charging_
@@ -214,6 +214,13 @@ Control the charging
 | ![charCom](../images/charging_Complete.png) | The charging is complete | ... _have no effect_
 | ![charNul](../images/charging_Null.png) | The charging state is unknown | ... _have no effect_
  
+Controle the range tracking
+--
+
+| Bouton | Description |  A clic on this bouton will ... |
+| --- | --- | ---: |
+| ![track](../images/tracking_off.png) | The range tracking is stopped | _... start the range tracking _
+| ![track](../images/tracking_on.gif) | The range tracking is running | _... stop the range tracking _
 
 
 User can set the charging limit using a specific widget, as described in following animation:
@@ -298,7 +305,9 @@ The example below corresponds to a real trip made on 2019, January the 5th. This
    - the range at the beginning of the trip in <b style="color:#3355FF">dashed</b>
    - the current evolution in <b style='color:#22C4FF'>blue</b>.
    - When the HVAC is on, the curve turns to <b style='color:blueviolet'>violet</b>.
-- The right vertical axis represents the difference between the <b style="color:#3355FF">range at the beginning of the trip</b> and the <b style='color:#22C4FF'>current range</b> without <b>mileage traveled</b> removed. The curve is <b style="color:#00FF00">green</b> when there is a gain, and <b style="color:#FFA500">orange</b> when we observe a loss.
+- The right vertical axis represents:
+   - the difference between the <b style="color:#3355FF">range at the beginning of the trip</b> and the <b style='color:#22C4FF'>current range</b> without <b>mileage traveled</b> removed. The curve is <b style="color:#00FF00">green</b> when there is a gain, and <b style="color:#FFA500">orange</b> when we observe a loss.
+   - the value of the <b style="color:#E74C3C">charger power</b> when the car is charging 
 
 
 The table below lists all the different stages of the day. User can clic a specific stage to zoom the graph. A clic on the footer resets the zoom and displays the whole day.

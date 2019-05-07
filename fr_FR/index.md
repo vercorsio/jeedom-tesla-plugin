@@ -220,6 +220,13 @@ Contrôler la charge
 | ![charCom](../images/charging_Complete.png) | La recharge est terminée | ... _être sans effet_
 | ![charNul](../images/charging_Null.png) | Etat de recharge indéterminée | ... _être sans effet_
  
+Contrôler le suivi de l'autonomie
+--
+
+| Bouton | Description |  Un clic sur ce bouton va ... |
+| --- | --- | ---: |
+| ![track](../images/tracking_off.png) | Le suivi de l'autonomie est arrêté | _... démarre le suivi de l'autonomie_
+| ![track](../images/tracking_on.gif) | Le suivi de l'autonomie est démarré | _... arrête le suivi de l'autonomie_
 
 
 Pour modifier depuis le dashboard la limite de charge, il suffit de délacer le curseur sur le graph de la batterie. Le pourcentage ainsi que le nombre approximatif de kilomètres seront affichés:
@@ -305,7 +312,7 @@ L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui s
 - En abscisse on trouve le temps
 - En ordonnée à gauche en <b>noir</b>, le kilométrage parcouru. <u>Note:</u> l'angle de la courbe est proportionel à la vitesse.
 - En ordonnée à gauche en <b style='color:#22C4FF'>bleu</b>, l'autonomie de départ en <b style="color:#3355FF">pointillé</b>, et l'évolution de l'autonomie en <b style='color:#22C4FF'>bleu</b>. Quand la climatisation est allumée, le trait est en <b style='color:blueviolet'>violet</b>.
- - En ordonnée à droite, la différence constatée entre l'<b style="color:#3355FF">autonomie initiale</b> et l'<b style='color:#22C4FF'>autonomie réelle</b> compte tenu des <b>kilomètres parcourus</b>. La courbe est <b style="color:#00FF00">verte</b> quand il y a un gain, <b style="color:#FFA500">orange</b> en cas de perte.
+ - En ordonnée à droite, la différence constatée entre l'<b style="color:#3355FF">autonomie initiale</b> et l'<b style='color:#22C4FF'>autonomie réelle</b> compte tenu des <b>kilomètres parcourus</b>. La courbe est <b style="color:#00FF00">verte</b> quand il y a un gain, <b style="color:#FFA500">orange</b> en cas de perte. Et la <b style="color:#E74C3C">puissance de charge</b> quand la voiture est en cours de recharge. 
 
 
 

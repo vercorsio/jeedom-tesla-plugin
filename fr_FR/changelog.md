@@ -1,3 +1,20 @@
+<a name="1.6.0"></a>
+# 1.6.0 (2019-05-07)
+
+### Features
+
+ * [**Range Tracking**] Ajout du graph de la puissance de charge.
+ * [**Range Tracking**] Possibilité de choisir les colonnes du tableau et de les trier.
+ * [**Widget**] Ajout d'un bouton pour démarrer/arrêter le suivi de l'autonomie depuis le widget (desktop et mobile)
+
+### Improvements
+
+ * Amélioration de la gestion du process qui pilote le suivi de l'autonomie.
+ * Prêt pour Jeedom V4 !
+
+### Fixes
+ * Correctif mineurs
+ 
 <a name="1.5.2"></a>
 # 1.5.2 (2019-04-08)
 

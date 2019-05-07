@@ -1,3 +1,20 @@
+<a name="1.6.0"></a>
+# 1.6.0 (2019-05-07)
+
+### Features
+
+ * [**Range Tracking**] Add a serie in the graph to display power of charge.
+ * [**Range Tracking**] Ability to choose which column to display in the table and sort them.
+ * [**Widget**] Add a button to start/stop the range tracking in the widget.
+
+### Improvements
+
+ * Improve the way range tracking is managed by Jeedom.
+ * Ready for Jeedom V4 !
+
+### Fixes
+ * Minor fixes
+  
 <a name="1.5.2"></a>
 # 1.5.2 (2019-04-08)
 
