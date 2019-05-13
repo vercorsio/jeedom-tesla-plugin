@@ -15,6 +15,10 @@
 ### Fixes
  * Minor fixes
   
+### Update instructions
+ * As cron has been changed to 'daemon', it's better to not activate the "Automatic Management" in the plugin configuration panel. 
+ As a matter of fact, the "Automatic Management" will tess Jeedom to make sure the daemon is always up, restarting it if stopped. For the range tracking, we prefer to start and stop it manually.
+
 <a name="1.5.2"></a>
 # 1.5.2 (2019-04-08)
 

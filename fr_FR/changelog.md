@@ -14,7 +14,13 @@
 
 ### Fixes
  * Correctif mineurs
- 
+
+### Update instructions
+ * Suite au passage du cron en 'daemon', il est conseillé de ne pas activer la *Gestion automatique* du démon dans la configuration du plugin. 
+ En effet, lorsque la gestion automatique est activé, Jeedom va s'assurer que le daemon est actif en toute occasion et ira le relancer s'il a été arrêter.
+ Pour le cas du *Suivi d'Autonomie*, on preferera l'arrêter et le démarrer soit même.
+
+
 <a name="1.5.2"></a>
 # 1.5.2 (2019-04-08)
 
