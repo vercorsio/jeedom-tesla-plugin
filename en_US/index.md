@@ -219,13 +219,31 @@ Controle the range tracking
 
 | Bouton | Description |  A clic on this bouton will ... |
 | --- | --- | ---: |
-| ![track](../images/tracking_off.png) | The range tracking is stopped | _... start the range tracking _
-| ![track](../images/tracking_on.gif) | The range tracking is running | _... stop the range tracking _
+| ![track](../images/tracking_off.png) | The range tracking is stopped | _... start the range tracking_
+| ![track](../images/tracking_on.gif) | The range tracking is running | _... stop the range tracking_
+| ![track](../images/tracking_auto.png) | The range tracking is running and cannot be manually stopped (managed by Jeedom, see note below) | _...  have no effect_
+
+> **Note**
+>
+> If in the tesla plugin configuration panel the **Automatic Management** is activated, Jeesdom will restart the daemon if it detects it has been stopped. Thus it is advised to deactivate the **Automatic Management**.
 
 
 User can set the charging limit using a specific widget, as described in following animation:
 
 ![setLimit](../images/en_setChargingLimit.gif)
+
+
+Health
+==
+
+To mae sure the Tesla plugin is doing well, the user can run a series of test in the **Health** panel (menu Analyze / Health).
+
+![setLimit](../images/sante.png)
+
+> ** Note**
+>
+>If a permission issu is detected on tracking files, it will be fixed.
+
 
 Scenario
 ==

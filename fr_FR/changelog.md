@@ -1,3 +1,21 @@
+<a name="1.6.1"></a>
+# 1.6.1 (2019-05-15)
+
+### Features
+
+ * [**Santé**] Ajout de tests de vérification pour s'assurer de la bonne santé du plugin (menu Analyse / Santé / plugin Tesla ).
+
+### Improvements
+
+ * Lorsque la gestion automatique du démon du plugin est activé, le bouton de démarrage/arrêt du Suivi de l'Autonomie est désactivé.
+
+### Fixes
+ * Vérification et réparation des autorisations des fichiers de Suivi d'Autonomie. 
+ Un fichier qui n'a pas les bons droits (lecture/ecriture) peut conduire à un non affichage des graphes du *Suivi de l'Autonomie*.
+
+Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412/) pour ses retours et tests !
+
+
 <a name="1.6.0"></a>
 # 1.6.0 (2019-05-07)
 

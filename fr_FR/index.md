@@ -227,11 +227,27 @@ Contrôler le suivi de l'autonomie
 | --- | --- | ---: |
 | ![track](../images/tracking_off.png) | Le suivi de l'autonomie est arrêté | _... démarre le suivi de l'autonomie_
 | ![track](../images/tracking_on.gif) | Le suivi de l'autonomie est démarré | _... arrête le suivi de l'autonomie_
+| ![track](../images/tracking_auto.png) | Le suivi de l'autonomie est démarré et géré par Jeedom | _être sans effet_
 
+> **Note**
+>
+> Si dans la configuration du plugin la **Gestion Automatique** du démon est activé, Jeedom cherchera a redémarrer le démon s'il est arrêté. Il est donc conseillé de désactiver la **Gestion Automatique**.
 
 Pour modifier depuis le dashboard la limite de charge, il suffit de délacer le curseur sur le graph de la batterie. Le pourcentage ainsi que le nombre approximatif de kilomètres seront affichés:
 
 ![setLimit](../images/setChargingLimit.gif)
+
+Santé
+==
+
+Pour s'assurer que le plugin Tesla est bien configuré, un ensemble de vérifications est joué lorsque on ouvre l'écran **Santé** (menu Analyse / Santé).
+
+![setLimit](../images/sante.png)
+
+> ** Note**
+>
+>Si un problème de permission est détecté, il sera corrigé.
+
 
 Scenario
 ==

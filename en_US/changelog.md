@@ -1,3 +1,21 @@
+<a name="1.6.1"></a>
+# 1.6.1 (2019-05-15)
+
+### Features
+
+ * [**Health**] Add a serie of tests to make sure the plugin is doing well (menu Analyze / Health / plugin Tesla ).
+
+### Improvements
+
+ * When the "Automatic Management" is set, the button to start/stop the *Range Tracking* is disabled.
+
+### Fixes
+ * Check and repair the tracking files permissions.
+ A file with bad permission, may have impact on *Range Tracking* display.
+
+Thanks to `J0kers` from [Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412/) forum for his feedback and tests !
+
+
 <a name="1.6.0"></a>
 # 1.6.0 (2019-05-07)
 
