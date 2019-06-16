@@ -1,3 +1,18 @@
+<a name="1.7.0"></a>
+# 1.7.0 (2019-06-16)
+
+### Features
+ * Ajout du choix de la monnaie pour l'affichage (EUR, USD, CHF et GBP)
+ * [**Range Tracking**] Ajout d'un mode sommeil qui va réduire la fréquence de mise à jour quand la voiture est arrêtée depuis 8 minutes. le jour la fréquence passe de 1 appel toutes les 5 secondes à 1 appel toutes les 60 secondes. La nuit (de 23h à 5h du matin) la fréquence passe à 1 appel toutes les 10 minutes. Les chiffres 8, 5, 60 et 10 ci-dessus sont modifiable dans le panneau de configuration.
+  * [**Range Tracking**] Suite à l'ajout du mode sommeil, il est tout à fait possible de laisser Jeedom gérer le démon automatiquement.
+  * [**Range Tracking**] Lorsque la voiture est détéctée hors-ligne, le graph de l'autonomie est affiché en pointillé noir.
+
+### Improvements
+
+ * Amélioration des performance d'affichage sur les très gros fichiers de tracking.
+
+Merci à `matts` du forum [Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412/) pour ses retours et tests !
+
 <a name="1.6.1"></a>
 # 1.6.1 (2019-05-15)
 

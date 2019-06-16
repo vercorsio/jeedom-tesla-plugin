@@ -1,3 +1,18 @@
+<a name="1.7.0"></a>
+# 1.7.0 (2019-06-16)
+
+### Features
+ * Add currencies for cost displays (possible choices are EUR, USD, CHF and GBP)
+ * [**Range Tracking**] Add a sleep mode to reduce frequency of car updates when the car is stopped since 8 minutes. During the day, the frequency changes from 1 call every 5 seconds to 1 call every 60 seconds. During the night (11 PM till 5 AM) the frequency changes to 1 call every 10 monutes. The numbers 8, 5, 60 et 10 above can be modified from the tesla configuration panel.
+  * [**Range Tracking**] Next to the addition of sleeping mode, use can freely activate the Automatic Management of daemon.
+  * [**Range Tracking**] When the car is offline, the range curve turns to black.
+
+### Improvements
+
+ * Improve rendering performance when loading big trakcing files.
+
+Thanks to `matts` from [Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412/) forum for his feedback and tests !
+
 <a name="1.6.1"></a>
 # 1.6.1 (2019-05-15)
 
