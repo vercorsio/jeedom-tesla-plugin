@@ -1,3 +1,16 @@
+<a name="1.7.1"></a>
+# 1.7.1 (2019-25-07)
+
+### Features
+ * [**Widget**] A new button is added to enable/disable the sentry mode. It is also possible to enable/disable it via scenarios.
+
+### Improvements
+ * [**Range Tracking**] Sentry mode is visible on the graph as a red dot line.
+ * The plugin version is more user friendly (rather than only a hash tag) : `vX.Y.Z` is for the sable version X.Y.Z and `vX.Y.Z-n-hash` is for the nth version after the stable X.Y.Z. 
+
+## Fixes
+ * [**Range Tracking**] When the connexion with the car was lost while driving, the trip was cut in two pieces. It is now fixed. The offline period is shown as black dotted line.
+
 <a name="1.7.0"></a>
 # 1.7.0 (2019-06-16)
 

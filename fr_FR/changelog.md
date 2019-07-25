@@ -1,3 +1,16 @@
+<a name="1.7.1"></a>
+# 1.7.1 (2019-25-07)
+
+### Features
+ * [**Widget**] Ajout d'un bouton pour activer/désactiver le mode Sentinelle.
+
+### Improvements
+ * [**Range Tracking**] Les moments passés au parking avec le mode Sentinelle activés sont repérés par un trait pointillé rouge.
+ * Le nom de la version est plus facile à lire dans le rapport de santé et dans le panneau de configuration: `vX.Y.Z` indique la version stable X.Y.Z et `vX.Y.Z-n-hash` indique la nième version bêta (et son hash git) après la version stable X.Y.Z. 
+
+## Fixes
+ * [**Range Tracking**] Les trajets où la voiture devient hors ligne (tunnels, changement opérateur au passage d'une frontière,...) ne sont plus découpés. le pointillé passe en noir lorsque la voiture est vue hors ligne.
+
 <a name="1.7.0"></a>
 # 1.7.0 (2019-06-16)
 
