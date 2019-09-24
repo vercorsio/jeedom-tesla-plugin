@@ -1,3 +1,37 @@
+<a name="1.8.0"></a>
+# 1.8.0 (2019-09-24)
+### Features
+ * [**Widget**] Ajout de commandes pour allumer et éteindre le volant et les sièges chauffants. Un panneau de contrôle animé permet de modifier l'état de chaque siège et du volant. Egalement pilotable depuis un scénario.
+ * [**Widget**] Personnalisation des images de voiture. Quatre URLs permettent au plugin de télécharger quatre photos différentes (vue de profil, vue avant, vue arrière, vue intérieure).
+
+### Improvements
+ * [**Santé**] Vérifie si le VIN est présent dans la configuration dechaque voiture. Affiche une version "brouillée" du VIN (sans les six derniers chiffres).
+ * Les images sont maintenant stockées en local pour répondre à une exigence Jeedom et faciliter/accélérer leur chargement.
+
+### Fixes
+ * [**Santé**] Affichage du bon numéro de version dans le rapport de santé.
+
+### Compatibilité Debian
+  * Jeedom n'est **pas compatible avec Debian 10**. Le plugin risque de rencontrer des difficultés s'il est installé sur une Debian 10. Se référer aux instructions d'installation de Jeedom : https://jeedom.github.io/documentation/installation/fr_FR/
+
+<a name="1.7.3"></a>
+# 1.7.3 (2019-09-09)
+
+### Features
+ * [**Widget**] Ajout d'une commande pour ouvrir et fermer le port de recharge. Egalement pilotable depuis un scénario.
+
+### Improvements
+ * Ajout du numéro de VIN sur la configuration du véhicule pour garantir une bonne synchronisation.
+
+### Fixes
+  * Correctif sur l'apparence du bouton Sentinelle.
+
+ <a name="1.7.2"></a>
+# 1.7.2 (2019-08-27)
+### Fixes
+ * Mise à jour de l'un des appels vers l'API Tesla suite à la modification de l'un des endpoints (/data -> /vehicle_data). Certaines commandes pouvaient ne pas fonctionner. Corrigé.
+
+
 <a name="1.7.1"></a>
 # 1.7.1 (2019-25-07)
 
@@ -8,7 +42,7 @@
  * [**Range Tracking**] Les moments passés au parking avec le mode Sentinelle activés sont repérés par un trait pointillé rouge.
  * Le nom de la version est plus facile à lire dans le rapport de santé et dans le panneau de configuration: `vX.Y.Z` indique la version stable X.Y.Z et `vX.Y.Z-n-hash` indique la nième version bêta (et son hash git) après la version stable X.Y.Z. 
 
-## Fixes
+### Fixes
  * [**Range Tracking**] Les trajets où la voiture devient hors ligne (tunnels, changement opérateur au passage d'une frontière,...) ne sont plus découpés. le pointillé passe en noir lorsque la voiture est vue hors ligne.
 
 <a name="1.7.0"></a>

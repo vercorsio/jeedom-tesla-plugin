@@ -89,6 +89,8 @@ Une fois le plugin configuré, le ou les véhicules de votre compte tesla sont a
 
 ![config](../images/configPlugin-3.png)
 
+ * __Vehicle Identification Number (VIN)__ : Champ obligatoire qui permet d'identifier de manière unique votre véhicule pour intéragir avec les serveurs Tesla.
+
 ![config](../images/configCar-1.png)
 Le __Suivi de l'autonomie__ en mode `énergie` nécessite quelques informations liées à la batterie, telle que:
 
@@ -177,24 +179,41 @@ Par exemple pour ne pas afficher la photo et les détails de climatisation, il s
 
 L'odomètre est historisé, ce qui permet d'obtenir le graphique des km parcourus.
 
-Contrôler la climatisation
+Par défaut, le widget est mis à jour toutes les heures entre 5h du matin et 23h. Il est possible de désactiver cette mise à jour en décochant "Activer" en face de "cronHourly"
+
+![cronHourly](../images/widget-cronHourly.png)
+
+Contrôler la climatisation, les sièges et le volant chauffants
 --
 
 | Bouton | Description | Un clic sur ce bouton va ... | 
 | --- | --- | --: |
 | ![clim off](../images/clim_off.png) | La climatisation est éteinte | _... allumer la climatisation_ | 
 | ![clim on](../images/clim_on.gif) | La climatisation est allumée | _... éteindre la climatisation_ |
+| ![heaters on](../images/seat_heaters_on.png) | Le volant ou un des sièges chauffants est allumé | _... ouvrir le panneau de contrôle des sièges chauffants_ |
+| ![heaters off](../images/seat_heaters_off.png) | Aucun des sièges chauffants ni le volant n'est allumé | _... ouvrir le panneau de contrôle des sièges chauffants_ |
 
 Il est possible de modifier la température cible de la climatisation en utilisant un widget secifique, comme décrit dans l'animation ci-dessous:
 
+
 ![clim on](../images/setTemps.gif)
-> **Note**
+
+Après avoir cliqué sur l'icone de siège, il est possible de contrôler le niveau de chauffage des sièges et du volant. Le nombre de rangées affiché dépend de la configuration du véhicule. Egalement, si le volant est chauffant, il est activable via ce panneau de contrôle.
+
+Le bouton OFF permet de tout éteindre. Le bouton OK permet de valider les choix faits pour chacun des sièges et du volant: 
+
+
+![heaters](../images/SeatHeaters.gif) 
+
+
+> **Notes**
 >
 > A cause d'une limitation dans l'API Tesla, il n'est possible de configurer des températures différentes pour le conducteur et le passager que lorsque les températures sont déjà non synchronisées dans le véhicule (SYNC désactivé).
 >
+> L'accès au sièges chauffants n'est possible que si la climatisation est allumée.
 
 
-Contrôler le vérouillage (portes, coffres et toît ouvrant)
+Contrôler le vérouillage (portes, coffres, toît ouvrant et sentinelle)
 --
 
 | Bouton | Description |  Un clic sur ce bouton va ... |
@@ -202,11 +221,13 @@ Contrôler le vérouillage (portes, coffres et toît ouvrant)
 | ![lockOn](../images/locked.png) | La voiture est fermée | _... dévérouiller les portes_ |
 | ![lockOff](../images/unlocked.png) | La voiture est ouverte | _... vérouiller les portes_ |
 | ![frunkOff](../images/frunk_off.png) | Le coffre avant est fermé | _... dévérouiller le frunk_ |
-| ![frunkOn](../images/frunk_on.png) | Le coffre avant est ouvert | _...  être sans effet_ |
+| ![frunkOn](../images/frunk_on.png) | Le coffre avant est ouvert | _... être sans effet_ |
 | ![trunkOff](../images/trunk_off.png) | Le coffre arrière est fermé | _... ouvrir le coffre_ |
-| ![trunkOn](../images/trunk_on.png) | Le coffre arrière est ouvert | _...  fermer le coffre_ |
+| ![trunkOn](../images/trunk_on.png) | Le coffre arrière est ouvert | _... fermer le coffre_ |
 | ![panoOff](../images/pano_off.png) | Le toît panoramique est fermé | _... ouvrir le toît panoramique_ |
-| ![panoOn](../images/pano_on.png) | Le toît panoramique est ouvert | _...  fermer le toît panoramique_ |
+| ![panoOn](../images/pano_on.png) | Le toît panoramique est ouvert | _... fermer le toît panoramique_ |
+| ![panoOn](../images/sentry_off.png) | Le mode sentinelle est désactivé | _... active le mode sentinelle_ |
+| ![panoOn](../images/sentry_on.gif) | Le mode sentinelle est activé | _... désactive le mode sentinelle_ |
 
 Contrôler la charge
 --
@@ -219,7 +240,8 @@ Contrôler la charge
 | ![charPau](../images/charging_Pause.png) | La recharge a été manuellement arrétée | _... reprendre la recharge_
 | ![charCom](../images/charging_Complete.png) | La recharge est terminée | ... _être sans effet_
 | ![charNul](../images/charging_Null.png) | Etat de recharge indéterminée | ... _être sans effet_
- 
+| ![panoOn](../images/charge_door.gif) | Ouverture de la trappe de recharge | _... ferme/ouvre la trappe de recharge_ |
+
 Contrôler le suivi de l'autonomie
 --
 
@@ -227,11 +249,13 @@ Contrôler le suivi de l'autonomie
 | --- | --- | ---: |
 | ![track](../images/tracking_off.png) | Le suivi de l'autonomie est arrêté | _... démarre le suivi de l'autonomie_
 | ![track](../images/tracking_on.gif) | Le suivi de l'autonomie est démarré | _... arrête le suivi de l'autonomie_
+| ![track](../images/tracking_sommeil_jour.gif) | Le suivi de l'autonomie est démarré en mode SOMMEIL jour| _... arrête le suivi de l'autonomie_
+| ![track](../images/tracking_sommeil_nuit.gif) | Le suivi de l'autonomie est démarré en mode SOMMEIL nuit| _... arrête le suivi de l'autonomie_
 | ![track](../images/tracking_auto.png) | Le suivi de l'autonomie est démarré et géré par Jeedom | _être sans effet_
 
 > **Note**
 >
-> Si dans la configuration du plugin la **Gestion Automatique** du démon est activé, Jeedom cherchera a redémarrer le démon s'il est arrêté. Il est donc conseillé de désactiver la **Gestion Automatique**.
+> Si dans la configuration du plugin la **Gestion Automatique** du démon est activé, Jeedom cherchera à redémarrer le démon s'il est arrêté. Vous pouvez donc laisser Jeedom garantir que le `tracking` est actif en permanance (**Gestion Automatique**) ou le démarrer et l'arrêter manuellement.
 
 Pour modifier depuis le dashboard la limite de charge, il suffit de délacer le curseur sur le graph de la batterie. Le pourcentage ainsi que le nombre approximatif de kilomètres seront affichés:
 
@@ -281,32 +305,60 @@ Exemples de scénarios:
 Suivi de l'autonomie
 ==
 
+Note: Le *Suivi de l'autonomie* est aussi appelé *Range Tracking* ou simplement *tracking*. 
+
 Principe
 --
 
 Le panneau **suivi de l'autonomie** permet au conducteur de comprendre l'influence de sa conduite et de l'environement sur l'autonomie du véhicule, pour chacune des Tesla activées dans votre Jeedom.
 
-Cela permet de comprendre comment évolue l'autonomie restante au fil des trajets, des charges et temps de repos, ou de voir l'énérgie consommée lors des trajets, et l'énérgie emmagasinée lors de recharges.
+Cela permet de comprendre comment évolue l'autonomie restante au fil des trajets, des charges et temps de repos, ou de voir l'énergie consommée lors des trajets, et l'énergie emmagasinée lors de recharges.
 
-Ce 'tracking' s'appuie sur des données acquises depuis les Servers Tesla via un cron qui est démarré et arrêté depuis le panneau. Les données sont stockées en **local** sur votre serveur Jeedom.
+Ce 'tracking' s'appuie sur des données acquises depuis les Servers Tesla via un démon qui est démarré et arrêté depuis le panneau. Les données sont stockées en **local** sur votre serveur Jeedom.
 
 Un graphique retrace l'évolution de l'autonomie ou de l'énergie au cours d'une journée et un calendrier permet de consulter l'historique des graphiques.
 
 > **Notes**
 >
-> * Pratique, la version mobile permet de suivre l'évolution de l'autonomie ou de l'énérgie tout en conduisant !
+> * Pratique, la version mobile permet de suivre l'évolution de l'autonomie ou de l'énergie tout en conduisant !
 > 
 > * Pour accéder directement à la vue `Tesla` depuis la version Mobile sans jongler avec les menus, il est possible de définir `Tesla` comme vue "Mobile" par défaut dans la configuration du profil (Menu `User` -> `Profil Admin` -> Onglet `Interface`)
 >
 > * Le suivi de l'autonomie peut être programmé via un scénario.
 
+
+
+
+
+Configuration et impact du tracking
+-- 
+
+![tracking-graph](../images/tracking-settings.png)
+
+Lorsque le véhicule roule ou est en charge, les graphs permettent de donner une idée très précise de l'évolution de l'autonomie. En revanche, à l'arrêt au parking, il n'est pas nécessaire de monitorer aussi finement l'état de la voiture.
+
+Passé un certain laps de temps (`temps d'attente au parking`) le tracking ralentit son rythme et espace les différents appels, passant par défaut d'un appel toutes les 5 secondes lors du roulage et des recharges à un appel toutes les minutes (`SOMMEIL JOUR`). La nuit entre 23h et 5h du matin, ce rythme décroit encore plus puisqu'il passe à un appel toutes les dix minutes (`SOMMEIL NUIT`).
+Ces intervalles de temps sont configurables.
+
+Quand la voiture se remet à rouler/charger, le prochain appel va detecter ce changement d'état et fera passer le tracking en mode `NORMAL`, pour garantir un suivi régulier du tracking.
+
+#### Considérations techniques:
+Tesla propose sur son API deux appels d'interrogation du véhicule:
+ - un appel nommé `data` qui indique simplement l'état de la voiture : `online`, `offline`, `asleep`, `waking` et `unknown`. Cet appel n'est pas intrusif, il ne rentre pas en contact avec la voiture. `online` indique que la voiture roule, charge, télécharge une mise à jour, effectue une opération interne de service.... Mais elle peut tout à fait être `online` au parking. Et, sans être sollicité pendant un certain temps au parking, elle pourra automatiquement rentrer dans une phase de sommeil (`offline`/`asleep`). Hélas, sur cet appel, il n'y a pas de distinguo entre un `online "actif"` (roulage, charge, ...), et un `online "inactif"` (au parking en attente d'un prochain sommeil), ce qui permettrait de detecter la phase de pré-sommeil.
+- un appel nommé `vehicle` qui remonte toutes les données pertinentes et à jour sur le véhicule. Cet appel `vehicle` n'est possible que lorsque la voiture est `online`. Solliciter trop fréquement  cet appel `vehicle` empèche la voiture de passer `offline`. 
+
+Avant chaque appel `vehicle` le tracking effectue un appel `data`. Si ce dernier remonte un état `offline` ou `asleep`, le tracking laisse la voiture dans son sommeil et ne vas pas effectuer d'appel `vehicle`. Dans le cas contraire (`online`) le tracking effectue l'appel `vehicle` et stocke un nouveau jeu de données qui sera utilisé pour les graphs et les statistiques.
+
+
 Mise en place
 --
 Par défaut, l'acquision n'est pas démarrée.
 
-Un clic sur `Start Recording` va démarrer le cron qui va récupérer à intervalles réguliers les données qui serviront à afficher des graphiques de suivi, identifier les différentes étapes de la journée et proposer des statistiques.
+Un clic sur `Start Recording` va démarrer le démon qui va récupérer à intervalles réguliers les données qui serviront à afficher des graphiques de suivi, identifier les différentes étapes de la journée et proposer des statistiques.
 
-Un clic sur `Stop Recording` va stopper l'acquisition des données (arrêt du cron).
+Un clic sur `Stop Recording` va stopper l'acquisition des données (arrêt du démon).
+
+Lorsque le démon est en mode **Gestion Automatique**, il n'est pas possible d'interagir manuellement pour arrêter/démarrer le démon. 
 
 > **Notes**
 >

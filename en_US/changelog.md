@@ -1,5 +1,38 @@
+<a name="1.8.0"></a>
+# 1.8.0 (2019-09-24)
+### Features
+ * [**Widget**] Add commands to set seats and steering wheel heaters. Canbe ran via scenario.
+ * [**Widget**] Add ability to upload car images.
+
+### Improvements
+ * [**Health**] Check that VIN is present in health report. Display a scrambled VIN number.
+ * Les images sont maintenant stockées en local pour répondre à une exigence Jeedom et faciliter/accélérer leur chargement.
+
+### Fixes
+ * [**Health**] Display the right version number in health report.
+
+### Compatibility Debian
+  * Jeedom **is not compatible with Debian 10**. Check instruction here : https://jeedom.github.io/documentation/installation/en_US/
+
+<a name="1.7.3"></a>
+# 1.7.3 (2019-09-09)
+
+### Features
+ * [**Widget**] Add a command to open and close the charging port. Can be part of a scenario.
+
+### Improvements
+ * Add VIN number on car config for unicity on car synchronization.
+
+### Fixes
+  * Fix the Sentry icon styling.
+
+ <a name="1.7.2"></a>
+# 1.7.2 (2019-08-27)
+### Fixes
+ * Update code next to a change in one of the endpoints (/data -> /vehicle_data). Some commands were not able to be proceseed. Fixed.
+
 <a name="1.7.1"></a>
-# 1.7.1 (2019-25-07)
+# 1.7.1 (2019-07-25)
 
 ### Features
  * [**Widget**] A new button is added to enable/disable the sentry mode. It is also possible to enable/disable it via scenarios.
