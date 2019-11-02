@@ -1,20 +1,46 @@
+<a name="1.9.0 beta"></a>
+# 1.9.0-beta (2019-11-02)
+
+### Features
+
+ * [**Range Tracking**] Refonte du mécanisme du tracking et son affichage. Après une durée d'attente au parking de 10 minutes, le tracking effectue un appel `data` toutes les 15 minutes, permettant ainsi à la voiture de se mettre en veille. Une fois en veille, le tracking surveille l'état de la voiture et se remet en mode NORMAL dès que celle-ci sort de sa veille. Les périodes de veille sont matérialisées par un trait pointillé noir sur le graph du suivi d'autonomie et le bouton du tracking se transforme en 'Lune qui ronfle". Un clic sur ce bouton permet de forcer manuellement le tracking en mode NORMAL. Lors des phases de veille le tracking ne fait que des appels "vehicle" pour surveiller le prochain réveil, ce qui garanti ZERO interaction avec la voiture. Le tracking est entièrement configurable via le panneau de configuration du plugin.
+ 
+ * [**Range Tracking**] Ajout d'un mode `Live AUTO` qui permute automatiquement le graph entre la vue globale de la journée lors des phases de parking et la vue qui n'affiche que les 5 dernières minutes pendant la conduite
+
+ * [**Range Tracking**] Ajout d'informations pertinentes sur le haut du graph. Le temps de conduite, la durée du parking ou le temps de recharge est indiqué, ainsi que le nombre de période de offline, le nombre de periodes de recharge.
+
+
+### Improvements
+
+ * [**Widget**] Modification du visuel du bouton d'ouverture de la trappe de recharge.
+
+### Fixes
+
+ * Sur Model X, l'affichage de la troisième rangée de sièges n'était pas visible. Corrigé.
+ * La mise en marche du chauffage des sièges ne marchait pas depuis un scénario. Corrigée.
+ * Erreurs MySql sur Debian 10. Corrigées.
+
 <a name="1.8.0"></a>
 # 1.8.0 (2019-09-24)
 ### Features
+
  * [**Widget**] Ajout de commandes pour allumer et éteindre le volant et les sièges chauffants. Un panneau de contrôle animé permet de modifier l'état de chaque siège et du volant. Egalement pilotable depuis un scénario.
  * [**Widget**] Personnalisation des images de voiture. Quatre URLs permettent au plugin de télécharger quatre photos différentes (vue de profil, vue avant, vue arrière, vue intérieure).
 
 ### Improvements
+
  * [**Configuration**] Ajout d'un bouton pour remettre les valeurs par défaut sur les principales variables de configuration du tracking.
  * [**Santé**] Vérifie si le VIN est présent dans la configuration dechaque voiture. Affiche une version "brouillée" du VIN (sans les six derniers chiffres).
  * Les images sont maintenant stockées en local pour répondre à une exigence Jeedom et faciliter/accélérer leur chargement.
 
 ### Fixes
+
  * [**Santé**] Affichage du bon numéro de version dans le rapport de santé.
  * Suppression de l'affichage du message suivant : `Verification du démon:, {"type":"AJAX","code":42,"message":Unknown error"}`. Ce message sans gravité est remonté par Jeedom et est simplement ignoré.
  * L'ouverture et la fermeture du coffre fonctionnait mais ne rafraichissait pas l'état dans le plugin. Corrigé
 
 ### Compatibilité Debian
+
   * Jeedom n'est **pas compatible avec Debian 10**. Le plugin risque de rencontrer des difficultés s'il est installé sur une Debian 10. Se référer aux instructions d'installation de Jeedom : https://jeedom.github.io/documentation/installation/fr_FR/
 
 Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412/) et `kenshirohokuto` du forum Jeedom pour vos retours et tests !
@@ -23,9 +49,11 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
 # 1.7.3 (2019-09-09)
 
 ### Features
+
  * [**Widget**] Ajout d'une commande pour ouvrir et fermer le port de recharge. Egalement pilotable depuis un scénario.
 
 ### Improvements
+
  * Ajout du numéro de VIN sur la configuration du véhicule pour garantir une bonne synchronisation.
 
 ### Fixes
@@ -34,6 +62,7 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
  <a name="1.7.2"></a>
 # 1.7.2 (2019-08-27)
 ### Fixes
+
  * Mise à jour de l'un des appels vers l'API Tesla suite à la modification de l'un des endpoints (/data -> /vehicle_data). Certaines commandes pouvaient ne pas fonctionner. Corrigé.
 
 
@@ -41,19 +70,23 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
 # 1.7.1 (2019-25-07)
 
 ### Features
+
  * [**Widget**] Ajout d'un bouton pour activer/désactiver le mode Sentinelle.
 
 ### Improvements
+
  * [**Range Tracking**] Les moments passés au parking avec le mode Sentinelle activés sont repérés par un trait pointillé rouge.
  * Le nom de la version est plus facile à lire dans le rapport de santé et dans le panneau de configuration: `vX.Y.Z` indique la version stable X.Y.Z et `vX.Y.Z-n-hash` indique la nième version bêta (et son hash git) après la version stable X.Y.Z. 
 
 ### Fixes
+
  * [**Range Tracking**] Les trajets où la voiture devient hors ligne (tunnels, changement opérateur au passage d'une frontière,...) ne sont plus découpés. le pointillé passe en noir lorsque la voiture est vue hors ligne.
 
 <a name="1.7.0"></a>
 # 1.7.0 (2019-06-16)
 
 ### Features
+
  * Ajout du choix de la monnaie pour l'affichage (EUR, USD, CHF et GBP)
  * [**Range Tracking**] Ajout d'un mode sommeil qui va réduire la fréquence de mise à jour quand la voiture est arrêtée depuis 8 minutes. le jour la fréquence passe de 1 appel toutes les 5 secondes à 1 appel toutes les 60 secondes. La nuit (de 23h à 5h du matin) la fréquence passe à 1 appel toutes les 10 minutes. Les chiffres 8, 5, 60 et 10 ci-dessus sont modifiable dans le panneau de configuration.
   * [**Range Tracking**] Suite à l'ajout du mode sommeil, il est tout à fait possible de laisser Jeedom gérer le démon automatiquement.
@@ -77,6 +110,7 @@ Merci à `matts` du forum [Automobile Propre](https://forums.automobile-propre.c
  * Lorsque la gestion automatique du démon du plugin est activé, le bouton de démarrage/arrêt du Suivi de l'Autonomie est désactivé.
 
 ### Fixes
+
  * Vérification et réparation des autorisations des fichiers de Suivi d'Autonomie. 
  Un fichier qui n'a pas les bons droits (lecture/ecriture) peut conduire à un non affichage des graphes du *Suivi de l'Autonomie*.
 
