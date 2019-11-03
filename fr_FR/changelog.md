@@ -7,7 +7,7 @@
  
  * [**Range Tracking**] Ajout d'un mode `Live AUTO` qui permute automatiquement le graph entre la vue globale de la journée lors des phases de parking et la vue qui n'affiche que les 5 dernières minutes pendant la conduite
 
- * [**Range Tracking**] Ajout d'informations pertinentes sur le haut du graph. Le temps de conduite, la durée du parking ou le temps de recharge est indiqué, ainsi que le nombre de période de offline, le nombre de periodes de recharge.
+ * [**Range Tracking**] Ajout d'informations pertinentes sur le haut du graph. Le temps de conduite, la durée du parking ou le temps de recharge est indiqué, ainsi que le nombre de périodes de offline, le nombre de periodes de recharge.
 
 
 ### Improvements
@@ -16,9 +16,9 @@
 
 ### Fixes
 
- * Sur Model X, l'affichage de la troisième rangée de sièges n'était pas visible. Corrigé.
- * La mise en marche du chauffage des sièges ne marchait pas depuis un scénario. Corrigée.
- * Erreurs MySql sur Debian 10. Corrigées.
+ * Sur Model X, l'affichage de la troisième rangée de sièges n'était pas visible. Problème corrigé.
+ * La mise en marche du chauffage des sièges ne marchait pas depuis un scénario. Problème corrigé.
+ * Les erreurs `Incorrect integer value for 'isVisible'`, `class 'object' not found` et `Data too long for column 'name'` qui pouvaient apparaître sur Debian 10, sont maintenant corrigées.
 
 <a name="1.8.0"></a>
 # 1.8.0 (2019-09-24)
