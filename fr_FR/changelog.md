@@ -1,7 +1,13 @@
 <a name="1.9.0 beta"></a>
-# 1.9.0-beta (2019-11-02)
+# 1.9.0 (2019-11-07)
+
+### Highlights
+
+ * Compatibilité Debian 10, et Freebox Delta
+ * Meilleure prise en charge des periodes de veille du véhicule 
 
 ### Features
+
 
  * [**Range Tracking**] Refonte du mécanisme du tracking et son affichage. Après une durée d'attente au parking de 10 minutes, le tracking effectue un appel `data` toutes les 15 minutes, permettant ainsi à la voiture de se mettre en veille. Une fois en veille, le tracking surveille l'état de la voiture et se remet en mode NORMAL dès que celle-ci sort de sa veille. Les périodes de veille sont matérialisées par un trait pointillé noir sur le graph du suivi d'autonomie et le bouton du tracking se transforme en 'Lune qui ronfle". Un clic sur ce bouton permet de forcer manuellement le tracking en mode NORMAL. Lors des phases de veille le tracking ne fait que des appels "vehicle" pour surveiller le prochain réveil, ce qui garanti ZERO interaction avec la voiture. Le tracking est entièrement configurable via le panneau de configuration du plugin.
  
@@ -18,7 +24,11 @@
 
  * Sur Model X, l'affichage de la troisième rangée de sièges n'était pas visible. Problème corrigé.
  * La mise en marche du chauffage des sièges ne marchait pas depuis un scénario. Problème corrigé.
+ * Non démarrage de la charge programmable suite à modification de l'API Tesla. Problème corrigé.
+ * Suppression du message d'erreur `Highcharts error #15` qui pouvait conduire à un affichage du graph moins véolce. Problème corrigé.
  * Les erreurs `Incorrect integer value for 'isVisible'`, `class 'object' not found` et `Data too long for column 'name'` qui pouvaient apparaître sur Debian 10, sont maintenant corrigées.
+
+Merci a tous les béta testeurs !
 
 <a name="1.8.0"></a>
 # 1.8.0 (2019-09-24)
