@@ -1,3 +1,42 @@
+<a name="1.9.1"></a>
+# 1.9.1 (2019-11-15)
+
+### Fixes
+
+ * Fix the tracking button on the widget.
+ * Tracking was sometimes not able to switch from SOMMEIL NIGHT to SOMMEIL DAY. This has been fixed.
+
+<a name="1.9.0"></a>
+# 1.9.0 (2019-11-07)
+
+### Highlights
+
+ * Compatibily with Debian 10 and Freebox Delta
+ * The tracking better handles the offline periods
+
+### Features
+
+ * [**Range Tracking**] The tracking mecanism has been redesigned. Once parked, the tracking continues to get data in NORMAL mode. 10 minutes after it has started the tracking reduced the frequency and let the car going to sleep. In this mode (PARKING DAY), the car refreshes the data every 15 minutes. During this idle time, the car may fall asleep. Then, the plugin monitors the car using the `vehicle` call that does not enter in interaction with the car. Offline, the graph shows dotted black curve, and tracking button shows a "snoring moon". When the car starts to charge or moves, the offline status ends and the tracxking automatically switch to NORMAL MODE. User may want to manually turn the tracking back to NORMAL mode with a click on this "moon". Tracking can be configured with advanced settings in the plugin configuration panel.
+ 
+ * [**Range Tracking**] Add a `Live AUTO` mode that automatically switches from day view to "last 5 minutes view" when the car is driving.
+
+ * [**Range Tracking**] Add information above the graph about the car and the past periods : driving time, parking time, duration of current offline periods/charging periods..
+
+
+### Improvements
+
+ * [**Widget**] Look and Feel of the 'open charging door' button has been modified.
+
+### Fixes
+
+ * Model X, the display of third row was not visible. This has been fixed.
+ * The heating seats was not working from a Jeedom scenario. This has been fixed.
+ * Updated the scheduled recharging after a Tesla API update. This has been fixed.
+ * Removed the error message`Highcharts error #15`.
+ * Errors `Incorrect integer value for 'isVisible'`, `class 'object' not found` et `Data too long for column 'name'` seen on Debian 10 are now fixed.
+
+Thanks to all beta testers !
+
 <a name="1.8.0"></a>
 # 1.8.0 (2019-09-24)
 ### Features

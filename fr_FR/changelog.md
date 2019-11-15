@@ -1,4 +1,12 @@
-<a name="1.9.0 beta"></a>
+<a name="1.9.1"></a>
+# 1.9.1 (2019-11-15)
+
+### Fixes
+
+ * Correctif sur le visuel du tracking affiché dans le widget
+ * Correctif d'un bug qui pouvait empêcher le passage du tracking SOMMEIL NIGHT / SOMMEIL DAY
+
+<a name="1.9.0"></a>
 # 1.9.0 (2019-11-07)
 
 ### Highlights
