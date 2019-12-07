@@ -1,3 +1,29 @@
+<a name="1.9.2-4-g1ed09e8"></a>
+# Beta 1.9.2-4-g1ed09e8 (2019-12-02)
+
+### Improvements
+ * Ajout des commandes suivantes qui peuvent être utilisées comme déclencheur de scénario:
+   - `Info cable connecté` : valeur 1 quand le cable de recharge est engagé.
+   - `Info ampérage de recharge` : valeur de l'ampérage en cours lors de la recharge.
+   - `Info puissance de recharge` : valeur de la puissance en cours lors de la recharge.
+
+Exemple:
+
+ <img src="../images/scenario-trigger.png" alt="drawing" width="500"/>
+
+
+ * Changement de l'icone "voiture" utilisé pour indiquer un trajet dans le tableau du tracking:
+
+ <img src="../images/tesla-m3.svg" alt="drawing" width="90"/>
+
+
+<a name="1.9.2"></a>
+# 1.9.2 (2019-12-02)
+
+### Fixes
+
+ * Correctif sur les Tesla virtuelles qui n'avaient pas de commandes ajoutées
+
 <a name="1.9.1"></a>
 # 1.9.1 (2019-11-15)
 
@@ -15,7 +41,6 @@
  * Meilleure prise en charge des periodes de veille du véhicule 
 
 ### Features
-
 
  * [**Range Tracking**] Refonte du mécanisme du tracking et son affichage. Après une durée d'attente au parking de 10 minutes, le tracking effectue un appel `data` toutes les 15 minutes, permettant ainsi à la voiture de se mettre en veille. Une fois en veille, le tracking surveille l'état de la voiture et se remet en mode NORMAL dès que celle-ci sort de sa veille. Les périodes de veille sont matérialisées par un trait pointillé noir sur le graph du suivi d'autonomie et le bouton du tracking se transforme en 'Lune qui ronfle". Un clic sur ce bouton permet de forcer manuellement le tracking en mode NORMAL. Lors des phases de veille le tracking ne fait que des appels "vehicle" pour surveiller le prochain réveil, ce qui garanti ZERO interaction avec la voiture. Le tracking est entièrement configurable via le panneau de configuration du plugin.
  

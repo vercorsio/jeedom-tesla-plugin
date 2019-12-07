@@ -409,23 +409,49 @@ Le Tableau retranscrit les informations d'énergie. Les données sont affichées
 > - En dehors des plages de conduite, le graphique affiche l'évolution de l'autonomie à l'arrêt, et permet par exemple de tracer les pertes de type <i>"vampire drain"</i> et de voir les courbes lors des recharges.
 > - Activer en continu le recording peut conduire à une consommation d'énergie non souhaitée.
 
+Liens utiles:
+== 
+ - Les notes de mise à jour : [ChangeLog](!https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog)
+ - Le forum officiel du plugin : [Forum Community de Jeedom](!https://community.jeedom.com/tags/plugin-tesla)
+ - Une mine d'info sur le [Forum Automobile Propre](!https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412)
+ - Tweeterriennes et tweeterriens, RDV ici: [Tweeter @TeslaJeedom](!https://twitter.com/TeslaJeedom)
+ - Envie de poster un avis sur le plugin ? [Ajoutez le vôtre !](!https://www.jeedom.com/market/?v=d&p=market&type=plugin&plugin_id=tesla)
+ - Besoin d'une Tesla pour tester le plugin ? [Utilisez mon lien de parrainage !](http://ts.la/nicolas2320)
+
+
 FAQ:
 ==
 
-1. Comment béneficier des nouvelles fonctionalités après mise à jour du plugin ?
+1. Comment béneficier des nouvelles fonctionalités après mise à jour du Plugin ?
 
-   Lors de la mise à jour, le plugin synchronise automatiquement vos véhicules configurés avec la nouvelle version du plugin. Cependant, il se peut que la mise à jour ne se soit pas faite. Il suffira alors de cliquer sur le bouton `Synchroniser mes voitures` et les nouvelles commandes Info et Action seront ajoutées à l'équipement et visibles sur le dashboard.
+   Lors de la mise à jour, le Plugin synchronise automatiquement vos véhicules configurés avec la nouvelle version du Plugin. Cependant, il se peut que la mise à jour ne se soit pas faite. Il suffira alors de cliquer sur le bouton `Synchroniser mes voitures` et les nouvelles commandes Info et Action seront ajoutées à l'équipement et visibles sur le dashboard.
 
 2. Comment changer les unités de températures et de distance (°C / °F, km / miles) ?
    
-   Le plugin Tesla de Jeedom lit et utilise les paramètres que vous avez configuré dans votre voiture.
+   Le Plugin Tesla de Jeedom lit et utilise les paramètres que vous avez configuré dans votre voiture.
 
    Idem pour l'affichage de l'autonomie typique ou nominale. 
 
 3. La commande 'Réveiller' ne réveille pas la voiture.
   
-   Depuis le panneau de configuration du plugin, vous pouvez modifier les deux paramètres `Nombre de tentatives pour reveiller le véhicule` et `Nombre de secondes entre deux tentatives` pour essayer de forcer le reveil. Les chances de succès du réveil sont plus grandes quand le mode **Connexion permanente** est activé dans les paramètres de votre voiture. 
+   Depuis le panneau de configuration du Plugin, vous pouvez modifier les deux paramètres `Nombre de tentatives pour reveiller le véhicule` et `Nombre de secondes entre deux tentatives` pour essayer de forcer le reveil. Les chances de succès du réveil sont plus grandes quand le mode **Connexion permanente** est activé dans les paramètres de votre voiture. 
 
+ 4. Est-ce que le tracking du Plugin permet à la voiture de se mettre en veille ?
+    
+    Oui, le Plugin cherche à favoriser sa mise en veille dès que possible. La veille est un état dans lequel se met la voiture et qui réduit sa consommation électrique au plus strict minimum. Il n'y a pas de moyen technique de demander à la voiture de se mettre en veille. Dès qu'elle n'est plus sollicitée pendant une période de 15 à 20 minutes, elle passe en mode veille. Elle sortira de veille si elle est ouverte, conduite, en charge (bien qu'elle se remette parfois en veille lors des phases de charge) et/ou sollicitée par une application tierce (y compris l'app officielle Tesla ou le widget Ios). Des besoins internes à la voitures iront la réveiller également (températures hautes/basses, mise à jour de la voiture, ...)
+    
+    Exemple: 
+      - La voiture roule, le tracking enregistre les données au fil de l'eau, le tracking est en mode NORMAL.
+      - La voiture se gare, le tracking continue en mode NORMAL pendant 10 minutes prêt à se remettre à enregistrer le prochain trajet.
+      - Passées ces 10 minutes, le tracking se met en mode SOMMEIL, arrête l'enregistrement au fil de l'eau et ira interroger la voiture toutes les 15 minutes, laissant la voiture la possibilité de se mettre en veille.
+      - Dès que la voiture passe en veille, le tracking le detecte, arrête tout enregistrement et surveille simplement l'état de la voiture (appel `vehicle`) qui indiquera `offline` toute la durée de la veille.
+      - Quand le tracking voit que l'état de la voiture passe `online` il re passe le tracking en mode NORMAL, prêt à enregistrer un trajet, et/ou à commencer une periode d'attente de 10 minutes.
+
+    Note: lorsque la voiture est en mode SOMMEIL, le tracking ne peut pas detecter un départ entre deux enregistrements. On peut donc ainsi "perdre" au maximum 14 minutes de trajet. Mais il est tout à fait possible de manuellement remettre le tracking en mode normal en cliquant sur l'icone orange du tracking.
+
+ 5. Est-ce qu'il est possible de régler l'ampérage depuis le Plugin ?
+
+     Non. L'API de tesla ne permet pas cette fonction qui serait effectivement très utile pour augmenter ou diminuer la vitesse de charge dans un scénario par exemple. Dès que c'est rendu possible ce sera ajouté au Plugin
 
 ----
 
