@@ -11,7 +11,7 @@ Egalement, ce plugin propose un panneau pour suivre sur un graphique l'évolutio
 
 Vous souhaitez que votre voiture ait une charge de 90% à 6h55 ? Programmez via un scénario l'heure de départ de la charge !
 
-Retrouvez la liste des nouveautés sur le [Change log](!https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog).
+Retrouvez la liste des nouveautés sur le [Change log](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog).
 
 
 Configuration du plugin
@@ -411,11 +411,11 @@ Le Tableau retranscrit les informations d'énergie. Les données sont affichées
 
 Liens utiles:
 == 
- - Les notes de mise à jour : [ChangeLog](!https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog)
- - Le forum officiel du plugin : [Forum Community de Jeedom](!https://community.jeedom.com/tags/plugin-tesla)
- - Une mine d'info sur le [Forum Automobile Propre](!https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412)
- - Tweeterriennes et tweeterriens, RDV ici: [Tweeter @TeslaJeedom](!https://twitter.com/TeslaJeedom)
- - Envie de poster un avis sur le plugin ? [Ajoutez le vôtre !](!https://www.jeedom.com/market/?v=d&p=market&type=plugin&plugin_id=tesla)
+ - Les notes de mise à jour : [ChangeLog](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog)
+ - Le forum officiel du plugin : [Forum Community de Jeedom](https://community.jeedom.com/tags/plugin-tesla)
+ - Une mine d'info sur le [Forum Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412)
+ - Tweeterriennes et tweeterriens, RDV ici: [Tweeter @TeslaJeedom](https://twitter.com/TeslaJeedom)
+ - Envie de poster un avis sur le plugin ? [Ajoutez le vôtre !](https://www.jeedom.com/market/?v=d&p=market&type=plugin&plugin_id=tesla)
  - Besoin d'une Tesla pour tester le plugin ? [Utilisez mon lien de parrainage !](http://ts.la/nicolas2320)
 
 
