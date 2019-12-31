@@ -1,3 +1,11 @@
+<a name="v1.9.2-5-g9c2c519"></a>
+# Beta v1.9.2-5-g9c2c519 (2019-12-28)
+
+### Improvements
+ * Possibilité d'exporter le graph du tracking sous forme d'image (png, jpeg, pdf, svg) ou en fichier (csv, xls):
+
+ <img src="../images/exportChart.gif" alt="exporting" width="300"/>
+
 <a name="1.9.2-4-g1ed09e8"></a>
 # Beta 1.9.2-4-g1ed09e8 (2019-12-02)
 
