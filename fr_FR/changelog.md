@@ -5,6 +5,7 @@
  * Le tracking calcule l'autonomie maximale de la batterie en fonction des données remontées par l'API. Cette valeur peut varier d'un jour à l'autre. Elle est affichée dans le tableau sur le selecteur des voitures
 
  * Possibilité d'exporter le graph du tracking sous forme d'image (png, jpeg, pdf, svg) ou en fichier (csv, xls):
+
     <img src="../images/exportChart.gif" alt="exporting" width="300"/>
 
  * Ajout des commandes suivantes qui peuvent être utilisées comme déclencheur de scénario:
@@ -14,7 +15,7 @@
 
 Exemple:
 
- <img src="../images/scenario-trigger.png" alt="drawing" width="500"/>
+ <img src="../images/scenario-trigger.png" alt="drawing" width="500" style="border:1px dotted grey; padding:20px;"/>
 
  * Changement de l'icone "voiture" utilisée pour indiquer un trajet dans le tableau du tracking:
 
