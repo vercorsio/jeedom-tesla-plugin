@@ -1,3 +1,9 @@
+<a name="v1.9.4"></a>
+# Version 1.9.4 - 2020-01-09
+
+### Correctif
+ * [**Range Tracking**] En mode Energie, l'unité ne basculait pas en %. Corrigé  (Merci `vince_007`)
+
 <a name="v1.9.3"></a>
 # Version 1.9.3 - 2020-01-08
 
@@ -15,7 +21,7 @@
 
 Exemple:
 
- <img src="../images/scenario-trigger.png" alt="drawing" width="500" style="border:1px dotted grey; padding:20px;"/>
+ <img src="../images/scenario-trigger.png" alt="drawing" width="500" style="background:beige; border-radius:8px; border:1px dotted grey; padding:20px;"/>
 
  * Changement de l'icone "voiture" utilisée pour indiquer un trajet dans le tableau du tracking:
 
