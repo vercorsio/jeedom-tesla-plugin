@@ -1,3 +1,10 @@
+
+<a name="v1.9.4-1-g1dcdae7"></a>
+# Version Beta 1.9.4-1-g1dcdae7 (2020-01-10)
+
+### Améliorations
+ * [**Range Tracking**] Calcul plus fin pour l'estimation de la capacité maximale de la batterie. Basé non plus sur le max de toutes les valeurs, mais sur une moyenne. 
+
 <a name="v1.9.4"></a>
 # Version 1.9.4 - 2020-01-09
 
