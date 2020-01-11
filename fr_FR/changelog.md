@@ -1,3 +1,17 @@
+<a name="v1.9.4-2-g81a3324"></a>
+# Version Beta 1.9.4-2-g81a3324 (2020-01-11)
+
+### Améliorations
+ * [**Range Tracking**] Depuis la configuration de chaque véhicule, l'utilisateur à le choix de fixer une valeur pour l'autonomie max, ou bien de laisser le plugin l'estimer dynamiquement:
+
+ <img src="../images/configureRangeAtFull.gif" alt="drawing" width="500" style="border-radius:8px;"/>
+
+> Note: Au niveau du tracking, un "~" prefixe l'autonomie lorsqu'elle est estimée:
+> 
+> <img src="../images/dynamicRangeAtFull.png" alt="drawing" width="300" height="90" style="border-radius:8px;"/> <img src="../images/userDefinedRangeAtFull.png" alt="drawing" width="300"  height="90" style="border-radius:8px;"/>
+
+
+
 
 <a name="v1.9.4-1-g1dcdae7"></a>
 # Version Beta 1.9.4-1-g1dcdae7 (2020-01-10)
