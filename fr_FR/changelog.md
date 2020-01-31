@@ -1,23 +1,25 @@
-<a name="v1.9.4-2-g81a3324"></a>
-# Version Beta 1.9.4-2-g81a3324 (2020-01-11)
+<a name="v1.9.5"></a>
+# Version 1.9.5 (2020-01-31)
 
 ### Améliorations
- * [**Range Tracking**] Depuis la configuration de chaque véhicule, l'utilisateur à le choix de fixer une valeur pour l'autonomie max, ou bien de laisser le plugin l'estimer dynamiquement:
+ * [**Range Tracking**] Depuis la configuration de chaque véhicule, l'utilisateur à le choix de fixer une valeur pour l'autonomie max, ou bien de laisser le plugin l'estimer dynamiquement.
 
  <img src="../images/configureRangeAtFull.gif" alt="drawing" width="500" style="border-radius:8px;"/>
-
+ 
+ * [**Range Tracking**] Calcul plus fin pour l'estimation de la capacité maximale de la batterie. Basé non plus sur le 
+ max de toutes les valeurs, mais sur une moyenne. 
+ * [**Range Tracking**] Le tracking enregistre les températures intérieures et extérieures. Elles ne sont pour l'instant pas affichées sur le graph. Ce sera fait dans une prochaine version.
+ * [**Configuration**] Désormais même si la voiture est en veille, les images sont téléchargées. Si la nouvelle image est corrompue (mauvais lien, ... ) l'ancienne image est restaurée.
+ * [**Configuration**] Ajout d'un bouton 'Documentation' qui dirige vers le site [Tesla Jeedom](http://tesla.jeedom.free.fr)
+ 
+ 
 > Note: Au niveau du tracking, un "~" prefixe l'autonomie lorsqu'elle est estimée:
 > 
 > <img src="../images/dynamicRangeAtFull.png" alt="drawing" width="300" height="90" style="border-radius:8px;"/> <img src="../images/userDefinedRangeAtFull.png" alt="drawing" width="300"  height="90" style="border-radius:8px;"/>
 
+### Correctifs
 
-
-
-<a name="v1.9.4-1-g1dcdae7"></a>
-# Version Beta 1.9.4-1-g1dcdae7 (2020-01-10)
-
-### Améliorations
- * [**Range Tracking**] Calcul plus fin pour l'estimation de la capacité maximale de la batterie. Basé non plus sur le max de toutes les valeurs, mais sur une moyenne. 
+ * Le rapport de santé affichait une erreur lorsque l'autonomie maximale n'était pas renseignée quand elle était estimée dynamiquement.
 
 <a name="v1.9.4"></a>
 # Version 1.9.4 - 2020-01-09
