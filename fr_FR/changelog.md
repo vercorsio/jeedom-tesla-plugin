@@ -1,3 +1,12 @@
+<a name="v1.9.6"></a>
+# Version 1.9.6 (2020-02-07)
+
+### Correctifs
+ * Le panel du tracking n'était pas visible pour un utilisateur autre qu'admin. Corrigé.
+ * La valeur de `Info trappe de recharge` pouvait permuter de 1 (ouvert) à 0 (fermer) sans raison. L'API Tesla parfois remonte une valeur nulle (identifiée à 0) alors que le cable de recharge est engagé. Dans ce cas, le plugin force la valeur à 1 ("ouvert"). Corrigé
+ * Des mises à jour d'informations du tracking continuaient a être effectuées après avoir quitté l'écran du tracking. Corrigé
+ * Typo (vérouiller -> verrouiller)
+
 <a name="v1.9.5"></a>
 # Version 1.9.5 (2020-01-31)
 
