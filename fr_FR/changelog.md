@@ -1,3 +1,27 @@
+<a name="v2.0.0-beta.1-1-g439720d"-></a>
+# Version v2.0.0-beta.1-1-g439720d (2020-02-10)
+
+### Highlights
+
+Version majeure qui intègre une cartographie liée aux trajets effectués et aux lieux de parking/recharge.
+
+### Nouveautés
+ * Suivi en temps réel d'un trajet sur la carte du tracking.
+ * Affichage des trajets parcourus sur une carte, chaque portion est identifiée par une couleur spécifique. 
+ * Les points d'arrêt sont materialisés par des marqueurs `parking`, leur coordonnées GPS sont traduites en adresses physiques.
+ * Un maqueur `parking` peut être transformé en marqueur `favori`. Un nom court peut lui être donné, ainsi qu'un rayon d'action (en m).
+ * Lorsque la voiture entre ou sort du rayon d'action d'un `favori`, le plugin met un à jour ces nouvelles commandes de type Info qui peuvent être utilisées dans des scénarios : `Info s'approche de`, `Info s'éloigne de` et `Info date dernier franchissement`.  
+ * Un clic sur la ligne du trajet permet de suivre l'évolution de la voiture depuis son point de départ jusqu'à son point d'arrivée. 
+ * Ajout de colonnes dans le tableau du tracking pour indiquer les lieux de départ et d'arrivée.
+
+
+**En images, ajouter un favori, l'éditer et suivre un trajet sur la carte :**
+
+<img src="../images/Map-SetFavorite.gif" alt="drawing" width="400" style="border-radius:8px;"/>
+<img src="../images/Map-EditFavorite.gif" alt="drawing" width="400" style="border-radius:8px;"/>
+
+<img src="../images/Map-Table.jpg" alt="drawing" width="804" style="border-radius:8px;"/>
+
 <a name="v1.9.6"></a>
 # Version 1.9.6 (2020-02-07)
 
