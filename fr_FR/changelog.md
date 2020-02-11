@@ -10,9 +10,10 @@ Version majeure qui intègre une cartographie liée aux trajets effectués et au
  * Affichage des trajets parcourus sur une carte, chaque portion est identifiée par une couleur spécifique. 
  * Les points d'arrêt sont materialisés par des marqueurs `parking`, leur coordonnées GPS sont traduites en adresses physiques.
  * Un maqueur `parking` peut être transformé en marqueur `favori`. Un nom court peut lui être donné, ainsi qu'un rayon d'action (en m).
- * Lorsque la voiture entre ou sort du rayon d'action d'un `favori`, le plugin met un à jour ces nouvelles commandes de type Info qui peuvent être utilisées dans des scénarios : `Info s'approche de`, `Info s'éloigne de` et `Info date dernier franchissement`.  
+ * Lorsque la voiture entre ou sort du rayon d'action d'un `favori`, le plugin met à jour ces nouvelles commandes de type Info qui peuvent être utilisées dans des scénarios : `Info s'approche de`, `Info s'éloigne de` et `Info date dernier franchissement`.  
  * Un clic sur la ligne du trajet permet de suivre l'évolution de la voiture depuis son point de départ jusqu'à son point d'arrivée. 
  * Ajout de colonnes dans le tableau du tracking pour indiquer les lieux de départ et d'arrivée.
+ * La légende du tracking n'est plus affichée en permanence. Après clic sur le bouton "Légende", on peut activer/désactiver l'affichage d'une courbe en cliquant sur son titre.
 
 
 **En images, ajouter un favori, l'éditer et suivre un trajet sur la carte :**
