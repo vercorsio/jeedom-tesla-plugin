@@ -16,7 +16,7 @@ Version v2.0.0-beta.1-4-g3333686 (2020-02-12)
  
 
 
-<a name="v2.0.0-beta.1-1-g439720d"-></a>
+<a name="v2.0.0-beta.1-1-g439720d"></a>
 # Version v2.0.0-beta.1-1-g439720d (2020-02-10)
 
 ### Highlights
