@@ -4,7 +4,17 @@
 ### Correctifs
 
  * L'API Tesla remonte parfois des valeurs incohérentes pour la position de la porte de recharge et l'état du cable. Valeurs qui étaient interprétées et traduites en `porte fermée` et `cable désengagé`, alors qu'il n'en est rien. Ceci provoquait des remontées d'info contraires à la réalité, et rendait l'utilisation des commandes `Info trappe de recharge` et `Info cable connecté` dans des scénarios plutôt impossible. Maintenant, ces valeurs incohérentes sont ignorées.
+
+<a name="v2.0.0-beta.1-4-g3333686"-></a>
+Version v2.0.0-beta.1-4-g3333686 (2020-02-12)
+
+### Améliorations
+ * La position des marqueurs peut être redéfinie. Il suffit de glisser/déposer le marqueur sur la carte à son nouvel emplacement.
+
+### Corréctifs
+ * Il pouvait être impossible de définir un favori. L'icone "coeur" qui est utilisé pour ajouter/modifier/supprimer un favori, ainsi que les bouton d'action pouvaient ne pas apparaître. Corrigé
  
+
 
 <a name="v2.0.0-beta.1-1-g439720d"-></a>
 # Version v2.0.0-beta.1-1-g439720d (2020-02-10)
