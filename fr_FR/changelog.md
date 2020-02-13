@@ -1,8 +1,8 @@
 <a name="v2.0.0-beta.1-7-g4ea3619"></a>
-Version v2.0.0-beta.1-7-g4ea3619 (2020-02-12)
+# Version v2.0.0-beta.1-7-g4ea3619 (2020-02-12)
 
 ### Améliorations
- * Sur la version desktop, le calendrier du tracking empèche de selectionner les jours sans tracking. 
+ * Sur la version desktop, le calendrier du tracking ne permet de sélectionner que les jours avec tracking. 
 
 ### Correctifs
  * Les favoris edités sur Safari sont maintenant bien pris en compte. Réglage d'un problème de cache.
