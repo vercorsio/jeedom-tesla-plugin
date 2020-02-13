@@ -1,3 +1,14 @@
+<a name="v2.0.0-beta.1-7-g4ea3619"></a>
+Version v2.0.0-beta.1-7-g4ea3619 (2020-02-12)
+
+### Améliorations
+ * Sur la version desktop, le calendrier du tracking empèche de selectionner les jours sans tracking. 
+
+### Correctifs
+ * Les favoris edités sur Safari sont maintenant bien pris en compte. Réglage d'un problème de cache.
+ * Les informations du véhicule n'étaient pas mises à jour sur le widget. Corrigé.
+
+
 <a name="v1.9.7"></a>
 # Version 1.9.7 (2020-02-12)
 
@@ -5,13 +16,13 @@
 
  * L'API Tesla remonte parfois des valeurs incohérentes pour la position de la porte de recharge et l'état du cable. Valeurs qui étaient interprétées et traduites en `porte fermée` et `cable désengagé`, alors qu'il n'en est rien. Ceci provoquait des remontées d'info contraires à la réalité, et rendait l'utilisation des commandes `Info trappe de recharge` et `Info cable connecté` dans des scénarios plutôt impossible. Maintenant, ces valeurs incohérentes sont ignorées.
 
-<a name="v2.0.0-beta.1-4-g3333686"-></a>
+<a name="v2.0.0-beta.1-4-g3333686"></a>
 Version v2.0.0-beta.1-4-g3333686 (2020-02-12)
 
 ### Améliorations
  * La position des marqueurs peut être redéfinie. Il suffit de glisser/déposer le marqueur sur la carte à son nouvel emplacement.
 
-### Corréctifs
+### Correctifs
  * Il pouvait être impossible de définir un favori. L'icone "coeur" qui est utilisé pour ajouter/modifier/supprimer un favori, ainsi que les bouton d'action pouvaient ne pas apparaître. Corrigé
  
 
