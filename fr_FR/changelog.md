@@ -1,3 +1,10 @@
+<a name="v2.0.0-beta.1-8-gbe084f7"></a>
+# Version v2.0.0-beta.1-8-gbe084f7 (2020-02-14)
+
+### Améliorations
+ * Les marqueurs sont réaffichés après la modification d'un favori ou d'un emplacement de parking.
+
+
 <a name="v2.0.0-beta.1-7-g4ea3619"></a>
 # Version v2.0.0-beta.1-7-g4ea3619 (2020-02-12)
 
