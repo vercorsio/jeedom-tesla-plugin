@@ -1,3 +1,18 @@
+<a name="v2.0.0-beta.1-22-g7385f9b"></a>
+# Version v2.0.0-beta.1-22-g7385f9b (2020-03-02)
+
+### Améliorations
+ * [**Tracking**] Ajout d'un bouton 'plein écran'.
+ * [**Tracking**] Ajout d'une barre de contrôle sur fond noir 'à la Tesla' pour piloter l'affichage de la carte, du graph et du tableau :
+ <img src="../images/tracking-flex-columns.png" alt="drawing" width="804" style="border-radius:8px;"/>
+
+
+ * [**Tracking**] Interruption du chargement si une autre date est demandée.
+ * [**Tracking**] Ajout d'un message dans le tableau si aucune donnée n'est disponible.
+ * [**Tracking**] Déselectionner une ligne du tableau revient au zoom initial.
+ * [**Tracking**] Amélioration du suivi du markeur de la voiture lors de la conduite.
+  
+ 
 <a name="v2.0.0-beta.1-9-gb68f51c"></a>
 # Version v2.0.0-beta.1-9-gb68f51c (2020-02-15)
 
