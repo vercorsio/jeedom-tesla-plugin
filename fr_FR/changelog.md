@@ -1,3 +1,14 @@
+<a name="v2.0.0-beta.1-24-gbf47ae1"></a>
+# Version v2.0.0-beta.1-24-gbf47ae1 (2020-03-03)
+
+### Améliorations
+ * [**Tracking**] Parfois, la voiture en roulant entre dans une zone sans réseau (parking souterrain par exemple) et se gare. Lorsqu'elle repart elle revient visible alors qu'elle roule déjà. Le tracking va scinder ce trajet en deux en utilisant les conditions de durée et de distance entre deux mesures indiquées dans la configuration avancée du plugin:
+
+<img src="../images/tracking-cutTripsConfig.png" alt="drawing" width="804" style="border-radius:8px;"/>
+
+### Correctifs
+ * [**Tracking**] Lorsque la voiture est à l'arret en veille et qu'elle part, le tracking peut mettre un certain temps pour détecter ce nouvel état (driving). Cela se traduit par une phase de parking qui indique un kilométrage non nul. Comme il est impossible de déterminer l'heure exacte du départ, les statistiques liées a cette phase ne sont pas pertinentes. Ces trajets fantômes sont ignorés et retirés du tableau.
+
 <a name="v2.0.0-beta.1-22-g7385f9b"></a>
 # Version v2.0.0-beta.1-22-g7385f9b (2020-03-02)
 
