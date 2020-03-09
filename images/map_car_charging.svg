@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+<style>
+  /* <![CDATA[ */
+   @keyframes pulse {0%{fill:#E74C3C}50%{fill:#fff}100%{fill:#fff} }
+    .cnt { animation: pulse 0.8s infinite linear alternate}
+   /* ]]> */
+  </style>
+<circle fill="#000" cx="50%" cy="50%" r="15" />
+<circle fill="#E74C3C" cx="50%" cy="50%" r="13" />
+<circle class="cnt" cx="50%" cy="50%" r="7" />
+ </svg>

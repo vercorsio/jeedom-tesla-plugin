@@ -4,14 +4,21 @@ Bienvenue sur la page de documentation du plugin Tesla de Jeedom !
 
 Avec ce plugin, l'utilisateur peut accéder à sa voiture Tesla, et intéragir avec les données remontées par l'API proposée par Tesla.
 
-Egalement, ce plugin propose un panneau pour suivre sur un graphique l'évolution de l'autonomie et de l'énergie au cours d'une journée, au gré des kilomètres parcourus:
+Ce plugin propose également un panneau pour suivre sur un graphique l'évolution de l'autonomie et de l'énergie au cours d'une journée, au gré des kilomètres parcourus:
 
 
 ![tracking-graph](../images/consoLow480.gif)
 
-Vous souhaitez que votre voiture ait une charge de 90% à 6h55 ? Programmez via un scénario l'heure de départ de la charge !
+Sur ce même panneau, vous trouverez un tableau récapitulatif des étapes de la journées (conduite, charge, parking). Il détaille les durées, consommation, vitesse, ... de chaque étape, les colonnes sont modifiables et peuvent être triées.
 
-Retrouvez la liste des nouveautés sur le [Change log](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog).
+Une carte permet aussi de retracer l'ensemble des trajets d'une journée, de définir des favoris, de suivre à la trace votre voiture depuis l'écran de votre Tesla ! 
+
+![tracking-graph](../images/tracking-map.png)
+
+Et parce que ce plugin est une composante de votre système de domotique, la majeure partie des fonctions de la voiture peut être programmée dans des scénarios. Par exemple, si vous souhaitez que votre voiture ait une charge de 90% à 6h55, il suffit de créer le scénario qui règllera l'heure de départ de la charge !
+
+
+Retrouvez la liste des nouveautés sur le [Change log](http://tesla.jeedom.free.fr/changelog).
 
 
 Configuration du plugin
@@ -27,8 +34,8 @@ Le plugin va rechercher la ou les Tesla associées à votre compte et créer les
 ![config](../images/configPlugin-2.png)
 > **Tip**
 >
-> Ce plugin nécessite que votre Tesla soit accessible sur le réseau pour ne pas provoquer d'erreur. 
-> Si l'application Tesla sur votre smartphone arrive à se connecter à votre Tesla, le plugin sera à même de configurer correctement votre Tesla dans Jeedom.
+>  - Ce plugin nécessite que votre Tesla soit accessible sur le réseau pour que la configuration se passe correctement. 
+>  - Si l'application Tesla sur votre smartphone arrive à se connecter à votre Tesla, le plugin sera à même de configurer correctement votre Tesla dans Jeedom.
 
 Pour accéder au panneaux de suivi de l'autonomie, il suffit de cocher `Afficher le panneau desktop` et `Afficher le panneau mobile`:  
 ![config](../images/configPlugin-4.png)
@@ -38,7 +45,7 @@ Les deux méthodes de connections sont les suivantes:
 
 ### 1) Avec vos identifiants de compte Tesla:
 
-- **Email** : l'email que vous utilisez pour vos connecter sur votre compte Tesla
+- **Email** : l'email que vous utilisez pour vous connecter sur votre compte Tesla
 - **Mot de passe** : le mot de passe correspondant
 > **Note**
 >
@@ -64,7 +71,7 @@ Votre jeton d'accès à votre compte Tesla : 49329effb7d381c945fbf7e6b3e02691e74
 > Le plugin ne fonctionnera que pendant la durée de validité du jeton d'accès. 
 > Un bouton `revoker mon jeton d'accès` permet d'informer le service Tesla que ce jeton ne permettra plus la connexion au service.
 
-Le bouton __"Synchroniser mes voitures"__ permettra d'effectuer la recherche et ajoutera un équipement Jeedom pour chaque véhicule Tesla non encore créé.
+Le bouton __"Synchroniser mes voitures"__ permettra d'effectuer la recherche et ajoutera un équipement Jeedom pour chaque véhicule Tesla non encore créé. Un clic sur ce bouton peut permettre également de mettre à jour l'équipement associé à votre Tesla. 
 
 Tesla virtuelle
 --
@@ -77,8 +84,7 @@ Autres paramètres de configuration
 --
 
 - **Coût du kWh** (en euro) : Nécessaire pour calculer approximativement le cout d'une charge, le prix pour parcourir 100km et le nombre de km que l'on peut faire avec 1 euro. La valeur par défaut est `0.14`.
-- **Tesla Client ID** et **Tesla Client Secret** : deux clefs publiques qui sont necessaires pour accéder à l'API du serveur des Tesla. Déjà renseignées, ces clefs peuvent être modifiées au cas où l'API requiert de nouvelles valeurs. 
-
+- **Tesla Client ID** et **Tesla Client Secret** : deux clefs publiques qui sont nécessaires pour accéder à l'API du serveur des Tesla. Déjà renseignées, ces clefs peuvent être modifiées au cas où l'API requiert de nouvelles valeurs. 
 
 
 
@@ -95,11 +101,15 @@ Une fois le plugin configuré, le ou les véhicules de votre compte tesla sont a
 Le __Suivi de l'autonomie__ en mode `énergie` nécessite quelques informations liées à la batterie, telle que:
 
  * __Capacité batterie__ : La capacité "commerciale" de la batterie en kWh
- * __Autonomie__ : le nombre de kilomètres qu'il est possible de parcourir avec 100% d'autonomie 
+ * __Autonomie__ : le nombre de kilomètres qu'il est possible de parcourir avec 100% d'autonomie. Vous pouvez choisir de laisser le plugin estimer le nombre de kilomètre qu'il est possible de faire avec un 'plein'.
  * __Consommation typique__ : En théorie, c'est le rapport entre `Capacité batterie X 1000 / Autonomie`. Ajustable selon ses propres constatations.
  * __Affichage__ : L'affichage par défaut du Suivi de l'Autonomie. Choix : `Energie` ou `Distance`. 
 
+Ici vous pourrez également choisir une image pour votre voiture.
 
+
+Liste des commandes et des actions du véhicule
+=======================
 Les commandes d'info et d'action associées à chaque Tesla sont les suivantes
 
 ![config](../images/configCar-2.png)
@@ -116,6 +126,7 @@ Commandes de type **info**
 | **Info climatisation** | Indique si la climatisation est allumée ou éteinte.
 | **Info température habitacle** | Indique la température à l'intérieur du véhicule.
 | **Info recharge** | Indique si la voiture est en train de charger ou non. Les valeurs possibles sont  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled`, `Driving` }.
+| **Info cablle connecté** | Indique si le cable de recharge est connecté.
 | **Info niveau de batterie** | Indique le pourcentage de la batterie.
 | **Info limite de recharge** | Indique le pourcentage à atteindre à la fin d'un recharge.
 | **Info verouillage** | Indique si la voiture est fermée ou ouverte.
@@ -130,6 +141,9 @@ Commandes de type **info**
 | **Détail de la recharge** | Affiche les données issues de la recharge.
 | **Détail de la climatisation** | Affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur). 
 | **Détail data** | Pour debug - affiche un buffer encode en 64bits débarassé de toute info personnelle (VIN/id/GPS/...).
+| **Info sapproche de** | Nom du favori duquel se rapproche la voiture.
+| **Info séloigne de** | Nom du favori duquel s'éloigne la voiture.
+| **Info date dernier franchissement** | Timestamp qui indique l'heure à laquelle la frontière du dernier favori a été franchie.
 
 Commandes de type **action**
 --
@@ -143,6 +157,7 @@ Commandes de type **action**
 | **Contrôler le vérouillage** | Va permettre de vérouiller ou déverouiller la voiture.
 | **Contrôler le coffre avant** | Va permettre de vérouiller ou déverouiller le coffre avant (frunk).
 | **Contrôler le coffre arrière** | Va permettre de vérouiller ou déverouiller le coffre arrière (trunk).
+| **Contrôler la trappe de charge** | Va permettre d'ouvrir/fermer la trappe de recharge.
 | **Contrôler le toit ouvrant** | Va permettre d'entrouvrir ou de fermer le toît panoramique.
 | **Contrôler l'heure de fin de recharge** | Va permettre de définir l'heure (format Hmm) à laquelle la charge devra se finir.
 | **Contrôler le suivi de l'autonomie** | Va permettre de démarrer ou arrêter le suivi de l'autonomie.
@@ -240,7 +255,7 @@ Contrôler la charge
 | ![charPau](../images/charging_Pause.png) | La recharge a été manuellement arrétée | _... reprendre la recharge_
 | ![charCom](../images/charging_Complete.png) | La recharge est terminée | ... _être sans effet_
 | ![charNul](../images/charging_Null.png) | Etat de recharge indéterminée | ... _être sans effet_
-| ![panoOn](../images/charge_door.gif) | Ouverture de la trappe de recharge | _... ferme/ouvre la trappe de recharge_ |
+| ![panoOn](../images/trappe.png) | Ouverture de la trappe de recharge | _... ferme/ouvre la trappe de recharge_ |
 
 Contrôler le suivi de l'autonomie
 --
@@ -251,11 +266,11 @@ Contrôler le suivi de l'autonomie
 | ![track](../images/tracking_on.gif) | Le suivi de l'autonomie est démarré | _... arrête le suivi de l'autonomie_
 | ![track](../images/tracking_sommeil_jour.gif) | Le suivi de l'autonomie est démarré en mode SOMMEIL jour| _... arrête le suivi de l'autonomie_
 | ![track](../images/tracking_sommeil_nuit.gif) | Le suivi de l'autonomie est démarré en mode SOMMEIL nuit| _... arrête le suivi de l'autonomie_
-| ![track](../images/tracking_auto.png) | Le suivi de l'autonomie est démarré et géré par Jeedom | _être sans effet_
-
+|
 > **Note**
 >
-> Si dans la configuration du plugin la **Gestion Automatique** du démon est activé, Jeedom cherchera à redémarrer le démon s'il est arrêté. Vous pouvez donc laisser Jeedom garantir que le `tracking` est actif en permanance (**Gestion Automatique**) ou le démarrer et l'arrêter manuellement.
+> - Si dans la configuration du plugin la **Gestion Automatique** du démon est activé, Jeedom cherchera à redémarrer le démon s'il est arrêté. Vous pouvez donc laisser Jeedom garantir que le `tracking` est actif en permanance (**Gestion Automatique**) ou le démarrer et l'arrêter manuellement.
+> - Si la **Gestion Automatique** du démon est désactivé il suffit de tenir appuyé sur le bouton du tracking au moins 5 secondes pour voir apparaître le bouton __STOP__.
 
 Pour modifier depuis le dashboard la limite de charge, il suffit de délacer le curseur sur le graph de la batterie. Le pourcentage ainsi que le nombre approximatif de kilomètres seront affichés:
 
@@ -409,15 +424,63 @@ Le Tableau retranscrit les informations d'énergie. Les données sont affichées
 > - En dehors des plages de conduite, le graphique affiche l'évolution de l'autonomie à l'arrêt, et permet par exemple de tracer les pertes de type <i>"vampire drain"</i> et de voir les courbes lors des recharges.
 > - Activer en continu le recording peut conduire à une consommation d'énergie non souhaitée.
 
+
+Cartographie
+==
+
+La version 2.0.0 du plugin introduit la cartographie qui permet :
+ - de traduire les lieux de parking en adresses physiques,
+ - d'afficher sur le tableau du tracking les lieux de départ et d'arrivée,
+ - de définir un lieu de parking en favori,
+ - d'utiliser, dans un scénario, les évenements émis lorsque la voiture entre ou sort d'un favori,
+ - d'afficher les trajets effectués sur une carte chacun étant d'une couleur spécifique,
+ - de suivre la voiture sur la carte lors des déplacements,
+ - de rejouer un trajet effectué en suivant la pastille sur la carte et sur le graphe d'autonomie.
+
+Editer un favori
+--
+Le menu en haut à droite permet d'afficher sur la carte tous les lieux de parking et/ou ces lieux s'ils ont été transformé en favori.
+
+Le marqueur du parking peut être déplacé pour le positionner au bon endroit.
+
+Un clic sur ce marqueur, puis sur le "coeur" permet de le transformer en favori.
+
+On voit sur la carte ci dessous qu'un arret à été fait au Col du Lautaret (trajet rouge puis trajet vert). On peut donc définir ce lieu comme un favori, et lui indiquer un rayon d'action. La prochaine fois que la voiture entrera ou sortira de cette 'bulle', un évenement Jeedom sera émis, pouvant par exemple déclencher un scénario (ouverture de portail, éclairage, ... ).
+
+![map-setfavori](../images/Map-setFavorite.gif)
+
+Les différentes formes de la pastille
+--
+ <div class="col-sm-9 col-sm-offset-3">
+              Sur la carte la pastille qui représente l'emplacement de la voiture prend différentes formes selon son état:
+              <ul style='list-style:none'>
+                <li style='padding:4px 0; display:flex; align-items:center '><img style='height:40px' src="../images/map_car_offline.svg">&nbsp;&nbsp; la voiture est en veille sur un parking.</li> 
+                <li style='padding:4px 0; display:flex; align-items:center '> <img style='height:40px' src="../images/map_car_online.svg">&nbsp;&nbsp; la voiture est en ligne sur un parking.</li>
+                <li style='padding:4px 0; display:flex; align-items:center '><img style='height:40px' src="../images/map_car_charging.svg">&nbsp;&nbsp; la voiture est en cours de recharge.</li>
+                <li style='padding:4px 0; ; display:flex; align-items:center '><img style='height:40px' src="../images/map_car_driving.svg">&nbsp;&nbsp; la voiture roule.</li>
+              </ul>
+            </div>
+
+
+
 Liens utiles:
 == 
- - Les notes de mise à jour : [ChangeLog](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/changelog)
+ - Le site officiel du plugin : [Tesla Jeedom](http://tesla.jeedom.free.fr)
+ - Les notes de mise à jour : [ChangeLog](http://tesla.jeedom.free.fr/changelog)
  - Le forum officiel du plugin : [Forum Community de Jeedom](https://community.jeedom.com/tags/plugin-tesla)
  - Une mine d'info sur le [Forum Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412)
  - Tweeterriennes et tweeterriens, RDV ici: [Tweeter @TeslaJeedom](https://twitter.com/TeslaJeedom)
  - Envie de poster un avis sur le plugin ? [Ajoutez le vôtre !](https://www.jeedom.com/market/?v=d&p=market&type=plugin&plugin_id=tesla)
  - Besoin d'une Tesla pour tester le plugin ? [Utilisez mon lien de parrainage !](http://ts.la/nicolas2320)
-
+ - Envie de soutenir le développement du projet : 
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style='text-align:center'>
+<input type="hidden" name="cmd" value="_donations" />
+<input type="hidden" name="business" value="8SN6AK2X5LEQQ" />
+<input type="hidden" name="item_name" value="Soutenir le développement !" />
+<input type="hidden" name="currency_code" value="EUR" />
+<input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Bouton Faites un don avec PayPal" />
+<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1" />
+</form>
 
 FAQ:
 ==
