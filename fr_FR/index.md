@@ -13,7 +13,7 @@ Sur ce même panneau, vous trouverez un tableau récapitulatif des étapes de la
 
 Une carte permet aussi de retracer l'ensemble des trajets d'une journée, de définir des favoris, de suivre à la trace votre voiture depuis l'écran de votre Tesla ! 
 
-![tracking-graph](../images/tracking-map.png)
+ <img src="../images/tracking-map.png" alt="map" width="804" style="border-radius:8px;"/>
 
 Et parce que ce plugin est une composante de votre système de domotique, la majeure partie des fonctions de la voiture peut être programmée dans des scénarios. Par exemple, si vous souhaitez que votre voiture ait une charge de 90% à 6h55, il suffit de créer le scénario qui règllera l'heure de départ de la charge !
 
@@ -93,11 +93,13 @@ Configuration du véhicule
 
 Une fois le plugin configuré, le ou les véhicules de votre compte tesla sont ajoutés. Il suffit de cliquer sur chacun pour l'activer, le rendre visible et l'attacher à un objet parent (ici le Garage) :
 
-![config](../images/configPlugin-3.png)
+ <img src="../images/configPlugin-3.png" alt="config" width="804" style="border-radius:8px;"/>
 
  * __Vehicle Identification Number (VIN)__ : Champ obligatoire qui permet d'identifier de manière unique votre véhicule pour intéragir avec les serveurs Tesla.
 
-![config](../images/configCar-1.png)
+
+ <img src="../images/configCar-1.png" alt="config" width="804" style="border-radius:8px;"/>
+
 Le __Suivi de l'autonomie__ en mode `énergie` nécessite quelques informations liées à la batterie, telle que:
 
  * __Capacité batterie__ : La capacité "commerciale" de la batterie en kWh
@@ -112,7 +114,7 @@ Liste des commandes et des actions du véhicule
 =======================
 Les commandes d'info et d'action associées à chaque Tesla sont les suivantes
 
-![config](../images/configCar-2.png)
+ <img src="../images/configCar-2.png" alt="config" width="804" style="border-radius:8px;"/>
 
 Commandes de type **info**
 --
@@ -137,7 +139,7 @@ Commandes de type **info**
 | **Info heure de fin de recharge** | Indique l'heure (format Hmm) à laquelle la charge est censée se terminer.
 | **Odomètre** | Indique la valeur du compteur kilométrique (miles ou km).
 | **Info véhicule** | Affiche un titre et un sous titre correspondant à l'état actuel de la voiture. Par exemple _Conduite 67km_, _Recharge planifiée à 22h50_, _Stationnée_, _Supercharge_, ...
-| **Détail autonomie** | Affiche un graph de la batterie
+| **Détail autonomie** | Affiche un graphe de la batterie
 | **Détail de la recharge** | Affiche les données issues de la recharge.
 | **Détail de la climatisation** | Affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur). 
 | **Détail data** | Pour debug - affiche un buffer encode en 64bits débarassé de toute info personnelle (VIN/id/GPS/...).
@@ -267,12 +269,13 @@ Contrôler le suivi de l'autonomie
 | ![track](../images/tracking_sommeil_jour.gif) | Le suivi de l'autonomie est démarré en mode SOMMEIL jour| _... arrête le suivi de l'autonomie_
 | ![track](../images/tracking_sommeil_nuit.gif) | Le suivi de l'autonomie est démarré en mode SOMMEIL nuit| _... arrête le suivi de l'autonomie_
 |
+
 > **Note**
 >
 > - Si dans la configuration du plugin la **Gestion Automatique** du démon est activé, Jeedom cherchera à redémarrer le démon s'il est arrêté. Vous pouvez donc laisser Jeedom garantir que le `tracking` est actif en permanance (**Gestion Automatique**) ou le démarrer et l'arrêter manuellement.
 > - Si la **Gestion Automatique** du démon est désactivé il suffit de tenir appuyé sur le bouton du tracking au moins 5 secondes pour voir apparaître le bouton __STOP__.
 
-Pour modifier depuis le dashboard la limite de charge, il suffit de délacer le curseur sur le graph de la batterie. Le pourcentage ainsi que le nombre approximatif de kilomètres seront affichés:
+Pour modifier depuis le dashboard la limite de charge, il suffit de délacer le curseur sur le graphe de la batterie. Le pourcentage ainsi que le nombre approximatif de kilomètres seront affichés:
 
 ![setLimit](../images/setChargingLimit.gif)
 
@@ -294,14 +297,15 @@ Scenario
 Exemples de scénarios: 
 
 * Modifier le seuil de recharge à son maximum :
-  ![setLimit](../images/scenario_setChargeLimit_100.png)
+ <img src="../images/scenario_setChargeLimit_100.png" alt="scenario set limit" width="804" style="border-radius:8px;"/>
+
 
 * Reveiller la voiture et mettre le seuil de charge à 90% et activer la climatisation si la température de l'habitacle est inférieur à 14°C :
 
-  ![climate](../images/scenario_Climate.png)
+ <img src="../images/scenario_Climate.png" alt="scenario climate" width="804" style="border-radius:8px;"/>
 
 * Programmer le départ de la charge pour que la voiture ait 90% de batterie à 7h00 !
-  ![startTime](../images/scenario_getStartTime.png)
+ <img src="../images/scenario_getStartTime.png" alt="scenario startTime" width="804" style="border-radius:8px;"/>
 
 > **Note** 
 >
@@ -377,7 +381,7 @@ Lorsque le démon est en mode **Gestion Automatique**, il n'est pas possible d'i
 
 > **Notes**
 >
-> Lors de l'acquisition et si le graph affiché est le graph du jour, l'affichage bascule automatiquement en en mode `live`, et affiche en temps réel les dernières données acquises.
+> Lors de l'acquisition et si le graphe affiché est le graphe du jour, l'affichage bascule automatiquement en en mode `live`, et affiche en temps réel les dernières données acquises.
 >
 > Au premier lancement, il peut se passer plusieurs minutes avant que des données soient
 effectivement disponibles pour l'affichage.
@@ -390,6 +394,8 @@ L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui s
 - <code>km 30</code> à <code>km 50</code>: autoroute.
 - <code>km 50</code> à <code>km 65</code>: route départementale - _altitude à l'arrivée: 500m._
 
+ <img src="../images/tracking-graph.png" alt="tracking graph" width="804" style="border-radius:8px;"/>
+
 ![tracking-graph](../images/tracking-graph.png)
 
 - En abscisse on trouve le temps
@@ -399,7 +405,7 @@ L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui s
 
 
 
-Un tableau récapitulatif par journée est affiché et permet sur selection d'une ligne de zoomer sur le graph correspondant. Un clic sur la ligne "Total" va afficher la journée complète.
+Un tableau récapitulatif par journée est affiché et permet sur selection d'une ligne de zoomer sur le graphe correspondant. Un clic sur la ligne "Total" va afficher la journée complète.
 
 ![tracking-graph](../images/tracking-table.png)
 
@@ -514,9 +520,9 @@ FAQ:
 
     Note: lorsque la voiture est en mode SOMMEIL, le tracking ne peut pas detecter un départ entre deux enregistrements. On peut donc ainsi "perdre" au maximum 14 minutes de trajet. Mais il est tout à fait possible de manuellement remettre le tracking en mode normal en cliquant sur l'icone orange du tracking.
 
- 5. Est-ce qu'il est possible de régler l'ampérage depuis le Plugin ?
+ 5. Est-ce qu'il est possible de régler l'intensité depuis le Plugin ?
 
-     Non. L'API de tesla ne permet pas cette fonction qui serait effectivement très utile pour augmenter ou diminuer la vitesse de charge dans un scénario par exemple. Dès que c'est rendu possible ce sera ajouté au Plugin
+     Non. L'API de tesla ne permet pas cette fonction qui serait effectivement très utile pour augmenter ou diminuer la vitesse de charge dans un scénario par exemple. Dès que c'est rendu possible ce sera ajouté au Plugin.
 
 ----
 
