@@ -15,7 +15,7 @@ Une carte permet aussi de retracer l'ensemble des trajets d'une journée, de dé
 
  <img src="../images/tracking-map.png" alt="map" width="804" style="border-radius:8px;"/>
 
-Et parce que ce plugin est une composante de votre système de domotique, la majeure partie des fonctions de la voiture peut être programmée dans des scénarios. Par exemple, si vous souhaitez que votre voiture ait une charge de 90% à 6h55, il suffit de créer le scénario qui règllera l'heure de départ de la charge !
+Et parce que ce plugin est une composante de votre système de domotique, la majeure partie des fonctions de la voiture peut être programmée dans des scénarios. Par exemple, si vous souhaitez que votre voiture ait une charge de 90% à 6h55, il suffit de créer le scénario qui règlera l'heure de départ de la charge !
 
 
 Retrouvez la liste des nouveautés sur le [Change log](http://tesla.jeedom.free.fr/changelog).
@@ -297,15 +297,15 @@ Scenario
 Exemples de scénarios: 
 
 * Modifier le seuil de recharge à son maximum :
- <img src="../images/scenario_setChargeLimit_100.png" alt="scenario set limit" width="804" style="border-radius:8px;"/>
+  <img src="../images/scenario_setChargeLimit_100.png" alt="scenario set limit" width="804" style="border-radius:8px;"/>
 
 
 * Reveiller la voiture et mettre le seuil de charge à 90% et activer la climatisation si la température de l'habitacle est inférieur à 14°C :
 
- <img src="../images/scenario_Climate.png" alt="scenario climate" width="804" style="border-radius:8px;"/>
+  <img src="../images/scenario_Climate.png" alt="scenario climate" width="804" style="border-radius:8px;"/>
 
 * Programmer le départ de la charge pour que la voiture ait 90% de batterie à 7h00 !
- <img src="../images/scenario_getStartTime.png" alt="scenario startTime" width="804" style="border-radius:8px;"/>
+  <img src="../images/scenario_getStartTime.png" alt="scenario startTime" width="804" style="border-radius:8px;"/>
 
 > **Note** 
 >
@@ -344,8 +344,6 @@ Un graphique retrace l'évolution de l'autonomie ou de l'énergie au cours d'une
 > * Pour accéder directement à la vue `Tesla` depuis la version Mobile sans jongler avec les menus, il est possible de définir `Tesla` comme vue "Mobile" par défaut dans la configuration du profil (Menu `User` -> `Profil Admin` -> Onglet `Interface`)
 >
 > * Le suivi de l'autonomie peut être programmé via un scénario.
-
-
 
 
 
@@ -396,7 +394,6 @@ L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui s
 
  <img src="../images/tracking-graph.png" alt="tracking graph" width="804" style="border-radius:8px;"/>
 
-![tracking-graph](../images/tracking-graph.png)
 
 - En abscisse on trouve le temps
 - En ordonnée à gauche en <b>noir</b>, le kilométrage parcouru. <u>Note:</u> l'angle de la courbe est proportionel à la vitesse.
@@ -407,7 +404,8 @@ L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui s
 
 Un tableau récapitulatif par journée est affiché et permet sur selection d'une ligne de zoomer sur le graphe correspondant. Un clic sur la ligne "Total" va afficher la journée complète.
 
-![tracking-graph](../images/tracking-table.png)
+ <img src="../images/tracking-table.png" alt="tracking table" width="804" style="border-radius:8px;"/>
+
 
 - L'`efficience` correspond au pourcentage de km gagnés/perdus par rapport à la longueur du trajet, ce qui permet de pondérer les résultats. Les petits trajets sont 'énergivores'.
  - Les trois boutons en haut à droite du tableau permettent de filtrer par type d'étape et de pouvoir par exemple calculer les pertes liées aux seules étapes de type `parking`.
