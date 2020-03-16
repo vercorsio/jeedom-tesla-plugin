@@ -38,7 +38,7 @@ Voici la liste des principales nouveautés que vous pouvez retrouver sur la  [pa
  * L'évènement `Info trappe de recharge` semble parfois remonter ouvert alors qu'il est fermé, et inversement. Je conseille d'utiliser dans les scénarios de déclenchement de recharge, l'évènement `Info cable connecté`
 
 
-Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé leur retours et leur soutient  : `Funroc`, `jerry`, `J0kers`, `MattKirby`, `matts`, `oxton`, `Tonio16`, ... 
+Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé leur retours et leur soutient  : `bobjouy`, `Funroc`, `jerry`, `J0kers`, `MattKirby`, `matts`, `oxton`, `Tonio16`, ... 
 
 <a name="v2.0.0-beta.1-25-g2b4660d"></a>
 # Version v2.0.0-beta.1-25-g2b4660d (2020-03-03)
