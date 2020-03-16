@@ -6,7 +6,7 @@
 Voici la liste des principales nouveautés que vous pouvez retrouver sur la  [page](http://tesla.jeedom.free.fr/version2/)  dédiée à la sortie de la V2 :
 
 
- <img src="../images/teslaPluginv2.gif" alt="v2" width="320" style="border-radius:8px;width:320px text-align:center; margin:0 auto"/>
+ <img src="../images/teslaPluginV2.gif" alt="v2" width="320" style="border-radius:8px;width:320px text-align:center; margin:0 auto"/>
 
 
 ### Nouveautés
