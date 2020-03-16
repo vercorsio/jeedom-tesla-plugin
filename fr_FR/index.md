@@ -41,7 +41,7 @@ Pour accéder au panneaux de suivi de l'autonomie, il suffit de cocher `Afficher
 ![config](../images/configPlugin-4.png)
 
 
-Les deux méthodes de connections sont les suivantes:
+Les deux méthodes de connexions sont les suivantes:
 
 ### 1) Avec vos identifiants de compte Tesla:
 
@@ -53,7 +53,7 @@ Les deux méthodes de connections sont les suivantes:
 > 
 > De part la nature de Jeedom qui est Self Hosted, vos identifiants sont stockés **localement** sur la machine qui héberge votre Jeedom. Malgré tout, si vous le souhaitez, vous pourriez après la première synchronisation, effacer les champs email/mot de passe.
 >
-> Néanmoins, le jeton d'accès a une date d'expiration (environ 90 jours) au dela de laquelle il tentera de refaire une connection pour le rafraichir. Il vous appartiendra de remettre vos identifiants et/ou coller un jeton d'accès (cf methode n°2)
+> Néanmoins, le jeton d'accès a une date d'expiration (environ 90 jours) au dela de laquelle il tentera de refaire une connexion pour le rafraichir. Il vous appartiendra de remettre vos identifiants et/ou coller un jeton d'accès (cf methode n°2)
 
 ### 2) Avec un jeton d'accès:
 

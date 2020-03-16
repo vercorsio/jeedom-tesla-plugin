@@ -1,3 +1,45 @@
+<a name="v2.0.0"></a>
+# Version v2.0.0 (2020-03-15)
+
+**La version 2 du plugin, compatible avec Jeedom V3 et V4, est maintenant disponiblle en version stable !**
+
+Voici la liste des principales nouveautés que vous pouvez retrouver sur la  [page](http://tesla.jeedom.free.fr/version2/)  dédiée à la sortie de la V2 :
+
+
+ <img src="../images/teslaPluginv2.gif" alt="v2" width="320" style="border-radius:8px;width:320px text-align:center; margin:0 auto"/>
+
+
+### Nouveautés
+ * La **cartographie** fait son entrée !!
+   - Suivi en temps réel d'un trajet sur la carte du tracking.
+   - Affichage des trajets parcourus sur une carte, chaque portion est identifiée par une couleur spécifique.
+   - Les points d'arrêt sont matérialisés par des marqueurs parking, leur coordonnées GPS sont traduites en adresses physiques.
+   - Un marqueur parking peut être transformé en marqueur favori. Un nom court peut lui être donné, ainsi qu'un rayon d'action (en m).
+   - Un clic sur la ligne du trajet permet de suivre l'évolution de la voiture depuis son point de départ jusqu'à son point d'arrivée.
+   - Ajout de colonnes dans le tableau du tracking pour indiquer les lieux de départ et d'arrivée.
+   - Lorsque la voiture entre ou sort d'un favori, un évennement est émis qui peut servir de déclencheur pour un scenario (Homelink, ...)
+   - La pastille qui materialise la position de la voiture sur la carte change de couleur en fonction de son état (online, offline, conduite, charge)
+ * **Mode plein écran** et barre de menus noire "à la Tesla" qui permet de choisir affichage désiré.
+ * Le plugin est maintenant traduit en **espagnol**.
+ * **Parking souterrain** : découpe d'un trajet en deux si deux mesures consécutives sont séparées d'au moins 5 minutes et au plus 500 mètres (valeurs configurables)
+ * Mise à jour en live de la valeur "Info réveillée" lorsque le tracking est activé, ce qui permet de **monitorer l'état de la voiture** (notification) et d'utiliser la valeur pour déclencher des scénarios.
+
+### Améliorations
+ * Le calendrier pour sélectionner une date n'affiche que celles qui contiennent des données de tracking.  
+ * Il est possible de désélectionner une ligne du tableau pour revenir au zoom global
+ * Agrandissement de la jauge de l'autonomie dans le widget
+
+### Correctifs
+ * En mode "Energie", la courbe de l'autonomie arborait une verticale à droite. Corrigé
+
+... ainsi que les correctifs listés ci-dessous lors de la sortie des différentes versions béta.
+
+### Problème connu
+ * L'évènement `Info trappe de recharge` semble parfois remonter ouvert alors qu'il est fermé, et inversement. Je conseille d'utiliser dans les scénarios de déclenchement de recharge, l'évènement `Info cable connecté`
+
+
+Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé leur retours et leur soutient  : `Funroc`, `jerry`, `J0kers`, `MattKirby`, `matts`, `oxton`, `Tonio16`, ... 
+
 <a name="v2.0.0-beta.1-25-g2b4660d"></a>
 # Version v2.0.0-beta.1-25-g2b4660d (2020-03-03)
 
