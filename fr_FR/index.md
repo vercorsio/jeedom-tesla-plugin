@@ -354,8 +354,8 @@ Configuration et impact du tracking
 
 Lorsque le véhicule roule ou est en charge, les graphs permettent de donner une idée très précise de l'évolution de l'autonomie. En revanche, à l'arrêt au parking, il n'est pas nécessaire de monitorer aussi finement l'état de la voiture.
 
-Passé un certain laps de temps (`temps d'attente au parking`) le tracking ralentit son rythme et espace les différents appels, passant par défaut d'un appel toutes les 5 secondes lors du roulage et des recharges à un appel toutes les minutes (`SOMMEIL JOUR`). La nuit entre 23h et 5h du matin, ce rythme décroit encore plus puisqu'il passe à un appel toutes les dix minutes (`SOMMEIL NUIT`).
-Ces intervalles de temps sont configurables.
+Passé un certain laps de temps (`temps d'attente au parking`) le tracking ralentit son rythme et espace les différents appels, passant par défaut d'un appel toutes les 5 secondes lors du roulage et des recharges à un appel toutes les 15 minutes minutes (`SOMMEIL JOUR`) laissant la possibilité à la voiture d'entrer en veillle. La nuit, ce rythme décroit encore plus puisqu'il passe à un appel toutes les trente minutes (`SOMMEIL NUIT`).
+Ces intervalles de temps sont configurables, ainsi que les heures de début et de fin de la periode de `SOMMEIL NUIT`
 
 Quand la voiture se remet à rouler/charger, le prochain appel va detecter ce changement d'état et fera passer le tracking en mode `NORMAL`, pour garantir un suivi régulier du tracking.
 

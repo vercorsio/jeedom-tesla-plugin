@@ -1,5 +1,22 @@
+<a name="2.0.1-beta-8-g6cecdc4"></a>
+# Version 2.0.1-beta-8-g6cecdc4 (2020-03-21)
+
+### Améliorations
+ * Possibilité de définir la page horaire qui définit la période du tracking SOMMEIL NUIT, où le tracking baisse la fréquentation des appels. Réglages disponibles dans la configuration avancée du plugin.
+
+### Correctifs
+ * L'info de la date de dernière mise à jour du widget contenait un code de traduction non résolu. Corrigé.
+ * Suppression d'une trace de debuggage : `C A L L  checkAndUpdateCommands()...` . Corrigé.
+ * L'`Info trappe de recharge` indiquait une valeur parfois fantaisiste (trappe semblant ouverte, alors que non). Corrigé.
+ * Le rapport de santé affichait une information erronée quant a la description du tracking. Corrigé.
+
+> Note: 
+> 
+> Comme il est physiquement possible d'ouvrir/fermer la trappe de recharge alors que la voiture est en veille, la valeur de `Info trappe de recharge` sera mise à jour au reveil de celle ci.
+
+
 <a name="v2.0.0"></a>
-# Version v2.0.0 (2020-03-15)
+# Version 2.0.0 (2020-03-15)
 
 **La version 2 du plugin, compatible avec Jeedom V3 et V4, est maintenant disponiblle en version stable !**
 
@@ -41,7 +58,7 @@ Voici la liste des principales nouveautés que vous pouvez retrouver sur la  [pa
 Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé leur retours et leur soutient  : `bobjouy`, `Funroc`, `jerry`, `J0kers`, `MattKirby`, `matts`, `oxton`, `Tonio16`, ... 
 
 <a name="v2.0.0-beta.1-25-g2b4660d"></a>
-# Version v2.0.0-beta.1-25-g2b4660d (2020-03-03)
+# Version 2.0.0-beta.1-25-g2b4660d (2020-03-03)
 
 ### Améliorations
  * [**Tracking**] Parfois, la voiture en roulant entre dans une zone sans réseau (parking souterrain par exemple) et se gare. Lorsqu'elle repart elle revient visible alors qu'elle roule déjà. Le tracking va scinder ce trajet en deux en utilisant les conditions de durée et de distance entre deux mesures indiquées dans la configuration avancée du plugin:
@@ -53,7 +70,7 @@ Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé
  * [**Tracking**] Le mode Sentinelle est à nouveau visible sur le tableau (point rouge sur l'icone) et sur le graph (qui passe en rouge lorsque le mode Sentinelle est activé)
 
 <a name="v2.0.0-beta.1-22-g7385f9b"></a>
-# Version v2.0.0-beta.1-22-g7385f9b (2020-03-02)
+# Version 2.0.0-beta.1-22-g7385f9b (2020-03-02)
 
 ### Améliorations
  * [**Tracking**] Ajout d'un bouton 'plein écran'.
@@ -68,13 +85,13 @@ Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé
   
  
 <a name="v2.0.0-beta.1-9-gb68f51c"></a>
-# Version v2.0.0-beta.1-9-gb68f51c (2020-02-15)
+# Version 2.0.0-beta.1-9-gb68f51c (2020-02-15)
 
 ### Améliorations
  * Les marqueurs sont réaffichés après la modification d'un favori ou d'un emplacement de parking.
 
 <a name="v2.0.0-beta.1-7-g4ea3619"></a>
-# Version v2.0.0-beta.1-7-g4ea3619 (2020-02-12)
+# Version 2.0.0-beta.1-7-g4ea3619 (2020-02-12)
 
 ### Améliorations
  * Sur la version desktop, le calendrier du tracking ne permet de sélectionner que les jours avec tracking. 
@@ -92,7 +109,7 @@ Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé
  * L'API Tesla remonte parfois des valeurs incohérentes pour la position de la porte de recharge et l'état du cable. Valeurs qui étaient interprétées et traduites en `porte fermée` et `cable désengagé`, alors qu'il n'en est rien. Ceci provoquait des remontées d'info contraires à la réalité, et rendait l'utilisation des commandes `Info trappe de recharge` et `Info cable connecté` dans des scénarios plutôt impossible. Maintenant, ces valeurs incohérentes sont ignorées.
 
 <a name="v2.0.0-beta.1-4-g3333686"></a>
-# Version v2.0.0-beta.1-4-g3333686 (2020-02-12)
+# Version 2.0.0-beta.1-4-g3333686 (2020-02-12)
 
 ### Améliorations
  * La position des marqueurs peut être redéfinie. Il suffit de glisser/déposer le marqueur sur la carte à son nouvel emplacement.
@@ -103,7 +120,7 @@ Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé
 
 
 <a name="v2.0.0-beta.1-1-g439720d"></a>
-# Version v2.0.0-beta.1-1-g439720d (2020-02-10)
+# Version 2.0.0-beta.1-1-g439720d (2020-02-10)
 
 ### Highlights
 
