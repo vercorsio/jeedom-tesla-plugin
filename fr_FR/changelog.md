@@ -1,3 +1,12 @@
+<a name="2.0.1-beta-11-g65ab137"></a>
+# Version 2.0.1-beta-11-g65ab137 (2020-03-28)
+
+### Améliorations
+ * Passage forcé du tracking en mode normal après avoir réveillé la voiture depuis un scénario
+ * Ajout des traductions pour l'Allemand, l'Italien et le Portugais 
+ * Indication de l'avancement de la mise à jour logicielle
+ * Ajout de la commande de type info `Info mise à jour logicielle`  qui permet de déclencher un scénario quand une nouvelle version du logiciel de la voiture est disponible. Valeurs possibles dans l'ordre de la séquence de la mise à jour:  `downloading_wifi_wait`, `downloading`, `available`, `scheduled` et `installing`. Quand aucune mise à jour est disponible, la valeur est vide. 
+
 <a name="2.0.1-beta-8-g6cecdc4"></a>
 # Version 2.0.1-beta-8-g6cecdc4 (2020-03-21)
 
