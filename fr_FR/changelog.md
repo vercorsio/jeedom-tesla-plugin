@@ -1,5 +1,5 @@
-<a name="2.0.1-beta-11-g65ab137"></a>
-# Version 2.0.1-beta-11-g65ab137 (2020-03-28)
+<a name="v2.0.1"></a>
+# Version 2.0.1 (2020-03-29)
 
 ### Améliorations
  * Passage forcé du tracking en mode normal après avoir réveillé la voiture depuis un scénario
@@ -7,7 +7,7 @@
  * Indication de l'avancement de la mise à jour logicielle
  * Ajout de la commande de type info `Info mise à jour logicielle`  qui permet de déclencher un scénario quand une nouvelle version du logiciel de la voiture est disponible. Valeurs possibles dans l'ordre de la séquence de la mise à jour:  `downloading_wifi_wait`, `downloading`, `available`, `scheduled` et `installing`. Quand aucune mise à jour est disponible, la valeur est vide. 
 
-<a name="2.0.1-beta-8-g6cecdc4"></a>
+<a name="v2.0.1-beta-8-g6cecdc4"></a>
 # Version 2.0.1-beta-8-g6cecdc4 (2020-03-21)
 
 ### Améliorations
@@ -215,14 +215,14 @@ Exemple:
  <img src="../images/tesla-m3.svg" alt="drawing" width="90" style='background:white; padding:9px; border-radius:8px'/>
 
 
-<a name="1.9.2"></a>
+<a name="v1.9.2"></a>
 # Version 1.9.2 - 2019-12-02
 
 ### Correctifs
 
  * Correctif sur les Tesla virtuelles qui n'avaient pas de commandes ajoutées
 
-<a name="1.9.1"></a>
+<a name="v1.9.1"></a>
 # Version 1.9.1 - 2019-11-15
 
 ### Correctifs
@@ -230,7 +230,7 @@ Exemple:
  * Correctif sur le visuel du tracking affiché dans le widget
  * Correctif d'un bug qui pouvait empêcher le passage du tracking SOMMEIL NIGHT / SOMMEIL DAY
 
-<a name="1.9.0"></a>
+<a name="v1.9.0"></a>
 # Version 1.9.0 - 2019-11-07
 
 ### Highlights
@@ -261,7 +261,7 @@ Exemple:
 
 Merci a tous les béta testeurs !
 
-<a name="1.8.0"></a>
+<a name="v1.8.0"></a>
 # Version 1.8.0 - 2019-09-24
 ### Nouveautés
 
@@ -286,7 +286,7 @@ Merci a tous les béta testeurs !
 
 Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412/) et `kenshirohokuto` du forum Jeedom pour vos retours et tests !
 
-<a name="1.7.3"></a>
+<a name="v1.7.3"></a>
 # Version 1.7.3 - 2019-09-09
 
 ### Nouveautés
@@ -300,14 +300,14 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
 ### Correctifs
   * Correctif sur l'apparence du bouton Sentinelle.
 
- <a name="1.7.2"></a>
+ <a name="v1.7.2"></a>
 # Version 1.7.2 - 2019-08-27
 ### Correctifs
 
  * Mise à jour de l'un des appels vers l'API Tesla suite à la modification de l'un des endpoints (/data -> /vehicle_data). Certaines commandes pouvaient ne pas fonctionner. Corrigé.
 
 
-<a name="1.7.1"></a>
+<a name="v1.7.1"></a>
 # Version 1.7.1 - 2019-25-07
 
 ### Nouveautés
@@ -323,7 +323,7 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
 
  * [**Range Tracking**] Les trajets où la voiture devient hors ligne (tunnels, changement opérateur au passage d'une frontière,...) ne sont plus découpés. le pointillé passe en noir lorsque la voiture est vue hors ligne.
 
-<a name="1.7.0"></a>
+<a name="v1.7.0"></a>
 # Version 1.7.0 - 2019-06-16
 
 ### Nouveautés
@@ -339,7 +339,7 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
 
 Merci à `matts` du forum [Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412/) pour ses retours et tests !
 
-<a name="1.6.1"></a>
+<a name="v1.6.1"></a>
 # Version 1.6.1 - 2019-05-15
 
 ### Nouveautés
@@ -358,7 +358,7 @@ Merci à `matts` du forum [Automobile Propre](https://forums.automobile-propre.c
 Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412/) pour ses retours et tests !
 
 
-<a name="1.6.0"></a>
+<a name="v1.6.0"></a>
 # Version 1.6.0 - 2019-05-07
 
 ### Nouveautés
@@ -383,7 +383,7 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
  Pour le cas du *Suivi d'Autonomie*, on preferera l'arrêter et le démarrer soit même.
 
 
-<a name="1.5.2"></a>
+<a name="v1.5.2"></a>
 # Version 1.5.2 - 2019-04-08
 
 ### Améliorations
@@ -406,7 +406,7 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
 
  * [**Scenario**] La nuit, une trace peut indiquer que la charge est impossible a démarrer, mais elle pourra être démarrer en asynchrone par le serveur. Il est recommandé d'ajouter dans le scénario une commande de réveil de la voiture.
 
-<a name="1.5.1"></a>
+<a name="v1.5.1"></a>
 # Version 1.5.1 - 2019-03-20
 
 ### Améliorations
@@ -420,7 +420,7 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
   * [**Suivi de l'Autonomie**] Le premier trajet de la journée pouvait être vu en état "Parking". Corrigé
 
 
-<a name="1.5.0"></a>
+<a name="v1.5.0"></a>
 # Version 1.5.0 - 2019-03-14
 
 ### Nouveautés
@@ -453,7 +453,7 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
 Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et suggestions d'améliorations !
 
 
-<a name="1.4.2"></a>
+<a name="v1.4.2"></a>
 # Version 1.4.2 - 2019-02-14
 
 ### Améliorations
@@ -465,21 +465,21 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 * Correctif sur le texte d'info de dernière mise à jour qui pouvait afficher successivement plusieurs valeurs différentes.
 
-<a name="1.4.1"></a>
+<a name="v1.4.1"></a>
 # Version 1.4.1 - 2019-02-08
 
 ### Améliorations
 
 * [**Scenario**] La commande 'Contrôle de la recharge' admet un nouvel argument 'Estimer' qui va: démarrer une charge, attendre 2 minutes, calculer l'heure de départ et arréter la charge. Note: le scénario de départ de charge est simplifié.
 
-<a name="1.4.0"></a>
+<a name="v1.4.0"></a>
 # Version 1.4.0 - 2019-02-04
 
 ### Nouveautés
 
 * [**Scenario**] Ajout de la commande qui va retourner l'heure de départ de la charge, pour qu'elle soit chargée à x% à une heure donnée. Utilisable dans un scénario Jeedom (cf documentation).
 
-<a name="1.3.1"></a>
+<a name="v1.3.1"></a>
 # Version 1.3.1 - 2019-01-30
 
 ### Améliorations
@@ -492,7 +492,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 * Correctifs pour une meilleure stabilité et maintenabilité.
 
-<a name="1.3.0"></a>
+<a name="v1.3.0"></a>
 # Version 1.3.0 - 2019-01-23
 
 ### Nouveautés
@@ -503,7 +503,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 * Le panneau de 'Suivi de l'Autonomie' n'est pas encore traduit en anglais.
 
-<a name="1.2.2"></a>
+<a name="v1.2.2"></a>
 # Version 1.2.2 - 2019-01-07
 
 ### Améliorations
@@ -514,12 +514,12 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 * Suppression du message "Erreur d'accès au Seveur Tesla", lors du réveil de la voiture.
 
-<a name="1.2.1"></a>
+<a name="v1.2.1"></a>
 # Version 1.2.1 - 2018-12-22
 ### Correctifs
 * Le plugin est maintenant compatible avec PHP 5.6.
 
-<a name="1.2.0"></a>
+<a name="v1.2.0"></a>
 # Version 1.2.0 - 2018-12-19
 
 ### Nouveautés
@@ -545,7 +545,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 Un grand merci à `Kim` pour ses retours et suggestions d'améliorations !
 
-<a name="1.1.0"></a>
+<a name="v1.1.0"></a>
 # Version 1.1.0 - 2018-12-10
 
 ### Nouveautés
@@ -565,7 +565,7 @@ Un grand merci à `Kim` pour ses retours et suggestions d'améliorations !
 
 * [Temp settings] A cause d'une limitation sur l'API Tesla, il n'est pas possible de passer de `SYNC` à `Not SYNC`. En conséquence, il n'est possible de configurer la température du passager que si dans la voiture les températures ne sont pas synchronisées (`Not SYNC`)).
 
-<a name="1.0.0"></a>
+<a name="v1.0.0"></a>
 # Version 1.0.0 - 2018-11-29
 
 ### Nouveautés
@@ -575,7 +575,7 @@ Un grand merci à `Kim` pour ses retours et suggestions d'améliorations !
 
 Un grand merci à l'équipe Jeedom  `Loic` and `Alexandre`, et aux béta-testeurs `carfnann` et `philippe` pour leurs tests et commentaires !
 
-<a name="0.3.0"></a>
+<a name="v0.3.0"></a>
 # Version 0.3.0 - 2018-11-23
 
 ### Correctifs
@@ -586,7 +586,7 @@ Un grand merci à l'équipe Jeedom  `Loic` and `Alexandre`, et aux béta-testeur
 * Ajout de Model 3 et Roadster dans la liste des Tesla virtuelles.
 * Amélioration de la phase d'authentification (jeton d'accès et login).
 
-<a name="0.2.0"></a>
+<a name="v0.2.0"></a>
 # Version 0.2.0 - 2018-11-18
 
 ### Nouveautés
@@ -594,7 +594,7 @@ Un grand merci à l'équipe Jeedom  `Loic` and `Alexandre`, et aux béta-testeur
 * Mise à jour de la documentation
 * Ajout de l'anglais comme langue disponible
 
-<a name="0.1.0"></a>
+<a name="v0.1.0"></a>
 # Version 0.1.0 - 2018-11-10
 
 **Ceci est la première version **béta** publiée sur le market de Jeedom**
