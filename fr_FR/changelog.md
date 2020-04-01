@@ -1,3 +1,11 @@
+<a name="v2.0.2"></a>
+# Version 2.0.2 (2020-03-29)
+
+### Correctif
+ * L'affichage 'MISE A JOUR LOGICIELLE' s'affichait quand la version à télécharger retournée par Tesla était ' ' (un espace). Corrigé 
+
+Merci à 'nicothum' !
+
 <a name="v2.0.1"></a>
 # Version 2.0.1 (2020-03-29)
 
