@@ -1,3 +1,13 @@
+<a name="v2.0.3"></a>
+# Version 2.0.3 (2020-04-03)
+
+### Améliorations
+ * Un message 'Voiture en veille' remplace l'erreur '408' dans les logs quand la synchro horaire (cronHourly) est activée et que la voiture dort. 
+
+### Correctifs
+ * Les boutons OK/OFF des sièges chauffants ne sont pas correctement affichés quand Jeedom utilise le thème Darksobre. Corrigé.
+ * L'image de la voiture sur le widget pouvait parfois disparaitre. Corrigé.
+
 <a name="v2.0.2"></a>
 # Version 2.0.2 (2020-03-29)
 
