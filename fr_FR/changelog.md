@@ -1,5 +1,5 @@
-<a name="v2.0.3"></a>
-# Version 2.0.3 (2020-04-03)
+<a name="v2.0.4"></a>
+# Version 2.0.4 (2020-04-03)
 
 ### Améliorations
  * Un message 'Voiture en veille' remplace l'erreur '408' dans les logs quand la synchro horaire (cronHourly) est activée et que la voiture dort. 
