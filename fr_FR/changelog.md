@@ -1,3 +1,17 @@
+<a name="v2.1.0-beta-5-g6c866dc"></a>
+# 2.1.0-beta-5-g6c866dc (2020-04-29)
+### Nouveautés
+ * Ajout de `Info vitesse` qui indique la vitesse actuelle (négatif si marche arrière). Utile par exemple pour n'ouvrir un portail que si on s'en approche à vitesse modérée. A utiliser sans modération dans les scénarios : détection de trop grande vitesse, ouverture d'un garage si marche arrière, ....
+ * Ajout d'un `darkMode` dans la configuration du plugin pour afficher la carte sur fond noir, et qui permet un meilleur affichage de l'icone Tesla. 
+
+### Améliorations
+ * Possibilité d'uploader une image (png/gif/jpeg) pour changer le visuel de la voiture affichée sur le widget par une image téléchargée.
+ * De bien meilleures traductions espagnoles.
+
+ 
+### Problème connu
+ * l'`Info trappe de recharge` s'appuie sur une donnée envoyée par l'API Tesla qui parfois est incohérente : il arrive que la trappe soit dite fermée alors que le cable est engagé... Préférez donc `Info cable connecté` dans vos scénarios.
+
 <a name="v2.0.4"></a>
 ## 2.0.4 (2020-04-03)
 
