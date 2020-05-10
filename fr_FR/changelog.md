@@ -591,7 +591,7 @@ Un grand merci à `Kim` pour ses retours et suggestions d'améliorations !
 Un grand merci à l'équipe Jeedom  `Loic` and `Alexandre`, et aux béta-testeurs `carfnann` et `philippe` pour leurs tests et commentaires !
 
 <a name="v0.3.0"></a>
-# 0.3.0 - 2018-11-23
+## 0.3.0 - 2018-11-23
 
 ### Correctifs
 
@@ -602,7 +602,7 @@ Un grand merci à l'équipe Jeedom  `Loic` and `Alexandre`, et aux béta-testeur
 * Amélioration de la phase d'authentification (jeton d'accès et login).
 
 <a name="v0.2.0"></a>
-# 0.2.0 - 2018-11-18
+## 0.2.0 - 2018-11-18
 
 ### Nouveautés
 
@@ -610,7 +610,7 @@ Un grand merci à l'équipe Jeedom  `Loic` and `Alexandre`, et aux béta-testeur
 * Ajout de l'anglais comme langue disponible
 
 <a name="v0.1.0"></a>
-# 0.1.0 - 2018-11-10
+## 0.1.0 - 2018-11-10
 
 **Ceci est la première version **béta** publiée sur le market de Jeedom**
 
