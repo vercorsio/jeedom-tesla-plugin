@@ -1,14 +1,15 @@
 <a name="v2.1.0-beta-5-g6c866dc"></a>
-# 2.1.0-beta-5-g6c866dc (2020-04-29)
+## 2.1.0-beta-5-g6c866dc (2020-04-29)
+
 ### Nouveautés
  * Ajout de `Info vitesse` qui indique la vitesse actuelle (négatif si marche arrière). Utile par exemple pour n'ouvrir un portail que si on s'en approche à vitesse modérée. A utiliser sans modération dans les scénarios : détection de trop grande vitesse, ouverture d'un garage si marche arrière, ....
- * Ajout d'un `darkMode` dans la configuration du plugin pour afficher la carte sur fond noir, et qui permet un meilleur affichage de l'icone Tesla. 
+ * Ajout d'un `darkMode` dans la configuration du plugin pour afficher la carte sur fond noir, et qui permet un meilleur affichage de l'icone Tesla.
 
 ### Améliorations
  * Possibilité d'uploader une image (png/gif/jpeg) pour changer le visuel de la voiture affichée sur le widget par une image téléchargée.
  * De bien meilleures traductions espagnoles.
 
- 
+
 ### Problème connu
  * l'`Info trappe de recharge` s'appuie sur une donnée envoyée par l'API Tesla qui parfois est incohérente : il arrive que la trappe soit dite fermée alors que le cable est engagé... Préférez donc `Info cable connecté` dans vos scénarios.
 
@@ -16,7 +17,7 @@
 ## 2.0.4 (2020-04-03)
 
 ### Améliorations
- * Un message 'Voiture en veille' remplace l'erreur '408' dans les logs quand la synchro horaire (cronHourly) est activée et que la voiture dort. 
+ * Un message 'Voiture en veille' remplace l'erreur '408' dans les logs quand la synchro horaire (cronHourly) est activée et que la voiture dort.
 
 ### Correctifs
  * Les boutons OK/OFF des sièges chauffants ne sont pas correctement affichés quand Jeedom utilise le thème Darksobre. Corrigé.
@@ -26,7 +27,7 @@
 ## 2.0.2 (2020-03-29)
 
 ### Correctif
- * L'affichage 'MISE A JOUR LOGICIELLE' s'affichait quand la version à télécharger retournée par Tesla était ' ' (un espace). Corrigé 
+ * L'affichage 'MISE A JOUR LOGICIELLE' s'affichait quand la version à télécharger retournée par Tesla était ' ' (un espace). Corrigé
 
 Merci à 'nicothum' !
 
@@ -35,9 +36,9 @@ Merci à 'nicothum' !
 
 ### Améliorations
  * Passage forcé du tracking en mode normal après avoir réveillé la voiture depuis un scénario
- * Ajout des traductions pour l'Allemand, l'Italien et le Portugais 
+ * Ajout des traductions pour l'Allemand, l'Italien et le Portugais
  * Indication de l'avancement de la mise à jour logicielle
- * Ajout de la commande de type info `Info mise à jour logicielle`  qui permet de déclencher un scénario quand une nouvelle version du logiciel de la voiture est disponible. Valeurs possibles dans l'ordre de la séquence de la mise à jour:  `downloading_wifi_wait`, `downloading`, `available`, `scheduled` et `installing`. Quand aucune mise à jour est disponible, la valeur est vide. 
+ * Ajout de la commande de type info `Info mise à jour logicielle`  qui permet de déclencher un scénario quand une nouvelle version du logiciel de la voiture est disponible. Valeurs possibles dans l'ordre de la séquence de la mise à jour:  `downloading_wifi_wait`, `downloading`, `available`, `scheduled` et `installing`. Quand aucune mise à jour est disponible, la valeur est vide.
 
 <a name="v2.0.1-beta-8-g6cecdc4"></a>
 ## 2.0.1-beta-8-g6cecdc4 (2020-03-21)
@@ -51,21 +52,18 @@ Merci à 'nicothum' !
  * L'`Info trappe de recharge` indiquait une valeur parfois fantaisiste (trappe semblant ouverte, alors que non). Corrigé.
  * Le rapport de santé affichait une information erronée quant a la description du tracking. Corrigé.
 
-> Note: 
-> 
+> Note:
+>
 > Comme il est physiquement possible d'ouvrir/fermer la trappe de recharge alors que la voiture est en veille, la valeur de `Info trappe de recharge` sera mise à jour au reveil de celle ci.
 
-
 <a name="v2.0.0"></a>
-# 2.0.0 (2020-03-15)
+## 2.0.0 (2020-03-15)
 
 **La version 2 du plugin, compatible avec Jeedom V3 et V4, est maintenant disponiblle en version stable !**
 
 Voici la liste des principales nouveautés que vous pouvez retrouver sur la  [page](http://tesla.jeedom.free.fr/version2/)  dédiée à la sortie de la V2 :
 
-
  <img src="../images/teslaPluginV2.gif" alt="v2" width="320" style="border-radius:8px;width:320px text-align:center; margin:0 auto"/>
-
 
 ### Nouveautés
  * La **cartographie** fait son entrée !!
@@ -83,7 +81,7 @@ Voici la liste des principales nouveautés que vous pouvez retrouver sur la  [pa
  * Mise à jour en live de la valeur "Info réveillée" lorsque le tracking est activé, ce qui permet de **monitorer l'état de la voiture** (notification) et d'utiliser la valeur pour déclencher des scénarios.
 
 ### Améliorations
- * Le calendrier pour sélectionner une date n'affiche que celles qui contiennent des données de tracking.  
+ * Le calendrier pour sélectionner une date n'affiche que celles qui contiennent des données de tracking. 
  * Il est possible de désélectionner une ligne du tableau pour revenir au zoom global
  * Agrandissement de la jauge de l'autonomie dans le widget
 
@@ -95,11 +93,10 @@ Voici la liste des principales nouveautés que vous pouvez retrouver sur la  [pa
 ### Problème connu
  * L'évènement `Info trappe de recharge` semble parfois remonter ouvert alors qu'il est fermé, et inversement. Je conseille d'utiliser dans les scénarios de déclenchement de recharge, l'évènement `Info cable connecté`
 
-
-Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé leur retours et leur soutient  : `bobjouy`, `Funroc`, `jerry`, `J0kers`, `MattKirby`, `matts`, `oxton`, `Tonio16`, ... 
+Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé leur retours et leur soutient  : `bobjouy`, `Funroc`, `jerry`, `J0kers`, `MattKirby`, `matts`, `oxton`, `Tonio16`, ...
 
 <a name="v2.0.0-beta.1-25-g2b4660d"></a>
-# 2.0.0-beta.1-25-g2b4660d (2020-03-03)
+## 2.0.0-beta.1-25-g2b4660d (2020-03-03)
 
 ### Améliorations
  * [**Tracking**] Parfois, la voiture en roulant entre dans une zone sans réseau (parking souterrain par exemple) et se gare. Lorsqu'elle repart elle revient visible alors qu'elle roule déjà. Le tracking va scinder ce trajet en deux en utilisant les conditions de durée et de distance entre deux mesures indiquées dans la configuration avancée du plugin:
@@ -111,36 +108,34 @@ Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé
  * [**Tracking**] Le mode Sentinelle est à nouveau visible sur le tableau (point rouge sur l'icone) et sur le graph (qui passe en rouge lorsque le mode Sentinelle est activé)
 
 <a name="v2.0.0-beta.1-22-g7385f9b"></a>
-# 2.0.0-beta.1-22-g7385f9b (2020-03-02)
+## 2.0.0-beta.1-22-g7385f9b (2020-03-02)
 
 ### Améliorations
  * [**Tracking**] Ajout d'un bouton 'plein écran'.
  * [**Tracking**] Ajout d'une barre de contrôle sur fond noir 'à la Tesla' pour piloter l'affichage de la carte, du graph et du tableau :
  <img src="../images/tracking-flex-columns.png" alt="drawing" width="804" style="border-radius:8px;"/>
 
-
  * [**Tracking**] Interruption du chargement si une autre date est demandée.
  * [**Tracking**] Ajout d'un message dans le tableau si aucune donnée n'est disponible.
  * [**Tracking**] Déselectionner une ligne du tableau revient au zoom initial.
  * [**Tracking**] Amélioration du suivi du markeur de la voiture lors de la conduite.
-  
- 
+
+
 <a name="v2.0.0-beta.1-9-gb68f51c"></a>
-# 2.0.0-beta.1-9-gb68f51c (2020-02-15)
+## 2.0.0-beta.1-9-gb68f51c (2020-02-15)
 
 ### Améliorations
  * Les marqueurs sont réaffichés après la modification d'un favori ou d'un emplacement de parking.
 
 <a name="v2.0.0-beta.1-7-g4ea3619"></a>
-# 2.0.0-beta.1-7-g4ea3619 (2020-02-12)
+## 2.0.0-beta.1-7-g4ea3619 (2020-02-12)
 
 ### Améliorations
- * Sur la version desktop, le calendrier du tracking ne permet de sélectionner que les jours avec tracking. 
+ * Sur la version desktop, le calendrier du tracking ne permet de sélectionner que les jours avec tracking.
 
 ### Correctifs
  * Les favoris edités sur Safari sont maintenant bien pris en compte. Réglage d'un problème de cache.
  * Les informations du véhicule n'étaient pas mises à jour sur le widget. Corrigé.
-
 
 <a name="v1.9.7"></a>
 ## 1.9.7 (2020-02-12)
@@ -150,18 +145,17 @@ Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé
  * L'API Tesla remonte parfois des valeurs incohérentes pour la position de la porte de recharge et l'état du cable. Valeurs qui étaient interprétées et traduites en `porte fermée` et `cable désengagé`, alors qu'il n'en est rien. Ceci provoquait des remontées d'info contraires à la réalité, et rendait l'utilisation des commandes `Info trappe de recharge` et `Info cable connecté` dans des scénarios plutôt impossible. Maintenant, ces valeurs incohérentes sont ignorées.
 
 <a name="v2.0.0-beta.1-4-g3333686"></a>
-# 2.0.0-beta.1-4-g3333686 (2020-02-12)
+## 2.0.0-beta.1-4-g3333686 (2020-02-12)
 
 ### Améliorations
  * La position des marqueurs peut être redéfinie. Il suffit de glisser/déposer le marqueur sur la carte à son nouvel emplacement.
 
 ### Correctifs
  * Il pouvait être impossible de définir un favori. L'icone "coeur" qui est utilisé pour ajouter/modifier/supprimer un favori, ainsi que les bouton d'action pouvaient ne pas apparaître. Corrigé
- 
 
 
 <a name="v2.0.0-beta.1-1-g439720d"></a>
-# 2.0.0-beta.1-1-g439720d (2020-02-10)
+## 2.0.0-beta.1-1-g439720d (2020-02-10)
 
 ### Highlights
 
@@ -169,14 +163,13 @@ Version majeure qui intègre une cartographie liée aux trajets effectués et au
 
 ### Nouveautés
  * Suivi en temps réel d'un trajet sur la carte du tracking.
- * Affichage des trajets parcourus sur une carte, chaque portion est identifiée par une couleur spécifique. 
+ * Affichage des trajets parcourus sur une carte, chaque portion est identifiée par une couleur spécifique.
  * Les points d'arrêt sont materialisés par des marqueurs `parking`, leur coordonnées GPS sont traduites en adresses physiques.
  * Un maqueur `parking` peut être transformé en marqueur `favori`. Un nom court peut lui être donné, ainsi qu'un rayon d'action (en m).
- * Lorsque la voiture entre ou sort du rayon d'action d'un `favori`, le plugin met à jour ces nouvelles commandes de type Info qui peuvent être utilisées dans des scénarios : `Info s'approche de`, `Info s'éloigne de` et `Info date dernier franchissement`.  
- * Un clic sur la ligne du trajet permet de suivre l'évolution de la voiture depuis son point de départ jusqu'à son point d'arrivée. 
+ * Lorsque la voiture entre ou sort du rayon d'action d'un `favori`, le plugin met à jour ces nouvelles commandes de type Info qui peuvent être utilisées dans des scénarios : `Info s'approche de`, `Info s'éloigne de` et `Info date dernier franchissement`. 
+ * Un clic sur la ligne du trajet permet de suivre l'évolution de la voiture depuis son point de départ jusqu'à son point d'arrivée.
  * Ajout de colonnes dans le tableau du tracking pour indiquer les lieux de départ et d'arrivée.
  * La légende du tracking n'est plus affichée en permanence. Après clic sur le bouton "Légende", on peut activer/désactiver l'affichage d'une courbe en cliquant sur son titre.
-
 
 **En images, ajouter un favori, l'éditer et suivre un trajet sur la carte :**
 
@@ -201,16 +194,16 @@ Version majeure qui intègre une cartographie liée aux trajets effectués et au
  * [**Range Tracking**] Depuis la configuration de chaque véhicule, l'utilisateur à le choix de fixer une valeur pour l'autonomie max, ou bien de laisser le plugin l'estimer dynamiquement.
 
  <img src="../images/configureRangeAtFull.gif" alt="drawing" width="500" style="border-radius:8px;"/>
- 
- * [**Range Tracking**] Calcul plus fin pour l'estimation de la capacité maximale de la batterie. Basé non plus sur le 
- max de toutes les valeurs, mais sur une moyenne. 
+
+ * [**Range Tracking**] Calcul plus fin pour l'estimation de la capacité maximale de la batterie. Basé non plus sur le
+ max de toutes les valeurs, mais sur une moyenne.
  * [**Range Tracking**] Le tracking enregistre les températures intérieures et extérieures. Elles ne sont pour l'instant pas affichées sur le graph. Ce sera fait dans une prochaine version.
  * [**Configuration**] Désormais même si la voiture est en veille, les images sont téléchargées. Si la nouvelle image est corrompue (mauvais lien, ... ) l'ancienne image est restaurée.
  * [**Configuration**] Ajout d'un bouton 'Documentation' qui dirige vers le site [Tesla Jeedom](http://tesla.jeedom.free.fr)
- 
- 
+
+
 > Note: Au niveau du tracking, un "~" prefixe l'autonomie lorsqu'elle est estimée:
-> 
+>
 > <img src="../images/dynamicRangeAtFull.png" alt="drawing" width="300" height="90" style="border-radius:8px;"/> <img src="../images/userDefinedRangeAtFull.png" alt="drawing" width="300"  height="90" style="border-radius:8px;"/>
 
 ### Correctifs
@@ -246,7 +239,6 @@ Exemple:
 
  <img src="../images/tesla-m3.svg" alt="drawing" width="90" style='background:white; padding:9px; border-radius:8px'/>
 
-
 <a name="v1.9.2"></a>
 ## 1.9.2 - 2019-12-02
 
@@ -263,21 +255,18 @@ Exemple:
  * Correctif d'un bug qui pouvait empêcher le passage du tracking SOMMEIL NIGHT / SOMMEIL DAY
 
 <a name="v1.9.0"></a>
-# 1.9.0 - 2019-11-07
+## 1.9.0 - 2019-11-07
 
 ### Highlights
 
  * Compatibilité Debian 10, et Freebox Delta
- * Meilleure prise en charge des periodes de veille du véhicule 
+ * Meilleure prise en charge des periodes de veille du véhicule
 
 ### Nouveautés
 
  * [**Range Tracking**] Refonte du mécanisme du tracking et son affichage. Après une durée d'attente au parking de 10 minutes, le tracking effectue un appel `data` toutes les 15 minutes, permettant ainsi à la voiture de se mettre en veille. Une fois en veille, le tracking surveille l'état de la voiture et se remet en mode NORMAL dès que celle-ci sort de sa veille. Les périodes de veille sont matérialisées par un trait pointillé noir sur le graph du suivi d'autonomie et le bouton du tracking se transforme en 'Lune qui ronfle". Un clic sur ce bouton permet de forcer manuellement le tracking en mode NORMAL. Lors des phases de veille le tracking ne fait que des appels "vehicle" pour surveiller le prochain réveil, ce qui garanti ZERO interaction avec la voiture. Le tracking est entièrement configurable via le panneau de configuration du plugin.
- 
  * [**Range Tracking**] Ajout d'un mode `Live AUTO` qui permute automatiquement le graph entre la vue globale de la journée lors des phases de parking et la vue qui n'affiche que les 5 dernières minutes pendant la conduite
-
  * [**Range Tracking**] Ajout d'informations pertinentes sur le haut du graph. Le temps de conduite, la durée du parking ou le temps de recharge est indiqué, ainsi que le nombre de périodes de offline, le nombre de periodes de recharge.
-
 
 ### Améliorations
 
@@ -294,7 +283,8 @@ Exemple:
 Merci a tous les béta testeurs !
 
 <a name="v1.8.0"></a>
-# 1.8.0 - 2019-09-24
+## 1.8.0 - 2019-09-24
+
 ### Nouveautés
 
  * [**Widget**] Ajout de commandes pour allumer et éteindre le volant et les sièges chauffants. Un panneau de contrôle animé permet de modifier l'état de chaque siège et du volant. Egalement pilotable depuis un scénario.
@@ -338,7 +328,6 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
 
  * Mise à jour de l'un des appels vers l'API Tesla suite à la modification de l'un des endpoints (/data -> /vehicle_data). Certaines commandes pouvaient ne pas fonctionner. Corrigé.
 
-
 <a name="v1.7.1"></a>
 ## 1.7.1 - 2019-25-07
 
@@ -349,14 +338,14 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
 ### Améliorations
 
  * [**Range Tracking**] Les moments passés au parking avec le mode Sentinelle activés sont repérés par un trait pointillé rouge.
- * Le nom de la version est plus facile à lire dans le rapport de santé et dans le panneau de configuration: `vX.Y.Z` indique la version stable X.Y.Z et `vX.Y.Z-n-hash` indique la nième version bêta (et son hash git) après la version stable X.Y.Z. 
+ * Le nom de la version est plus facile à lire dans le rapport de santé et dans le panneau de configuration: `vX.Y.Z` indique la version stable X.Y.Z et `vX.Y.Z-n-hash` indique la nième version bêta (et son hash git) après la version stable X.Y.Z.
 
 ### Correctifs
 
  * [**Range Tracking**] Les trajets où la voiture devient hors ligne (tunnels, changement opérateur au passage d'une frontière,...) ne sont plus découpés. le pointillé passe en noir lorsque la voiture est vue hors ligne.
 
 <a name="v1.7.0"></a>
-# 1.7.0 - 2019-06-16
+## 1.7.0 - 2019-06-16
 
 ### Nouveautés
 
@@ -384,14 +373,13 @@ Merci à `matts` du forum [Automobile Propre](https://forums.automobile-propre.c
 
 ### Correctifs
 
- * Vérification et réparation des autorisations des fichiers de Suivi d'Autonomie. 
+ * Vérification et réparation des autorisations des fichiers de Suivi d'Autonomie.
  Un fichier qui n'a pas les bons droits (lecture/ecriture) peut conduire à un non affichage des graphes du *Suivi de l'Autonomie*.
 
 Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412/) pour ses retours et tests !
 
-
 <a name="v1.6.0"></a>
-# 1.6.0 - 2019-05-07
+## 1.6.0 - 2019-05-07
 
 ### Nouveautés
 
@@ -410,10 +398,9 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
 
 ### Instructions de mise à jour
 
- * Suite au passage du cron en 'daemon', il est conseillé de ne pas activer la *Gestion automatique* du démon dans la configuration du plugin. 
+ * Suite au passage du cron en 'daemon', il est conseillé de ne pas activer la *Gestion automatique* du démon dans la configuration du plugin.
  En effet, lorsque la gestion automatique est activé, Jeedom va s'assurer que le daemon est actif en toute occasion et ira le relancer s'il a été arrêter.
  Pour le cas du *Suivi d'Autonomie*, on preferera l'arrêter et le démarrer soit même.
-
 
 <a name="v1.5.2"></a>
 ## 1.5.2 - 2019-04-08
@@ -433,7 +420,7 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
  * [**Widget**] Affichage correct des jantes 20" et du pack Performance le cas échéant sur la Model3
  * [**Widget**] Prise en compte des couleurs de carrosserie de la Model 3.
  * [**Widget**] Sur certains navigateurs web, le curseur de la limite de charge pouvait s'afficher en blanc. Corrigé.
- 
+
 ### Problème connu
 
  * [**Scenario**] La nuit, une trace peut indiquer que la charge est impossible a démarrer, mais elle pourra être démarrer en asynchrone par le serveur. Il est recommandé d'ajouter dans le scénario une commande de réveil de la voiture.
@@ -451,9 +438,8 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
   * [**Widget**] Correctif au niveau de l'unité d'énergie (kW -> kWh).
   * [**Suivi de l'Autonomie**] Le premier trajet de la journée pouvait être vu en état "Parking". Corrigé
 
-
 <a name="v1.5.0"></a>
-# 1.5.0 - 2019-03-14
+## 1.5.0 - 2019-03-14
 
 ### Nouveautés
 
@@ -467,7 +453,7 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
  * [**Suivi de l'Autonomie**] Dans la version Mobile, sur un écran large, les courbes sont plus épaisses pour un meilleur rendu sur l'écran de la Tesla par exemple.
  * [**Widget**] Fenêtre modale de confirmation sur les boutons d'ouverture de portes et coffres.
  * Ajout d'une Model Y rouge dans les Tesla virtuelles.
- 
+
 ### Correctifs
 
  * [**Suivi de l'Autonomie**] Quand le chauffage est allumé, seule la ligne change de couleur. Même couleur du fond de courbe si chauffage est on ou off
@@ -481,9 +467,7 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
 
 * [**Suivi de l'Autonomie**] Sur les journées où il y a eu beaucoup d'aquisition lors de long parcours, l'affichage peut être long, voire ne pas être possible.
 
-
 Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et suggestions d'améliorations !
-
 
 <a name="v1.4.2"></a>
 ## 1.4.2 - 2019-02-14
@@ -505,7 +489,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 * [**Scenario**] La commande 'Contrôle de la recharge' admet un nouvel argument 'Estimer' qui va: démarrer une charge, attendre 2 minutes, calculer l'heure de départ et arréter la charge. Note: le scénario de départ de charge est simplifié.
 
 <a name="v1.4.0"></a>
-# 1.4.0 - 2019-02-04
+## 1.4.0 - 2019-02-04
 
 ### Nouveautés
 
@@ -525,7 +509,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 * Correctifs pour une meilleure stabilité et maintenabilité.
 
 <a name="v1.3.0"></a>
-# 1.3.0 - 2019-01-23
+## 1.3.0 - 2019-01-23
 
 ### Nouveautés
 
@@ -552,7 +536,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 * Le plugin est maintenant compatible avec PHP 5.6.
 
 <a name="v1.2.0"></a>
-# 1.2.0 - 2018-12-19
+## 1.2.0 - 2018-12-19
 
 ### Nouveautés
 
@@ -570,7 +554,6 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 * Correction sur le bouton d'ouverture du toit ouvrant.
 
-
 ### Problème connu
 
 * La fonction de reveil marche mieux lorsque le mode **Connexion permanente** est activé dans la voiture.
@@ -578,7 +561,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 Un grand merci à `Kim` pour ses retours et suggestions d'améliorations !
 
 <a name="v1.1.0"></a>
-# 1.1.0 - 2018-12-10
+## 1.1.0 - 2018-12-10
 
 ### Nouveautés
 
@@ -598,7 +581,7 @@ Un grand merci à `Kim` pour ses retours et suggestions d'améliorations !
 * [Temp settings] A cause d'une limitation sur l'API Tesla, il n'est pas possible de passer de `SYNC` à `Not SYNC`. En conséquence, il n'est possible de configurer la température du passager que si dans la voiture les températures ne sont pas synchronisées (`Not SYNC`)).
 
 <a name="v1.0.0"></a>
-# 1.0.0 - 2018-11-29
+## 1.0.0 - 2018-11-29
 
 ### Nouveautés
 
