@@ -1,3 +1,17 @@
+<a name="v2.1.0-beta-11-g7c7c0f7"></a>
+# 2.1.0-beta-11-g7c7c0f7 (2020-05-17)
+
+### Nouveautés
+ * [**widget**] Ajout d'un bouton pour réveiller la voiture lorsqu'elle est endormie. Un clic sur ce bouton effectuera 3 tentatives de réveil espacées de 5 secondes (3 et 5 sont configurables au niveau du plugin). Un second clic sur ce bouton annulera la procédure de réveil, mais la voiture peut être amenée à se réveiller quand même si une précédente tentative réussit. Dès lors que la voiture est réveillée, ce bouton disparait.
+ * [**widget**] Affichage de la pastillle bleu/rouge/verte/grise qui indique l'état de la voiture (bleu=conduite / rouge=encharge / verte=au parking / grise=hors ligne)
+  
+### Améliorations
+ * [**widget**] Les info/action ajoutées pour personaliser le widget sont conservées lors de la mise à jour du plugin (ainsi que le fait qu'une commande de type info soit historisée).
+ * [**Geolocalisation**] La détection d'un favori est faite du plus petit cercle au plus grand cercle. Quand la voiture est dans la zone d'un grand cercle et qu'elle entre dans la zone d'un petit cercle, l'évennement `Info s'approche de` prend la valeur du nom du petit cercle.
+
+Merci aux béta testeurs !
+
+
 <a name="v2.1.0-beta-5-g6c866dc"></a>
 # 2.1.0-beta-5-g6c866dc (2020-04-29)
 
