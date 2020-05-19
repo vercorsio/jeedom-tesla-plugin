@@ -1,12 +1,25 @@
+<a name="v2.1.0-beta-15-gaefc609"></a>
+# 2.1.0-beta-15-gaefc609 (2020-05-19)
+
+### Nouveautés
+ * Ajout de `Info selecteur de vitesses` qui indique la valeur du ... selecteur de vitesses : `P`, `R`, `N`, `D` ou `OFF`
+
+### Améliorations
+ * [**Widget**] Lorsque une commande du widget est exécutée (clic d'un bouton pour allumer la climatisation, ouvrir un coffre, ...) le plugin commence par réveiller la voiture si elle est hors ligne.
+ * Ajout de la version du software Tesla dans les données acquises lors du tracking. Pour une future exploitation.
+
+## Correctif
+ * [**Widget**] Chez certains, l'image de la voiture ne s'affichait pas correctement. C'est maintenant corrigé.
+
 <a name="v2.1.0-beta-11-g7c7c0f7"></a>
 # 2.1.0-beta-11-g7c7c0f7 (2020-05-17)
 
 ### Nouveautés
- * [**widget**] Ajout d'un bouton pour réveiller la voiture lorsqu'elle est endormie. Un clic sur ce bouton effectuera 3 tentatives de réveil espacées de 5 secondes (3 et 5 sont configurables au niveau du plugin). Un second clic sur ce bouton annulera la procédure de réveil, mais la voiture peut être amenée à se réveiller quand même si une précédente tentative réussit. Dès lors que la voiture est réveillée, ce bouton disparait.
- * [**widget**] Affichage de la pastillle bleu/rouge/verte/grise qui indique l'état de la voiture (bleu=conduite / rouge=encharge / verte=au parking / grise=hors ligne)
+ * [**Widget**] Ajout d'un bouton pour réveiller la voiture lorsqu'elle est endormie. Un clic sur ce bouton effectuera 3 tentatives de réveil espacées de 5 secondes (3 et 5 sont configurables au niveau du plugin). Un second clic sur ce bouton annulera la procédure de réveil, mais la voiture peut être amenée à se réveiller quand même si une précédente tentative réussit. Dès lors que la voiture est réveillée, ce bouton disparait.
+ * [**Widget**] Affichage de la pastillle bleu/rouge/verte/grise qui indique l'état de la voiture (bleu=conduite / rouge=encharge / verte=au parking / grise=hors ligne)
   
 ### Améliorations
- * [**widget**] Les info/action ajoutées pour personaliser le widget sont conservées lors de la mise à jour du plugin (ainsi que le fait qu'une commande de type info soit historisée).
+ * [**Widget**] Les info/action ajoutées pour personaliser le widget sont conservées lors de la mise à jour du plugin (ainsi que le fait qu'une commande de type info soit historisée).
  * [**Geolocalisation**] La détection d'un favori est faite du plus petit cercle au plus grand cercle. Quand la voiture est dans la zone d'un grand cercle et qu'elle entre dans la zone d'un petit cercle, l'évennement `Info s'approche de` prend la valeur du nom du petit cercle.
 
 Merci aux béta testeurs !
