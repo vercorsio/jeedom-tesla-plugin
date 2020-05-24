@@ -2,11 +2,11 @@
 # 2.1.0-beta-19-ga3a1dee (2020-05-24)
 
 ### Nouveautés
- * <img src="../images/klaxon.png" alt="klaxon" width="40"/> [**Widget**] Ajout de la commande `Actionner le klaxon` et de son bouton sur le widget 
+ * <img src="../images/klaxon.png" alt="klaxon" width="40" style='border-radius:5px'/> [**Widget**] Ajout de la commande `Actionner le klaxon` et de son bouton sur le widget 
 
- * <img src="../images/flashLights.png" alt="flashLights" width="40"/> [**Widget**] Ajout de la commande `Actionner les phares` et de son bouton sur le widget.
+ * <img src="../images/flashLights.png" alt="flashLights" width="40" style='border-radius:5px'/> [**Widget**] Ajout de la commande `Actionner les phares` et de son bouton sur le widget.
 
- * <img src="../images/windows-vent.png" alt="vent" width="40"/> [**Widget**] Ajout de la commande `Contrôler les fenêtres` et de son bouton sur le widget.
+ * <img src="../images/windows-vent.png" alt="vent" width="40" style='border-radius:5px'/> [**Widget**] Ajout de la commande `Contrôler les fenêtres` et de son bouton sur le widget.
  * Ajout de `Info fenêtres` qui indique l'état des des 4 fenêtres (dans l'ordre: "conducteur", "passager", "arrière passager", "arrière conducteur") avec 3 lettres pour chacune ('O': Ouverte, 'P': Partiellement ouverte et 'F': Fermée). Exemples: `OPFF` = Fenêtre conducteur ouverte, fenêtre passager partiellement ouverte et les deux fenetres à l'arrière sont fermées, `PPPP` = Toutes les fenêtres sont en mode ventilation (partiellement ouvertes), ...
 
 > Note:
@@ -15,10 +15,12 @@
 >
 > **ATTENTION**: assurez vous qu'aucun objet ou doigt ne dépasse d'une fenêtre avant d'actionner la fermeture à distance.
 
-Description du visuel
- - <img src="../images/windows-open.png" alt="vent" width="40"/>  au moins une fenêtre est ouverte 
- - <img src="../images/windows-vent.png" alt="vent" width="40"/>  toutes les fenêtres sont en mode *ventilation*
- - <img src="../images/windows-close.png" alt="vent" width="40"/> toutes les fenêtres sont fermées
+> **IDEE**: Utilisez `Actionner le klaxon` et/ou `Actionner les phares` dans vos scénarios pour confirmer une séquence d'action !
+
+Description du visuel du bouton `Contrôler les fenêtres`:
+ - <img src="../images/windows-open.png" alt="vent" width="40" style='border-radius:5px'/>  au moins une fenêtre est ouverte 
+ - <img src="../images/windows-vent.png" alt="vent" width="40" style='border-radius:5px'/>  toutes les fenêtres sont en mode *ventilation*
+ - <img src="../images/windows-close.png" alt="vent" width="40" style='border-radius:5px'/> toutes les fenêtres sont fermées
 
 
 
