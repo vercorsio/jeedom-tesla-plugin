@@ -1,3 +1,27 @@
+<a name="v2.1.0-beta-19-ga3a1dee"></a>
+# 2.1.0-beta-19-ga3a1dee (2020-05-24)
+
+### Nouveautés
+ * <img src="../images/klaxon.png" alt="klaxon" width="40"/> [**Widget**] Ajout de la commande `Actionner le klaxon` et de son bouton sur le widget 
+
+ * <img src="../images/flashLights.png" alt="flashLights" width="40"/> [**Widget**] Ajout de la commande `Actionner les phares` et de son bouton sur le widget.
+
+ * <img src="../images/windows-vent.png" alt="vent" width="40"/> [**Widget**] Ajout de la commande `Contrôler les fenêtres` et de son bouton sur le widget.
+ * Ajout de `Info fenêtres` qui indique l'état des des 4 fenêtres (dans l'ordre: "conducteur", "passager", "arrière passager", "arrière conducteur") avec 3 lettres pour chacune ('O': Ouverte, 'P': Partiellement ouverte et 'F': Fermée). Exemples: `OPFF` = Fenêtre conducteur ouverte, fenêtre passager partiellement ouverte et les deux fenetres à l'arrière sont fermées, `PPPP` = Toutes les fenêtres sont en mode ventilation (partiellement ouvertes), ...
+
+> Note:
+>
+> `Contrôler les fenêtres` permet de ventiler la voiture en ouvrant simultanément toutes les fenêtres, et de fermer toutes les fenêtres à distance. Si au moins une des fenêtres est ouverte (totalement ou partiellement), une action sur `Contrôler les fenêtres` ouvrira toutes les fenêtres en mode *ventillation*. Une seconde action fermera simultanément les fenêtres.
+>
+> **ATTENTION**: assurez vous qu'aucun objet ou doigt ne dépasse d'une fenêtre avant d'actionner la fermeture à distance.
+
+Description du visuel
+ - <img src="../images/windows-open.png" alt="vent" width="40"/>  au moins une fenêtre est ouverte 
+ - <img src="../images/windows-vent.png" alt="vent" width="40"/>  toutes les fenêtres sont en mode *ventilation*
+ - <img src="../images/windows-close.png" alt="vent" width="40"/> toutes les fenêtres sont fermées
+
+
+
 <a name="v2.1.0-beta-15-gaefc609"></a>
 # 2.1.0-beta-15-gaefc609 (2020-05-19)
 
@@ -17,7 +41,7 @@
 ### Nouveautés
  * [**Widget**] Ajout d'un bouton pour réveiller la voiture lorsqu'elle est endormie. Un clic sur ce bouton effectuera 3 tentatives de réveil espacées de 5 secondes (3 et 5 sont configurables au niveau du plugin). Un second clic sur ce bouton annulera la procédure de réveil, mais la voiture peut être amenée à se réveiller quand même si une précédente tentative réussit. Dès lors que la voiture est réveillée, ce bouton disparait.
  * [**Widget**] Affichage de la pastillle bleu/rouge/verte/grise qui indique l'état de la voiture (bleu=conduite / rouge=encharge / verte=au parking / grise=hors ligne)
-  
+
 ### Améliorations
  * [**Widget**] Les info/action ajoutées pour personaliser le widget sont conservées lors de la mise à jour du plugin (ainsi que le fait qu'une commande de type info soit historisée).
  * [**Geolocalisation**] La détection d'un favori est faite du plus petit cercle au plus grand cercle. Quand la voiture est dans la zone d'un grand cercle et qu'elle entre dans la zone d'un petit cercle, l'évennement `Info s'approche de` prend la valeur du nom du petit cercle.
@@ -29,7 +53,7 @@ Merci aux béta testeurs !
 # 2.1.0-beta-5-g6c866dc (2020-04-29)
 
 ### Nouveautés
- * Ajout de `Info vitesse` qui indique la vitesse actuelle (négatif si marche arrière). Utile par exemple pour n'ouvrir un portail que si on s'en approche à vitesse modérée. A utiliser sans modération dans les scénarios : détection de trop grande vitesse, ouverture d'un garage si marche arrière, ....
+ * Ajout de `Info vitesse` qui indique la vitesse actuelle (négative si marche arrière). Utile par exemple pour n'ouvrir un portail que si on s'en approche à vitesse modérée. A utiliser sans modération dans les scénarios : détection de trop grande vitesse, ouverture d'un garage si marche arrière, ....
  * Ajout d'un `darkMode` dans la configuration du plugin pour afficher la carte sur fond noir, et qui permet un meilleur affichage de l'icone Tesla.
 
 ### Améliorations
@@ -65,7 +89,7 @@ Merci à 'nicothum' !
  * Passage forcé du tracking en mode normal après avoir réveillé la voiture depuis un scénario
  * Ajout des traductions pour l'Allemand, l'Italien et le Portugais
  * Indication de l'avancement de la mise à jour logicielle
- * Ajout de la commande de type info `Info mise à jour logicielle`  qui permet de déclencher un scénario quand une nouvelle version du logiciel de la voiture est disponible. Valeurs possibles dans l'ordre de la séquence de la mise à jour:  `downloading_wifi_wait`, `downloading`, `available`, `scheduled` et `installing`. Quand aucune mise à jour est disponible, la valeur est vide.
+ * Ajout de la commande de type info `Info mise à jour logicielle` qui permet de déclencher un scénario quand une nouvelle version du logiciel de la voiture est disponible. Valeurs possibles dans l'ordre de la séquence de la mise à jour: `downloading_wifi_wait`, `downloading`, `available`, `scheduled` et `installing`. Quand aucune mise à jour est disponible, la valeur est vide.
 
 <a name="v2.0.1-beta-8-g6cecdc4"></a>
 # 2.0.1-beta-8-g6cecdc4 (2020-03-21)
@@ -88,7 +112,7 @@ Merci à 'nicothum' !
 
 **La version 2 du plugin, compatible avec Jeedom V3 et V4, est maintenant disponiblle en version stable !**
 
-Voici la liste des principales nouveautés que vous pouvez retrouver sur la  [page](http://tesla.jeedom.free.fr/version2/)  dédiée à la sortie de la V2 :
+Voici la liste des principales nouveautés que vous pouvez retrouver sur la [page](http://tesla.jeedom.free.fr/version2/) dédiée à la sortie de la V2 :
 
  <img src="../images/teslaPluginV2.gif" alt="v2" width="320" style="border-radius:8px;width:320px text-align:center; margin:0 auto"/>
 
@@ -120,7 +144,7 @@ Voici la liste des principales nouveautés que vous pouvez retrouver sur la  [pa
 ### Problème connu
  * L'évènement `Info trappe de recharge` semble parfois remonter ouvert alors qu'il est fermé, et inversement. Je conseille d'utiliser dans les scénarios de déclenchement de recharge, l'évènement `Info cable connecté`
 
-Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé leur retours et leur soutient  : `bobjouy`, `Funroc`, `jerry`, `J0kers`, `MattKirby`, `matts`, `oxton`, `Tonio16`, ...
+Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé leur retours et leur soutient : `bobjouy`, `Funroc`, `jerry`, `J0kers`, `MattKirby`, `matts`, `oxton`, `Tonio16`, ...
 
 <a name="v2.0.0-beta.1-25-g2b4660d"></a>
 # 2.0.0-beta.1-25-g2b4660d (2020-03-03)
@@ -231,7 +255,7 @@ Version majeure qui intègre une cartographie liée aux trajets effectués et au
 
 > Note: Au niveau du tracking, un "~" prefixe l'autonomie lorsqu'elle est estimée:
 >
-> <img src="../images/dynamicRangeAtFull.png" alt="drawing" width="300" height="90" style="border-radius:8px;"/> <img src="../images/userDefinedRangeAtFull.png" alt="drawing" width="300"  height="90" style="border-radius:8px;"/>
+> <img src="../images/dynamicRangeAtFull.png" alt="drawing" width="300" height="90" style="border-radius:8px;"/> <img src="../images/userDefinedRangeAtFull.png" alt="drawing" width="300" height="90" style="border-radius:8px;"/>
 
 ### Correctifs
 
@@ -241,7 +265,7 @@ Version majeure qui intègre une cartographie liée aux trajets effectués et au
 # 1.9.4 - 2020-01-09
 
 ### Correctif
- * [**Range Tracking**] En mode Energie, l'unité ne basculait pas en %. Corrigé  (Merci `vince_007`)
+ * [**Range Tracking**] En mode Energie, l'unité ne basculait pas en %. Corrigé (Merci `vince_007`)
 
 <a name="v1.9.3"></a>
 # 1.9.3 - 2020-01-08
@@ -615,7 +639,7 @@ Un grand merci à `Kim` pour ses retours et suggestions d'améliorations !
 * Ceci est la première version **stable** publiée sur le Jeedom market !
 * Les prochaines versions ajouteront de nouvelles fonctionalités (contrôle des temperatures, Contrôle de la limite de charge ...) !
 
-Un grand merci à l'équipe Jeedom  `Loic` and `Alexandre`, et aux béta-testeurs `carfnann` et `philippe` pour leurs tests et commentaires !
+Un grand merci à l'équipe Jeedom `Loic` and `Alexandre`, et aux béta-testeurs `carfnann` et `philippe` pour leurs tests et commentaires !
 
 <a name="v0.3.0"></a>
 # 0.3.0 - 2018-11-23
