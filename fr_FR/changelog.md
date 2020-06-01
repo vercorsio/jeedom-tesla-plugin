@@ -1,3 +1,14 @@
+<a name="v2.1.0-beta-25-g55cbfa0"></a>
+# 2.1.0-beta-25-g55cbfa0 (2020-06-01)
+
+### Améliorations
+ * [**Tracking**] Quand le tracking est arrêté manuellement, un point 'Parking' est ajouté à cet instant.
+
+### Correctifs
+ * [**Widget**] Problème d'ouverture et de fermeture des fenêtres. Corrigé
+ * Le plugin forçait le timezone à `Europe/Paris`. Corrigé
+ * Le bas du calendrier était parfois masqué par la barre noire. Corrigé
+
 <a name="v2.1.0-beta-19-ga3a1dee"></a>
 # 2.1.0-beta-19-ga3a1dee (2020-05-24)
 
