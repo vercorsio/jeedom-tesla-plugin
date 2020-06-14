@@ -1,3 +1,10 @@
+<a name="v2.1.0-beta-27-gad1902b"></a>
+# 2.1.0-beta-27-gad1902b (2020-06-15)
+
+### Améliorations
+ * Ajout de "Info ampérage demandé" et "Info ampérage maximum" qui contiennent les consignes d'ampérage
+ * Conservation du nom de l'action ou de l'info si elle existe déjà (dans le cas ou elle a été renommé, son nom n'est plus réinitiallisé). 
+
 <a name="v2.1.0-beta-25-g55cbfa0"></a>
 # 2.1.0-beta-25-g55cbfa0 (2020-06-01)
 
