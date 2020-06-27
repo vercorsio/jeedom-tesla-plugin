@@ -1,88 +1,68 @@
-<a name="v2.1.0-beta-27-gad1902b"></a>
-# 2.1.0-beta-27-gad1902b (2020-06-15)
+<a name="v2.1.0"></a>
+# 2.1.0 (2020-06-27)
 
-### Améliorations
- * Ajout de "Info ampérage demandé" et "Info ampérage maximum" qui contiennent les consignes d'ampérage
- * Conservation du nom de l'action ou de l'info si elle existe déjà (dans le cas ou elle a été renommé, son nom n'est plus réinitiallisé). 
-
-<a name="v2.1.0-beta-25-g55cbfa0"></a>
-# 2.1.0-beta-25-g55cbfa0 (2020-06-01)
-
-### Améliorations
- * [**Tracking**] Quand le tracking est arrêté manuellement, un point 'Parking' est ajouté à cet instant.
-
-### Correctifs
- * [**Widget**] Problème d'ouverture et de fermeture des fenêtres. Corrigé
- * Le plugin forçait le timezone à `Europe/Paris`. Corrigé
- * Le bas du calendrier était parfois masqué par la barre noire. Corrigé
-
-<a name="v2.1.0-beta-19-ga3a1dee"></a>
-# 2.1.0-beta-19-ga3a1dee (2020-05-24)
 
 ### Nouveautés
- * <img src="../images/klaxon.png" alt="klaxon" width="40" style='border-radius:5px'/> [**Widget**] Ajout de la commande `Actionner le klaxon` et de son bouton sur le widget 
 
- * <img src="../images/flashLights.png" alt="flashLights" width="40" style='border-radius:5px'/> [**Widget**] Ajout de la commande `Actionner les phares` et de son bouton sur le widget.
+<img src="../images/klaxon.png" alt="klaxon" width="40" style='border-radius:5px'/> 
+<img src="../images/flashLights.png" alt="flashLights" width="40" style='border-radius:5px'/>
+<img src="../images/windows-vent.png" alt="vent" width="40" style='border-radius:5px'/>
 
- * <img src="../images/windows-vent.png" alt="vent" width="40" style='border-radius:5px'/> [**Widget**] Ajout de la commande `Contrôler les fenêtres` et de son bouton sur le widget.
- * Ajout de `Info fenêtres` qui indique l'état des des 4 fenêtres (dans l'ordre: "conducteur", "passager", "arrière passager", "arrière conducteur") avec 3 lettres pour chacune ('O': Ouverte, 'P': Partiellement ouverte et 'F': Fermée). Exemples: `OPFF` = Fenêtre conducteur ouverte, fenêtre passager partiellement ouverte et les deux fenetres à l'arrière sont fermées, `PPPP` = Toutes les fenêtres sont en mode ventilation (partiellement ouvertes), ...
+ * [**Widget**] Ajout de la commande `Actionner le klaxon` et de son bouton sur le widget 
+ * [**Widget**] Ajout de la commande `Actionner les phares` et de son bouton sur le widget.
+ * [**Widget**] Ajout de la commande `Contrôler les fenêtres` et de son bouton sur le widget.
+ * Ajout de `Info fenêtres` qui indique l'état des des 4 fenêtres (dans l'ordre: "conducteur", "passager", "arrière passager", "arrière conducteur") avec 3 lettres pour chacune (`O`: Ouverte, `P`: Partiellement ouverte et `F`: Fermée). Exemples: `OPFF` = Fenêtre conducteur ouverte, fenêtre passager partiellement ouverte et les deux fenetres à l'arrière sont fermées, `PPPP` = Toutes les fenêtres sont en mode ventilation (partiellement ouvertes), ...
+ * Ajout de `Info selecteur de vitesses` qui indique la valeur du ... selecteur de vitesses : `P`, `R`, `N`, `D` ou `OFF`
+ * [**Widget**] Ajout d'un bouton pour réveiller la voiture lorsqu'elle est endormie. Un clic sur ce bouton effectuera 3 tentatives de réveil espacées de 5 secondes (3 et 5 sont configurables au niveau du plugin). Un second clic sur ce bouton annulera la procédure de réveil, mais la voiture peut être amenée à se réveiller quand même si une précédente tentative réussit. Dès lors que la voiture est réveillée, ce bouton disparait.
+ * [**Widget**] Affichage de la pastille bleu/rouge/verte/grise qui indique l'état de la voiture (bleu=conduite / rouge=encharge / verte=au parking / grise=hors ligne)
+ * Ajout de `Info vitesse` qui indique la vitesse actuelle (négative si marche arrière). Utile par exemple pour n'ouvrir un portail que si on s'en approche à vitesse modérée. A utiliser sans modération dans les scénarios : détection de trop grande vitesse, ouverture d'un garage si marche arrière, ....
+ * Ajout d'un `darkMode` dans la configuration du plugin pour afficher la carte sur fond noir, et qui permet un meilleur affichage de l'icone Tesla.
+ * Ajout de `Info ampérage demandé` et `Info ampérage maximum` qui contiennent les consignes d'ampérage
 
-> Note:
+
+
+> Notes:
 >
 > `Contrôler les fenêtres` permet de ventiler la voiture en ouvrant simultanément toutes les fenêtres, et de fermer toutes les fenêtres à distance. Si au moins une des fenêtres est ouverte (totalement ou partiellement), une action sur `Contrôler les fenêtres` ouvrira toutes les fenêtres en mode *ventillation*. Une seconde action fermera simultanément les fenêtres.
 >
 > **ATTENTION**: assurez vous qu'aucun objet ou doigt ne dépasse d'une fenêtre avant d'actionner la fermeture à distance.
-
-> **IDEE**: Utilisez `Actionner le klaxon` et/ou `Actionner les phares` dans vos scénarios pour confirmer une séquence d'action !
-
-Description du visuel du bouton `Contrôler les fenêtres`:
- - <img src="../images/windows-open.png" alt="vent" width="40" style='border-radius:5px'/>  au moins une fenêtre est ouverte 
- - <img src="../images/windows-vent.png" alt="vent" width="40" style='border-radius:5px'/>  toutes les fenêtres sont en mode *ventilation*
- - <img src="../images/windows-close.png" alt="vent" width="40" style='border-radius:5px'/> toutes les fenêtres sont fermées
-
+>
+>
+> Description du visuel du bouton `Contrôler les fenêtres`:
+>  - <img src="../images/windows-open.png" alt="vent" width="40" style='border-radius:5px'/>  au moins une fenêtre est ouverte 
+>  - <img src="../images/windows-vent.png" alt="vent" width="40" style='border-radius:5px'/>  toutes les fenêtres sont en mode *ventilation*
+>  - <img src="../images/windows-close.png" alt="vent" width="40" style='border-radius:5px'/> toutes les fenêtres sont fermées
 
 
-<a name="v2.1.0-beta-15-gaefc609"></a>
-# 2.1.0-beta-15-gaefc609 (2020-05-19)
+> Idée:
+>
+> Utilisez `Actionner le klaxon` et/ou `Actionner les phares` dans vos scénarios pour confirmer une séquence d'action !
 
-### Nouveautés
- * Ajout de `Info selecteur de vitesses` qui indique la valeur du ... selecteur de vitesses : `P`, `R`, `N`, `D` ou `OFF`
 
 ### Améliorations
+ * Conservation du nom de l'action ou de l'info si elle existe déjà (dans le cas ou elle a été renommé, son nom n'est plus réinitiallisé). 
+ * [**Tracking**] Quand le tracking est arrêté manuellement, un point 'Parking' est ajouté à cet instant.
  * [**Widget**] Lorsque une commande du widget est exécutée (clic d'un bouton pour allumer la climatisation, ouvrir un coffre, ...) le plugin commence par réveiller la voiture si elle est hors ligne.
  * Ajout de la version du software Tesla dans les données acquises lors du tracking. Pour une future exploitation.
-
-## Correctif
- * [**Widget**] Chez certains, l'image de la voiture ne s'affichait pas correctement. C'est maintenant corrigé.
-
-<a name="v2.1.0-beta-11-g7c7c0f7"></a>
-# 2.1.0-beta-11-g7c7c0f7 (2020-05-17)
-
-### Nouveautés
- * [**Widget**] Ajout d'un bouton pour réveiller la voiture lorsqu'elle est endormie. Un clic sur ce bouton effectuera 3 tentatives de réveil espacées de 5 secondes (3 et 5 sont configurables au niveau du plugin). Un second clic sur ce bouton annulera la procédure de réveil, mais la voiture peut être amenée à se réveiller quand même si une précédente tentative réussit. Dès lors que la voiture est réveillée, ce bouton disparait.
- * [**Widget**] Affichage de la pastillle bleu/rouge/verte/grise qui indique l'état de la voiture (bleu=conduite / rouge=encharge / verte=au parking / grise=hors ligne)
-
-### Améliorations
  * [**Widget**] Les info/action ajoutées pour personaliser le widget sont conservées lors de la mise à jour du plugin (ainsi que le fait qu'une commande de type info soit historisée).
  * [**Geolocalisation**] La détection d'un favori est faite du plus petit cercle au plus grand cercle. Quand la voiture est dans la zone d'un grand cercle et qu'elle entre dans la zone d'un petit cercle, l'évennement `Info s'approche de` prend la valeur du nom du petit cercle.
-
-Merci aux béta testeurs !
-
-
-<a name="v2.1.0-beta-5-g6c866dc"></a>
-# 2.1.0-beta-5-g6c866dc (2020-04-29)
-
-### Nouveautés
- * Ajout de `Info vitesse` qui indique la vitesse actuelle (négative si marche arrière). Utile par exemple pour n'ouvrir un portail que si on s'en approche à vitesse modérée. A utiliser sans modération dans les scénarios : détection de trop grande vitesse, ouverture d'un garage si marche arrière, ....
- * Ajout d'un `darkMode` dans la configuration du plugin pour afficher la carte sur fond noir, et qui permet un meilleur affichage de l'icone Tesla.
-
-### Améliorations
  * Possibilité d'uploader une image (png/gif/jpeg) pour changer le visuel de la voiture affichée sur le widget par une image téléchargée.
  * De bien meilleures traductions espagnoles.
 
 
+### Correctifs
+ * [**Widget**] Problème d'ouverture et de fermeture des fenêtres. Corrigé
+ * Le plugin forçait le timezone à `Europe/Paris`, bug trouvé par un utilisateur de Quebec. Corrigé
+ * Le bas du calendrier était parfois masqué par la barre noire. Corrigé
+ * [**Widget**] Chez certains, l'image de la voiture ne s'affichait pas correctement. C'est maintenant corrigé.
+
+
 ### Problème connu
  * l'`Info trappe de recharge` s'appuie sur une donnée envoyée par l'API Tesla qui parfois est incohérente : il arrive que la trappe soit dite fermée alors que le cable est engagé... Préférez donc `Info cable connecté` dans vos scénarios.
+
+
+Un grand merci aux béta testeurs qui ont patiement testé les 6 versions béta successives de cette 2.1 !
+
 
 <a name="v2.0.4"></a>
 # 2.0.4 (2020-04-03)
@@ -130,7 +110,7 @@ Merci à 'nicothum' !
 <a name="v2.0.0"></a>
 # 2.0.0 (2020-03-15)
 
-**La version 2 du plugin, compatible avec Jeedom V3 et V4, est maintenant disponiblle en version stable !**
+**La version 2 du plugin, compatible avec Jeedom V3 et V4, est maintenant disponible en version stable !**
 
 Voici la liste des principales nouveautés que vous pouvez retrouver sur la [page](http://tesla.jeedom.free.fr/version2/) dédiée à la sortie de la V2 :
 
