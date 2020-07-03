@@ -1,6 +1,14 @@
+<a name="v2.1.1"></a>
+# 2.1.1 (2020-07-03)
+
+### Correctifs
+ * [**Widget**] Le bouton "Sentinelle" n'apparaissait pas correctement. Corrigé
+ * [**Widget**] Le bouton "Réveiller" n'apparaissait pas correctement. Corrigé
+ * [**Widget**] La fonction "Réveiller" appelée via un scénario ne fonctionnait pas correctement. Corrigé
+
+
 <a name="v2.1.0"></a>
 # 2.1.0 (2020-06-27)
-
 
 ### Nouveautés
 
@@ -18,8 +26,6 @@
  * Ajout de `Info vitesse` qui indique la vitesse actuelle (négative si marche arrière). Utile par exemple pour n'ouvrir un portail que si on s'en approche à vitesse modérée. A utiliser sans modération dans les scénarios : détection de trop grande vitesse, ouverture d'un garage si marche arrière, ....
  * Ajout d'un `darkMode` dans la configuration du plugin pour afficher la carte sur fond noir, et qui permet un meilleur affichage de l'icone Tesla.
  * Ajout de `Info ampérage demandé` et `Info ampérage maximum` qui contiennent les consignes d'ampérage
-
-
 
 > Notes:
 >
