@@ -1,3 +1,11 @@
+<a name="v2.1.2-beta-2-gb7ed23a"></a>
+# 2.1.2-beta-2-gb7ed23a (2020-08-09)
+
+### Correctifs
+ * [**Widget**] résolution du problème d'affichage du curseur de recharge après installation d'un widget "batterie"
+ - réglage d'un possible effet de bord du rafraichissement de "Info réveillée"
+
+
 <a name="v2.1.1"></a>
 # 2.1.1 (2020-07-03)
 
