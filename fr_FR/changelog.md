@@ -1,5 +1,19 @@
+<a name="v2.1.2-beta-11-g75f6b4c"></a>
+# 2.1.2-beta-11-g75f6b4c (2020-10-14)
+
+### Améliorations
+ * Meilleure prise en charge du tracking lorsque plus d'une Tesla est suivie par le plugin 
+
+<a name="v2.1.2-beta-9-gcebcc8e"></a>
+# 2.1.2-beta-9-gcebcc8e (2020-09-28)
+
+### Améliorations
+ * Suppression de la case à cocher "historiser" pour les Commandes de type Info qui n'ont pas vocation être historisées (buffer, json, ...) 
+ * Ajout de "Info tension de recharge"
+ * Ajout des graphes "température habitacle" et "température extérieure"  
+
 <a name="v2.1.2-beta-4-g7957449"></a>
-# 2.1.2-beta-4-g7957449 (2020-08-09)
+# 2.1.2-beta-4-g7957449 (2020-08-21)
 
 ### Correctifs
  * Problème de mise à jour de 'Info recharge'. Corrigé
