@@ -1,3 +1,11 @@
+<a name="v2.1.2-beta-14-ga746292"></a>
+# 2.1.2-beta-14-ga746292 (2020-10-23)
+
+### Correctifs
+ * Typo sur des log de type Info corrigé (Klaxon actionné, Phares actionnés)
+ * L'icone Lune n'était pas visible sur Jeeodm V4. Corrigé
+ * Le retour d'état "online/offline" pouvait être erroné quand plus d'une Tesla est suivie par le plugin. Corrigé
+
 <a name="v2.1.2-beta-11-g75f6b4c"></a>
 # 2.1.2-beta-11-g75f6b4c (2020-10-14)
 
