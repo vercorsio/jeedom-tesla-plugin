@@ -1,3 +1,12 @@
+<a name="v2.1.3-beta-3-g6ed1bd5"></a>
+# 2.1.3-beta-3-g6ed1bd5 (2020-12-08)
+
+### Correctifs
+ * Le plugin pouvait ne pas réussir a se connecter aux serveurs de Tesla. Corrigé.
+ * [**Tracking**] Le tracé du trajet en cours ne s'affichait pas. Corrigé
+ * [**Tracking**] Le tracé d'un précédent trajet provoquait des erreurs javascript. Corrigé
+
+
 <a name="v2.1.2"></a>
 # 2.1.2 (2020-11-21)
 
