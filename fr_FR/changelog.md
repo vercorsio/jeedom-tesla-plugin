@@ -1,3 +1,9 @@
+<a name="v2.1.4"></a>
+# 2.1.4 (2021-01-26)
+
+### Correctifs
+ * Le plugin est maintenant compatible avec la version 4.1 de Jeedom.
+
 <a name="v2.1.3"></a>
 # 2.1.3 (2020-12-19)
 
@@ -10,27 +16,27 @@
 # 2.1.2 (2020-11-21)
 
 ### Améliorations
- * Meilleure prise en charge du tracking lorsque plus d'une Tesla est suivie par le plugin 
- * Suppression de la case à cocher "historiser" pour les Commandes de type Info qui n'ont pas vocation être historisées (buffer, json, ...) 
- * Ajout de "Info tension de recharge"
- * Ajout des graphes "température habitacle" et "température extérieure"  
+ * Meilleure prise en charge du tracking lorsque plus d'une Tesla est suivie par le plugin.
+ * Suppression de la case à cocher "historiser" pour les Commandes de type Info qui n'ont pas vocation être historisées (buffer, json, ...).
+ * Ajout de "Info tension de recharge".
+ * Ajout des graphes "température habitacle" et "température extérieure".
 
 ### Correctifs
- * Problème de mise à jour de 'Info recharge'. Corrigé
- * [**Widget**] résolution du problème d'affichage du curseur de recharge après installation d'un widget "batterie"
- * réglage d'un possible effet de bord du rafraichissement de "Info réveillée"
- * Typo sur des log de type Info corrigé (Klaxon actionné, Phares actionnés)
- * L'icone Lune n'était pas visible sur Jeeodm V4. Corrigé
- * Le retour d'état "online/offline" pouvait être erroné quand plus d'une Tesla est suivie par le plugin. Corrigé
+ * Problème de mise à jour de 'Info recharge'. Corrigé.
+ * [**Widget**] résolution du problème d'affichage du curseur de recharge après installation d'un widget "batterie".
+ * réglage d'un possible effet de bord du rafraichissement de "Info réveillée".
+ * Typo sur des log de type Info corrigé (Klaxon actionné, Phares actionnés).
+ * L'icone Lune n'était pas visible sur Jeeodm V4. Corrigé.
+ * Le retour d'état "online/offline" pouvait être erroné quand plus d'une Tesla est suivie par le plugin. Corrigé.
 
 
 <a name="v2.1.1"></a>
 # 2.1.1 (2020-07-03)
 
 ### Correctifs
- * [**Widget**] Le bouton "Sentinelle" n'apparaissait pas correctement. Corrigé
- * [**Widget**] Le bouton "Réveiller" n'apparaissait pas correctement. Corrigé
- * [**Widget**] La fonction "Réveiller" appelée via un scénario ne fonctionnait pas correctement. Corrigé
+ * [**Widget**] Le bouton "Sentinelle" n'apparaissait pas correctement. Corrigé.
+ * [**Widget**] Le bouton "Réveiller" n'apparaissait pas correctement. Corrigé.
+ * [**Widget**] La fonction "Réveiller" appelée via un scénario ne fonctionnait pas correctement. Corrigé.
 
 
 <a name="v2.1.0"></a>
