@@ -1,3 +1,21 @@
+<a name="v2.2.0"></a>
+# 2.2.0 (2021-02-03)
+
+### Améliorations
+ * Prise en charge du nouveau serveur d'authentification mis en ligne par Tesla.
+
+### Correctifs
+ * La prise en charge du mode Sentinelle pouvait ne pas être effective. Corrigé.
+
+
+> Notes:
+> 
+> Etant donné que Tesla a changé son mode d'authentification, cette version devient necessaire pour connecter sa Tesla à Jeedom.
+> 
+> L'authentification multifacteur (MFA) n'est pas prise en charge par cette version 2.2.0. Ce sera supporté dans une version ultérieure du plugin... À suivre 
+
+Un grand **merci** à `gpaumat`, `dramces`, `nicothum`, `3.14R`, `Tonio16` et `10tribu` pour les tests qu'ils ont effectué sur la béta pour ces modifications de serveur d'authentification. 
+
 <a name="v2.1.4"></a>
 # 2.1.4 (2021-01-26)
 
