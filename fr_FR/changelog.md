@@ -1,7 +1,13 @@
+<a name="v2.3.0-beta-2-gebc8022"></a>
+# 2.3.0-beta-2-gebc8022 (2021-02-16)
+
+### Améliorations
+ * Prise en charge de l'authentification multifacteur. Nécessite sa [configuration](https://mfa.tesla.com/begin?locale=fr_fr) sur votre compte [tesla.com](https://www.tesla.com/fr_FR/teslaaccount).
+
 <a name="v2.2.0"></a>
 # 2.2.0 (2021-02-03)
 
-### Améliorations
+### Amélioration
  * Prise en charge du nouveau serveur d'authentification mis en ligne par Tesla.
 
 ### Correctifs
@@ -19,7 +25,7 @@ Un grand **merci** à `gpaumat`, `dramces`, `nicothum`, `3.14R`, `Tonio16` et `1
 <a name="v2.1.4"></a>
 # 2.1.4 (2021-01-26)
 
-### Correctifs
+### Correctif
  * Le plugin est maintenant compatible avec la version 4.1 de Jeedom.
 
 <a name="v2.1.3"></a>
