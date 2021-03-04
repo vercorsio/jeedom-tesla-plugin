@@ -1,7 +1,36 @@
-<a name="v2.3.0-beta-2-gebc8022"></a>
-# 2.3.0-beta-2-gebc8022 (2021-02-16)
+<a name="v2.3.3-beta-1-g9be6078"></a>
+# 2.3.3-beta-1-g9be6078 (2021-03-03)
 
 ### Améliorations
+ * Nouvelle présentation plus claire de la procédure de connexion au compte tesla.com. Le formulaire de connexion présente les habituels `e-mail` / `mot de passe` et `code secret` (requis si l'authentification multifacteur est activée) ainsi qu'un lien pour basculer sur l'authentifaction par token.
+ * Une fois conneccté, le plugin affiche le panneau de configuration complet, ainsi qu'un bouton pour se déconnecter.
+
+ > Notes
+ >
+ > * Après la connexion, il est nécessaire de cliquer sur `Synchroniser mes véhicules` pour re-activer les équipements Jeedom associés à chacunes de vos Tesla, et également appliquer les eventuelles nouvelles fonctionalités sur ces équipements.
+ >
+ > * Lors de la deconnexion, le jeton d'accès est révoqué (il devient inutilisable) et les identifiants sont effacés. Le panneau de configuration bascule sur le formulaire de connexion.
+ > 
+ > * Le bouton de test ajouté en v2.3.2 a été supprimé : le test de validité du token est automatiquement effecctué pour afficher le cas échéant le panneau de configuration du plugin.
+
+<a name="v2.3.2"></a>
+# 2.3.2 (2021-02-26)
+
+### Amélioration
+ * Ajout d'un bouton de test pour vérifier que le jeton d'authentification est valide. 
+
+
+<a name="v2.3.1"></a>
+# 2.3.1 (2021-02-21)
+
+### Améliorations
+ * Lors de la phase d'authentification, jusqu'à 6 accès différents aux serveurs Tesla doivent être effectués. Si l'un d'eux échoue un mecanisme de ré-essai a été ajouté (jusqu'à 5 tentatives).
+ * Le jeton d'authentification était effacé à l'installation d'une mise à jour. Il n'est maintenant supprimé que s'il a été généré avant fin février 2021.
+
+<a name="v2.3.0"></a>
+# 2.3.0 (2021-02-16)
+
+### Amélioration
  * Prise en charge de l'authentification multifacteur. Nécessite sa [configuration](https://mfa.tesla.com/begin?locale=fr_fr) sur votre compte [tesla.com](https://www.tesla.com/fr_FR/teslaaccount).
 
 <a name="v2.2.0"></a>
