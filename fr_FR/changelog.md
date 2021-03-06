@@ -1,17 +1,18 @@
-<a name="v2.3.3-beta-1-g9be6078"></a>
-# 2.3.3-beta-1-g9be6078 (2021-03-03)
+<a name="v2.3.3"></a>
+# 2.3.3 (2021-03-06)
 
 ### Améliorations
- * Nouvelle présentation plus claire de la procédure de connexion au compte tesla.com. Le formulaire de connexion présente les habituels `e-mail` / `mot de passe` et `code secret` (requis si l'authentification multifacteur est activée) ainsi qu'un lien pour basculer sur l'authentifaction par token.
- * Une fois conneccté, le plugin affiche le panneau de configuration complet, ainsi qu'un bouton pour se déconnecter.
+ * Nouvelle présentation plus claire de la procédure de connexion au compte tesla.com. Le formulaire de connexion présente les habituels `e-mail` / `mot de passe` et `code secret` (ce dernier est requis si l'authentification multifacteur est activée) ainsi qu'un lien pour basculer sur l'authentifaction par token.
+ * Une fois connecté, le plugin affiche le panneau de configuration complet, ainsi qu'un bouton pour se déconnecter.
+ * Si l'authentification a été faite à l'aide de l'adresse e-mail et du mot de passe, un token de raffraichissement est envoyé par Tesla. Il permet de mettre à jour le jeton d'authentification quand celui-ci arrive a échéance, garantissant ainsi une utilisation sans interuption du plugin.
 
  > Notes
  >
- > * Après la connexion, il est nécessaire de cliquer sur `Synchroniser mes véhicules` pour re-activer les équipements Jeedom associés à chacunes de vos Tesla, et également appliquer les eventuelles nouvelles fonctionalités sur ces équipements.
+ > * Après la première connexion, il est nécessaire de cliquer sur `Synchroniser mes véhicules` pour scanner les voitures de votre compte Tesla et créer les équipements Jeedom associés à chacunes d'elles. Aussi suite à la mise à jour du plugin, `Synchroniser mes véhicules` permettra d'ajouter les eventuelles nouvelles fonctionalités sur vos équipements Tesla déclarés dans Jeedom.
  >
- > * Lors de la deconnexion, le jeton d'accès est révoqué (il devient inutilisable) et les identifiants sont effacés. Le panneau de configuration bascule sur le formulaire de connexion.
+ > * Lors de la deconnexion, les jetons d'accès et de raffraichissement sont révoqués (ils deviennent inutilisables) et les identifiants sont effacés. Le panneau de configuration bascule sur le formulaire de connexion.
  > 
- > * Le bouton de test ajouté en v2.3.2 a été supprimé : le test de validité du token est automatiquement effecctué pour afficher le cas échéant le panneau de configuration du plugin.
+ > * Le bouton de test ajouté en v2.3.2 a été supprimé : le test de validité du token est automatiquement effectué pour afficher le cas échéant le panneau de configuration du plugin.
 
 <a name="v2.3.2"></a>
 # 2.3.2 (2021-02-26)
