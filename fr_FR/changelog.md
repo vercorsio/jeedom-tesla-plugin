@@ -1,4 +1,10 @@
 <a name="v2.3.3"></a>
+# 2.3.4 (2021-03-07)
+### Correctif
+ * Les commandes du widget pouvaient ne pas répondre. Corrigé.
+
+
+<a name="v2.3.3"></a>
 # 2.3.3 (2021-03-06)
 
 ### Améliorations
@@ -182,11 +188,6 @@ Merci à 'nicothum' !
  * Ajout des traductions pour l'Allemand, l'Italien et le Portugais
  * Indication de l'avancement de la mise à jour logicielle
  * Ajout de la commande de type info `Info mise à jour logicielle` qui permet de déclencher un scénario quand une nouvelle version du logiciel de la voiture est disponible. Valeurs possibles dans l'ordre de la séquence de la mise à jour: `downloading_wifi_wait`, `downloading`, `available`, `scheduled` et `installing`. Quand aucune mise à jour est disponible, la valeur est vide.
-
-<a name="v2.0.1-beta-8-g6cecdc4"></a>
-# 2.0.1-beta-8-g6cecdc4 (2020-03-21)
-
-### Améliorations
  * Possibilité de définir la page horaire qui définit la période du tracking SOMMEIL NUIT, où le tracking baisse la fréquentation des appels. Réglages disponibles dans la configuration avancée du plugin.
 
 ### Correctifs
@@ -212,73 +213,61 @@ Voici la liste des principales nouveautés que vous pouvez retrouver sur la [pag
  * La **cartographie** fait son entrée !!
    - Suivi en temps réel d'un trajet sur la carte du tracking.
    - Affichage des trajets parcourus sur une carte, chaque portion est identifiée par une couleur spécifique.
-   - Les points d'arrêt sont matérialisés par des marqueurs parking, leur coordonnées GPS sont traduites en adresses physiques.
-   - Un marqueur parking peut être transformé en marqueur favori. Un nom court peut lui être donné, ainsi qu'un rayon d'action (en m).
+   - Les points d'arrêt sont matérialisés par des marqueurs `parking`, leur coordonnées GPS sont traduites en adresses physiques.
+   - Un marqueur `parking` peut être transformé en marqueur `favori`. Un nom court peut lui être donné, ainsi qu'un rayon d'action (en m).
    - Un clic sur la ligne du trajet permet de suivre l'évolution de la voiture depuis son point de départ jusqu'à son point d'arrivée.
    - Ajout de colonnes dans le tableau du tracking pour indiquer les lieux de départ et d'arrivée.
-   - Lorsque la voiture entre ou sort d'un favori, un évennement est émis qui peut servir de déclencheur pour un scenario (Homelink, ...)
+   - Lorsque la voiture entre ou sort d'un `favori`, un évennement est émis qui peut servir de déclencheur pour un scenario (Homelink, ...). Le plugin met à jour deux nouvelles commandes de type Info qui peuvent être utilisées dans des scénarios : `Info s'approche de`, `Info s'éloigne de` et `Info date dernier franchissement`. 
    - La pastille qui materialise la position de la voiture sur la carte change de couleur en fonction de son état (online, offline, conduite, charge)
+  - La légende du tracking n'est plus affichée en permanence. Après clic sur le bouton "Légende", on peut activer/désactiver l'affichage d'une courbe en cliquant sur son titre.
  * **Mode plein écran** et barre de menus noire "à la Tesla" qui permet de choisir affichage désiré.
  * Le plugin est maintenant traduit en **espagnol**.
  * **Parking souterrain** : découpe d'un trajet en deux si deux mesures consécutives sont séparées d'au moins 5 minutes et au plus 500 mètres (valeurs configurables)
  * Mise à jour en live de la valeur "Info réveillée" lorsque le tracking est activé, ce qui permet de **monitorer l'état de la voiture** (notification) et d'utiliser la valeur pour déclencher des scénarios.
 
+**En images, ajouter un favori, l'éditer et suivre un trajet sur la carte :**
+
+<img src="../images/Map-SetFavorite.gif" alt="drawing" width="400" style="border-radius:8px;"/>
+<img src="../images/Map-EditFavorite.gif" alt="drawing" width="400" style="border-radius:8px;"/>
+
+<img src="../images/Map-Table.jpg" alt="drawing" width="400" style="border-radius:8px;"/>
+
+
 ### Améliorations
  * Le calendrier pour sélectionner une date n'affiche que celles qui contiennent des données de tracking. 
  * Il est possible de désélectionner une ligne du tableau pour revenir au zoom global
  * Agrandissement de la jauge de l'autonomie dans le widget
+ * [**Tracking**] Parfois, la voiture en roulant entre dans une zone sans réseau (parking souterrain par exemple) et se gare. Lorsqu'elle repart elle revient visible alors qu'elle roule déjà. Le tracking va scinder ce trajet en deux en utilisant les conditions de durée et de distance entre deux mesures indiquées dans la configuration avancée du plugin:
+
+<img src="../images/tracking-cutTripsConfig.png" alt="drawing" width="804" style="border-radius:8px;"/>
+
+ * [**Tracking**] Ajout d'un bouton 'plein écran'.
+ * [**Tracking**] Ajout d'une barre de contrôle sur fond noir 'à la Tesla' pour piloter l'affichage de la carte, du graph et du tableau :
+ 
+ <img src="../images/tracking-flex-columns.png" alt="drawing" width="400" style="border-radius:8px;"/>
+
+ * [**Tracking**] Interruption du chargement si une autre date est demandée.
+ * [**Tracking**] Ajout d'un message dans le tableau si aucune donnée n'est disponible.
+ * [**Tracking**] Déselectionner une ligne du tableau revient au zoom initial.
+ * [**Tracking**] Amélioration du suivi du markeur de la voiture lors de la conduite.
+ * Les marqueurs sont réaffichés après la modification d'un favori ou d'un emplacement de parking.
+ * Sur la version desktop, le calendrier du tracking ne permet de sélectionner que les jours avec tracking.
+
+
 
 ### Correctifs
  * En mode "Energie", la courbe de l'autonomie arborait une verticale à droite. Corrigé
+ * [**Tracking**] Lorsque la voiture est à l'arret en veille et qu'elle part, le tracking peut mettre un certain temps pour détecter ce nouvel état (driving). Cela se traduit par une phase de parking qui indique un kilométrage non nul. Comme il est impossible de déterminer l'heure exacte du départ, les statistiques liées a cette phase ne sont pas pertinentes. Ces trajets fantômes sont ignorés et retirés du tableau.
+ * [**Tracking**] Le mode Sentinelle est à nouveau visible sur le tableau (point rouge sur l'icone) et sur le graph (qui passe en rouge lorsque le mode Sentinelle est activé)
+ * Les favoris edités sur Safari sont maintenant bien pris en compte. Réglage d'un problème de cache.
+ * Les informations du véhicule n'étaient pas mises à jour sur le widget. Corrigé.
 
-... ainsi que les correctifs listés ci-dessous lors de la sortie des différentes versions béta.
 
 ### Problème connu
  * L'évènement `Info trappe de recharge` semble parfois remonter ouvert alors qu'il est fermé, et inversement. Je conseille d'utiliser dans les scénarios de déclenchement de recharge, l'évènement `Info cable connecté`
 
 Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé leur retours et leur soutient : `bobjouy`, `Funroc`, `jerry`, `J0kers`, `MattKirby`, `matts`, `oxton`, `Tonio16`, ...
 
-<a name="v2.0.0-beta.1-25-g2b4660d"></a>
-# 2.0.0-beta.1-25-g2b4660d (2020-03-03)
-
-### Améliorations
- * [**Tracking**] Parfois, la voiture en roulant entre dans une zone sans réseau (parking souterrain par exemple) et se gare. Lorsqu'elle repart elle revient visible alors qu'elle roule déjà. Le tracking va scinder ce trajet en deux en utilisant les conditions de durée et de distance entre deux mesures indiquées dans la configuration avancée du plugin:
-
-<img src="../images/tracking-cutTripsConfig.png" alt="drawing" width="804" style="border-radius:8px;"/>
-
-### Correctifs
- * [**Tracking**] Lorsque la voiture est à l'arret en veille et qu'elle part, le tracking peut mettre un certain temps pour détecter ce nouvel état (driving). Cela se traduit par une phase de parking qui indique un kilométrage non nul. Comme il est impossible de déterminer l'heure exacte du départ, les statistiques liées a cette phase ne sont pas pertinentes. Ces trajets fantômes sont ignorés et retirés du tableau.
- * [**Tracking**] Le mode Sentinelle est à nouveau visible sur le tableau (point rouge sur l'icone) et sur le graph (qui passe en rouge lorsque le mode Sentinelle est activé)
-
-<a name="v2.0.0-beta.1-22-g7385f9b"></a>
-# 2.0.0-beta.1-22-g7385f9b (2020-03-02)
-
-### Améliorations
- * [**Tracking**] Ajout d'un bouton 'plein écran'.
- * [**Tracking**] Ajout d'une barre de contrôle sur fond noir 'à la Tesla' pour piloter l'affichage de la carte, du graph et du tableau :
- <img src="../images/tracking-flex-columns.png" alt="drawing" width="804" style="border-radius:8px;"/>
-
- * [**Tracking**] Interruption du chargement si une autre date est demandée.
- * [**Tracking**] Ajout d'un message dans le tableau si aucune donnée n'est disponible.
- * [**Tracking**] Déselectionner une ligne du tableau revient au zoom initial.
- * [**Tracking**] Amélioration du suivi du markeur de la voiture lors de la conduite.
-
-
-<a name="v2.0.0-beta.1-9-gb68f51c"></a>
-# 2.0.0-beta.1-9-gb68f51c (2020-02-15)
-
-### Améliorations
- * Les marqueurs sont réaffichés après la modification d'un favori ou d'un emplacement de parking.
-
-<a name="v2.0.0-beta.1-7-g4ea3619"></a>
-# 2.0.0-beta.1-7-g4ea3619 (2020-02-12)
-
-### Améliorations
- * Sur la version desktop, le calendrier du tracking ne permet de sélectionner que les jours avec tracking.
-
-### Correctifs
- * Les favoris edités sur Safari sont maintenant bien pris en compte. Réglage d'un problème de cache.
- * Les informations du véhicule n'étaient pas mises à jour sur le widget. Corrigé.
 
 <a name="v1.9.7"></a>
 # 1.9.7 (2020-02-12)
@@ -295,31 +284,6 @@ Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé
 
 ### Correctifs
  * Il pouvait être impossible de définir un favori. L'icone "coeur" qui est utilisé pour ajouter/modifier/supprimer un favori, ainsi que les bouton d'action pouvaient ne pas apparaître. Corrigé
-
-
-<a name="v2.0.0-beta.1-1-g439720d"></a>
-# 2.0.0-beta.1-1-g439720d (2020-02-10)
-
-### Highlights
-
-Version majeure qui intègre une cartographie liée aux trajets effectués et aux lieux de parking/recharge.
-
-### Nouveautés
- * Suivi en temps réel d'un trajet sur la carte du tracking.
- * Affichage des trajets parcourus sur une carte, chaque portion est identifiée par une couleur spécifique.
- * Les points d'arrêt sont materialisés par des marqueurs `parking`, leur coordonnées GPS sont traduites en adresses physiques.
- * Un maqueur `parking` peut être transformé en marqueur `favori`. Un nom court peut lui être donné, ainsi qu'un rayon d'action (en m).
- * Lorsque la voiture entre ou sort du rayon d'action d'un `favori`, le plugin met à jour ces nouvelles commandes de type Info qui peuvent être utilisées dans des scénarios : `Info s'approche de`, `Info s'éloigne de` et `Info date dernier franchissement`. 
- * Un clic sur la ligne du trajet permet de suivre l'évolution de la voiture depuis son point de départ jusqu'à son point d'arrivée.
- * Ajout de colonnes dans le tableau du tracking pour indiquer les lieux de départ et d'arrivée.
- * La légende du tracking n'est plus affichée en permanence. Après clic sur le bouton "Légende", on peut activer/désactiver l'affichage d'une courbe en cliquant sur son titre.
-
-**En images, ajouter un favori, l'éditer et suivre un trajet sur la carte :**
-
-<img src="../images/Map-SetFavorite.gif" alt="drawing" width="400" style="border-radius:8px;"/>
-<img src="../images/Map-EditFavorite.gif" alt="drawing" width="400" style="border-radius:8px;"/>
-
-<img src="../images/Map-Table.jpg" alt="drawing" width="804" style="border-radius:8px;"/>
 
 <a name="v1.9.6"></a>
 # 1.9.6 (2020-02-07)
