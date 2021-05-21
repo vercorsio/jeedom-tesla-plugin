@@ -1,4 +1,16 @@
-<a name="v2.3.3"></a>
+<a name="v2.3.5"></a>
+# 2.3.5 (2021-05-21)
+
+### Améliorations
+ * Ajout d'un bouton d'aide dans le panneau de configuration du plugin. Il permet de vérifier l'ensemble des éléments nécessaires au bon fonctionnement du plugin.
+
+### Correctif
+ * Une fois que le token expirait, le plugin n'était pas en mesure de le rafraichir. Corrigé.
+ * Problème lié a la connexion au compte Tesla.com. Corrigé.
+
+
+
+<a name="v2.3.4"></a>
 # 2.3.4 (2021-03-07)
 ### Correctif
  * Les commandes du widget pouvaient ne pas répondre. Corrigé.
