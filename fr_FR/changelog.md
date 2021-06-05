@@ -1,3 +1,19 @@
+<a name="v2.3.6"></a>
+# 2.3.6 (2021-06-05)
+
+### Améliorations
+ * Ajout de l'indication "compte connecté" ou "compte déconnecté" sur la page principale de configuration du plugin
+  * Possibilité de voir et éditer les jetons d'authentification et de refraichissement depuis la configuration avancée.
+  * Arrêt/redémarrage du tracking lors des phases de connexion/récupération de jeton d'authentification.
+
+### Correctif
+ * Depuis quelques temps, la connexion au compte Tesla en utilisant les identifiants était impossible chez certains utilisateurs. Une erreur 403 était remontée par les serveurs Tesla lors de la récupération du jeton d'authentification. Ce problème lié à la negociation de la couche de sécurité (TLS) est corrigé.
+
+
+> Notes
+ >
+ > * Petite dédicace à tout ceux qui ont observé/subi l'erreur 403. Merci pour votre patience et votre aide !
+
 <a name="v2.3.5"></a>
 # 2.3.5 (2021-05-21)
 
@@ -22,13 +38,13 @@
 ### Améliorations
  * Nouvelle présentation plus claire de la procédure de connexion au compte tesla.com. Le formulaire de connexion présente les habituels `e-mail` / `mot de passe` et `code secret` (ce dernier est requis si l'authentification multifacteur est activée) ainsi qu'un lien pour basculer sur l'authentifaction par token.
  * Une fois connecté, le plugin affiche le panneau de configuration complet, ainsi qu'un bouton pour se déconnecter.
- * Si l'authentification a été faite à l'aide de l'adresse e-mail et du mot de passe, un token de raffraichissement est envoyé par Tesla. Il permet de mettre à jour le jeton d'authentification quand celui-ci arrive a échéance, garantissant ainsi une utilisation sans interuption du plugin.
+ * Si l'authentification a été faite à l'aide de l'adresse e-mail et du mot de passe, un token de rafraichissement est envoyé par Tesla. Il permet de mettre à jour le jeton d'authentification quand celui-ci arrive a échéance, garantissant ainsi une utilisation sans interuption du plugin.
 
  > Notes
  >
  > * Après la première connexion, il est nécessaire de cliquer sur `Synchroniser mes véhicules` pour scanner les voitures de votre compte Tesla et créer les équipements Jeedom associés à chacunes d'elles. Aussi suite à la mise à jour du plugin, `Synchroniser mes véhicules` permettra d'ajouter les eventuelles nouvelles fonctionalités sur vos équipements Tesla déclarés dans Jeedom.
  >
- > * Lors de la deconnexion, les jetons d'accès et de raffraichissement sont révoqués (ils deviennent inutilisables) et les identifiants sont effacés. Le panneau de configuration bascule sur le formulaire de connexion.
+ > * Lors de la deconnexion, les jetons d'accès et de rafraichissement sont révoqués (ils deviennent inutilisables) et les identifiants sont effacés. Le panneau de configuration bascule sur le formulaire de connexion.
  > 
  > * Le bouton de test ajouté en v2.3.2 a été supprimé : le test de validité du token est automatiquement effectué pour afficher le cas échéant le panneau de configuration du plugin.
 
