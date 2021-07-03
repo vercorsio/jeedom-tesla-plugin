@@ -1,3 +1,17 @@
+<a name="v2.3.8"></a>
+# 2.3.8 (2021-06-23)
+
+### Correctif
+ * Le token d'authentification pouvait disparaitre après avoir cliqué sur "Sauvegarder" une fois l'authentification réussie.
+ Cela ammenait a un "bandeau rouge" assez disgracieux et révélateur. C'est maintenant corrigé
+
+<a name="v2.3.7"></a>
+# 2.3.7 (2021-06-22)
+
+### Correctif
+ * Le message "create_function is deprecated" n'est plus, suite à la mise à jour d'une librairie interne.
+
+
 <a name="v2.3.6"></a>
 # 2.3.6 (2021-06-05)
 
