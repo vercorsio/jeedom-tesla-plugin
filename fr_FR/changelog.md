@@ -1,3 +1,22 @@
+
+<a name="v2.3.10"></a>
+# 2.3.10 (2021-08-28)
+
+### Améliorations
+ * Ajout d'une note indiquant qu'il est conseillé d'utiliser l'authentification par token
+ * Ajout de liens vers deux Application Android et iOS pour générer un token
+ * Lors de la connexion par token, il est maintenant possible d'indiquer le token de rafraishissement
+
+### Correctif
+ * Suppression de l'image captcha qui pouvait apparaitre
+ 
+<a name="v2.3.9"></a>
+# 2.3.9 (2021-06-24)
+
+### Correctif
+ * Amélioration de la procédure d'authentification
+
+
 <a name="v2.3.8"></a>
 # 2.3.8 (2021-06-23)
 
@@ -42,6 +61,7 @@
 
 <a name="v2.3.4"></a>
 # 2.3.4 (2021-03-07)
+
 ### Correctif
  * Les commandes du widget pouvaient ne pas répondre. Corrigé.
 
