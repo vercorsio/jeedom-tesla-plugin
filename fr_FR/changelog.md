@@ -1,3 +1,21 @@
+<a name="v2.3.11"></a>
+# 2.3.11 (2021-09-10)
+
+### Améliorations
+ * L'authentification par token est proposée par défaut. L'authentification par identifiants (email/mot de passe) reste possible mais est sujette à l'échec du fait du changement des serveurs d'authentification Tesla 
+
+### Correctif
+ * Seuls les tokens commençant par `qts-` étaient considérés comme valides. Après rafraichissement de celui-ci un nouveau token prefixé par `eu-` est fourni par Tesla et des messages d'erreur du type `"Le token d'authentification n'est pas renseigné ou n'est pas valide"` apparaissaient. Ce problème est corrigé.
+
+
+> Notes
+ >
+ > * Au moment de la connexion, il n'est pas conseillé de cliquer sur le bouton vert "Sauvegarder". Cela peut avoir un effet de bord négatif sur la configuration et effacer le token d'authentification.
+
+
+Merci à tous ceux qui ont testé les différentes versions béta : `Alex25`, `dranreb38`, `Elkapine`, `Fabki`, `FredL`, `nicothum`, `ovomaltin`, `technoseb27`, `TheKiller83`, `Tonio16`, `Viald`
+
+
 
 <a name="v2.3.10"></a>
 # 2.3.10 (2021-08-28)
