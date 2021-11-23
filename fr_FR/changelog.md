@@ -1,3 +1,58 @@
+
+<a name="v3.0.0-beta-26-26"></a>
+# 3.0.0-beta-26-26 (2021-11-23)
+### Améliorations
+ * Ajout des statistiques mensuelles
+ * Meilleure prise en charge de l'affichage du nouveau tracking sur mobiles
+
+
+<a name="v3.0.0-beta-12-16"></a>
+# 3.0.0-beta-12-16 (2021-11-04)
+
+### Améliorations
+ * Prise en charge de la modification de l'ampérage de charge (Info et commande "scénarisable")
+ * Les panneaux de statistiques sont séparés et peuvent être cachés indépendament.
+ * Le nouveau tracking se souvient de ce quel éléments étaient affichés (graph, carte, liste, stats) pour les réafficher plus tard.
+ * Affichage en clair du nombre de kilomètres gagnés/perdus (cf Note)
+
+ > Note:
+ > 
+ > Le nombre de km "gagnés" ou "perdus" lors de la conduite varie selon le style de conduite ou la météo, ou le profil de la route. 
+ > 
+ > Exemple : on part avec **100km** d'autonomie, pour un parcours de **20km**. En théorie on devrait arriver avec une autonomie de **80km**.... oui mais non.... selon la pente, la température et l'age du capitaine, on pourra arriver :
+ >
+ >  - avec **85km** d'autonomie (parce qu'on a conduit sage, par exemple, ou en descente), auquel cas le panneau de stats "en cours" indique en vert **+5km**
+ >  - avec **71km** d'autonomie (parce qu'on a appuyé sur le champignon, ou qu'on a pas mal grimpé), auquel cas panneau de stats "en cours" indique en orange **-9km**
+ >
+ > Ce chiffre (qui est aussi visible sur le graph) est affiché en continu quand on conduit dans les stats "en cours", on peut inciter le conducteur à vouloir le garder vert :) 
+ > 
+
+
+<a name="v3.0.0-beta-5-gfaab6f0"></a>
+# 3.0.0-beta-5-gfaab6f0 (2021-10-02)
+
+### Améliorations
+ * Le panneau de statistiques s'affiche comme un tiroir depuis le bas
+ * Ajout des données "en cours" au dessus des statistiques de la journée
+
+<a name="v3.0.0-beta-3-g5d658ba"></a>
+# 3.0.0-beta-3-g5d658ba (2021-09-28)
+
+### Améliorations
+ * Ajout d'un module de statistiques, qui propose une vue synthétique des trajets/recharges de la journée
+
+
+<a name="v3.0.0-beta-1-g7b05cbb"></a>
+# 3.0.0-beta-1-g7b05cbb (2021-09-19)
+
+### Highlights
+
+ * Première version béta de la V3
+ * Nouvelle interface pour le tracking, intégralement implémentée en Angular 12
+ * Le cœur du plugin reste inchangé
+ * Sur ce nouveau tracking, on retrouve pour un jour donné : la carte, le détail des trajets et le graphique de l'énergie dépensée/accumulée et des kilomètres parcourus
+ * Nouveauté sur ce nouveau tracking : la **timeline** qui retrace la chronologie des périodes sur une journée
+
 <a name="v2.3.11"></a>
 # 2.3.11 (2021-09-10)
 
