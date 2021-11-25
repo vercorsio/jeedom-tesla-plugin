@@ -2,7 +2,9 @@ Introduction
 ===
 Bienvenue sur la page de documentation du plugin Tesla de Jeedom ! 
 
-Avec ce plugin, l'utilisateur peut accéder à sa voiture Tesla, et intéragir avec les données remontées par l'API proposée par Tesla.
+Avec ce plugin l'utilisateur peut accéder à sa voiture Tesla et intéragir avec les données remontées par l'API proposée par Tesla.
+
+Les informations proposées par Tesla peuvent être utilisées dans votre domotique et des actions peuvent être executées dans vos scénarios Jeedom, pour par exemple démarrer une recharge à une heure précise selon l'endroit, fermer les fenêtres s'il pleut, allumer la climatisation le matin s'il fait froid, ajuster l'ampérage de recharge selon la capacité de production de vos panneaux photovoltaïques, .... 
 
 Ce plugin propose également un panneau pour suivre sur un graphique l'évolution de l'autonomie et de l'énergie au cours d'une journée, au gré des kilomètres parcourus:
 
@@ -15,99 +17,98 @@ Une carte permet aussi de retracer l'ensemble des trajets d'une journée, de dé
 
  <img src="../images/tracking-map.png" alt="map" width="804" style="border-radius:8px;"/>
 
-Et parce que ce plugin est une composante de votre système de domotique, la majeure partie des fonctions de la voiture peut être programmée dans des scénarios. Par exemple, si vous souhaitez que votre voiture ait une charge de 90% à 6h55, il suffit de créer le scénario qui règlera l'heure de départ de la charge !
-
+Et parce que ce plugin est une composante de votre système de domotique, votre Tesla rejoint tous les équipements de votre maison. Ce qui vous permettra de les combiner entre eux pour des affichages ou des actions coordonnées. 
 
 Retrouvez la liste des nouveautés sur le [Change log](http://tesla.jeedom.free.fr/changelog).
 
 
-Configuration du plugin
+Connexion au compte Tesla
 =======================
 
 La configuration est très simple, après téléchargement du plugin, il
-vous suffit de l’activer et d'utiliser l'une des deux méthodes indiquées ci-dessous pour accéder à votre compte Tesla.
+vous suffit de l’activer et de renseigner le jeton d'accès necessaire pour accéder à votre compte Tesla.
 
 ![config](../images/configPlugin-1.png)
 
-Le plugin va rechercher la ou les Tesla associées à votre compte et créer les équipements automatiquement.
+Pour permettre au plugin d'intéragir avec votre Tesla, un **jeton d'authentification** doit être renseigné. Ce jeton est obtenu en utilisant une application dédiée. Comme par exemple :    
+ * [Auth app for Tesla](https://apps.apple.com/us/app/auth-app-for-tesla/id1552058613) 
+  * [Tesla Tokens](https://play.google.com/store/apps/details?id=net.leveugle.teslatokens)
+
+Ces applications utilisent la page d'authentification du site officiel Tesla et vous donnent après connexion deux jetons:
+ * le **jeton d'accès** : il est utilisé par le plugin dans ses échanges avec les serveurs Tesla. Ce jeton est valide environ 45 jours.
+  * le **jeton de rafraichissement** : s'il est indiqué, il permettra au plugin de remplacer automatiquement le **jeton d'accès** quand il expire.
+
 
 ![config](../images/configPlugin-2.png)
-> **Tip**
+> **Note**
 >
 >  - Ce plugin nécessite que votre Tesla soit accessible sur le réseau pour que la configuration se passe correctement. 
 >  - Si l'application Tesla sur votre smartphone arrive à se connecter à votre Tesla, le plugin sera à même de configurer correctement votre Tesla dans Jeedom.
-
-Pour accéder au panneaux de suivi de l'autonomie, il suffit de cocher `Afficher le panneau desktop` et `Afficher le panneau mobile`:  
-![config](../images/configPlugin-4.png)
-
-
-Les deux méthodes de connexions sont les suivantes:
-
-### 1) Avec vos identifiants de compte Tesla:
-
-- **Email** : l'email que vous utilisez pour vous connecter sur votre compte Tesla
-- **Mot de passe** : le mot de passe correspondant
-> **Note**
->
-> Vos identifiants ne sont utilisés que lors de la phase de connexion pour récupérer un jeton d'accès. 
-> 
-> De part la nature de Jeedom qui est Self Hosted, vos identifiants sont stockés **localement** sur la machine qui héberge votre Jeedom. Malgré tout, si vous le souhaitez, vous pourriez après la première synchronisation, effacer les champs email/mot de passe.
->
-> Néanmoins, le jeton d'accès a une date d'expiration (environ 90 jours) au dela de laquelle il tentera de refaire une connexion pour le rafraichir. Il vous appartiendra de remettre vos identifiants et/ou coller un jeton d'accès (cf methode n°2)
-
-### 2) Avec un jeton d'accès:
-
-- **Jeton d'accès** : Jeton que vous pouvez, entre autre, vous procurer en executant le script php fourni avec le plugin:
-
-```
-$ php /var/www/html/plugins/tesla/scripts/tokenTesla.php mon.email@FAI.fr mot2passe
-
-Votre jeton d'accès à votre compte Tesla : 49329effb7d381c945fbf7e6b3e02691e746904f47ebdb2a3e54d49c93473e80
-```
-
-> **Note**
->
-> Cette méthode permet d'éviter d'entrer ses identifiants dans la configuration du plugin.
-> Le plugin ne fonctionnera que pendant la durée de validité du jeton d'accès. 
-> Un bouton `revoker mon jeton d'accès` permet d'informer le service Tesla que ce jeton ne permettra plus la connexion au service.
-
-Le bouton __"Synchroniser mes voitures"__ permettra d'effectuer la recherche et ajoutera un équipement Jeedom pour chaque véhicule Tesla non encore créé. Un clic sur ce bouton peut permettre également de mettre à jour l'équipement associé à votre Tesla. 
+> -  Le plugin Tesla de Jeedom ne necessite pas les identifiants de votre compte Tesla. 
 
 Tesla virtuelle
 --
 
-Pour tester le plugin sans connexion à votre compte Tesla, ou si vous n'avez pas (encore) de Tesla, le plugin offre la possibilité de créer des équipements virtuels correspondants à des Tesla __Model S__ et/ou __Model X__.
+Pour tester le plugin sans connexion à votre compte Tesla, ou si vous n'avez pas (encore) de Tesla, le plugin offre la possibilité de créer des équipements virtuels correspondants à des Tesla __Model 3__,  __Model Y__, __Model S__ et/ou __Model X__.
 
-Il suffira de cliquer sur le bouton __"Ajouter des Tesla virtuelles"__. Des jeux de données correspondants à des véhicules réels seront utilisés pour créer des équipements virtuels. Bien entendu toute action (chauffage/charge/dévérouillage) sur ces équipements sera sans effet.
+Il suffira de cliquer sur le bouton __"Ajouter des Tesla virtuelles"__. Des jeux de données correspondants à des véhicules réels seront utilisés pour créer des équipements virtuels. Bien entendu toute action (chauffage/charge/dévérouillage) sur ces équipements sera sans effet, mais du plus bel effet dans votre interface Jeedom.
+
+Deconnexion
+--
+
+Une fois connecté, le plugin affiche un bouton de deconnexion qui revoquera le token d'authentification auprès des serveurs Tesla. Après révocation, il ne pourra plus être utilisé. Il faudra en générer un autre. 
+
+Configuration du plugin
+=======================
+
+Après connexion, le plugin pourra se connecter aux serveurs Tesla et récupèrera la ou les Tesla associées à votre compte pour créer les "équipements" Jeedom automatiquement.
+
+Le bouton __"Synchroniser mes voitures"__ permet d'effectuer une recherche manuelle et ajoutera un équipement Jeedom pour chaque véhicule Tesla non encore créé. Cela permet également de mettre à jour les équipements associés à vos Tesla après une mise à jour du plugin. 
+
+Démon
+--
+Le suivi de l'autonomie repose sur des jeux de données acquises via l'API des serveurs Tesla. L'acquisition de ces données est effectuée par un script qui doit tourner en arrière plan. Son démarrage se pilote depuis le panneau de contrôle du plugin. Il est recommandé d'activer la **Gestion Automatique** pour que Jeedom le redémmarre s'il s'arrête. 
+
+![config](../images/tesla-daemon.png)
+
+Tracking
+--
+
+Pour accéder aux panneaux de suivi de l'autonomie (également appelé "tracking"), il suffit de cocher `Afficher le panneau desktop` et `Afficher le panneau mobile`:  
+
+![config](../images/configPlugin-4.png)
+
+
 
 Autres paramètres de configuration
 --
 
 - **Coût du kWh** (en euro) : Nécessaire pour calculer approximativement le cout d'une charge, le prix pour parcourir 100km et le nombre de km que l'on peut faire avec 1 euro. La valeur par défaut est `0.14`.
-- **Tesla Client ID** et **Tesla Client Secret** : deux clefs publiques qui sont nécessaires pour accéder à l'API du serveur des Tesla. Déjà renseignées, ces clefs peuvent être modifiées au cas où l'API requiert de nouvelles valeurs. 
+- **Tesla Client ID** et **Tesla Client Secret** : deux clefs publiques qui sont nécessaires pour accéder à l'API du serveur des Tesla. Déjà renseignées, ces clefs peuvent être modifiées au cas où l'API requiert de nouvelles valeurs.
+- **cronHourly** : S'il est activé, une fois par heure, le plugin fait une mise à jour des données du widget. Quand le tracking est actif, les données du widget sont mises à jour au fil de l'eau.  
 
 
 
 Configuration du véhicule
 =======================
 
-Une fois le plugin configuré, le ou les véhicules de votre compte tesla sont ajoutés. Il suffit de cliquer sur chacun pour l'activer, le rendre visible et l'attacher à un objet parent (ici le Garage) :
+Une fois le plugin configuré, le ou les véhicules de votre compte tesla sont ajoutés. 
 
  <img src="../images/configPlugin-3.png" alt="config" width="804" style="border-radius:8px;"/>
 
- * __Vehicle Identification Number (VIN)__ : Champ obligatoire qui permet d'identifier de manière unique votre véhicule pour intéragir avec les serveurs Tesla.
+ Un lien **Documentation** permet d'afficher cette documentation, et un lien **Aide** apporte un premier niveau d'aide en cas de besoin.
 
+Pour configurer le véhicule, il suffit de cliquer sur son image. Il sera alors possible de l'activer, le rendre visible et l'attacher à un objet parent (ici le Garage) :
 
  <img src="../images/configCar-1.png" alt="config" width="804" style="border-radius:8px;"/>
 
-Le __Suivi de l'autonomie__ en mode `énergie` nécessite quelques informations liées à la batterie, telle que:
-
+ * __Vehicle Identification Number (VIN)__ : Champ obligatoire qui permet d'identifier de manière unique votre véhicule pour intéragir avec les serveurs Tesla.
  * __Capacité batterie__ : La capacité "commerciale" de la batterie en kWh
- * __Autonomie__ : le nombre de kilomètres qu'il est possible de parcourir avec 100% d'autonomie. Vous pouvez choisir de laisser le plugin estimer le nombre de kilomètre qu'il est possible de faire avec un 'plein'.
- * __Consommation typique__ : En théorie, c'est le rapport entre `Capacité batterie X 1000 / Autonomie`. Ajustable selon ses propres constatations.
+ * __Autonomie__ : le nombre de kilomètres qu'il est possible de parcourir avec 100% d'autonomie. Vous pouvez choisir de laisser le plugin estimer le nombre de kilomètre qu'il est possible de faire avec un 'plein' (cocher alors "estimer").
+ * __Consommation typique__ : En théorie, c'est le rapport entre `Capacité batterie x 1000 / Autonomie`. Ajustable selon ses propres constatations.
  * __Affichage__ : L'affichage par défaut du Suivi de l'Autonomie. Choix : `Energie` ou `Distance`. 
 
-Ici vous pourrez également choisir une image pour votre voiture.
+Et vous pourrez également choisir une image pour votre voiture.
 
 
 Liste des commandes et des actions du véhicule
