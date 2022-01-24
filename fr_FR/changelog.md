@@ -30,7 +30,8 @@
 ### Améliorations
 
 - Ajout des statistiques annuelles.
-- Chanement de visuel pour le selecteur de dates. Un clic sur le mois donne les statistiques du mois, un clic sur l'année donne les statistiques de l'année et un clic sur le jour ouvre le calendrier.
+- Changement de visuel pour le sélecteur de dates. Un clic sur le mois donne les statistiques du mois, un clic sur l'année donne les statistiques de l'année et un clic sur le jour ouvre le calendrier.
+- L'authentification ne peut se faire maintenant qu'au travers d'un token.
 
 <a name="v3.0.0-beta-28-27"></a>
 
@@ -38,13 +39,6 @@
 
 ### Améliorations
 
-- Ajout des statistiques mensuelles
-- Meilleure prise en charge de l'affichage du nouveau tracking sur mobiles
-
-
-<a name="v3.0.0-beta-26-26"></a>
-# 3.0.0-beta-26-26 (2021-11-23)
-### Améliorations
 - Ajout des statistiques mensuelles
 - Meilleure prise en charge de l'affichage du nouveau tracking sur mobiles
 
