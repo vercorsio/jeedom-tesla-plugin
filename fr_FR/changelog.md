@@ -1,3 +1,28 @@
+<a name="v3.0.0-beta.49.44"></a>
+# 3.0.0-beta.49.44 (2022-01-24)
+### Améliorations
+ * Changement de la police de caractères qui s'approche maintenant plus de celle utilisée par le site tesla.com
+ * Mise à jour du widget à la volée quand le tracking est actif. 
+ * Prêt pour Jeedom 4.2
+
+
+### Correctif
+ * Il pouvait être impossible d'éditer les paramètres d'un parking. Corrigé
+
+
+<a name="v3.0.0-beta-46-40"></a>
+# 3.0.0-beta-46-40 (2022-01-18)
+### Améliorations
+ * Migration des données du tracking vers des tables de la base de données Jeedom (toujours en local)
+ * Possibilité de définir un prix moyen du kwh par emplacement
+ * Un parking peut être marqué comme lieu favori et/ou lieu de recharge
+ * Sur la carte, les lieux de recharges sont symbolisés par des marqueurs rouges, les marqueurs de parking sont devenus verts (le bleu étant réservé au trajets)
+ * Le
+
+> Notes:
+>
+>  - les premiers affichages de statistiques peuvent être lents. En effet, le plugin lit les fichiers, les analyse et les inscrit en base de données. Les accès suivants seront rapides.
+>  - La capacité a déplacer un marqueur a été supprimé. Cela pouvait se faire à l'insu du plein gré...
 
 <a name="v3.0.0-beta-26-26"></a>
 # 3.0.0-beta-26-26 (2021-11-23)

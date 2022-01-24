@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5 {
 	margin-left : 20px !important;
 }
 #div_content {
-	padding-left : 400px !important; 
+	padding-left : 400px !important;
 }
 #side-nav {
 	background-color:#F3F3F3 !important;
@@ -37,7 +37,7 @@ h1,h2,h3,h4,h5 {
 }
 @media only screen and (max-width : 992px) {
 	#div_content {
-		padding-left : 0 !important; 
+		padding-left : 0 !important;
 	}
 }
 .toclevel-2{
@@ -73,7 +73,7 @@ nav ul a,nav {
 	vertical-align: middle !important;
 }
 .toctext{
-	font-size : 0.85rem !important; 
+	font-size : 0.85rem !important;
 }
 .tocnumber{
 	color : #95C12B !important;
@@ -101,7 +101,7 @@ nav ul a,nav {
 		display:block !important;
 	}
 	#div_content {
-		padding-left : 0px !important; 
+		padding-left : 0px !important;
 	}
 }
 

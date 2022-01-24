@@ -102,7 +102,7 @@
    document.title = 'Documentation Jeedom | '+ title[0].toUpperCase() + title.substring(1)
    $(".button-collapse").sideNav();
    $('meta[name=description]').remove();
-   $('head').append( '<meta name="description" content="Ceci est la documentation du plugin "'+ title[0].toUpperCase() + title.substring(1)+'", lier à la solution domotique Jeedom.">' ); 
+   $('head').append( '<meta name="description" content="Ceci est la documentation du plugin "'+ title[0].toUpperCase() + title.substring(1)+'", lier à la solution domotique Jeedom.">' );
    $('img').addClass('responsive-img');
    $('#div_content table').addClass('striped');
    init();
@@ -160,14 +160,14 @@
   if($(this)[0].tagName.toLowerCase() == 'h1'){
     $('#'+$(this).attr('id')).text(i + ') ' + $(this).text());
     i++;
-  } 
+  }
   if($(this)[0].tagName.toLowerCase() == 'h2'){
-    $('#'+$(this).attr('id')).text( (i-1) + '.' + j + ') ' + $(this).text()); 
+    $('#'+$(this).attr('id')).text( (i-1) + '.' + j + ') ' + $(this).text());
     j++;
   }else{
     j = 1;
   }
-});  
+});
 });
 
   var idChapitre = null, nbrChapitre = 0, idAncre = null;
