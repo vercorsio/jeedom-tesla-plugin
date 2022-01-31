@@ -1,3 +1,9 @@
+<a name="v3.0.0-beta.51.45"></a>
+# 3.0.0-beta.51.45 (2022-01-31)
+### Correctifs
+- Des trajets pouvaient ne pas se charger ou être incomplets. Corrigé
+- Le widget pouvait ne pas se mettre à jour. Corrigé
+
 <a name="v3.0.0-beta.49.44"></a>
 # 3.0.0-beta.49.44 (2022-01-24)
 ### Améliorations
