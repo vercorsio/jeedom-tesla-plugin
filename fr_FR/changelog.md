@@ -1,3 +1,20 @@
+<a name="v3.0.1"></a>
+# 3.0.1 (2022-03-01)
+
+### Correctif
+ - Le widget pouvait clignoter au rechargement. Corrigé
+
+<a name="v3.0.0"></a>
+# 3.0.0 (2022-02-28)
+### Highlights
+- Passage en stable de la version 3.0.0
+- Retrouvez l'ensemble des améliorations introduites avec la version 3 au fil des différentes versions beta.
+- Merci à tous les testeurs, à vos retours, à votre patience
+
+> Notes:
+> 
+> La version 2.3 du plugin Tesla n'est pas compatible avec la version 4.2 de Jeedom sortie le 31 janvier. 
+
 <a name="v3.0.0-beta.51.45"></a>
 # 3.0.0-beta.51.45 (2022-01-31)
 ### Correctifs
