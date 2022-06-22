@@ -1,3 +1,68 @@
+<a name="v3.0.10-beta.74.52"></a>
+# 3.0.10-beta.74.52 (2022-06-21)
+
+### Correctif
+ - La table des trajets pouvait être vide. Corrigé
+
+
+<a name="v3.0.10-beta.71.52"></a>
+# 3.0.10-beta.71.52 (2022-06-16)
+
+### Améliorations
+ - Suppression du bouton pour synchroniser les voitures
+ - A la connexion, le plugin scan automatiquement les véhicules associés au compte tesla.com et les rend disponibles à l'ajout dans Jeedom
+ - Dans le cas d'une installation sur un jeedom 4.2, les tuiles de la carte du tracking peuvent ne pas s'afficher. Une solution de contournement est proposée et affichée après le clic sur l'icone ambulance.
+ 
+### Correctif
+ - Suite aux nouvelles règles de sécurité intoduites depuis Jeedom 4.2, les images issues du configurateur tesla peuvent provoquer un freeze.
+ - Un jeu d'images statiques (1 de chaque pour les 5 couleurs des 4 modèles Tesla) est proposé. L'utilisateur choisit la couleur dans la configuration du véhicule
+
+> Note
+>
+> La possibilité d'uploader une image pour remplacer celle par défaut a été temporairement retiré
+> Suppression des 3 autres images (3/4, intérieur, arrière)
+
+ 
+
+<a name="v3.0.9"></a>
+# 3.0.9 (2022-04-12)
+
+### Améliorations
+ - Ajustement des données affichées sur le rapport de santé
+
+
+<a name="v3.0.8"></a>
+# 3.0.8 (2022-04-05)
+
+### Améliorations
+ - La valeur par défaut du cout du kWh passe de 0.14 à 0.18
+
+### Correctif
+ - Force le rafraichissement du toekn avant qu'il n'expire.
+
+<a name="v3.0.7"></a>
+# 3.0.7 (2022-04-05)
+
+### Améliorations
+ - Alignement de la gestion des tokens d'authentification suite aux modification d'API tesla.
+
+
+<a name="v3.0.6"></a>
+# 3.0.6 (2022-03-30)
+
+### Correctifs
+ - Correctif lié à la base - consolidation des booleans favoris et charge.
+ - Meilleurs prise en charge des erreurs remontées par la base de données 
+
+> Notes
+ - Version 3.0.3, 3.0.4 et 3.0.5 : corrections mineures
+
+<a name="v3.0.2"></a>
+# 3.0.2 (2022-03-08)
+
+### Correctif
+ - L'indication de vitesse est corrigée
+
 <a name="v3.0.1"></a>
 # 3.0.1 (2022-03-01)
 
