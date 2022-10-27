@@ -1,12 +1,50 @@
-<a name="v3.0.10-beta.74.52"></a>
-# 3.0.10-beta.74.52 (2022-06-21)
+<a name="v3.0.14"></a>
+# 3.0.14 (2022-10-27)
+
+### Améliorations
+ - **Tableau des trajets** : Les choix de type de trajets visibles sur le tableau sont mémorisés (parking/driving/sleeping/charging).
+ - **Carte** : Ajout d'un style de carte : OpenStreetMap, avec mémorisation du choix de carte choisie. Bouton plus gros sur grands écrans. Meilleure prise en charge du thème noir.
+ - **Statistiques** : Ajout de la vitesse et de l'energie produite/consommée lors de la conduite. Ajout de la vitesse de charge. Ajout des températures extérieure et habitacle.
+ - **Page de démarrage** : Revue du chargement de la page, avec fond rouge :)
+ - **Graphique** : Redesign de la légende. La légende n'est plus affichable sur petits écrans. 
+ - **Multi Tesla** : Meilleure prise en charge lorsque plusieurs Tesla sont déclarées sous Jeedom.
+ - **Base de données** : Optimisation et suppression des lignes orphelines.
+ - **Statistiques** : Le panel des statistiques du jour peut être glissé vers le haut.
+ - **Performances** : Amélioration du code pour réduire les temps de chargement des données et accélerer l'affichage. 
+
+
+### Correctifs
+ - **Démon du tracking** : Redémarrage du tracking s'il a été démarré il y a plus de 5 heures et lorsqu'il est en échec. 
+ - Lorsque une voiture n'a pas de nom, le plugin refusait son inscription. Maintenant un nom par défaut *"Sans nom"* est utilisé pour permettre son intégration dans Jeedom.
+ - Le tracking est redémarré après mise à jour du plugin.
+
+
+> Note :
+>
+> Les noms des fichiers de tracking sont renommés lors de la mise à jour de cette version. Le VIN est maintenant utilisé dans le nom du fichier.
+
+
+
+<a name="v3.0.13"></a>
+# 3.0.13 (2022-09-24)
+
+### Améliorations
+ - Petites améliorations visuelles sur le tracking. 
+
+<a name="v3.0.12"></a>
+# 3.0.12 (2022-08-06)
+
+### Correctif
+ - Certains trajets n'étaient pas pris en compte (sortie de veille à début de conduite, ...). Corrigé
+
+<a name="v3.0.11"></a>
+# 3.0.11 (2022-07-06)
 
 ### Correctif
  - La table des trajets pouvait être vide. Corrigé
 
-
-<a name="v3.0.10-beta.71.52"></a>
-# 3.0.10-beta.71.52 (2022-06-16)
+<a name="v3.0.10"></a>
+# 3.0.10 (2022-06-29)
 
 ### Améliorations
  - Suppression du bouton pour synchroniser les voitures
@@ -14,6 +52,7 @@
  - Dans le cas d'une installation sur un jeedom 4.2, les tuiles de la carte du tracking peuvent ne pas s'afficher. Une solution de contournement est proposée et affichée après le clic sur l'icone ambulance.
  
 ### Correctif
+ - 
  - Suite aux nouvelles règles de sécurité intoduites depuis Jeedom 4.2, les images issues du configurateur tesla peuvent provoquer un freeze.
  - Un jeu d'images statiques (1 de chaque pour les 5 couleurs des 4 modèles Tesla) est proposé. L'utilisateur choisit la couleur dans la configuration du véhicule
 
