@@ -1,3 +1,31 @@
+<a name="v3.1.0-beta.103-105"></a>
+# 3.1.0-beta.103-105 (2022-11-16)
+
+### Nouveautés
+
+#### Feuille de Route
+
+- le tableau des trajets adopte un nouveau visuel : **la Feuille de Route**. Plus claire et plus synthétique, elle met l'accent sur les trajets et les charges de la journée représentés par des panneaux accrochés à une chronologie située à la gauche de l'écran. On retrouve sur chaque panneau la vitesse de conduite ou de charge, la durée de l'étape, la consommation d'énérgie, ... Dans ce visuel, les parkings et temps de veille ne sont pas affichés. 
+- Lors de la conduite, si un trajet est programmé dans la Tesla, un panneau supplémentaire s'affiche et indique la destination, l'heure estimée d'arrivée et le kilométrage à l'arrivée.
+- L'ancien mode d'affichage en tableau reste disponible. Il suffit de cliquer sur "Détails" eu haut à droite de la "Feuille de Route"
+- Simplification du filtrage des étapes : quatre boutons "Conduite", "Charge", "Parking" et "Veille" sont visibles en haut à droite de la feuille de route pour ajouter/enlever des types de trajets. "Parking" et "Veille" ne sont disponibles que lorsque le tableau passe en mode "Détail".  
+
+#### Carte
+- La carte contient un nouveau bouton qui permet de voir l'intégralité des trajets effectués sur la journée affichée.
+- Lorsque l'on passe le pointeur de la souris sur un trajet, le tracé sur la carte est mis en évidence. Un clic sur la ligne permet de zoomer sur le tracé en question.
+- Lorsqu'on clique sur un marqueur de la carte (parking ou favoris) le popup affiche désormais les 5 derniers passages ou recharges à cet endroit. 
+
+#### Divers
+- Le kiométrage ou % restant dans la barre du haut du tracking devient clickable si le jour affiché n'est pas le jour courant. Un clic sur ce chiffre est un raccourci pour afficher le tracking "d'aujourd'hui".
+- Un bouton "Regénérer le Widget" est disponible dans la configuration du véhicule pour remettre le widget dans son état initial. Il permet également de compléter les commandes manquantes (introduites lors d'une mise à jour du plugin, par exemple, ...)
+
+<a name="v3.0.16"></a>
+# 3.0.16 (2022-11-10)
+
+### Améliorations
+ - Performances : Optimisation et simplification des requètes pour améliorer l'expérience utilisateur
+
+
 <a name="v3.0.14"></a>
 # 3.0.14 (2022-10-27)
 
