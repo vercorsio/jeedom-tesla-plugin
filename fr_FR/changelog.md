@@ -1,3 +1,17 @@
+<a name="v3.1.0-beta.106-109"></a>
+# 3.1.0-beta.106-109 (2022-11-23)
+
+### Amélioration
+ - Carte des trajets : ajout d'un mode qui permet de zoomer sur le trajet en cours. Des clics successifs sur le bouton situé en haut à droite de la carte, permettent de passer du zoom sur la voiture, au zoom sur le trajets en cours, puis au zoom de tous les trajets de la journée.
+
+### Correctif
+ - Le bouton du tracking du widget a été repensé. Il est maintenant lié a "Info mode du tracking".  
+
+> Note
+>
+> - Des correctifs seront apportés pour rafraichir le widget avec les dernières infos lors du réveil de la voiture
+
+
 <a name="v3.1.0-beta.103-105"></a>
 # 3.1.0-beta.103-105 (2022-11-16)
 
