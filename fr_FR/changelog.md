@@ -1,3 +1,9 @@
+<a name="v3.1.0-beta.116.110"></a>
+# 3.1.0-beta.116.110 (2022-11-30)
+
+### Correctif
+ - Les informations affichées dans le widget correspondent maintenant aux dernières données remontées par le tracking (bis).
+
 <a name="v3.1.0-beta.108-109"></a>
 # 3.1.0-beta.108-109 (2022-11-25)
 
