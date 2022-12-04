@@ -1,35 +1,11 @@
-<a name="v3.1.0-beta.116.110"></a>
-# 3.1.0-beta.116.110 (2022-11-30)
-
-### Correctif
- - Les informations affichées dans le widget correspondent maintenant aux dernières données remontées par le tracking (bis).
-
-<a name="v3.1.0-beta.108-109"></a>
-# 3.1.0-beta.108-109 (2022-11-25)
-
-### Correctif
- - Les informations affichées dans le widget correspondent maintenant aux dernières données remontées par le tracking.
-
-<a name="v3.1.0-beta.106-109"></a>
-# 3.1.0-beta.106-109 (2022-11-23)
-
-### Amélioration
- - Carte des trajets : ajout d'un mode qui permet de zoomer sur le trajet en cours. Des clics successifs sur le bouton situé en haut à droite de la carte, permettent de passer du zoom sur la voiture, au zoom sur le trajets en cours, puis au zoom de tous les trajets de la journée.
-
-### Correctif
- - Le bouton du tracking du widget a été repensé. Il est maintenant lié a "Info mode du tracking".  
-
-> Note
->
-> - Des correctifs seront apportés pour rafraichir le widget avec les dernières infos lors du réveil de la voiture
-
-
-<a name="v3.1.0-beta.103-105"></a>
-# 3.1.0-beta.103-105 (2022-11-16)
+<a name="v3.1.0"></a>
+# 3.1.0 (2022-12-04)
 
 ### Nouveautés
 
 #### Feuille de Route
+<img src="../images/feuille-de-route.png" alt="klaxon" width="100%" style='border-radius:5px'/> 
+
 
 - le tableau des trajets adopte un nouveau visuel : **la Feuille de Route**. Plus claire et plus synthétique, elle met l'accent sur les trajets et les charges de la journée représentés par des panneaux accrochés à une chronologie située à la gauche de l'écran. On retrouve sur chaque panneau la vitesse de conduite ou de charge, la durée de l'étape, la consommation d'énérgie, ... Dans ce visuel, les parkings et temps de veille ne sont pas affichés. 
 - Lors de la conduite, si un trajet est programmé dans la Tesla, un panneau supplémentaire s'affiche et indique la destination, l'heure estimée d'arrivée et le kilométrage à l'arrivée.
@@ -41,9 +17,22 @@
 - Lorsque l'on passe le pointeur de la souris sur un trajet, le tracé sur la carte est mis en évidence. Un clic sur la ligne permet de zoomer sur le tracé en question.
 - Lorsqu'on clique sur un marqueur de la carte (parking ou favoris) le popup affiche désormais les 5 derniers passages ou recharges à cet endroit. 
 
+<img src="../images/map-list-of-trips.png" style='height:240px; border-radius:5px'/> 
+
+- Ajout d'un mode qui permet de zoomer sur le trajet en cours. Des clics successifs sur le bouton situé en haut à droite de la carte, permettent de passer du zoom sur la voiture, au zoom sur le trajets en cours, puis au zoom de tous les trajets de la journée.
+
+
+<img src="../images/map-btn.gif" style='border-radius:5px'/> 
+
+
 #### Divers
 - Le kiométrage ou % restant dans la barre du haut du tracking devient clickable si le jour affiché n'est pas le jour courant. Un clic sur ce chiffre est un raccourci pour afficher le tracking "d'aujourd'hui".
 - Un bouton "Regénérer le Widget" est disponible dans la configuration du véhicule pour remettre le widget dans son état initial. Il permet également de compléter les commandes manquantes (introduites lors d'une mise à jour du plugin, par exemple, ...)
+
+### Correctif
+ - Le bouton du tracking du widget a été repensé. Il est maintenant lié a "Info mode du tracking".
+ - Les informations affichées dans le widget correspondent maintenant aux dernières données remontées par le tracking (merci à `vince_007` et `lcd91` pour leurs tests ! ).
+
 
 <a name="v3.0.16"></a>
 # 3.0.16 (2022-11-10)
@@ -564,7 +553,7 @@ Un grand merci aux béta testeurs qui ont patiement testé les 6 versions béta 
 
 - L'affichage 'MISE A JOUR LOGICIELLE' s'affichait quand la version à télécharger retournée par Tesla était ' ' (un espace). Corrigé
 
-Merci à 'nicothum' !
+Merci à `nicothum` !
 
 <a name="v2.0.1"></a>
 
