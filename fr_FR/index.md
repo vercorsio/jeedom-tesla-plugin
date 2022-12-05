@@ -78,6 +78,10 @@ Pour accéder aux panneaux de suivi de l'autonomie (également appelé "tracking
 
 ![config](../images/configPlugin-4.png)
 
+Une fois cochées et après rechargement de la page, un sous menu "Tesla" apparait dans le menu "Accueil". Il conduit alors au tracking :
+
+![config](../images/tracking-flex-columns.png)
+
 
 
 Autres paramètres de configuration
