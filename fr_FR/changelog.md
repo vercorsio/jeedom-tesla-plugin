@@ -1,3 +1,10 @@
+<a name="v3.1.1"></a>
+# 3.1.1 (2022-12-05)
+
+### Correctif
+ - A la première connexion, les jetons d'authentification n'étaient pas correctement enregistrés. Corrigé
+
+
 <a name="v3.1.0"></a>
 # 3.1.0 (2022-12-04)
 
