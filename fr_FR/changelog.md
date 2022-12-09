@@ -1,9 +1,19 @@
+<a name="v3.1.2"></a>
+# 3.1.2 (2022-12-09)
+
+### Améliorations
+ - Ajout de la version et d'un lien vers le changelog dans le panneau principal de configuration du plugin.
+ - Le bouton "Documentation" navigue maintenant vers http://tesla.jeedom.free.fr/documentation
+
+### Correctif
+ - Quand la voiture se trouve dans un fuseau horaire différent de celui de Jeedom, le tracking affiche des dates et durées erronnées. Corrigé
+
+
 <a name="v3.1.1"></a>
 # 3.1.1 (2022-12-05)
 
 ### Correctif
  - A la première connexion, les jetons d'authentification n'étaient pas correctement enregistrés. Corrigé
-
 
 <a name="v3.1.0"></a>
 # 3.1.0 (2022-12-04)
