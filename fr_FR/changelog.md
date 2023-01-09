@@ -1,3 +1,14 @@
+<a name="v3.1.3"></a>
+# 3.1.3 (2023-01-09)
+
+### Amélioration
+ - Ajout d'un bouton sur la carte pour accéder à la liste des favoris. Il devient possible de déplacer un favoris pour ajuster sa position.
+
+### Correctif
+ - Ouverture et fermeture du port de charge. A l'ouverture le port de charge est déverrouillé. Il se verrouille au bout de quelques instants. Corrigé
+ - Synchronisation de l'état du mode Sentinelle. Corrigé
+
+
 <a name="v3.1.2"></a>
 # 3.1.2 (2022-12-09)
 
