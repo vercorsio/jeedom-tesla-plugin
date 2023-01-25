@@ -1,10 +1,26 @@
+<a name="v3.1.5"></a>
+# 3.1.5 (2023-01-25)
+
+### Amélioration
+ - Changement du logo du plugin. Il arbore maintenant la face avant d'une Model 3.
+ - Dans la barre du haut du Tracking : 
+   * Affichage de la température si elle est inférieure à 5°C.
+   * Indication de l'activation du chauffage et/ou du dégivrage avant/arrière.
+   * Affichage d'une icone qui indique si un ou plusieurs pneus necessitent un regonflage (en orange si fable perte, rouge si forte perte).
+ - Homogénisation des icones affichées (dans le pur style Tesla).
+### Correctif
+ - Le démon du tracking pouvait bagotter après une mise à jour du plugin. Corrigé
+ - Correctif de l'affichage du graph de consommation lors du roulage.
+ - Une seconde tentative de réveil de la voiture pouvait échouer. Corrigé.
+
 <a name="v3.1.4"></a>
 # 3.1.4 (2023-01-18)
 
 ### Amélioration
  - Récupération de toutes les journées où le plugin détient des données de tracking, pour un affichage correct du calendrier.
  - Meilleure gestion de la lecture et l'écriture des fichiers. En cas de problème un message clair est indiqué dans les logs.
-
+ - Amélioration de l'affichage de la liste des favoris sur la carte (ajout de la ville, tri par ville, possibilité d'affichier cacher les favoris de parking et/ou les favoris de lieux de recharge)
+ 
 ### Correctif
  - Au redémarrage du démon, la date de début du stationnement est inconnue, L'affichage folklorique "_Stationnée depuis 52 ans 11 mois_" est simplement remplacé par "_Stationée_"...
  - Correction d'un problème introduit en 3.1.3 qui pouvais empecher le tracking de s'activer (merci à `BroLee` et `DrFlowW` ! )
