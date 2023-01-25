@@ -1,3 +1,14 @@
+<a name="v3.1.4"></a>
+# 3.1.4 (2023-01-18)
+
+### Amélioration
+ - Récupération de toutes les journées où le plugin détient des données de tracking, pour un affichage correct du calendrier.
+ - Meilleure gestion de la lecture et l'écriture des fichiers. En cas de problème un message clair est indiqué dans les logs.
+
+### Correctif
+ - Au redémarrage du démon, la date de début du stationnement est inconnue, L'affichage folklorique "_Stationnée depuis 52 ans 11 mois_" est simplement remplacé par "_Stationée_"...
+ - Correction d'un problème introduit en 3.1.3 qui pouvais empecher le tracking de s'activer (merci à `BroLee` et `DrFlowW` ! )
+
 <a name="v3.1.3"></a>
 # 3.1.3 (2023-01-09)
 
@@ -7,7 +18,6 @@
 ### Correctif
  - Ouverture et fermeture du port de charge. A l'ouverture le port de charge est déverrouillé. Il se verrouille au bout de quelques instants. Corrigé
  - Synchronisation de l'état du mode Sentinelle. Corrigé
-
 
 <a name="v3.1.2"></a>
 # 3.1.2 (2022-12-09)
