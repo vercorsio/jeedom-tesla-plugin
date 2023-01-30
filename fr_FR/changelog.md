@@ -1,3 +1,9 @@
+<a name="v3.1.6-beta.143.132"></a>
+# 3.1.6-beta.143.132 (2023-01-30)
+
+### Correctif
+ - Lors de la mise à jour, quand la voiture est en veille et tarde à se réveiller, un bug peut empêcher le démon du tracking de se démarrer. Corrigé.
+
 <a name="v3.1.5"></a>
 # 3.1.5 (2023-01-25)
 
