@@ -1,5 +1,10 @@
-<a name="v3.1.6-beta.143.132"></a>
-# 3.1.6-beta.143.132 (2023-01-30)
+<a name="v3.1.6"></a>
+# 3.1.6 (2023-02-01)
+
+### Amélioration
+ - Dans la barre du haut du Tracking : 
+   * Affichage de l'indication de chauffe du siège conducteur et/ou passager.
+   * L'icone d'alerte "pneu dégonflé" est déplacée à droite 
 
 ### Correctif
  - Lors de la mise à jour, quand la voiture est en veille et tarde à se réveiller, un bug peut empêcher le démon du tracking de se démarrer. Corrigé.
@@ -12,7 +17,7 @@
  - Dans la barre du haut du Tracking : 
    * Affichage de la température si elle est inférieure à 5°C.
    * Indication de l'activation du chauffage et/ou du dégivrage avant/arrière.
-   * Affichage d'une icone qui indique si un ou plusieurs pneus necessitent un regonflage (en orange si fable perte, rouge si forte perte).
+   * Affichage d'une icone qui indique si un ou plusieurs pneus nécessitent un regonflage (en orange si fable perte, rouge si forte perte).
  - Homogénisation des icones affichées (dans le pur style Tesla).
 ### Correctif
  - Le démon du tracking pouvait bagotter après une mise à jour du plugin. Corrigé
