@@ -1,3 +1,18 @@
+<a name="v3.1.9"></a>
+# 3.1.9 (2023-02-20)
+
+
+### Correctif
+ - Le tracking avait une facheuse tendance à ne pas se démarrer correctement, plus particulièrement lors des mise à jour. Corrigé 
+
+<a name="v3.1.8"></a>
+# 3.1.8 (2023-02-17)
+
+
+### Correctif
+ - [Carte] Un markeur sans nom de ville peut provoquer une erreur lors de son édition. Corrigé
+
+ 
 <a name="v3.1.6"></a>
 # 3.1.6 (2023-02-01)
 
