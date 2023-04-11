@@ -1,3 +1,15 @@
+<a name="v3.1.10-beta.158.142"></a>
+# 3.1.10-beta.158.142 (2023-04-11)
+
+### Améliorations
+ - Dans la barre du haut du Tracking : Quand les données du jour sont affichées un clic sur le km restants affiche le % restant.
+ - Ajout des données `Info longitude`, `Info latitude` et `Info date de géolocalisation` qui sont mises à jour quand la voiture est à l'arrêt
+
+### Correctif
+ - Meilleure prise en charge de la seconde Tesla inscrite sur jeedom (merci à `Sattaz`).
+ - Le graph de la consommation ne se rafraichissait pas quand on passait d'une tesla à l'autre. Corrigé.
+
+
 <a name="v3.1.9"></a>
 # 3.1.9 (2023-02-20)
 
