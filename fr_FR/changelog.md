@@ -1,3 +1,21 @@
+<a name="v3.1.10-beta.173.144"></a>
+# 3.1.10-beta.173.144 (2023-05-02)
+### Améliorations
+ - Ajout d'un bouton *Découverte* dans la configuration du plugin pour rechercher des nouvelles Tesla associées au compte. (Remplace le scan automatique qui était fait à chaque accès a cette page).
+ - Les données `Info longitude`, `Info latitude` et `Info date de géolocalisation` sont maintenant mises à jour même lorsque la voiture se déplace.
+ - Le cartouche en bas du widget est plus visible. Il affiche la date de dernière mise à jour de celui-ci.
+ - Toutes les commandes du widget forcent le réveil de la voiture si elle est endormie.
+ - Optimisation des appels vers l'API Tesla impliquant de meilleures performances.
+
+### Correctifs
+ - Suite à une suppression de certains endpoints, des commandes ne fonctionnaient plus et des erreurs 429 ou 404 apparaissaient. Corrigé.
+ - Un clic sur l'icone siège du widget pouvait ne rien déclencher. Maintenant, il permet de voir à nouveau la configuration des sièges pour activer leur chauffage et celui du volant
+ - Le Widget se rafraichissait sans raison, provoquant clignotement, et parfois l'impossibilité de faire quelques-uns des réglages. Corrigé.
+ - Des erreurs dans les logs, à propos de variables manquantes, ont été corrigées.
+
+Merci à `vince_007` pour ses tests et retours détaillés.
+
+
 <a name="v3.1.10-beta.158.142"></a>
 # 3.1.10-beta.158.142 (2023-04-11)
 
@@ -60,7 +78,7 @@
  - Amélioration de l'affichage de la liste des favoris sur la carte (ajout de la ville, tri par ville, possibilité d'affichier cacher les favoris de parking et/ou les favoris de lieux de recharge)
  
 ### Correctif
- - Au redémarrage du démon, la date de début du stationnement est inconnue, L'affichage folklorique "_Stationnée depuis 52 ans 11 mois_" est simplement remplacé par "_Stationée_"...
+ - Au redémarrage du démon, la date de début du stationnement est inconnue, L'affichage folklorique "_Stationnée depuis 52 ans 11 mois_" est simplement remplacé par "_Stationnée_"...
  - Correction d'un problème introduit en 3.1.3 qui pouvais empecher le tracking de s'activer (merci à `BroLee` et `DrFlowW` ! )
 
 <a name="v3.1.3"></a>
