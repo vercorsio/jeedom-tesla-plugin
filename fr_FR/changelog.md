@@ -1,17 +1,30 @@
-<a name="v3.1.10-beta.173.144"></a>
-# 3.1.10-beta.173.144 (2023-05-02)
+<a name="v3.1.10"></a>
+# 3.1.10 (2023-05-14)
 ### Améliorations
  - Ajout d'un bouton *Découverte* dans la configuration du plugin pour rechercher des nouvelles Tesla associées au compte. (Remplace le scan automatique qui était fait à chaque accès a cette page).
- - Les données `Info longitude`, `Info latitude` et `Info date de géolocalisation` sont maintenant mises à jour même lorsque la voiture se déplace.
+ - Les données `Info longitude`, `Info latitude` et `Info date de géolocalisation` sont maintenant mises à jour même lorsque la voiture se déplace (*fonctionalité suggérée par `Goupil74`, merci !*).
  - Le cartouche en bas du widget est plus visible. Il affiche la date de dernière mise à jour de celui-ci.
  - Toutes les commandes du widget forcent le réveil de la voiture si elle est endormie.
  - Optimisation des appels vers l'API Tesla impliquant de meilleures performances.
-
+ - Pour plus de careté, affichage de la ville sous l'adresse dans la feuille de route et retouches visuelles mineures (taille des fontes, défilement, hauteur normalisée des "boites"  ...)
+ - Suppression de la liste des véhicules à gauche du panneu de configuration du plugin
+ - Ajout des infos `Info éloigné de` et `Info distance`. Le premier indique l'id du favori de référence duquel est éloigné la voiture à chaque instant. Le second indique la distance en nombre de mètres à vol d'oiseau. Une commande `Calculer la distance` , utilisable en scénario permet de définir à la fois le favori de référence et la distance  (*fonctionalité suggérée par `YannSdy`, merci !*).
+ - L'affichage en temps réél de la voiture sur la carte a été optimisé et amélioré
 ### Correctifs
  - Suite à une suppression de certains endpoints, des commandes ne fonctionnaient plus et des erreurs 429 ou 404 apparaissaient. Corrigé.
  - Un clic sur l'icone siège du widget pouvait ne rien déclencher. Maintenant, il permet de voir à nouveau la configuration des sièges pour activer leur chauffage et celui du volant
  - Le Widget se rafraichissait sans raison, provoquant clignotement, et parfois l'impossibilité de faire quelques-uns des réglages. Corrigé.
  - Des erreurs dans les logs, à propos de variables manquantes, ont été corrigées.
+
+
+### Notes
+ - Ne pas confondre `Info éloigné de` et `Info s'éloigne de`. 
+   - `Info éloigné de` contient l'**id** du favori de référence ajouté dans cette version 3.1.10. Le nom de cet **id** est affiché en clair par la commande `Calculer la distance`
+   - `Info s'éloigne de` indique le **nom** du favori duquel la voiture vient de s'aloigner et mit à jour quand la voiture vient de franchir le périmètre de la bulle qui l'entoure.
+ - Les logs peuvent contenir des erreurs 408, 429, 404 envoyées parfois par les serveurs Tesla. Ce n'est pas bloquant. Le plugin patiente et retente.
+
+### Problème connu
+ - Pour les possesseurs de plus d'une Tesla, le plugin peut réveiller l'une des Tesla quand l'autre roule. Le problème est à l'étude.
 
 Merci à `vince_007` pour ses tests et retours détaillés.
 
