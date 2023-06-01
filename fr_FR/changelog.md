@@ -1,3 +1,9 @@
+<a name="v3.1.11-beta.190.14"></a>
+# 3.1.11-beta.190.14 (2023-06-01)
+
+### Correctifs
+ - Il est de nouveau possible d'ajouter des Tesla Virtuelles pour tester le plugin. Après avoir cliqué sur "Ajouter des TEsla virtuelles dans la découverte", cliquez sur le bouton "Découverte" pour faire apparaître 7 Tesla (dont un roadster) dans votre "Garage"
+
 <a name="v3.1.10"></a>
 # 3.1.10 (2023-05-14)
 ### Améliorations
@@ -6,7 +12,7 @@
  - Le cartouche en bas du widget est plus visible. Il affiche la date de dernière mise à jour de celui-ci.
  - Toutes les commandes du widget forcent le réveil de la voiture si elle est endormie.
  - Optimisation des appels vers l'API Tesla impliquant de meilleures performances.
- - Pour plus de clareté, la ville est affichée sous l'adresse dans la feuille de route. Également des retouches visuelles mineures ont été apporté : taille des fontes, défilement, hauteur normalisée des "boites"  ...
+ - Pour plus de clareté, la ville est affichée sous l'adresse dans la feuille de route. Également des retouches visuelles mineures ont été apportées : taille des fontes, défilement, hauteur normalisée des "boites"  ...
  - Suppression de la liste des véhicules à gauche du panneau de configuration du plugin.
  - Ajout des infos `Info éloigné de` et `Info distance`. Le premier indique l'id du favori de référence duquel est éloigné la voiture à chaque instant. Le second indique la distance à vol d'oiseau en mètres. Une commande `Calculer la distance`, utilisable en scénario permet de définir à la fois le favori de référence et la distance (*fonctionalité suggérée par `YannSdy`, merci !*).
  - L'affichage en temps réél de la voiture sur la carte a été optimisé et amélioré.
@@ -27,7 +33,7 @@
 ### Notes
  - Ne pas confondre `Info éloigné de` et `Info s'éloigne de`. 
    - `Info éloigné de` contient l'**id** du favori de référence ajouté dans cette version 3.1.10. Le nom de cet **id** est affiché en clair par la commande `Calculer la distance`.
-   - `Info s'éloigne de` indique le **nom** du favori duquel la voiture vient de s'aloigner et mit à jour quand la voiture vient de franchir le périmètre de la bulle qui l'entoure.
+   - `Info s'éloigne de` indique le **nom** du favori duquel la voiture vient de s'éloigner et mit à jour quand la voiture vient de franchir le périmètre de la bulle qui l'entoure.
  - Les logs peuvent contenir des erreurs 408, 429, 404 envoyées parfois par les serveurs Tesla. Ce n'est pas bloquant. Le plugin patiente et retente.
 
 
