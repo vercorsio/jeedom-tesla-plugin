@@ -1,8 +1,25 @@
+<a name="v3.2.0-beta.219.176"></a>
+# 3.2.0-beta.219.176 (2024-02-05)
+### Améliorations
+  - Implémentation de la nouvelle API fleet de tesla.com. Pour connecter le plugin à cotre compte tesla.com, il faut obtenir de la part de tesla.com un code d'authentification après avoir autorisé les accès aux vehicules et a ses commandes. Pour se faire, cliquez sur le bouton `Récupérer mon code d'authentification`.
+
+
+<a name="v3.1.13"></a>
+# 3.1.13 (2024-01-05)
+### Correctifs
+ - Suppression du log signalant l'absence d'une table dans la base.
+
+<a name="v3.1.12-beta.210.14"></a>
+# 3.1.12-beta.210.14 (2023-11-28)
+### Améliorations
+ - Le plugin gère mieux la présence de plus d'un véhicule associé au compte tesla.com.
+ - Amélioration des performances lors de l'affichage des statistiques
+ 
 <a name="v3.1.11-beta.190.14"></a>
 # 3.1.11-beta.190.14 (2023-06-01)
 
 ### Correctifs
- - Il est de nouveau possible d'ajouter des Tesla Virtuelles pour tester le plugin. Après avoir cliqué sur "Ajouter des TEsla virtuelles dans la découverte", cliquez sur le bouton "Découverte" pour faire apparaître 7 Tesla (dont un roadster) dans votre "Garage"
+ - Il est de nouveau possible d'ajouter des Tesla Virtuelles pour tester le plugin. Après avoir cliqué sur "Ajouter des Tesla virtuelles dans la découverte", cliquez sur le bouton "Découverte" pour faire apparaître 7 Tesla (dont un roadster) dans votre "Garage"
 
 <a name="v3.1.10"></a>
 # 3.1.10 (2023-05-14)
