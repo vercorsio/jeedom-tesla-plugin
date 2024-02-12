@@ -26,25 +26,46 @@ Connexion au compte Tesla
 =======================
 
 La configuration est très simple, après téléchargement du plugin, il
-vous suffit de l’activer et de renseigner le jeton d'accès necessaire pour accéder à votre compte Tesla.
+vous suffit de l’activer et de renseigner le **code d'authentification** nécessaire pour accéder à votre compte Tesla.
 
 ![config](../images/configPlugin-1.png)
 
-Pour permettre au plugin d'intéragir avec votre Tesla, un **jeton d'authentification** doit être renseigné. Ce jeton est obtenu en utilisant une application dédiée. Comme par exemple :    
- * [Auth app for Tesla](https://apps.apple.com/us/app/auth-app-for-tesla/id1552058613) 
-  * [Tesla Tokens](https://play.google.com/store/apps/details?id=net.leveugle.teslatokens)
+Pour permettre au plugin d'intéragir avec votre Tesla, un **code d'authentification** doit être renseigné. Ce code est fourni exclusivelent par Tesla (depuis janvier 2024). Pour l'obtenir, il faut cliquer sur le lien "Récupérer mon code d'authentification" présent dans la section "Connection" du panneau de configuration du plugin. 
 
-Ces applications utilisent la page d'authentification du site officiel Tesla et vous donnent après connexion deux jetons:
- * le **jeton d'accès** : il est utilisé par le plugin dans ses échanges avec les serveurs Tesla. Ce jeton est valide environ 45 jours.
-  * le **jeton de rafraichissement** : s'il est indiqué, il permettra au plugin de remplacer automatiquement le **jeton d'accès** quand il expire.
+Ce lien redirige vers votre compte Tesla, ou vous devrez vous identifier pour autoriser le plugin Tesla de Jeedom à accéder à vos véhicules pour récupérer des informations et jouer des commandes.
+
+Un clic sur "Récupérer mon code d'authentification" vous amène sur le site auth.tesla.com, l'URL qui permet de vous authentifier sur votre compte tesla:
+
+<img src="../images/tesla_cnx1.png" alt="drawing"  style="border-radius:8px;"/>
+
+Accordez au plugin Tesla de Jeedom l'accès à vos informations de profil, de véhicule, aux commandes du véhicule et à la gestion de la recharge du véhicule. Ne pas cocher l'un de ces éléments peut amener le plugin à ne pas avoir un fonctionnement optimal. 
+
+> Note: Jeedom étant hébergé sur votre propre serveur, vous seul aurez accès au données qui seront stockées localement chez vous.
+
+<img src="../images/tesla_rights.png" alt="drawing"  style="border-radius:8px;"/>
+
+Après avoir accordé les droits au plugin tesla, "Jeedom Tesla Plugin" sera ajouté à la liste de vos Applications tierces. En cliquant sur "Gérer", vous pourrez supprimer le lien. Dès lors le plugin n'aura plus accès à vos véhicules. Il faudra recliquer sur "Récupérer mon code d'authentification"
+<img src="../images/tesla_appTierces.png" alt="drawing"  style="border-radius:8px;"/>
+
+Le code d'authentification est affiché sur une page dédiée qui n'est utilisée que pour ce but. Copiez ce code (en cliquant sur l'icone à droite du code affiché) et collez-le dans le panneau de configuration du plugin sur votre Jeedom. 
+
+> Note: Ce code est à usage unique. Il est inutile de le conserver. Le plugin ne l'enregistre pas. IL ser simplement a obtenir les premiers jetons d'authentification.
+
+<img src="../images/tesla_code.png" alt="drawing"  style="border-radius:8px;"/>
+
+Cliquez ensuite sur "CONNEXION" et le plugin va obtenir deux jetons
+
+  * le **jeton d'accès** : il est utilisé par le plugin dans ses échanges avec les serveurs Tesla. Ce jeton est valide 8 heures.
+  * le **jeton de rafraichissement** : il permettra au plugin de remplacer automatiquement le **jeton d'accès** quand il expire, et d'obtenir un nouveau jeton de rafraichissement.
 
 
 ![config](../images/configPlugin-2.png)
+
 > **Note**
 >
->  - Ce plugin nécessite que votre Tesla soit accessible sur le réseau pour que la configuration se passe correctement. 
+>  - Le plugin nécessite que votre Tesla soit accessible sur le réseau pour que la configuration se passe correctement. Assurez vous que la voiture soit réveillée au moment de l'activation du plugin.
 >  - Si l'application Tesla sur votre smartphone arrive à se connecter à votre Tesla, le plugin sera à même de configurer correctement votre Tesla dans Jeedom.
-> -  Le plugin Tesla de Jeedom ne necessite pas les identifiants de votre compte Tesla. 
+> -  Le plugin Tesla de Jeedom **ne necessite pas** les identifiants de votre compte Tesla. Ne les transmettez a personne.
 
 Tesla virtuelle
 --
@@ -56,7 +77,7 @@ Il suffira de cliquer sur le bouton __"Ajouter des Tesla virtuelles"__. Des jeux
 Deconnexion
 --
 
-Une fois connecté, le plugin affiche un bouton de deconnexion qui revoquera le token d'authentification auprès des serveurs Tesla. Après révocation, il ne pourra plus être utilisé. Il faudra en générer un autre. 
+Une fois connecté, le plugin affiche un bouton de deconnexion qui fermera la connexion ouverte. Les jetons d'accès seront revoqués auprès des serveurs Tesla. Le plugin ne sera plus fonctionel. Pour reconnecter, il faudra à nouveau récupérer un code d'authentification.
 
 Configuration du plugin
 =======================
@@ -448,7 +469,7 @@ La version 2.0.0 du plugin introduit la cartographie qui permet :
 
 Editer un favori
 --
-Le menu en haut à droite permet d'afficher sur la carte tous les lieux de parking et/ou ces lieux s'ils ont été transformé en favori.
+Le menu en haut à droite permet d'afficher sur la carte tous les lieux de parking et/ou ces lieux s'ils ont été transformés en favori.
 
 Le marqueur du parking peut être déplacé pour le positionner au bon endroit.
 
@@ -478,9 +499,10 @@ Liens utiles:
  - Les notes de mise à jour : [ChangeLog](http://tesla.jeedom.free.fr/changelog)
  - Le forum officiel du plugin : [Forum Community de Jeedom](https://community.jeedom.com/tags/plugin-tesla)
  - Une mine d'info sur le [Forum Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412)
+ - Une vidéo très demonstrative des possibilités du plugin proposée par XavMax un utilisateur du plugin : [video](https://www.youtube.com/watch?v=4p3vTRY0dNE)
  - Tweeterriennes et tweeterriens, RDV ici: [Tweeter @TeslaJeedom](https://twitter.com/TeslaJeedom)
  - Envie de poster un avis sur le plugin ? [Ajoutez le vôtre !](https://www.jeedom.com/market/?v=d&p=market&type=plugin&plugin_id=tesla)
- - Besoin d'une Tesla pour tester le plugin ? [Utilisez mon lien de parrainage !](http://ts.la/nicolas2320)
+ - Besoin d'une Tesla pour tester le plugin ? Utilisez mon lien de parrainage !  [http://ts.la/nicolas2320](https://www.tesla.com/fr_fr/referral/nicolas2320)
  - Envie de soutenir le développement du projet : 
  
 
