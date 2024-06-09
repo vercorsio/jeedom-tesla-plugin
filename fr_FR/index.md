@@ -75,9 +75,9 @@ Tesla a mis à jour début 2024 ses serveurs en introduisant les *Commandes Sign
 
 
 La mise en œuvre est simple. 
- 1) Depuis le pannneau de configuration du véhicule, démarrez ce Serveur Proxy sur un port défini (4443 par défaut).
- 2) Cliquez sur le bouton "Appairage de la Tesla". Un QR Code sera affiché, celui ci après avoir été scanné ouvrira l'application Tesla de votre smartphone (iOS ou Android) et vous demandera de choisir un véhicule compatible avec les commandes signées pour y ajouter la clef qui permettra de sécuriser l'envoi des commandes.
- 3) Envoyez des commandes (ouverture de coffre, activation de la climatisation, klaxon, ....), celles ci seront transmises au Serveur Proxy démarré localement qui les signera avant de les envoyer à la voiture via les Serveurs Proxy. 
+   1. Depuis le pannneau de configuration du véhicule, démarrez ce Serveur Proxy sur un port défini (4443 par défaut).
+   2. Cliquez sur le bouton "Appairage de la Tesla". Un QR Code sera affiché, celui ci après avoir été scanné ouvrira l'application Tesla de votre smartphone (iOS ou Android) et vous demandera de choisir un véhicule compatible avec les commandes signées pour y ajouter la clef qui permettra de sécuriser l'envoi des commandes.
+   3. Envoyez des commandes (ouverture de coffre, activation de la climatisation, klaxon, ....), celles ci seront transmises au Serveur Proxy démarré localement qui les signera avant de les envoyer à la voiture via les Serveurs Proxy. 
 
 
 ![config](../images/configCar-pairing.png)
@@ -209,18 +209,22 @@ Commandes de type **action**
 | --- | --- |
 | **Contrôler la recharge** | Va permettre de démarrer, interrompre, ou estimer la charge si le cable de recharge est engagé.
 | **Contrôler la limite de charge** | Va permettre de définir un pourcentage de charge a atteindre.
+| **Contrôler la trappe de charge** | Va permettre d'ouvrir/fermer la trappe de recharge.
+| **Contrôler l'ampérage de recharge** | Va permettre de préciser l'intensité du courant de charge (min 5A).
+| **Contrôler l'heure de fin de recharge** | Va permettre de définir l'heure (format Hmm) à laquelle la charge devra se finir.
 | **Contrôler la climatisation** | Va permettre d'allumer ou d'arreter la climatisation.
 | **Contrôler la température** | Va permettre de définir une température dans l'habitacle (conducteur/passager).
 | **Contrôler le vérouillage** | Va permettre de vérouiller ou déverouiller la voiture.
 | **Contrôler le coffre avant** | Va permettre de vérouiller ou déverouiller le coffre avant (frunk).
 | **Contrôler le coffre arrière** | Va permettre de vérouiller ou déverouiller le coffre arrière (trunk).
-| **Contrôler la trappe de charge** | Va permettre d'ouvrir/fermer la trappe de recharge.
+| **Contrôler les fenêtres** | Va permettre d'ouvrir ou fermer les fenêtres.
+| **Contrôler les phares** | Va actionner les phares
+| **Contrôler le klaxon** | Va actionner l'avertisseur sonnore
+| **Contrôler le mode sentinelle** | Va permettre de démarrer/arrêter le mode sentinelle
 | **Contrôler le toit ouvrant** | Va permettre d'entrouvrir ou de fermer le toît panoramique.
-| **Contrôler l'heure de fin de recharge** | Va permettre de définir l'heure (format Hmm) à laquelle la charge devra se finir.
 | **Contrôler le suivi de l'autonomie** | Va permettre de démarrer ou arrêter le suivi de l'autonomie.
-
 | **Rafraichir** | Mise à jour de la tuile sur clic de l'icone.
-| **Réveiller** | Force le reveil de la voiture (3 tentatives espacées de 5s). Peut-être utile dans un scénario. Met à jour la valeur de **Info reveillée**.
+| **Réveiller** | Force le reveil de la voiture (3 tentatives espacées de 5s). Peut être utile dans un scénario. Mets à jour la valeur de **Info reveillée**.
 
 > **Tip**
 >
