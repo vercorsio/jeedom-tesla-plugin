@@ -17,7 +17,7 @@
 ### Features
 
  * [**Range Tracking**] The tracking mecanism has been redesigned. Once parked, the tracking continues to get data in NORMAL mode. 10 minutes after it has started the tracking reduced the frequency and let the car going to sleep. In this mode (PARKING DAY), the car refreshes the data every 15 minutes. During this idle time, the car may fall asleep. Then, the plugin monitors the car using the `vehicle` call that does not enter in interaction with the car. Offline, the graph shows dotted black curve, and tracking button shows a "snoring moon". When the car starts to charge or moves, the offline status ends and the tracxking automatically switch to NORMAL MODE. User may want to manually turn the tracking back to NORMAL mode with a click on this "moon". Tracking can be configured with advanced settings in the plugin configuration panel.
- 
+
  * [**Range Tracking**] Add a `Live AUTO` mode that automatically switches from day view to "last 5 minutes view" when the car is driving.
 
  * [**Range Tracking**] Add information above the graph about the car and the past periods : driving time, parking time, duration of current offline periods/charging periods..
@@ -78,7 +78,7 @@ Thanks to all beta testers !
 
 ### Improvements
  * [**Range Tracking**] Sentry mode is visible on the graph as a red dot line.
- * The plugin version is more user friendly (rather than only a hash tag) : `vX.Y.Z` is for the sable version X.Y.Z and `vX.Y.Z-n-hash` is for the nth version after the stable X.Y.Z. 
+ * The plugin version is more user friendly (rather than only a hash tag) : `vX.Y.Z` is for the sable version X.Y.Z and `vX.Y.Z-n-hash` is for the nth version after the stable X.Y.Z.
 
 ## Fixes
  * [**Range Tracking**] When the connexion with the car was lost while driving, the trip was cut in two pieces. It is now fixed. The offline period is shown as black dotted line.
@@ -132,9 +132,9 @@ Thanks to `J0kers` from [Automobile Propre](https://forums.automobile-propre.com
 
 ### Fixes
  * Minor fixes
-  
+
 ### Update instructions
- * As cron has been changed to 'daemon', it's better to not activate the "Automatic Management" in the plugin configuration panel. 
+ * As cron has been changed to 'daemon', it's better to not activate the "Automatic Management" in the plugin configuration panel.
  As a matter of fact, the "Automatic Management" will tess Jeedom to make sure the daemon is always up, restarting it if stopped. For the range tracking, we prefer to start and stop it manually.
 
 <a name="1.5.2"></a>
@@ -154,7 +154,7 @@ Thanks to `J0kers` from [Automobile Propre](https://forums.automobile-propre.com
  * [**Widget**] Display wheels and perofmance pack on Model 3.
  * [**Widget**] Display right colors on Model 3.
  * [**Widget**] Some web browsers display white background for charging limit slider. Fixed
- 
+
 ### Known Issues
  * [**Scnario**] In the night, a trace in tesla log may indicate that the charging was not possible. However, the Tesla server may trigger it when car is awake. It is recommanded to add an awake command before starting the charge.
 
@@ -166,9 +166,9 @@ Thanks to `J0kers` from [Automobile Propre](https://forums.automobile-propre.com
  * [**Command**] "Info Charging" now returns 'Driving' when car is moving.
 
 ### Fixes
- * [**Widget**] Fixed unit issue (kW -> kWh) 
+ * [**Widget**] Fixed unit issue (kW -> kWh)
  * [**Range Tracking**] First trip of the day was seen as parked. Fixed
- 
+
 
 <a name="1.5.0"></a>
 # 1.5.0 (2019-03-14)
@@ -183,7 +183,7 @@ Thanks to `J0kers` from [Automobile Propre](https://forums.automobile-propre.com
  * [**Range Tracking**] In Mobile version, for a better readability on large devices (such as Tesla screens), the width of curve lines are now bigger.
  * [**Widget**] Clicking on `trunk`, `frunk` and `lock` buttons now require user to confirm the action (modal window).
  * Added a red Model Y in the fake cars.
- 
+
 ### Fixes:
  * [**Range Tracking**] Fix background color when HVAC is on.
  * [**Widget**] On Model 3, car image displays now the right color and wheels, and the roof button has been remove.
@@ -239,7 +239,7 @@ I want to thank `Bob Jouy` (https://twitter.com/bobjouy) for his feedback, sugge
 
 ### Known issues
 * The 'Range Tracking' panel is not translated in english yet.
- 
+
 <a name="1.2.2"></a>
 # 1.2.2 (2019-01-07)
 
@@ -271,7 +271,7 @@ I want to thank `Bob Jouy` (https://twitter.com/bobjouy) for his feedback, sugge
 
 ### Known issues
 * The wake up function better works when the **Always connected** mode is activated in the car.
- 
+
 
 Thank you to `Kim` for his feedback !
 
@@ -328,5 +328,5 @@ Many thanks to Jeedom team `Loic` and `Alexandre`, and to beta testers `carfnann
 * Control and display HVAC
 * Control and display lock
 
-  
+
 

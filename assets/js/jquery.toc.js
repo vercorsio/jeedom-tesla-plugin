@@ -157,7 +157,7 @@
                 $('#toctogglelink').click();
             }
         }
-// console.log('Fin funtion $.fn.toc',this);    
+// console.log('Fin funtion $.fn.toc',this);
         return this;
     }
 //console.log('appel $(#main_content).toc();');

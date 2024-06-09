@@ -1,6 +1,6 @@
 Introduction
 ===
-Welcome to the documentation page of the Jeedom Tesla plugin ! 
+Welcome to the documentation page of the Jeedom Tesla plugin !
 
 Thanks to it, a Tesla owner can access to her/his car and interact with it, based on Tesla API.
 
@@ -9,7 +9,7 @@ Also, this plugin provides a panel to track all day long (or on demand) on a gra
 ![tracking-graph](../images/consoLow480.gif)
 
 
-You want your car 90% charged at 7AM ? 
+You want your car 90% charged at 7AM ?
 Create a scenario that will schedule the charge at the right time !
 
 You will find the details of all versions in the [Change log](!https://vercorsio.github.io/jeedom-tesla-plugin/en_US/changelog).
@@ -43,10 +43,10 @@ The two methods to connect are::
 - **Password** : Enter here your password
 > **Note**
 >
-> Your credentials are only used for connexion phase to get an Access Token. 
+> Your credentials are only used for connexion phase to get an Access Token.
 >
 > Given the Self Hosted features Jeedom is running on, your credential are only stored **locally** to the machine that ran your Jeedom.
-> 
+>
 > However, you could want to remove email/password info after first sync, or keep them for the next time the plugin will require authentication (when Access Token expires).
 
 ### 2) With an Access Token:
@@ -58,8 +58,8 @@ $ php /var/www/html/plugins/tesla/scripts/tokenTesla.php <login> <password>
 
 Votre jeton d'accès à votre compte Tesla : 49329effb7d381c945fbf7e6b3e02691e746904f47ebdb2a3e54d49c93473e80
 ```
- 
-  
+
+
 > **Note**
 >
 > Using this method will work until Access Token expires.
@@ -78,7 +78,7 @@ Other config settings
 --
 
 - **Price for 1kWh** (euro) : Required to estimate the charging cost, the number of km you can do with 1euro and the price for 100km. The default value is `0.14`.
-- **Tesla Client ID** et **Tesla Client Secret** : These public keys are required to access the Tesla Server. They are already filled but you may want to change them. 
+- **Tesla Client ID** et **Tesla Client Secret** : These public keys are required to access the Tesla Server. They are already filled but you may want to change them.
 
 
 Vehicle setup
@@ -92,9 +92,9 @@ Once the plugin is setup and the cars added, you can modify each of your cars: m
 The `energy` mode on the  __Range Tracking__ requires some info about the battery:
 
  * __Capacité batterie__ : The capacity of the battery (kWh)
- * __Autonomie__ : How many km the car can do at 100% of charge 
+ * __Autonomie__ : How many km the car can do at 100% of charge
  * __Consommation typique__ : In theroy, it is `Capacité batterie X 1000 / Autonomie`. Can be updated according to usage.
- * __Affichage__ : The default display. Choices are: `Energie` or `Distance`. 
+ * __Affichage__ : The default display. Choices are: `Energie` or `Distance`.
 
 
 Info and action commands associated to each Tesla are the following:
@@ -126,10 +126,10 @@ Commands  **info**
 | **Info car** | Display info (title and subtitle) about current. Example _Driving 68km/h_, _Charging scheduled at 22h50_, _Parked_, _Supercharge_, ...
 | **Range details** | Display a battery graph.
 | **Charging details** | Display details about the charging.
-| **HVAC details** | Display details about HVAC (driver, passenger, inside and outside 
-| **Data details** | `For debugging purpose` - display a 64bits encoded buffer of the output of the car minus any personally identifiable info (VIN/id/GPS/...).  
+| **HVAC details** | Display details about HVAC (driver, passenger, inside and outside
+| **Data details** | `For debugging purpose` - display a 64bits encoded buffer of the output of the car minus any personally identifiable info (VIN/id/GPS/...).
 
-temperatures). 
+temperatures).
 
 Commands **action**
 --
@@ -175,9 +175,9 @@ By default, the odometer is historised. This can be useful to display a graph of
 Control HVAC
 --
 
-| Button | Description | A clic on this bouton will ... | 
+| Button | Description | A clic on this bouton will ... |
 | --- | --- | --: |
-| ![clim off](../images/clim_off.png) | HVAC is stopped | _... start HVAC_ | 
+| ![clim off](../images/clim_off.png) | HVAC is stopped | _... start HVAC_ |
 | ![clim on](../images/clim_on.gif) | HVAC is started | _... stop HVAC_ |
 
 User can set the driver and passenger temperature using a specific widget, described in following animation:
@@ -213,7 +213,7 @@ Control the charging
 | ![charPau](../images/charging_Pause.png) | The charging has been manually stopped | _... resume the charging_
 | ![charCom](../images/charging_Complete.png) | The charging is complete | ... _have no effect_
 | ![charNul](../images/charging_Null.png) | The charging state is unknown | ... _have no effect_
- 
+
 Controle the range tracking
 --
 
@@ -260,11 +260,11 @@ Scenario examples:
 * Set the charging start time to have **90%** charged at **7AM** !
   ![startTime](../images/scenario_getStartTime.png)
 
-> **Note** 
+> **Note**
 >
-> To return the specific starting time, a small charging needs to be ran. During it the charging estimates will be provided. 
+> To return the specific starting time, a small charging needs to be ran. During it the charging estimates will be provided.
 >
-> If the car is not ready for charging, the command **Info heure de départ de recharge** returns `N/A`. 
+> If the car is not ready for charging, the command **Info heure de départ de recharge** returns `N/A`.
 >
 > If the charging duration is smaller than the difference between now and the charging end time, the command **Info heure de départ de recharge** returns the starting time (format `Hmm`) when charging can be scheduled.
 >
@@ -309,8 +309,8 @@ When user clics on `Stop Recording` button, the cron job stops all data retrieva
 
 Example __Distance__
 --
-The example below corresponds to a real trip made on 2019, January the 5th. This trip is mainly split in 4 stages: 
-- <code>km  0</code> to <code>km 15</code>: road - _altitude: from 1100m to 1000m_. 
+The example below corresponds to a real trip made on 2019, January the 5th. This trip is mainly split in 4 stages:
+- <code>km  0</code> to <code>km 15</code>: road - _altitude: from 1100m to 1000m_.
 - <code>km 15</code> to <code>km 30</code>: road - _altitude: from 1000m to 250m_.
 - <code>km 30</code> to <code>km 50</code>: highway - _altitude: from 250m to 400m_.
 - <code>km 50</code> to <code>km 65</code>: road - _altitude: from 400m to 500m_.
@@ -325,7 +325,7 @@ The example below corresponds to a real trip made on 2019, January the 5th. This
    - When the HVAC is on, the curve turns to <b style='color:blueviolet'>violet</b>.
 - The right vertical axis represents:
    - the difference between the <b style="color:#3355FF">range at the beginning of the trip</b> and the <b style='color:#22C4FF'>current range</b> without <b>mileage traveled</b> removed. The curve is <b style="color:#00FF00">green</b> when there is a gain, and <b style="color:#FFA500">orange</b> when we observe a loss.
-   - the value of the <b style="color:#E74C3C">charger power</b> when the car is charging 
+   - the value of the <b style="color:#E74C3C">charger power</b> when the car is charging
 
 
 The table below lists all the different stages of the day. User can clic a specific stage to zoom the graph. A clic on the footer resets the zoom and displays the whole day.
@@ -333,7 +333,7 @@ The table below lists all the different stages of the day. User can clic a speci
 ![tracking-graph](../images/tracking-table.png)
 
 - The `efficiency` corresponds to the ratio between the gain/loss and the traveled mileage. In general small trips have bad efficency.
-- The 3 buttons on the top right of the table allow the user to filter the table. For example she/he can display only the parking stages to see how range evolves when car is not moving (_vampire drain_) 
+- The 3 buttons on the top right of the table allow the user to filter the table. For example she/he can display only the parking stages to see how range evolves when car is not moving (_vampire drain_)
 
 
 Example __energy__
@@ -365,7 +365,7 @@ FAQ:
    Also the choice to display rated range or ideal range is following the car settings
 
 3. The 'wake up' action does not wake up the car.
-  
+
    In the plugin configuration panel you can change the two following settings `Number of attempts to wakeup the car` and `Number of seconds between two attempts` to force the wake up. The `Wake up` action does better work when **Always connected** mode is activated in your car.
 
 

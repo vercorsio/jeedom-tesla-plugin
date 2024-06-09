@@ -1,10 +1,10 @@
 Introduction
 ===
-Bienvenue sur la page de documentation du plugin Tesla de Jeedom ! 
+Bienvenue sur la page de documentation du plugin Tesla de Jeedom !
 
 Avec ce plugin l'utilisateur peut accéder à sa voiture Tesla et intéragir avec les données remontées par l'API proposée par Tesla.
 
-Les informations proposées par Tesla peuvent être utilisées dans votre domotique et des actions peuvent être executées dans vos scénarios Jeedom, pour par exemple démarrer une recharge à une heure précise selon l'endroit, fermer les fenêtres s'il pleut, allumer la climatisation le matin s'il fait froid, ajuster l'ampérage de recharge selon la capacité de production de vos panneaux photovoltaïques, .... 
+Les informations proposées par Tesla peuvent être utilisées dans votre domotique et des actions peuvent être executées dans vos scénarios Jeedom, pour par exemple démarrer une recharge à une heure précise selon l'endroit, fermer les fenêtres s'il pleut, allumer la climatisation le matin s'il fait froid, ajuster l'ampérage de recharge selon la capacité de production de vos panneaux photovoltaïques, ....
 
 Ce plugin propose également un panneau pour suivre sur un graphique l'évolution de l'autonomie et de l'énergie au cours d'une journée, au gré des kilomètres parcourus:
 
@@ -13,11 +13,11 @@ Ce plugin propose également un panneau pour suivre sur un graphique l'évolutio
 
 Sur ce même panneau, vous trouverez un tableau récapitulatif des étapes de la journées (conduite, charge, parking). Il détaille les durées, consommation, vitesse, ... de chaque étape, les colonnes sont modifiables et peuvent être triées.
 
-Une carte permet aussi de retracer l'ensemble des trajets d'une journée, de définir des favoris, de suivre à la trace votre voiture depuis l'écran de votre Tesla ! 
+Une carte permet aussi de retracer l'ensemble des trajets d'une journée, de définir des favoris, de suivre à la trace votre voiture depuis l'écran de votre Tesla !
 
  <img src="../images/tracking-map.png" alt="map" width="804" style="border-radius:8px;"/>
 
-Et parce que ce plugin est une composante de votre système de domotique, votre Tesla rejoint tous les équipements de votre maison. Ce qui vous permettra de les combiner entre eux pour des affichages ou des actions coordonnées. 
+Et parce que ce plugin est une composante de votre système de domotique, votre Tesla rejoint tous les équipements de votre maison. Ce qui vous permettra de les combiner entre eux pour des affichages ou des actions coordonnées.
 
 Retrouvez la liste des nouveautés sur le [Change log](http://tesla.jeedom.free.fr/changelog).
 
@@ -30,7 +30,7 @@ vous suffit de l’activer et de renseigner le **code d'authentification** néce
 
 ![config](../images/configPlugin-1.png)
 
-Pour permettre au plugin d'intéragir avec votre Tesla, un **code d'authentification** doit être renseigné. Ce code est fourni exclusivelent par Tesla (depuis janvier 2024). Pour l'obtenir, il faut cliquer sur le lien "Récupérer mon code d'authentification" présent dans la section "Connection" du panneau de configuration du plugin. 
+Pour permettre au plugin d'intéragir avec votre Tesla, un **code d'authentification** doit être renseigné. Ce code est fourni exclusivelent par Tesla (depuis janvier 2024). Pour l'obtenir, il faut cliquer sur le lien "Récupérer mon code d'authentification" présent dans la section "Connection" du panneau de configuration du plugin.
 
 Ce lien redirige vers votre compte Tesla, ou vous devrez vous identifier pour autoriser le plugin Tesla de Jeedom à accéder à vos véhicules pour récupérer des informations et jouer des commandes.
 
@@ -38,7 +38,7 @@ Un clic sur "Récupérer mon code d'authentification" vous amène sur le site au
 
 <img src="../images/tesla_cnx1.png" alt="drawing"  style="border-radius:8px;"/>
 
-Accordez au plugin Tesla de Jeedom l'accès à vos informations de profil, de véhicule, aux commandes du véhicule et à la gestion de la recharge du véhicule. Ne pas cocher l'un de ces éléments peut amener le plugin à ne pas avoir un fonctionnement optimal. 
+Accordez au plugin Tesla de Jeedom l'accès à vos informations de profil, de véhicule, aux commandes du véhicule et à la gestion de la recharge du véhicule. Ne pas cocher l'un de ces éléments peut amener le plugin à ne pas avoir un fonctionnement optimal.
 
 > Note: Jeedom étant hébergé sur votre propre serveur, vous seul aurez accès au données qui seront stockées localement chez vous.
 
@@ -47,7 +47,7 @@ Accordez au plugin Tesla de Jeedom l'accès à vos informations de profil, de v�
 Après avoir accordé les droits au plugin tesla, "Jeedom Tesla Plugin" sera ajouté à la liste de vos Applications tierces. En cliquant sur "Gérer", vous pourrez supprimer le lien. Dès lors le plugin n'aura plus accès à vos véhicules. Il faudra recliquer sur "Récupérer mon code d'authentification"
 <img src="../images/tesla_appTierces.png" alt="drawing"  style="border-radius:8px;"/>
 
-Le code d'authentification est affiché sur une page dédiée qui n'est utilisée que pour ce but. Copiez ce code (en cliquant sur l'icone à droite du code affiché) et collez-le dans le panneau de configuration du plugin sur votre Jeedom. 
+Le code d'authentification est affiché sur une page dédiée qui n'est utilisée que pour ce but. Copiez ce code (en cliquant sur l'icone à droite du code affiché) et collez-le dans le panneau de configuration du plugin sur votre Jeedom.
 
 > Note: Ce code est à usage unique. Il est inutile de le conserver. Le plugin ne l'enregistre pas. IL ser simplement a obtenir les premiers jetons d'authentification.
 
@@ -65,7 +65,36 @@ Cliquez ensuite sur "CONNEXION" et le plugin va obtenir deux jetons
 >
 >  - Le plugin nécessite que votre Tesla soit accessible sur le réseau pour que la configuration se passe correctement. Assurez vous que la voiture soit réveillée au moment de l'activation du plugin.
 >  - Si l'application Tesla sur votre smartphone arrive à se connecter à votre Tesla, le plugin sera à même de configurer correctement votre Tesla dans Jeedom.
-> -  Le plugin Tesla de Jeedom **ne necessite pas** les identifiants de votre compte Tesla. Ne les transmettez a personne.
+> -  Le plugin Tesla de Jeedom **ne nécessite pas** les identifiants de votre compte Tesla. Ne les transmettez à personne.
+
+
+Appairage (requis pour les Tesla récentes)
+--
+
+Tesla a mis à jour début 2024 ses serveurs en introduisant les *Commandes Signées*. C'est un nouveau mode de connexion qui augmente encore la sécurisation des commandes envoyées au véhicule. Si les commandes ne s'exexutent pas depuis Jeedom et/ou que vous trouvez un message d'erreur dans les logs contenant `unsigned_cmds_hardlocked`, il est certainement probable que vous aillez à démarrer le Serveur Proxy.
+
+
+La mise en œuvre est simple. 
+ 1) Depuis le pannneau de configuration du véhicule, démarrez ce Serveur Proxy sur un port défini (4443 par défaut).
+ 2) Cliquez sur le bouton "Appairage de la Tesla". Un QR Code sera affiché, celui ci après avoir été scanné ouvrira l'application Tesla de votre smartphone (iOS ou Android) et vous demandera de choisir un véhicule compatible avec les commandes signées pour y ajouter la clef qui permettra de sécuriser l'envoi des commandes.
+ 3) Envoyez des commandes (ouverture de coffre, activation de la climatisation, klaxon, ....), celles ci seront transmises au Serveur Proxy démarré localement qui les signera avant de les envoyer à la voiture via les Serveurs Proxy. 
+
+
+![config](../images/configCar-pairing.png)
+
+> **Note**
+>  - Vous pourrez également arrêter le serveur depuis la page de configuration de la voiture.
+>  - Si la case est cochée et qu'au moment ou une commande doit être envoyée, le serveur est arrêté, Jeedom va tenter de le redémarrer.
+>  - Le code du Serveur Proxy est fourni par Tesla
+>  - la clef privée ajoutée dans votre Tesla lors de l'appairage peut-être supprimée depuis l'écran de votre Tesla (Menu Sécurité, dans la liste des cartes d'accès au véhicule)
+
+Le diagramme ci-dessous est disponible dans la documentation du [Serveur Proxy](https://github.com/teslamotors/vehicle-command). Dans le contexte du plugin jeedom, il faut lire :
+ - `Your Backend`: c'est le code du plugin jeedom qui envoie des commandes au Serveur Proxy
+ - `Vehicule Commands Proxy` est le Serveur Proxy démarré sur le port 4443. Il s'occupe de signer la commande et l'envoie aux Serveurs Tesla.
+ - `Fleet API` est le nom de la nouvelle API Tesla présente sur les Serveurs Tesla
+ - `Vehicle`, c'est votre Tesla 
+![config](../images/request_diagram.png)
+
 
 Tesla virtuelle
 --
@@ -84,18 +113,18 @@ Configuration du plugin
 
 Après connexion, le plugin pourra se connecter aux serveurs Tesla et récupèrera la ou les Tesla associées à votre compte pour créer les "équipements" Jeedom automatiquement.
 
-Le bouton __"Synchroniser mes voitures"__ permet d'effectuer une recherche manuelle et ajoutera un équipement Jeedom pour chaque véhicule Tesla non encore créé. Cela permet également de mettre à jour les équipements associés à vos Tesla après une mise à jour du plugin. 
+Le bouton __"Synchroniser mes voitures"__ permet d'effectuer une recherche manuelle et ajoutera un équipement Jeedom pour chaque véhicule Tesla non encore créé. Cela permet également de mettre à jour les équipements associés à vos Tesla après une mise à jour du plugin.
 
 Démon
 --
-Le suivi de l'autonomie repose sur des jeux de données acquises via l'API des serveurs Tesla. L'acquisition de ces données est effectuée par un script qui doit tourner en arrière plan. Son démarrage se pilote depuis le panneau de contrôle du plugin. Il est recommandé d'activer la **Gestion Automatique** pour que Jeedom le redémmarre s'il s'arrête. 
+Le suivi de l'autonomie repose sur des jeux de données acquises via l'API des serveurs Tesla. L'acquisition de ces données est effectuée par un script qui doit tourner en arrière plan. Son démarrage se pilote depuis le panneau de contrôle du plugin. Il est recommandé d'activer la **Gestion Automatique** pour que Jeedom le redémmarre s'il s'arrête.
 
 ![config](../images/tesla-daemon.png)
 
 Tracking
 --
 
-Pour accéder aux panneaux de suivi de l'autonomie (également appelé "tracking"), il suffit de cocher `Afficher le panneau desktop` et `Afficher le panneau mobile`:  
+Pour accéder aux panneaux de suivi de l'autonomie (également appelé "tracking"), il suffit de cocher `Afficher le panneau desktop` et `Afficher le panneau mobile`:
 
 ![config](../images/configPlugin-4.png)
 
@@ -110,14 +139,14 @@ Autres paramètres de configuration
 
 - **Coût du kWh** (en euro) : Nécessaire pour calculer approximativement le cout d'une charge, le prix pour parcourir 100km et le nombre de km que l'on peut faire avec 1 euro. La valeur par défaut est `0.14`.
 - **Tesla Client ID** et **Tesla Client Secret** : deux clefs publiques qui sont nécessaires pour accéder à l'API du serveur des Tesla. Déjà renseignées, ces clefs peuvent être modifiées au cas où l'API requiert de nouvelles valeurs.
-- **cronHourly** : S'il est activé, une fois par heure, le plugin fait une mise à jour des données du widget. Quand le tracking est actif, les données du widget sont mises à jour au fil de l'eau.  
+- **cronHourly** : S'il est activé, une fois par heure, le plugin fait une mise à jour des données du widget. Quand le tracking est actif, les données du widget sont mises à jour au fil de l'eau.
 
 
 
 Configuration du véhicule
 =======================
 
-Une fois le plugin configuré, le ou les véhicules de votre compte tesla sont ajoutés. 
+Une fois le plugin configuré, le ou les véhicules de votre compte tesla sont ajoutés.
 
  <img src="../images/configPlugin-3.png" alt="config" width="804" style="border-radius:8px;"/>
 
@@ -131,7 +160,7 @@ Pour configurer le véhicule, il suffit de cliquer sur son image. Il sera alors 
  * __Capacité batterie__ : La capacité "commerciale" de la batterie en kWh
  * __Autonomie__ : le nombre de kilomètres qu'il est possible de parcourir avec 100% d'autonomie. Vous pouvez choisir de laisser le plugin estimer le nombre de kilomètre qu'il est possible de faire avec un 'plein' (cocher alors "estimer").
  * __Consommation typique__ : En théorie, c'est le rapport entre `Capacité batterie x 1000 / Autonomie`. Ajustable selon ses propres constatations.
- * __Affichage__ : L'affichage par défaut du Suivi de l'Autonomie. Choix : `Energie` ou `Distance`. 
+ * __Affichage__ : L'affichage par défaut du Suivi de l'Autonomie. Choix : `Energie` ou `Distance`.
 
 Et vous pourrez également choisir une image pour votre voiture.
 
@@ -167,7 +196,7 @@ Commandes de type **info**
 | **Info véhicule** | Affiche un titre et un sous titre correspondant à l'état actuel de la voiture. Par exemple _Conduite 67km_, _Recharge planifiée à 22h50_, _Stationnée_, _Supercharge_, ...
 | **Détail autonomie** | Affiche un graphe de la batterie
 | **Détail de la recharge** | Affiche les données issues de la recharge.
-| **Détail de la climatisation** | Affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur). 
+| **Détail de la climatisation** | Affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur).
 | **Détail data** | Pour debug - affiche un buffer encode en 64bits débarassé de toute info personnelle (VIN/id/GPS/...).
 | **Info sapproche de** | Nom du favori duquel se rapproche la voiture.
 | **Info séloigne de** | Nom du favori duquel s'éloigne la voiture.
@@ -197,13 +226,13 @@ Commandes de type **action**
 >
 > Chacune de ces actions peut être intégrée dans un scénario Jeedom.
 >
-> Le format **Hmm**, est utilisé dans les blocs d'action des scénarios qui permettent de programmer une heure de début d'action. Exemples: 
->  - `2305` indique 23h05, 
+> Le format **Hmm**, est utilisé dans les blocs d'action des scénarios qui permettent de programmer une heure de début d'action. Exemples:
+>  - `2305` indique 23h05,
 >  - `18` indique 00h18,
 >  - `1200` indique 12h00,
 >  - `1210`indique 12h10,
 >  - `121` indique 1h21
-> 
+>
 
 Affichage du véhicule
 =======================
@@ -229,9 +258,9 @@ Par défaut, le widget est mis à jour toutes les heures entre 5h du matin et 23
 Contrôler la climatisation, les sièges et le volant chauffants
 --
 
-| Bouton | Description | Un clic sur ce bouton va ... | 
+| Bouton | Description | Un clic sur ce bouton va ... |
 | --- | --- | --: |
-| ![clim off](../images/clim_off.png) | La climatisation est éteinte | _... allumer la climatisation_ | 
+| ![clim off](../images/clim_off.png) | La climatisation est éteinte | _... allumer la climatisation_ |
 | ![clim on](../images/clim_on.gif) | La climatisation est allumée | _... éteindre la climatisation_ |
 | ![heaters on](../images/seat_heaters_on.png) | Le volant ou un des sièges chauffants est allumé | _... ouvrir le panneau de contrôle des sièges chauffants_ |
 | ![heaters off](../images/seat_heaters_off.png) | Aucun des sièges chauffants ni le volant n'est allumé | _... ouvrir le panneau de contrôle des sièges chauffants_ |
@@ -243,10 +272,10 @@ Il est possible de modifier la température cible de la climatisation en utilisa
 
 Après avoir cliqué sur l'icone de siège, il est possible de contrôler le niveau de chauffage des sièges et du volant. Le nombre de rangées affiché dépend de la configuration du véhicule. Egalement, si le volant est chauffant, il est activable via ce panneau de contrôle.
 
-Le bouton OFF permet de tout éteindre. Le bouton OK permet de valider les choix faits pour chacun des sièges et du volant: 
+Le bouton OFF permet de tout éteindre. Le bouton OK permet de valider les choix faits pour chacun des sièges et du volant:
 
 
-![heaters](../images/SeatHeaters.gif) 
+![heaters](../images/SeatHeaters.gif)
 
 
 > **Notes**
@@ -320,7 +349,7 @@ Pour s'assurer que le plugin Tesla est bien configuré, un ensemble de vérifica
 Scenario
 ==
 
-Exemples de scénarios: 
+Exemples de scénarios:
 
 * Modifier le seuil de recharge à son maximum :
   <img src="../images/scenario_setChargeLimit_100.png" alt="scenario set limit" width="804" style="border-radius:8px;"/>
@@ -333,11 +362,11 @@ Exemples de scénarios:
 * Programmer le départ de la charge pour que la voiture ait 90% de batterie à 7h00 !
   <img src="../images/scenario_getStartTime.png" alt="scenario startTime" width="804" style="border-radius:8px;"/>
 
-> **Note** 
+> **Note**
 >
-> Pour connaître l'heure de début de la recharge, il faut démarrer la charge avec l'action 'estimer' qui va démarrer une courte charge pour estimer le temps nécessaire pour la recharge. 
+> Pour connaître l'heure de début de la recharge, il faut démarrer la charge avec l'action 'estimer' qui va démarrer une courte charge pour estimer le temps nécessaire pour la recharge.
 >
-> Si la voiture n'est pas prète pour la charge, la commande **Info heure de départ de recharge** retourne `N/A`. 
+> Si la voiture n'est pas prète pour la charge, la commande **Info heure de départ de recharge** retourne `N/A`.
 >
 > Si le temps estimé est inférieur au temps qui sépare le moment où la commande est lancée et l'heure de fin de recharge, la commande **Info heure de départ de recharge** retourne l'heure au format `Hmm` à laquelle la charge pourra être lancée.
 >
@@ -350,7 +379,7 @@ Exemples de scénarios:
 Suivi de l'autonomie
 ==
 
-Note: Le *Suivi de l'autonomie* est aussi appelé *Range Tracking* ou simplement *tracking*. 
+Note: Le *Suivi de l'autonomie* est aussi appelé *Range Tracking* ou simplement *tracking*.
 
 Principe
 --
@@ -366,7 +395,7 @@ Un graphique retrace l'évolution de l'autonomie ou de l'énergie au cours d'une
 > **Notes**
 >
 > * Pratique, la version mobile permet de suivre l'évolution de l'autonomie ou de l'énergie tout en conduisant !
-> 
+>
 > * Pour accéder directement à la vue `Tesla` depuis la version Mobile sans jongler avec les menus, il est possible de définir `Tesla` comme vue "Mobile" par défaut dans la configuration du profil (Menu `User` -> `Profil Admin` -> Onglet `Interface`)
 >
 > * Le suivi de l'autonomie peut être programmé via un scénario.
@@ -374,7 +403,7 @@ Un graphique retrace l'évolution de l'autonomie ou de l'énergie au cours d'une
 
 
 Configuration et impact du tracking
--- 
+--
 
 ![tracking-graph](../images/tracking-settings.png)
 
@@ -388,7 +417,7 @@ Quand la voiture se remet à rouler/charger, le prochain appel va detecter ce ch
 #### Considérations techniques:
 Tesla propose sur son API deux appels d'interrogation du véhicule:
  - un appel nommé `data` qui indique simplement l'état de la voiture : `online`, `offline`, `asleep`, `waking` et `unknown`. Cet appel n'est pas intrusif, il ne rentre pas en contact avec la voiture. `online` indique que la voiture roule, charge, télécharge une mise à jour, effectue une opération interne de service.... Mais elle peut tout à fait être `online` au parking. Et, sans être sollicité pendant un certain temps au parking, elle pourra automatiquement rentrer dans une phase de sommeil (`offline`/`asleep`). Hélas, sur cet appel, il n'y a pas de distinguo entre un `online "actif"` (roulage, charge, ...), et un `online "inactif"` (au parking en attente d'un prochain sommeil), ce qui permettrait de detecter la phase de pré-sommeil.
-- un appel nommé `vehicle` qui remonte toutes les données pertinentes et à jour sur le véhicule. Cet appel `vehicle` n'est possible que lorsque la voiture est `online`. Solliciter trop fréquement  cet appel `vehicle` empèche la voiture de passer `offline`. 
+- un appel nommé `vehicle` qui remonte toutes les données pertinentes et à jour sur le véhicule. Cet appel `vehicle` n'est possible que lorsque la voiture est `online`. Solliciter trop fréquement  cet appel `vehicle` empèche la voiture de passer `offline`.
 
 Avant chaque appel `vehicle` le tracking effectue un appel `data`. Si ce dernier remonte un état `offline` ou `asleep`, le tracking laisse la voiture dans son sommeil et ne vas pas effectuer d'appel `vehicle`. Dans le cas contraire (`online`) le tracking effectue l'appel `vehicle` et stocke un nouveau jeu de données qui sera utilisé pour les graphs et les statistiques.
 
@@ -401,7 +430,7 @@ Un clic sur `Start Recording` va démarrer le démon qui va récupérer à inter
 
 Un clic sur `Stop Recording` va stopper l'acquisition des données (arrêt du démon).
 
-Lorsque le démon est en mode **Gestion Automatique**, il n'est pas possible d'interagir manuellement pour arrêter/démarrer le démon. 
+Lorsque le démon est en mode **Gestion Automatique**, il n'est pas possible d'interagir manuellement pour arrêter/démarrer le démon.
 
 > **Notes**
 >
@@ -412,7 +441,7 @@ effectivement disponibles pour l'affichage.
 
 Exemple affichage __distance__
 --
-L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui se découpe principalement en 4 segments : 
+L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui se découpe principalement en 4 segments :
 - <code>km  0</code> à <code>km 15</code>: route départementale sur du plat - _altitude 'en haut': 1100m._
 - <code>km 15</code> à <code>km 30</code>: route départementale en descente -  _altitude 'en bas': 250m._
 - <code>km 30</code> à <code>km 50</code>: autoroute.
@@ -424,7 +453,7 @@ L'exemple ci-dessous retrace un trajet réél effectué le 5 janvier 2019, qui s
 - En abscisse on trouve le temps
 - En ordonnée à gauche en <b>noir</b>, le kilométrage parcouru. <u>Note:</u> l'angle de la courbe est proportionel à la vitesse.
 - En ordonnée à gauche en <b style='color:#22C4FF'>bleu</b>, l'autonomie de départ en <b style="color:#3355FF">pointillé</b>, et l'évolution de l'autonomie en <b style='color:#22C4FF'>bleu</b>. Quand la climatisation est allumée, le trait est en <b style='color:blueviolet'>violet</b>.
- - En ordonnée à droite, la différence constatée entre l'<b style="color:#3355FF">autonomie initiale</b> et l'<b style='color:#22C4FF'>autonomie réelle</b> compte tenu des <b>kilomètres parcourus</b>. La courbe est <b style="color:#00FF00">verte</b> quand il y a un gain, <b style="color:#FFA500">orange</b> en cas de perte. Et la <b style="color:#E74C3C">puissance de charge</b> quand la voiture est en cours de recharge. 
+ - En ordonnée à droite, la différence constatée entre l'<b style="color:#3355FF">autonomie initiale</b> et l'<b style='color:#22C4FF'>autonomie réelle</b> compte tenu des <b>kilomètres parcourus</b>. La courbe est <b style="color:#00FF00">verte</b> quand il y a un gain, <b style="color:#FFA500">orange</b> en cas de perte. Et la <b style="color:#E74C3C">puissance de charge</b> quand la voiture est en cours de recharge.
 
 
 
@@ -435,7 +464,7 @@ Un tableau récapitulatif par journée est affiché et permet sur selection d'un
 
 - L'`efficience` correspond au pourcentage de km gagnés/perdus par rapport à la longueur du trajet, ce qui permet de pondérer les résultats. Les petits trajets sont 'énergivores'.
  - Les trois boutons en haut à droite du tableau permettent de filtrer par type d'étape et de pouvoir par exemple calculer les pertes liées aux seules étapes de type `parking`.
- 
+
 
 Exemple affichage __énergie__
 --
@@ -484,7 +513,7 @@ Les différentes formes de la pastille
  <div class="col-sm-9 col-sm-offset-3">
               Sur la carte la pastille qui représente l'emplacement de la voiture prend différentes formes selon son état:
               <ul style='list-style:none'>
-                <li style='padding:4px 0; display:flex; align-items:center '><img style='height:40px' src="../images/map_car_offline.svg">&nbsp;&nbsp; la voiture est en veille sur un parking.</li> 
+                <li style='padding:4px 0; display:flex; align-items:center '><img style='height:40px' src="../images/map_car_offline.svg">&nbsp;&nbsp; la voiture est en veille sur un parking.</li>
                 <li style='padding:4px 0; display:flex; align-items:center '> <img style='height:40px' src="../images/map_car_online.svg">&nbsp;&nbsp; la voiture est en ligne sur un parking.</li>
                 <li style='padding:4px 0; display:flex; align-items:center '><img style='height:40px' src="../images/map_car_charging.svg">&nbsp;&nbsp; la voiture est en cours de recharge.</li>
                 <li style='padding:4px 0; ; display:flex; align-items:center '><img style='height:40px' src="../images/map_car_driving.svg">&nbsp;&nbsp; la voiture roule.</li>
@@ -494,7 +523,7 @@ Les différentes formes de la pastille
 
 
 Liens utiles:
-== 
+==
  - Le site officiel du plugin : [Tesla Jeedom](http://tesla.jeedom.free.fr)
  - Les notes de mise à jour : [ChangeLog](http://tesla.jeedom.free.fr/changelog)
  - Le forum officiel du plugin : [Forum Community de Jeedom](https://community.jeedom.com/tags/plugin-tesla)
@@ -503,8 +532,8 @@ Liens utiles:
  - Tweeterriennes et tweeterriens, RDV ici: [Tweeter @TeslaJeedom](https://twitter.com/TeslaJeedom)
  - Envie de poster un avis sur le plugin ? [Ajoutez le vôtre !](https://www.jeedom.com/market/?v=d&p=market&type=plugin&plugin_id=tesla)
  - Besoin d'une Tesla pour tester le plugin ? Utilisez mon lien de parrainage !  [http://ts.la/nicolas2320](https://www.tesla.com/fr_fr/referral/nicolas2320)
- - Envie de soutenir le développement du projet : 
- 
+ - Envie de soutenir le développement du projet :
+
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style='text-align:center'>
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -523,20 +552,20 @@ FAQ:
    Lors de la mise à jour, le Plugin synchronise automatiquement vos véhicules configurés avec la nouvelle version du Plugin. Cependant, il se peut que la mise à jour ne se soit pas faite. Il suffira alors de cliquer sur le bouton `Synchroniser mes voitures` et les nouvelles commandes Info et Action seront ajoutées à l'équipement et visibles sur le dashboard.
 
 2. Comment changer les unités de températures et de distance (°C / °F, km / miles) ?
-   
+
    Le Plugin Tesla de Jeedom lit et utilise les paramètres que vous avez configuré dans votre voiture.
 
-   Idem pour l'affichage de l'autonomie typique ou nominale. 
+   Idem pour l'affichage de l'autonomie typique ou nominale.
 
 3. La commande 'Réveiller' ne réveille pas la voiture.
-  
-   Depuis le panneau de configuration du Plugin, vous pouvez modifier les deux paramètres `Nombre de tentatives pour reveiller le véhicule` et `Nombre de secondes entre deux tentatives` pour essayer de forcer le reveil. Les chances de succès du réveil sont plus grandes quand le mode **Connexion permanente** est activé dans les paramètres de votre voiture. 
+
+   Depuis le panneau de configuration du Plugin, vous pouvez modifier les deux paramètres `Nombre de tentatives pour reveiller le véhicule` et `Nombre de secondes entre deux tentatives` pour essayer de forcer le reveil. Les chances de succès du réveil sont plus grandes quand le mode **Connexion permanente** est activé dans les paramètres de votre voiture.
 
  4. Est-ce que le tracking du Plugin permet à la voiture de se mettre en veille ?
-    
+
     Oui, le Plugin cherche à favoriser sa mise en veille dès que possible. La veille est un état dans lequel se met la voiture et qui réduit sa consommation électrique au plus strict minimum. Il n'y a pas de moyen technique de demander à la voiture de se mettre en veille. Dès qu'elle n'est plus sollicitée pendant une période de 15 à 20 minutes, elle passe en mode veille. Elle sortira de veille si elle est ouverte, conduite, en charge (bien qu'elle se remette parfois en veille lors des phases de charge) et/ou sollicitée par une application tierce (y compris l'app officielle Tesla ou le widget Ios). Des besoins internes à la voitures iront la réveiller également (températures hautes/basses, mise à jour de la voiture, ...)
-    
-    Exemple: 
+
+    Exemple:
       - La voiture roule, le tracking enregistre les données au fil de l'eau, le tracking est en mode NORMAL.
       - La voiture se gare, le tracking continue en mode NORMAL pendant 10 minutes prêt à se remettre à enregistrer le prochain trajet.
       - Passées ces 10 minutes, le tracking se met en mode SOMMEIL, arrête l'enregistrement au fil de l'eau et ira interroger la voiture toutes les 15 minutes, laissant la voiture la possibilité de se mettre en veille.
