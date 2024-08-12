@@ -1,3 +1,19 @@
+<a name="v3.2.9"></a>
+### Améliorations
+  - Optimisation de la partie tracking, amélioraition des performances - passage en Angular 18
+
+### Correctif
+  - Lorsque la voiture n'avait pas de nom, Jeedom remontait une erreur `"le nom de l'équipement ne peut pas être vide"`. Corrigé  
+
+<a name="v3.2.8"></a>
+### Amélioration
+  - Le port du serveur proxy est mis a 4443 par défaut. Il doit être supérieur à 400. 
+
+### Correctifs
+  - Lorsque la voiture était endormie, les commandes signées ne reveillaient pas le vehicule. Corrigé
+  - le panneau de control pour le chauffage des sièges pouvait ne pas s'afficher
+  - Danbs certains cas, le token ne se rafraichissait pas correctement 
+
 <a name="v3.2.6-beta.268.178"></a>
 # 3.2.6-beta.268.178 (2024-03-31)
 ### Améliorations
