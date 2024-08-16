@@ -1,4 +1,5 @@
 <a name="v3.2.9"></a>
+# 3.2.9 (2024-08-12)
 ### Améliorations
   - Optimisation de la partie tracking, amélioraition des performances - passage en Angular 18
 
@@ -6,6 +7,7 @@
   - Lorsque la voiture n'avait pas de nom, Jeedom remontait une erreur `"le nom de l'équipement ne peut pas être vide"`. Corrigé  
 
 <a name="v3.2.8"></a>
+# 3.2.8 (2024-06-18)
 ### Amélioration
   - Le port du serveur proxy est mis a 4443 par défaut. Il doit être supérieur à 400. 
 
@@ -14,8 +16,8 @@
   - le panneau de control pour le chauffage des sièges pouvait ne pas s'afficher
   - Danbs certains cas, le token ne se rafraichissait pas correctement 
 
-<a name="v3.2.6-beta.268.178"></a>
-# 3.2.6-beta.268.178 (2024-03-31)
+<a name="v3.2.6"></a>
+# 3.2.6 (2024-04-05)
 ### Améliorations
   - En interne, le code a été revu. Les appels aux serveurs Tesla qui ne concernent pas un véhicule en particulier ont été extrait du code lié à l'équipement Jeedom. Ainsi les appels de la gestion de l'authentification, la récupération de la liste des véhicules, ... sont joués dans une partie de code dédié.
   - Seul le cron programmé 5 minutes avant l'expiration s'occupe de raffraichir le token. 
