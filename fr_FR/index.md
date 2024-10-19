@@ -580,7 +580,7 @@ FAQ:
 
  5. Est-ce qu'il est possible de régler l'intensité depuis le Plugin ?
 
-     Non. L'API de tesla ne permet pas cette fonction qui serait effectivement très utile pour augmenter ou diminuer la vitesse de charge dans un scénario par exemple. Dès que c'est rendu possible ce sera ajouté au Plugin.
+     OUI ! L'API de Tesla permet cette fonction qui n'était pas disponible à l'origine. Le plugin permet de faire ce réglage qui est très utile pour augmenter ou diminuer la vitesse de charge dans un scénario par exemple.
 
 ----
 
