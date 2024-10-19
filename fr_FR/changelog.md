@@ -1,5 +1,5 @@
-<a name="v3.2.10-beta.305.222"></a>
-# 3.2.10-beta.305.222 (2024-10-18)
+<a name="v3.2.10-beta.306.222"></a>
+# 3.2.10-beta.306.222 (2024-10-18)
 ### Améliorations
   - Refonte de la partie cartographie sur le tracking - Utilisation de maplibre.
   - Le tracking detecte quand le navigateur change de thème (jour/nuit) et s'adapte en conséquence.
