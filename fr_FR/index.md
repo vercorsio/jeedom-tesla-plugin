@@ -183,7 +183,10 @@ Commandes de type **info**
 | **Info climatisation** | Indique si la climatisation est allumée ou éteinte.
 | **Info température habitacle** | Indique la température à l'intérieur du véhicule.
 | **Info recharge** | Indique si la voiture est en train de charger ou non. Les valeurs possibles sont  { `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled`, `Driving` }.
-| **Info cablle connecté** | Indique si le cable de recharge est connecté.
+| **Info durée de recharge estimée** | Indique l'estimation de la durée restante de charge (en minutes).
+| **Info ampérage de recharge** | Indique l'intensité de charge (en ampères).
+| **Info durée de recharge estimée** | Indique l'estimation de la durée restante de charge (en minutes).
+| **Info cable connecté** | Indique si le cable de recharge est connecté.
 | **Info niveau de batterie** | Indique le pourcentage de la batterie.
 | **Info limite de recharge** | Indique le pourcentage à atteindre à la fin d'un recharge.
 | **Info verouillage** | Indique si la voiture est fermée ou ouverte.
@@ -200,6 +203,8 @@ Commandes de type **info**
 | **Détail data** | Pour debug - affiche un buffer encode en 64bits débarassé de toute info personnelle (VIN/id/GPS/...).
 | **Info sapproche de** | Nom du favori duquel se rapproche la voiture.
 | **Info séloigne de** | Nom du favori duquel s'éloigne la voiture.
+| **Info vitesse** | La vitesse de la voiture (en km/h).
+| **Info selecteur de vitesses** | Indique P R N ou D.
 | **Info date dernier franchissement** | Timestamp qui indique l'heure à laquelle la frontière du dernier favori a été franchie.
 
 Commandes de type **action**

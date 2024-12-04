@@ -1,18 +1,22 @@
-<a name="v3.2.10-beta.306.222"></a>
-# 3.2.10-beta.306.222 (2024-10-18)
+<a name="v3.2.10"></a>
+# 3.2.10 (2024-12-01)
 ### Améliorations
   - Refonte de la partie cartographie sur le tracking - Utilisation de maplibre.
   - Le tracking detecte quand le navigateur change de thème (jour/nuit) et s'adapte en conséquence.
   - L'état affiché/caché de chaque panneau "graphique/cartographie/statistiques/trajets" est mémorisé entre deux sessions web sur le même navigateur (local storage).
   - Un nouveau mode sur la cartographie permet d'afficher la voiture sur une carte inclinée et "en 3D"
-  - Amélioration des performances d'affichage.
   - Ajout de l'info de durée de recharge estimée : `charger_expected_duration_min`. Contient l'estimation du nombre de minutes de recharge avant d'atteindre la limite désirée.
+  - Affichage en continu des températures intérieur et extérieur. Non affiché sur mobile.
+  - Amélioration des performances d'affichage.
 
 
 ### Correctifs
   - Quand la voiture entrait dans un lieu de parking non marqué 'favori', la valeur de carenter était initialisée a N/A. Corrigé
   - Ajout d'une info indiquant la dernière mise à jour (`handshake`) qui permet au plugin Jeedom d'indiquer régulièrement a Jeedom qu'il est toujours en activité (evite les messages de heartbeat : "*Le plugin n'a pas reçu de messages depuis 480 min*")
+  - Sur des équipements lents, des pages du tracking peuvent ne pas s'afficher correctement. Priorité a été donnée au chargement des fichiers javascript pour réduire ce phénomène
 
+
+> Note: Merci aux testeurs !
 
 <a name="v3.2.9"></a>
 # 3.2.9 (2024-08-12)
