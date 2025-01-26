@@ -25,8 +25,52 @@ Retrouvez la liste des nouveautés sur le [Change log](http://tesla.jeedom.free.
 Connexion au compte Tesla
 =======================
 
-La configuration est très simple, après téléchargement du plugin, il
-vous suffit de l’activer et de renseigner le **code d'authentification** nécessaire pour accéder à votre compte Tesla.
+Après téléchargement du plugin, il suffit de l'activer et de procéder a quelques étapes de configuration:
+
+> A partir de février 2025, Tesla rend obligatoire l'utilisation de ses propres clés pour accéder aux serveurs qui permettent de récupérer des données de ces propres véhicules et pour leur envoyer des commandes (klaxon, demarrage de charge, réveil, ouverture de coffre, ...)
+
+La page de connexion du plugin Tesla sur votre Jeedom vous donne des informations générales et individuelles pour connecter le plugin aux serveurs Tesla
+
+Il convient donc de créer à partir de votre propre compte Tesla un compte "API Fleet" en cliquant sur ce lien : [https://developer.tesla.com](https://developer.tesla.com/fr_FR).
+
+Sur la page **Information sur l'application**, donnez un nom, une description et l'utilisation prévue.  Peu importe, mais évitons que tout le monde indique "Jeedom" :) 
+
+<img src="../images/Fleet_Create1.png" alt="cnx"  style="border-radius:8px;"/>
+
+Dans les **Informations du client** il faudra cocher *"Code d'autorisation et accès de machine à machine"* et renseigner les deux premières URLs.
+
+ - La première est le domaine qui héberge votre jeedom. La page de connexion du plugin vous l'indiquera.
+ - La seconde est une page qui vous permettra de récupérer le code d'accès, et sera `https://jeedomteslaplugin.firebaseapp.com/redirect/`
+ - La troisième est optionelle et inutile dans notre cas.
+
+<img src="../images/Fleet_Create2.png" alt="cnx"  style="border-radius:8px;"/>
+
+A l'étape **API et champs d'application**, cochez toutes les cases sauf les deux dernières qui correspondent à l'exploitation des équipements de production d'energie. Le plugin Tesla a besoin des informations du véhicule, de sa localisation, et des accès aux commandes et gestionde charge. 
+
+> Ces données restent en **local** sur votre serveur Jeedom. En aucun cas elles sont transmises à des tiers. En cochant ces cases vous vous autorisez à utiliser vos informations. Vous n'autorisez personne d'autre. 
+
+<img src="../images/Fleet_Create3.png" alt="cnx"  style="border-radius:8px;"/>
+
+Pour les **Informations de facturation**, cliquez simplement sur "Ignorer et soumettre".
+
+> Si votre utilisation dépasse 10€ par mois (qui sont déduits des factures mensuelles) et que vous n'avez pas renseigné de moyen de paiement, Tesla se reserve le droit de désactiver votre compte.
+>
+> Le plugin permet de limiter l'usage de l'API pour qu'elle ne dépasse une certaine somme. Si vous indiquez 10€, le plugin ne contactera plus les serveurs Tesla jusqu'à la fin du mois.
+
+<img src="../images/Fleet_Create4.png" alt="cnx"  style="border-radius:8px;"/>
+
+Suite au remplassage de ce formulaire, vous receverez un mail de Tesla vous indiquant que votre "application" est activée et disponible. Deux clefs seront alors disponibles à partir de ce compte Fleet API dans les détails de votre "application". Ces clefs seront à renseigner dans le panneau de connexion du plugin tesla.
+<img src="../images/Fleet_Create5.png" alt="cnx"  style="border-radius:8px;"/>
+
+De retour dans le panneau de configuration du plugin Tesla sur votre jeedom, vous renseignerez 
+ - votre *ID du client* dans `Client ID`
+ - votre *Secret du client* dans `Client Secret`
+ - l' *Origine(s) autorisée(s)* dans `URL d'origine autorisé`
+
+> Ces trois données ne doivent en aucun cas être transmise à un tiers.
+
+Après avoir renseigné ces données vous aurez accès au bouton **Récupérer mon code d'authentification** nécessaire pour accéder à votre compte Tesla.
+
 
 ![config](../images/configPlugin-1.png)
 
@@ -40,7 +84,7 @@ Un clic sur "Récupérer mon code d'authentification" vous amène sur le site au
 
 Accordez au plugin Tesla de Jeedom l'accès à vos informations de profil, de véhicule, aux commandes du véhicule et à la gestion de la recharge du véhicule. Ne pas cocher l'un de ces éléments peut amener le plugin à ne pas avoir un fonctionnement optimal.
 
-> Note: Jeedom étant hébergé sur votre propre serveur, vous seul aurez accès au données qui seront stockées localement chez vous.
+> Note: Jeedom étant hébergé sur votre propre serveur, vous seul aurez accès aux données qui seront stockées localement chez vous.
 
 <img src="../images/tesla_rights.png" alt="drawing"  style="border-radius:8px;"/>
 
@@ -49,7 +93,7 @@ Après avoir accordé les droits au plugin tesla, "Jeedom Tesla Plugin" sera ajo
 
 Le code d'authentification est affiché sur une page dédiée qui n'est utilisée que pour ce but. Copiez ce code (en cliquant sur l'icone à droite du code affiché) et collez-le dans le panneau de configuration du plugin sur votre Jeedom.
 
-> Note: Ce code est à usage unique. Il est inutile de le conserver. Le plugin ne l'enregistre pas. IL ser simplement a obtenir les premiers jetons d'authentification.
+> Note: Ce code est à usage unique. Il est inutile de le conserver. Le plugin ne l'enregistre pas. Il sert simplement à obtenir les premiers jetons d'authentification.
 
 <img src="../images/tesla_code.png" alt="drawing"  style="border-radius:8px;"/>
 
