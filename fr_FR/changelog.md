@@ -2,9 +2,9 @@
 # 3.3.0 (2025-01-26)
 
 ### Nouveautés
- A partir de décemre 2024, Tesla monétise son API en s'appuyant sur les clés que chacun doit avoir récupéré en créant une "Application" sur le site https://developer.tesla.com. La procédure est expliquée dans la docutentation du plugin: http://tesla.jeedom.free.fr/documentation.
+ A partir de décembre 2024, Tesla monétise son API en s'appuyant sur les clés que chacun doit avoir récupéré en créant une "Application" sur le site [https://developer.tesla.com](https://developer.tesla.com). La procédure est expliquée dans la docutentation du plugin: [http://tesla.jeedom.free.fr/documentation](http://tesla.jeedom.free.fr/documentation).
  
- Les factures des mois de décembre 2024 et janvier 2025 associées aux usages de l'API fleet ont été annulées. A chaque début de mois, Tesla remet à zéro les compteurs des 4 différents type de endpoint facturés:
+ Les factures des mois de décembre 2024 et janvier 2025 associées aux usages de l'API fleet ont été annulées. A chaque début de mois, Tesla remet à zéro les compteurs des 4 différents types de endpoint qui sont facturés:
   - `wakes` : les appels qui réveillent la voiture
   - `data` : les endpoints qui récupèrent les informations de la voiture
   - `commands`: les commandes envoyées au(x) véhicule(s) (ouverture de porte, klaxon, démarrage/arrêt de charge, ...)
@@ -12,22 +12,23 @@
 
   > Notes:
   >  - les endpoints d'authentification ainsi que certains endpoints (liste des voitures, ....) ne sont pas facturés
-  > - Tesla fait une réduction de 10€ par mois, ce qui permet de continuer d'utiliser l'API de façon gratuite
+  > - Tesla fait une réduction de 10€ par mois, ce qui permet de continuer d'utiliser l'API de façon gratuite.
   > - Le tracking tel qu'il est codé aujourd'hui dans le plugin Tesla utilise les endpoints de type `data` qui sont "couteux". Une migration vers les endpoints de type `signals` est à l'étude (Telemetry).
   
 
-  Sur la page de dashboard de votre application Tesla Fleet API : https://developer.tesla.com/dashboard vous pourrez suivre une estimation du coût de l'usage que vous faîtes de vos clefs (via le plugin Jeedom, et/ou autres applications tierces)
+  Sur la page de dashboard de votre application Tesla Fleet API ([https://developer.tesla.com/dashboard](https://developer.tesla.com/dashboard)) vous pourrez suivre une estimation du coût de l'usage que vous faîtes de vos clefs (via le plugin Jeedom, et/ou autres applications tierces)
 
-Pour des raisons évidentes, les clés jusqu'alors en usage sur jeedom ne seront plus disponibles. Chaque utilisateur du plugin devra indiquer ses propres clés. Il n'est pas obligatoire d'indiquer un moyen de paiement sur le site Tesla Fleet API pour la facturation des usages. En cas de dépassement et de non paiement, Tesla se reserve le droit de désactiver votre application.
+Pour des raisons évidentes, les clés jusqu'alors en usage sur jeedom ne seront plus disponibles dès la fin janvier 2025. Chaque utilisateur du plugin devra indiquer ses propres clés. Il n'est pas obligatoire d'indiquer un moyen de paiement sur le site Tesla Fleet API pour la facturation des usages. En cas de dépassement et de non paiement, Tesla se reserve le droit de désactiver votre application.
 
-Pour éviter de dépasser un certain montant mensuel, le plugin jeedom calcule à chaque requète envoyée à Tesla le coût estimatif cumulé sur le mois en cours. Un seuil configurable (par défaut, il est a 9.50€) permet au plugin d'arrêter les requêtes s'il est dépassé. Jusqu'au mois suivant, ou les compteurs sont réinitialisés.
+Pour éviter de dépasser un certain montant mensuel, le plugin Tesla de Jeedom calcule avant chaque requète envoyée à Tesla le coût estimatif cumulé sur le mois en cours. Si le seuil configurable (par défaut à 9.50€) est dépassé le plugin arrête d'envoyer des requêtes aux Serveurs Tesla. En début de mois suivant les compteurs sont réinitialisés.
 
-Comme le tracking du plugin est "gourmand" en endpoint de type `data`, un nouveau paramêtre dans la configuration du plugin permet de le désactiver, ce qui limitera grandement leur consommation et permettra d'utiliser le plugin pour envoyer des commandes tout au long du mois.
+Comme le tracking du plugin est "gourmand" en endpoints de type `data`, un nouveau paramêtre (nommé `traking`) dans la configuration du plugin permet de le désactiver, ce qui limitera grandement leur consommation et permettra d'utiliser le plugin pour envoyer des commandes tout au long du mois.
 
-Un graphique permet de visualiser jour par jour et heure par heure l'usage de l'API fleet. Il ne prend en compte que les requêtes effectuées depuis le jeedom plugin. Si vous utilisez des clés (le mêmes ou d'autres) pour monitorer vos tesla à partir d'autres application tierces, Jeedom n'en saura rien. IL se pourrait alors que vous dépassiez le seuil indiqué dans jeedom sans vous en apercevoir. N'hésitez pas a contrôler de manière régulière la page de facturation sur votre dashboard : https://developer.tesla.com/dashboard
+Un graphique permet de visualiser jour par jour et heure par heure l'usage de l'API Fleet. Il ne prend en compte que les requêtes effectuées depuis le plugin Tesla de Jeedom. Si vous utilisez des clés (les mêmes ou d'autres) pour monitorer vos véhicules Tesla à partir d'autres applications tierces, Jeedom n'en saura rien. Il se pourrait alors que vous dépassiez le seuil indiqué dans Jeedom sans vous en apercevoir.
+
+N'hésitez pas à contrôler de manière régulière la page de facturation sur votre dashboard : [https://developer.tesla.com/dashboard](https://developer.tesla.com/dashboard)
 
 Merci aux beta testeurs pour leur patience et leur retours qui m'ont permis d'avancer.
-
 
 <a name="v3.2.10"></a>
 # 3.2.10 (2024-12-01)
