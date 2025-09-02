@@ -1,3 +1,84 @@
+<a name="v3.3.8"></a>
+# 3.3.8 (2025-09-02)
+
+
+### Améliorations
+ - L'image de la voiture peut être choisie parmi plus d'une centaine, avec le choix des couleurs, de la génération des modèles et choix des roues (dont le nouveau Model Y Juniper).
+ - Panneau de configuration du véhicule indique si le Serveur Proxy est nécessaire.
+ - Le Serveur Proxy n'est plus livré de base avec le plugin. Trois binaires sur 3 architectures différentes étaient proposées. Maintenant, le Serveur Proxy est compilé au moment de l'installation en tant que dépendance. Si la compilation échoue, le plugin cherche à récupérer l'un des trois 'anciens' binaires. Des vérifications supplémentaires ont été ajoutées pour s'assurer que les dépendances sont correctement installées. Au passage, le poids du plugin repasse sous la barre de 10Mb.
+ - Meilleure prise en charge de l'arrêt du tracking lorsque le seuil du coût de l'API est atteint.
+ - Ajout du coût estimé par le plugin dans l'interface du tracking sous le bouton qui l'active.
+ - Optimisation de la partie tracking, amélioraition des performances - passage en Angular 19
+ - Si les tuiles de la map ne s'affichent pas, un message d'erreur indique le problème et la marche à suivre.
+ - Meilleure adaptabilité de la topbar du tracking sur mobile
+ - Si le panneau de statistique se superpose à la carte, un padding est efffectué pour recentrer la carte.
+
+### Correctifs
+ - Un appel régulier assure la communication entre le plugin et jeedom pour éviter le message "*Attention le pugin tesla n'a pas reçu de message depuis 480 min*". Corrigé.
+ - Possibilité de choisir une région autre que Europe lors de la connexion.
+ - Le tracking est réactivé par defaut. Pour ne pas consommer la totalité de l'enveloppe, le tracking ne fait plus un appel data toutes les 5 secondes mais toutes les 60 secondes. Configurable.
+ - Suite à un changement de l'API, la commande de ventilation des sièges ne fonctionnait plus. Corrigé.
+ - Meilleure prise en charge des erreurs remontées par les commandes signées (celles envoyées via le Serveur Proxy).
+ - L'image de la voiture choisie dans le panneau de configuration de la voiture est utilisée de façon homogèe dans le plugin.
+ - Suppression de la bannière rouge "*Aucune méthode correspondante à ::*".
+ - L'état de la voiture (endormie/éveillée) est vérifié avant de démarrer le Serveur Proxy.
+ - Seule la présence du "pid file" indiquait que le Serveur Proxy était démarré (le pid est stocké dans un fichier spécifique). Cela pouvait entrainer des incohérences quand ce fichier n'existait pas ou plus. L'état du Serveur Proxy s'appuie maintenant sur la présence du process et recrée le pid file si nécessaire. Les remontées d'état de ce Serveur Proxy sont plus clairement indiquées et conformes à la réalité.
+ - Tesla a changé l'URL qui permet les échanges liés à l'authentification (connexion, tokens, ...). Après le 01/09/2025 l'URL `https://fleet-auth.prd.vn.cloud.tesla.com` remplace `https://auth.tesla.com`. Fait !
+
+
+ > **Note**: Un grand merci à tous les utilisateurs qui ont testé la version beta et qui m'ont fait des retours précieux. Merci également à tous pour votre patience.
+
+
+<a name="v3.3.7"></a>
+# 3.3.7 (2025-03-07)
+
+### Amélioration
+ - Ajout de la gestion de l'encours du coût lié à l'utilisation de l'API. Un montant et une date peuvent être indiqué pour resynchroniser le plugin avec le coût réel constaté sur developer.tesla.com
+
+
+<a name="v3.3.6"></a>
+# 3.3.6 (2025-03-06)
+
+### Amélioration
+ - Pour plus de stabilité et une meilleure maintenabilité, des parties de code liées à la nouvelle API ont été réécrites et optimisées.
+
+### Correctifs
+ - Une erreur de base (duplicate entry) s'affichait chaque nuit vers minuit. Corrigé 
+ - Le démon et le Serveur Proxy continuaient de tourner lorsque le jeton d'accès était révoké. Corrigé
+ - Optimisation du code lié à la gestion du proxy.
+
+
+<a name="v3.3.5"></a>
+# 3.3.5 (2025-02-09)
+
+### Correctif
+ - Génération de la clé publique lors de la phase de connexion si cette clé n'avait pas éé créé lors de la mise à jour
+
+<a name="v3.3.4"></a>
+# 3.3.4 (2025-02-08)
+
+### Amélioration
+ - Nettoyage et optimisation du code d'authentification
+ - Ajout de vérification supplémentaires lors de la phase de connexion
+
+<a name="v3.3.3"></a>
+# 3.3.3 (2025-02-06)
+
+### Correctif
+ - Après sa suppression, la clé publique n'était pas correctement regénérée. Corrigé
+
+<a name="v3.3.2"></a>
+# 3.3.2 (2025-02-05)
+
+### Amélioration
+ - Affichage de la clé publique et comparaison avec celle vue de l'exterieur
+
+<a name="v3.3.1"></a>
+# 3.3.1 (2025-01-28)
+
+### Amélioration
+ - Vérification de la présence du https dans l'URL extérieur (pre-requis pour la mise en place du lien avec les serveurs tesla)
+
 <a name="v3.3.0"></a>
 # 3.3.0 (2025-01-26)
 
