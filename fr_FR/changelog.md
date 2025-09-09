@@ -1,3 +1,11 @@
+<a name="v3.3.9"></a>
+# 3.3.9 (2025-09-09)
+
+### Correctifs
+ - A l'installation du plugin, l'accès à la table tesla_fleet pouvait se faire avant même sa création en base. Corrigé
+ - Le tracking pouvait ne pas enregistrer les trajets en base. Corrigé 
+
+
 <a name="v3.3.8"></a>
 # 3.3.8 (2025-09-02)
 
