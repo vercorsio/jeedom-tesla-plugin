@@ -1,8 +1,27 @@
+<a name="v3.3.12"></a>
+
+# 3.3.12 (2025-10-01)
+
+### Améliorations
+  - Quand en réponse à une commande envoyée, Tesla répondait *418: Device not available*, le plugin remontait simplement l'erreur dans les logs. La documentation de l'API Tesla indique que le véhicule est hors ligne dans ces cas là. Le plugin va maintenant, après récéption d'un code d'etat HTTP 408, chercher à réveiller la voiture avant de rejouer la commande. Inutile donc maintenant dans vos scénarios de réveiller la voiture. Cela sera fait automatiquement si nécessaire.
+  - Dans les notes de mises à jour du Logiciel Tesla, les images suivent le thème choisi : sombres ou claires
+  - La liste des caractéristiques du véhicule est désormais triée par ordre alphabétique. 
+
+
+
+### Correctifs
+ - Les commandes de gestion des fenètres et de climatisation pouvaient ne pas fonctionner comme attendu. Corrigé.
+ - L'indication de l'heure à laquelle le prochain rafraichissement du token va être effectué n'était plus affiché. Corrigé.
+ - Le message *Attention : l'installation des dépendances a dépassé le temps maximum autorisé : 30min* pouvait s'afficher alors que l'installation n'était pas encore commencée. Corrigé.
+- Dans la fenètre **Fleet API**, les sommes des consommations de type DATA n'étaient pas correctemet calculées et affichées. Corrigé.
+
+
+
 <a name="v3.3.11"></a>
 
 # 3.3.11 (2025-09-29)
 
-## Correctif
+### Correctif
 
 - Lorsque le seuil d'utilisation de l'API Fleet était atteint, le plugin pouvait tomber dans une _endless loop_, trou noir en informatique.... Corrigé
 
