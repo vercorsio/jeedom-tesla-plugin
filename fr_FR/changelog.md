@@ -1,21 +1,31 @@
+<a name="v3.3.13"></a>
+
+# 3.3.13 (2025-10-07)
+
+### Amélioration
+ - Un nouveau fichier de cache conserve la résolution des geocodages inversés. Ceci évite de résoudre à nouveau les mêmes paires longitude/latitude en adresses physiques. L'adresse physique mise en cache est partagées par les paires longitude/latitude qui se situent dans un rayon de 5 mètres. Le fichier en question est `plugins/tesla/tracking/geocodes.csv`. Il peut être librement supprimé et sera recréé aux prochaines résolutions de localisations en adresses. 
+
+### Correctifs
+ - Le cron horaire pouvait revéiller la voiture. Bug introduit avec la 3.3.10. Corrigé.
+ - Seules les endpoints de type *commandes* réveillent systématiquement le véhicule s'il dort. Le message suivant apparait pour les autres types d'endpoint : "*The vehicle is not online and will not be automatically woken up. Thus, the 'xxx' endpoint is not executed*". Cela concerne principalement les récupérations d'info 
+
+
 <a name="v3.3.12"></a>
 
 # 3.3.12 (2025-10-01)
 
 ### Améliorations
-  - Quand en réponse à une commande envoyée, Tesla répondait *418: Device not available*, le plugin remontait simplement l'erreur dans les logs. La documentation de l'API Tesla indique que le véhicule est hors ligne dans ces cas là. Le plugin va maintenant, après récéption d'un code d'etat HTTP 408, chercher à réveiller la voiture avant de rejouer la commande. Inutile donc maintenant dans vos scénarios de réveiller la voiture. Cela sera fait automatiquement si nécessaire.
-  - Dans les notes de mises à jour du Logiciel Tesla, les images suivent le thème choisi : sombres ou claires
-  - La liste des caractéristiques du véhicule est désormais triée par ordre alphabétique. 
 
-
+- Quand en réponse à une commande envoyée, Tesla répondait _418: Device not available_, le plugin remontait simplement l'erreur dans les logs. La documentation de l'API Tesla indique que le véhicule est hors ligne dans ces cas là. Le plugin va maintenant, après récéption d'un code d'etat HTTP 408, chercher à réveiller la voiture avant de rejouer la commande. Inutile donc maintenant dans vos scénarios de réveiller la voiture. Cela sera fait automatiquement si nécessaire.
+- Dans les notes de mises à jour du Logiciel Tesla, les images suivent le thème choisi : sombres ou claires
+- La liste des caractéristiques du véhicule est désormais triée par ordre alphabétique.
 
 ### Correctifs
- - Les commandes de gestion des fenètres et de climatisation pouvaient ne pas fonctionner comme attendu. Corrigé.
- - L'indication de l'heure à laquelle le prochain rafraichissement du token va être effectué n'était plus affiché. Corrigé.
- - Le message *Attention : l'installation des dépendances a dépassé le temps maximum autorisé : 30min* pouvait s'afficher alors que l'installation n'était pas encore commencée. Corrigé.
+
+- Les commandes de gestion des fenètres et de climatisation pouvaient ne pas fonctionner comme attendu. Corrigé.
+- L'indication de l'heure à laquelle le prochain rafraichissement du token va être effectué n'était plus affiché. Corrigé.
+- Le message _Attention : l'installation des dépendances a dépassé le temps maximum autorisé : 30min_ pouvait s'afficher alors que l'installation n'était pas encore commencée. Corrigé.
 - Dans la fenètre **Fleet API**, les sommes des consommations de type DATA n'étaient pas correctemet calculées et affichées. Corrigé.
-
-
 
 <a name="v3.3.11"></a>
 
