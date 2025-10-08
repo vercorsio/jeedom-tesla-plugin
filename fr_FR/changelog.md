@@ -1,3 +1,12 @@
+<a name="v3.3.14"></a>
+
+# 3.3.14 (2025-10-08)
+
+### Correctifs
+ - Certaines commandes qui necessitaient une récupération des infos avant de s'executer pouvaient ne pas être jouées lorsque le véhicule n'était pas en ligne. Désormais, avant de jouer les commandes, le véhicule est rééllement réveillé si besoin.
+ - Retrofit php 7.3. Le plugin fonctionne a nouveau sur Debain 10. Il reste cependant conseillé de passer votre Jeedom sous Debian 11 comme recommandé.
+ - Le tracking et le cron du rafraichissement du jeton d'accès sont supprimés s'ils sont actifs alors que l'authentification n'est pas complète. 
+
 <a name="v3.3.13"></a>
 
 # 3.3.13 (2025-10-07)
