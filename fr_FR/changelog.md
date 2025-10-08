@@ -2,10 +2,14 @@
 
 # 3.3.14 (2025-10-08)
 
+### Amélioration
+ - En cas d'erreurs de type 500 (*Internal server error*), 503 (*Service Unavailable*) ou 504 (*Gateway Timeout*) retournées par les serveurs tesla lors de l'envoi de commandes, une demande de réveil de la voiture sera effectuée avant ré-essais (3 tentatives espacées de 5 secondes)
+
 ### Correctifs
  - Certaines commandes qui necessitaient une récupération des infos avant de s'executer pouvaient ne pas être jouées lorsque le véhicule n'était pas en ligne. Désormais, avant de jouer les commandes, le véhicule est rééllement réveillé si besoin.
  - Retrofit php 7.3. Le plugin fonctionne a nouveau sur Debain 10. Il reste cependant conseillé de passer votre Jeedom sous Debian 11 comme recommandé.
- - Le tracking et le cron du rafraichissement du jeton d'accès sont supprimés s'ils sont actifs alors que l'authentification n'est pas complète. 
+ - Le tracking et le cron du rafraichissement du jeton d'accès sont supprimés s'ils sont actifs alors que l'authentification n'est pas complète.
+ - L'indication de basse pression des pneus avait disparu sur l'interface du tracking. Corrigé
 
 <a name="v3.3.13"></a>
 
