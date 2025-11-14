@@ -1,3 +1,25 @@
+<a name="v3.3.15-beta.36.268"></a>
+
+# 3.3.15-beta.36.268 (2025-11-14)
+
+### Nouveautés
+ - Le temps d'attente entre deux appels lors de la recharge peut-etre configuré indépendament de celui utilisé lors de la conduite. Il vaut 180s par défaut. Voir dans le "Suivi de l'autonmie" dans la configuration avançée du plugin.
+ - Ajout d'une info `Info seuil mensuel atteint` qui passe de `0` à `1` quand le coût estimé de l'API par le plugin a atteint le seuil mensuel configuré. Pensez a mettr à jour la liste des commandes !
+
+### Améliorations
+ - D'après la documentation de l'API tesla "*Les véhicules dont la connectivité est mauvaise peuvent renvoyer le code d'état 408*". Le plugin considérait cette erreur 408 comme un échec pour les requètes de type commande et retentait après un réveil de la voiture. Les non-commandes (interrogation de l'état, ...) étaient systématiquement considérées comme échec sans ré-essai. L'amélioration consiste à retenter pour les requètes de type non-commande sans chercher à réveiller la voiture.
+ - Le système de surveillance qui detecte la voiture qui se réveille et laisse s'endormir la voiture au parking a été retravaillé et amélioré. Il et est moins gourant en appels de type Data.
+ - Le cron du tracking a un rythme moins effréné : toutes les 5 secondes quand le tracking est activé, toutes les minutes lorsqu'il est désactivé.
+ - L'exemple de calcul du coût du tracking se base sur 60h de recharge et 40h de conduite par mois (contre 4h de charge/conduite par jour)
+ - La table des coûts estimé de l'API affiche deux chiffres après la virgule.
+
+### Correctifs
+ - Un clic sur le bouton de rafraîchissement du widget (en haut à droite) forcera le réveil si besoin.
+ - Les etiquettes d'ouverture et fermeture du port de charge étaient inversées... Corrigé (merci @Thoto).
+ - Les données d'utilisation de l'API fleet ne sont pas additionnées lorsque plusieurs tesla sont monitorées par le plugin. Corrigé.
+ - L'erreur PHP *"Cannot redeclare cmp() (previously declared in ...)"* est maintenant corrigée.
+ - L'interface du tracking ne se rafraichissait pas correctement lors de la conduite. Corrigé.
+
 <a name="v3.3.14"></a>
 
 # 3.3.14 (2025-10-08)
@@ -6,8 +28,8 @@
  - En cas d'erreurs de type 500 (*Internal server error*), 503 (*Service Unavailable*) ou 504 (*Gateway Timeout*) retournées par les serveurs tesla lors de l'envoi de commandes, une demande de réveil de la voiture sera effectuée avant ré-essais (3 tentatives espacées de 5 secondes)
 
 ### Correctifs
- - Certaines commandes qui necessitaient une récupération des infos avant de s'executer pouvaient ne pas être jouées lorsque le véhicule n'était pas en ligne. Désormais, avant de jouer les commandes, le véhicule est rééllement réveillé si besoin.
- - Retrofit php 7.3. Le plugin fonctionne a nouveau sur Debain 10. Il reste cependant conseillé de passer votre Jeedom sous Debian 11 comme recommandé.
+ - Certaines commandes qui nécessitaient une récupération des infos avant de s'executer pouvaient ne pas être jouées lorsque le véhicule n'était pas en ligne. Désormais, avant de jouer les commandes, le véhicule est rééllement réveillé si besoin.
+ - Retrofit php 7.3. Le plugin fonctionne à nouveau sur Debain 10. Il reste cependant conseillé de passer votre Jeedom sous Debian 11 comme recommandé.
  - Le tracking et le cron du rafraichissement du jeton d'accès sont supprimés s'ils sont actifs alors que l'authentification n'est pas complète.
  - L'indication de basse pression des pneus avait disparu sur l'interface du tracking. Corrigé
 
