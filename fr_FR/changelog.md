@@ -1,3 +1,14 @@
+<a name="v3.3.15-beta.40.268"></a>
+
+# 3.3.15-beta.40.268 (2025-11-16)
+
+### Améliorations
+ - Si après plusieurs tentatives, les serveurs Tesla continuent de renvoyer les codes d'erreur 401 (`Unauthorized`), 405 (`Not allowed`), 421 (`Incorrect region`) ou 423 (`Locked`), le plugin ferme la session.
+
+### Correctifs
+ - Lorsque Tesla envoie *"403 error: account disabled: EXCEEDED_LIMIT"*, le plugin peut tourner en boucle et insister sans fin pour récupérer l'état de la voiture. Désormais, la session est fermée. Il conviendra de refaire la connexion entre le plugin et les serveurs Tesla après un petit tour sur le dashboard de tesla.com.
+  - L'erreur *Undefined index: scheduled_charging_start_time* pouvait apparaitre dans les logs. Corrigé.
+
 <a name="v3.3.15-beta.36.268"></a>
 
 # 3.3.15-beta.36.268 (2025-11-14)
