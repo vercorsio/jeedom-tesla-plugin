@@ -1,23 +1,31 @@
-<a name="v3.3.15-beta.40.268"></a>
+<a name="v3.4.0"></a>
 
-# 3.3.15-beta.40.268 (2025-11-16)
+# 3.4.0 (2026-10-12)
+
+### Nouveautés
+ - Ajout d'une fenêtre **Planifier** permettant de gérer directement depuis le plugin les plages programmées de recharge et de préconditionnement du véhicule.
+ - Les montants affichés dans la page des recharges sont désormais convertis et exprimés en euros.
 
 ### Améliorations
- - Si après plusieurs tentatives, les serveurs Tesla continuent de renvoyer les codes d'erreur 401 (`Unauthorized`), 405 (`Not allowed`), 421 (`Incorrect region`) ou 423 (`Locked`), le plugin ferme la session.
+ - A la connexion du compte, la région (`fleet_api_base_url`) est désormais mise à jour automatiquement, ce qui évite les erreurs liées à un serveur régional obsolète.
+ - Avant de rechercher les plages de recharge/préconditionnement programmées, le plugin vérifie maintenant que la voiture est bien en ligne.
 
 ### Correctifs
- - Lorsque Tesla envoie *"403 error: account disabled: EXCEEDED_LIMIT"*, le plugin peut tourner en boucle et insister sans fin pour récupérer l'état de la voiture. Désormais, la session est fermée. Il conviendra de refaire la connexion entre le plugin et les serveurs Tesla après un petit tour sur le dashboard de tesla.com.
-  - L'erreur *Undefined index: scheduled_charging_start_time* pouvait apparaitre dans les logs. Corrigé.
+ - Tesla a supprimé l'endpoint `feature_config` qui était utilisé pour vérifier que les serveurs Tesla répondaient. Il est remplacé par `/api/1/users/me`.
+ - Le calcul des métriques Fleet API sur l'ensemble des années pouvait être erroné. Corrigé.
+ - Mise à jour du code pour fonctionner correctement avec PHP 8.2 (la compatibilité avec PHP 7.4 est conservée).
+ - La vérification de la présence du Serveur Proxy (`tesla-http-proxy`) ne l'exécute plus avec l'option `--help`, ce qui pouvait faire échouer à tort l'installation des dépendances et provoquer une fuite mémoire.
 
-<a name="v3.3.15-beta.36.268"></a>
+<a name="v3.3.15"></a>
 
-# 3.3.15-beta.36.268 (2025-11-14)
+# 3.3.15 (2025-11-16)
 
 ### Nouveautés
  - Le temps d'attente entre deux appels lors de la recharge peut-etre configuré indépendament de celui utilisé lors de la conduite. Il vaut 180s par défaut. Voir dans le "Suivi de l'autonmie" dans la configuration avançée du plugin.
  - Ajout d'une info `Info seuil mensuel atteint` qui passe de `0` à `1` quand le coût estimé de l'API par le plugin a atteint le seuil mensuel configuré. Pensez a mettr à jour la liste des commandes !
 
 ### Améliorations
+ - Si après plusieurs tentatives, les serveurs Tesla continuent de renvoyer les codes d'erreur 401 (`Unauthorized`), 405 (`Not allowed`), 421 (`Incorrect region`) ou 423 (`Locked`), le plugin ferme la session.
  - D'après la documentation de l'API tesla "*Les véhicules dont la connectivité est mauvaise peuvent renvoyer le code d'état 408*". Le plugin considérait cette erreur 408 comme un échec pour les requètes de type commande et retentait après un réveil de la voiture. Les non-commandes (interrogation de l'état, ...) étaient systématiquement considérées comme échec sans ré-essai. L'amélioration consiste à retenter pour les requètes de type non-commande sans chercher à réveiller la voiture.
  - Le système de surveillance qui detecte la voiture qui se réveille et laisse s'endormir la voiture au parking a été retravaillé et amélioré. Il et est moins gourant en appels de type Data.
  - Le cron du tracking a un rythme moins effréné : toutes les 5 secondes quand le tracking est activé, toutes les minutes lorsqu'il est désactivé.
@@ -25,6 +33,8 @@
  - La table des coûts estimé de l'API affiche deux chiffres après la virgule.
 
 ### Correctifs
+ - Lorsque Tesla envoie *"403 error: account disabled: EXCEEDED_LIMIT"*, le plugin peut tourner en boucle et insister sans fin pour récupérer l'état de la voiture. Désormais, la session est fermée. Il conviendra de refaire la connexion entre le plugin et les serveurs Tesla après un petit tour sur le dashboard de tesla.com.
+  - L'erreur *Undefined index: scheduled_charging_start_time* pouvait apparaitre dans les logs. Corrigé.
  - Un clic sur le bouton de rafraîchissement du widget (en haut à droite) forcera le réveil si besoin.
  - Les etiquettes d'ouverture et fermeture du port de charge étaient inversées... Corrigé (merci @Thoto).
  - Les données d'utilisation de l'API fleet ne sont pas additionnées lorsque plusieurs tesla sont monitorées par le plugin. Corrigé.
