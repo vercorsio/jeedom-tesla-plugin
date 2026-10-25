@@ -21,12 +21,12 @@
 # 3.3.15 (2025-11-16)
 
 ### Nouveautés
- - Le temps d'attente entre deux appels lors de la recharge peut-etre configuré indépendament de celui utilisé lors de la conduite. Il vaut 180s par défaut. Voir dans le "Suivi de l'autonmie" dans la configuration avançée du plugin.
+ - Le temps d'attente entre deux appels lors de la recharge peut-etre configuré indépendamment de celui utilisé lors de la conduite. Il vaut 180s par défaut. Voir dans le "Suivi de l'autonomie" dans la configuration avancée du plugin.
  - Ajout d'une info `Info seuil mensuel atteint` qui passe de `0` à `1` quand le coût estimé de l'API par le plugin a atteint le seuil mensuel configuré. Pensez a mettr à jour la liste des commandes !
 
 ### Améliorations
  - Si après plusieurs tentatives, les serveurs Tesla continuent de renvoyer les codes d'erreur 401 (`Unauthorized`), 405 (`Not allowed`), 421 (`Incorrect region`) ou 423 (`Locked`), le plugin ferme la session.
- - D'après la documentation de l'API tesla "*Les véhicules dont la connectivité est mauvaise peuvent renvoyer le code d'état 408*". Le plugin considérait cette erreur 408 comme un échec pour les requètes de type commande et retentait après un réveil de la voiture. Les non-commandes (interrogation de l'état, ...) étaient systématiquement considérées comme échec sans ré-essai. L'amélioration consiste à retenter pour les requètes de type non-commande sans chercher à réveiller la voiture.
+ - D'après la documentation de l'API tesla "*Les véhicules dont la connectivité est mauvaise peuvent renvoyer le code d'état 408*". Le plugin considérait cette erreur 408 comme un échec pour les requêtes de type commande et retentait après un réveil de la voiture. Les non-commandes (interrogation de l'état, ...) étaient systématiquement considérées comme échec sans ré-essai. L'amélioration consiste à retenter pour les requêtes de type non-commande sans chercher à réveiller la voiture.
  - Le système de surveillance qui detecte la voiture qui se réveille et laisse s'endormir la voiture au parking a été retravaillé et amélioré. Il et est moins gourant en appels de type Data.
  - Le cron du tracking a un rythme moins effréné : toutes les 5 secondes quand le tracking est activé, toutes les minutes lorsqu'il est désactivé.
  - L'exemple de calcul du coût du tracking se base sur 60h de recharge et 40h de conduite par mois (contre 4h de charge/conduite par jour)
@@ -39,7 +39,7 @@
  - Les etiquettes d'ouverture et fermeture du port de charge étaient inversées... Corrigé (merci @Thoto).
  - Les données d'utilisation de l'API fleet ne sont pas additionnées lorsque plusieurs tesla sont monitorées par le plugin. Corrigé.
  - L'erreur PHP *"Cannot redeclare cmp() (previously declared in ...)"* est maintenant corrigée.
- - L'interface du tracking ne se rafraichissait pas correctement lors de la conduite. Corrigé.
+ - L'interface du tracking ne se rafraîchissait pas correctement lors de la conduite. Corrigé.
 
 <a name="v3.3.14"></a>
 
@@ -51,7 +51,7 @@
 ### Correctifs
  - Certaines commandes qui nécessitaient une récupération des infos avant de s'executer pouvaient ne pas être jouées lorsque le véhicule n'était pas en ligne. Désormais, avant de jouer les commandes, le véhicule est rééllement réveillé si besoin.
  - Retrofit php 7.3. Le plugin fonctionne à nouveau sur Debain 10. Il reste cependant conseillé de passer votre Jeedom sous Debian 11 comme recommandé.
- - Le tracking et le cron du rafraichissement du jeton d'accès sont supprimés s'ils sont actifs alors que l'authentification n'est pas complète.
+ - Le tracking et le cron du rafraîchissement du jeton d'accès sont supprimés s'ils sont actifs alors que l'authentification n'est pas complète.
  - L'indication de basse pression des pneus avait disparu sur l'interface du tracking. Corrigé
 
 <a name="v3.3.13"></a>
@@ -59,11 +59,11 @@
 # 3.3.13 (2025-10-07)
 
 ### Amélioration
- - Un nouveau fichier de cache conserve la résolution des geocodages inversés. Ceci évite de résoudre à nouveau les mêmes paires longitude/latitude en adresses physiques. L'adresse physique mise en cache est partagées par les paires longitude/latitude qui se situent dans un rayon de 5 mètres. Le fichier en question est `plugins/tesla/tracking/geocodes.csv`. Il peut être librement supprimé et sera recréé aux prochaines résolutions de localisations en adresses. 
+ - Un nouveau fichier de cache conserve la résolution des geocodages inversés. Ceci évite de résoudre à nouveau les mêmes paires longitude/latitude en adresses physiques. L'adresse physique mise en cache est partagée par les paires longitude/latitude qui se situent dans un rayon de 5 mètres. Le fichier en question est `plugins/tesla/tracking/geocodes.csv`. Il peut être librement supprimé et sera recréé aux prochaines résolutions de localisations en adresses. 
 
 ### Correctifs
  - Le cron horaire pouvait revéiller la voiture. Bug introduit avec la 3.3.10. Corrigé.
- - Seules les endpoints de type *commandes* réveillent systématiquement le véhicule s'il dort. Le message suivant apparait pour les autres types d'endpoint : "*The vehicle is not online and will not be automatically woken up. Thus, the 'xxx' endpoint is not executed*". Cela concerne principalement les récupérations d'info 
+ - Seuls les endpoints de type *commandes* réveillent systématiquement le véhicule s'il dort. Le message suivant apparait pour les autres types d'endpoint : "*The vehicle is not online and will not be automatically woken up. Thus, the 'xxx' endpoint is not executed*". Cela concerne principalement les récupérations d'info 
 
 
 <a name="v3.3.12"></a>
@@ -72,16 +72,16 @@
 
 ### Améliorations
 
-- Quand en réponse à une commande envoyée, Tesla répondait _418: Device not available_, le plugin remontait simplement l'erreur dans les logs. La documentation de l'API Tesla indique que le véhicule est hors ligne dans ces cas là. Le plugin va maintenant, après récéption d'un code d'etat HTTP 408, chercher à réveiller la voiture avant de rejouer la commande. Inutile donc maintenant dans vos scénarios de réveiller la voiture. Cela sera fait automatiquement si nécessaire.
+- Quand en réponse à une commande envoyée, Tesla répondait _418: Device not available_, le plugin remontait simplement l'erreur dans les logs. La documentation de l'API Tesla indique que le véhicule est hors ligne dans ces cas là. Le plugin va maintenant, après récéption d'un code d'état HTTP 408, chercher à réveiller la voiture avant de rejouer la commande. Inutile donc maintenant dans vos scénarios de réveiller la voiture. Cela sera fait automatiquement si nécessaire.
 - Dans les notes de mises à jour du Logiciel Tesla, les images suivent le thème choisi : sombres ou claires
 - La liste des caractéristiques du véhicule est désormais triée par ordre alphabétique.
 
 ### Correctifs
 
-- Les commandes de gestion des fenètres et de climatisation pouvaient ne pas fonctionner comme attendu. Corrigé.
-- L'indication de l'heure à laquelle le prochain rafraichissement du token va être effectué n'était plus affiché. Corrigé.
+- Les commandes de gestion des fenêtres et de climatisation pouvaient ne pas fonctionner comme attendu. Corrigé.
+- L'indication de l'heure à laquelle le prochain rafraîchissement du token va être effectué n'était plus affiché. Corrigé.
 - Le message _Attention : l'installation des dépendances a dépassé le temps maximum autorisé : 30min_ pouvait s'afficher alors que l'installation n'était pas encore commencée. Corrigé.
-- Dans la fenètre **Fleet API**, les sommes des consommations de type DATA n'étaient pas correctemet calculées et affichées. Corrigé.
+- Dans la fenêtre **Fleet API**, les sommes des consommations de type DATA n'étaient pas correctemet calculées et affichées. Corrigé.
 
 <a name="v3.3.11"></a>
 
@@ -102,11 +102,11 @@
 ### Améliorations
 
 - Le plugin lit d'un endpoint Tesla le fait que votre véhicule requièrt l'envoi de commandes signées et l'appariage avec votre véhicule. Ce qui nécessite la présence du Server Proxy. Ceci remplace la case à cocher "Server Proxy" que l'utilisateur devait cocher pour découvrir la gestion de ce process requis dans ces cas.
-- Meilleure gestion du démon : lorsque son arret est requis, le cron associé (nommé _tracking_) sera supprimé et lorsque son redémarrage sera demandé, le cron sera recréé (ce qui est plus propre et offre plus de stabilité qu'un mecanisme de pause/resume)
+- Meilleure gestion du démon : lorsque son arrêt est requis, le cron associé (nommé _tracking_) sera supprimé et lorsque son redémarrage sera demandé, le cron sera recréé (ce qui est plus propre et offre plus de stabilité qu'un mécanisme de pause/resume)
 - Lorsque le temps de pause entre deux appels DATA quand le véhicule roule ou charge est modifié, le cron _tracking_ est redémarré pour prendre en compte cette nouvelle valeur.
 - Ajout d'un paragraphe dans l'écran "Dépannage" pour aider l'utilisateur s'il rencontre des problèmes de droits qui empèchent la récupération des données de localisation par exemple (merci @Morzini)
 - Ajout d'une icone sur chaque bouton des panneaux de configuration de la voiture ou du plugin, afin de les identifier comme des boutons cliquable. En effet, des textes peuvent avoir le même visuel qu'un bouton. Maintenant, s'il existe une icon à gauche, c'est un bouton !
-- Passage sur Angular 20 et migration vers les nouvelles fonctionalités du framework. Ceci apporte de meilleures performances et plus de stabilité
+- Passage sur Angular 20 et migration vers les nouvelles fonctionnalités du framework. Ceci apporte de meilleures performances et plus de stabilité
 - Amélioration des performances et meilleure gestion des cas d'erreurs remontés par l'API Tesla
 
 > Encore merci aux beta testeurs pour leur réactivité et leur retours qui m'ont permis de stabiliser le code.
@@ -128,7 +128,7 @@
 
 - L'image de la voiture peut être choisie parmi plus d'une centaine, avec le choix des couleurs, de la génération des modèles et choix des roues (dont le nouveau Model Y Juniper).
 - Panneau de configuration du véhicule indique si le Serveur Proxy est nécessaire.
-- Le Serveur Proxy n'est plus livré de base avec le plugin. Trois binaires sur 3 architectures différentes étaient proposées. Maintenant, le Serveur Proxy est compilé au moment de l'installation en tant que dépendance. Si la compilation échoue, le plugin cherche à récupérer l'un des trois 'anciens' binaires. Des vérifications supplémentaires ont été ajoutées pour s'assurer que les dépendances sont correctement installées. Au passage, le poids du plugin repasse sous la barre de 10Mb.
+- Le Serveur Proxy n'est plus livré de base avec le plugin. Trois binaires sur 3 architectures différentes étaient proposées. Maintenant, le Serveur Proxy est compilé au moment de l'installation en tant que dépendance. Si la compilation échoue, le plugin cherche à récupérer l'un des trois 'anciens' binaires. Des vérifications supplémentaires ont été ajoutées pour s'assurer que les dépendances sont correctement installées. Au passage, le poids du plugin repasse sous la barre de 10 Mo.
 - Meilleure prise en charge de l'arrêt du tracking lorsque le seuil du coût de l'API est atteint.
 - Ajout du coût estimé par le plugin dans l'interface du tracking sous le bouton qui l'active.
 - Optimisation de la partie tracking, amélioraition des performances - passage en Angular 19
@@ -157,7 +157,7 @@
 
 ### Amélioration
 
-- Ajout de la gestion de l'encours du coût lié à l'utilisation de l'API. Un montant et une date peuvent être indiqué pour resynchroniser le plugin avec le coût réel constaté sur developer.tesla.com
+- Ajout de la gestion de l'encours du coût lié à l'utilisation de l'API. Un montant et une date peuvent être indiqués pour resynchroniser le plugin avec le coût réel constaté sur developer.tesla.com
 
 <a name="v3.3.6"></a>
 
@@ -239,7 +239,7 @@ Sur la page de dashboard de votre application Tesla Fleet API ([https://develope
 
 Pour des raisons évidentes, les clés jusqu'alors en usage sur jeedom ne seront plus disponibles dès la fin janvier 2025. Chaque utilisateur du plugin devra indiquer ses propres clés. Il n'est pas obligatoire d'indiquer un moyen de paiement sur le site Tesla Fleet API pour la facturation des usages. En cas de dépassement et de non paiement, Tesla se reserve le droit de désactiver votre application.
 
-Pour éviter de dépasser un certain montant mensuel, le plugin Tesla de Jeedom calcule avant chaque requète envoyée à Tesla le coût estimatif cumulé sur le mois en cours. Si le seuil configurable (par défaut à 9.50€) est dépassé le plugin arrête d'envoyer des requêtes aux Serveurs Tesla. En début de mois suivant les compteurs sont réinitialisés.
+Pour éviter de dépasser un certain montant mensuel, le plugin Tesla de Jeedom calcule avant chaque requête envoyée à Tesla le coût estimatif cumulé sur le mois en cours. Si le seuil configurable (par défaut à 9.50€) est dépassé le plugin arrête d'envoyer des requêtes aux Serveurs Tesla. En début de mois suivant les compteurs sont réinitialisés.
 
 Comme le tracking du plugin est "gourmand" en endpoints de type `data`, un nouveau paramêtre (nommé `traking`) dans la configuration du plugin permet de le désactiver, ce qui limitera grandement leur consommation et permettra d'utiliser le plugin pour envoyer des commandes tout au long du mois.
 
@@ -295,7 +295,7 @@ Merci aux beta testeurs pour leur patience et leur retours qui m'ont permis d'av
 
 - Lorsque la voiture était endormie, les commandes signées ne reveillaient pas le vehicule. Corrigé
 - le panneau de control pour le chauffage des sièges pouvait ne pas s'afficher
-- Danbs certains cas, le token ne se rafraichissait pas correctement
+- Danbs certains cas, le token ne se rafraîchissait pas correctement
 
 <a name="v3.2.6"></a>
 
@@ -304,7 +304,7 @@ Merci aux beta testeurs pour leur patience et leur retours qui m'ont permis d'av
 ### Améliorations
 
 - En interne, le code a été revu. Les appels aux serveurs Tesla qui ne concernent pas un véhicule en particulier ont été extrait du code lié à l'équipement Jeedom. Ainsi les appels de la gestion de l'authentification, la récupération de la liste des véhicules, ... sont joués dans une partie de code dédié.
-- Seul le cron programmé 5 minutes avant l'expiration s'occupe de raffraichir le token.
+- Seul le cron programmé 5 minutes avant l'expiration s'occupe de rafraîchir le token.
 - Chaque heure, le plugin s'assure que le cron du "refreshToken" est bien programmé, et l'ajustera si nécessaire.
 
 <a name="v3.2.5"></a>
@@ -391,13 +391,13 @@ Merci aux beta testeurs pour leur patience et leur retours qui m'ont permis d'av
 ### Améliorations
 
 - Ajout d'un bouton _Découverte_ dans la configuration du plugin pour rechercher des nouvelles Tesla associées au compte. (Remplace le scan automatique qui était fait à chaque accès a cette page).
-- Ajout des données `Info longitude`, `Info latitude` et `Info date de géolocalisation` qui sont mises à jour lorsque la voiture se déplace (_fonctionalité suggérée par `Goupil74`, merci !_).
+- Ajout des données `Info longitude`, `Info latitude` et `Info date de géolocalisation` qui sont mises à jour lorsque la voiture se déplace (_fonctionnalité suggérée par `Goupil74`, merci !_).
 - Le cartouche en bas du widget est plus visible. Il affiche la date de dernière mise à jour de celui-ci.
 - Toutes les commandes du widget forcent le réveil de la voiture si elle est endormie.
 - Optimisation des appels vers l'API Tesla impliquant de meilleures performances.
 - Pour plus de clareté, la ville est affichée sous l'adresse dans la feuille de route. Également des retouches visuelles mineures ont été apportées : taille des fontes, défilement, hauteur normalisée des "boites" ...
 - Suppression de la liste des véhicules à gauche du panneau de configuration du plugin.
-- Ajout des infos `Info éloigné de` et `Info distance`. Le premier indique l'id du favori de référence duquel est éloigné la voiture à chaque instant. Le second indique la distance à vol d'oiseau en mètres. Une commande `Calculer la distance`, utilisable en scénario permet de définir à la fois le favori de référence et la distance (_fonctionalité suggérée par `YannSdy`, merci !_).
+- Ajout des infos `Info éloigné de` et `Info distance`. Le premier indique l'id du favori de référence duquel est éloigné la voiture à chaque instant. Le second indique la distance à vol d'oiseau en mètres. Une commande `Calculer la distance`, utilisable en scénario permet de définir à la fois le favori de référence et la distance (_fonctionnalité suggérée par `YannSdy`, merci !_).
 - L'affichage en temps réél de la voiture sur la carte a été optimisé et amélioré.
 - Dans la barre du haut du Tracking, quand les données du jour sont affichées un clic sur le km restants affiche le % restant.
 
@@ -405,9 +405,9 @@ Merci aux beta testeurs pour leur patience et leur retours qui m'ont permis d'av
 
 - Suite à une suppression de certains endpoints, des commandes ne fonctionnaient plus et des erreurs 429 ou 404 apparaissaient. Corrigé.
 - Un clic sur l'icone siège du widget pouvait ne rien déclencher. Maintenant, il permet de voir à nouveau la configuration des sièges pour activer leur chauffage et celui du volant
-- Le Widget se rafraichissait sans raison, provoquant clignotement, et parfois l'impossibilité de faire quelques-uns des réglages. Corrigé.
+- Le Widget se rafraîchissait sans raison, provoquant clignotement, et parfois l'impossibilité de faire quelques-uns des réglages. Corrigé.
 - Des erreurs dans les logs, à propos de variables manquantes, ont été corrigées.
-- Le graph de la consommation ne se rafraichissait pas quand on passait d'une tesla à l'autre. Corrigé.
+- Le graph de la consommation ne se rafraîchissait pas quand on passait d'une tesla à l'autre. Corrigé.
 - Meilleure prise en charge de la seconde Tesla inscrite sur jeedom (merci à `Sattaz`).
 
 ### Problème connu
@@ -564,7 +564,7 @@ Merci à `vince_007` pour ses tests et retours détaillés.
 
 ### Améliorations
 
-- Performances : Optimisation et simplification des requètes pour améliorer l'expérience utilisateur
+- Performances : Optimisation et simplification des requêtes pour améliorer l'expérience utilisateur
 
 <a name="v3.0.14"></a>
 
@@ -655,7 +655,7 @@ Merci à `vince_007` pour ses tests et retours détaillés.
 
 ### Correctif
 
-- Force le rafraichissement du toekn avant qu'il n'expire.
+- Force le rafraîchissement du toekn avant qu'il n'expire.
 
 <a name="v3.0.7"></a>
 
@@ -672,7 +672,7 @@ Merci à `vince_007` pour ses tests et retours détaillés.
 ### Correctifs
 
 - Correctif lié à la base - consolidation des booleans favoris et charge.
-- Meilleurs prise en charge des erreurs remontées par la base de données
+- Meilleure prise en charge des erreurs remontées par la base de données
 
 > Notes
 
@@ -698,7 +698,7 @@ Merci à `vince_007` pour ses tests et retours détaillés.
 
 # 3.0.0 (2022-02-28)
 
-### Highlights
+### Nouveautés
 
 - Passage en stable de la version 3.0.0
 - Retrouvez l'ensemble des améliorations introduites avec la version 3 au fil des différentes versions beta.
@@ -745,7 +745,7 @@ Merci à `vince_007` pour ses tests et retours détaillés.
 > Notes:
 >
 > - les premiers affichages de statistiques peuvent être lents. En effet, le plugin lit les fichiers, les analyse et les inscrit en base de données. Les accès suivants seront rapides.
-> - La capacité a déplacer un marqueur a été supprimé. Cela pouvait se faire à l'insu du plein gré...
+> - La capacité à déplacer un marqueur a été supprimée. Cela pouvait se faire à l'insu du plein gré...
 
 <a name="v3.0.0-beta-29-28"></a>
 
@@ -773,8 +773,8 @@ Merci à `vince_007` pour ses tests et retours détaillés.
 ### Améliorations
 
 - Prise en charge de la modification de l'ampérage de charge (Info et commande "scénarisable")
-- Les panneaux de statistiques sont séparés et peuvent être cachés indépendament.
-- Le nouveau tracking se souvient de ce quel éléments étaient affichés (graph, carte, liste, stats) pour les réafficher plus tard.
+- Les panneaux de statistiques sont séparés et peuvent être cachés indépendamment.
+- Le nouveau tracking se souvient de quels éléments étaient affichés (graph, carte, liste, stats) pour les réafficher plus tard.
 - Affichage en clair du nombre de kilomètres gagnés/perdus (cf Note)
 
 > Note:
@@ -809,7 +809,7 @@ Merci à `vince_007` pour ses tests et retours détaillés.
 
 # 3.0.0-beta-1-g7b05cbb (2021-09-19)
 
-### Highlights
+### Nouveautés
 
 - Première version béta de la V3
 - Nouvelle interface pour le tracking, intégralement implémentée en Angular 12
@@ -827,7 +827,7 @@ Merci à `vince_007` pour ses tests et retours détaillés.
 
 ### Correctif
 
-- Seuls les tokens commençant par `qts-` étaient considérés comme valides. Après rafraichissement de celui-ci un nouveau token prefixé par `eu-` est fourni par Tesla et des messages d'erreur du type `"Le token d'authentification n'est pas renseigné ou n'est pas valide"` apparaissaient. Ce problème est corrigé.
+- Seuls les tokens commençant par `qts-` étaient considérés comme valides. Après rafraîchissement de celui-ci un nouveau token prefixé par `eu-` est fourni par Tesla et des messages d'erreur du type `"Le token d'authentification n'est pas renseigné ou n'est pas valide"` apparaissaient. Ce problème est corrigé.
 
 > Notes
 >
@@ -902,7 +902,7 @@ Merci à tous ceux qui ont testé les différentes versions béta : `Alex25`, `d
 
 ### Correctif
 
-- Une fois que le token expirait, le plugin n'était pas en mesure de le rafraichir. Corrigé.
+- Une fois que le token expirait, le plugin n'était pas en mesure de le rafraîchir. Corrigé.
 - Problème lié a la connexion au compte Tesla.com. Corrigé.
 
 <a name="v2.3.4"></a>
@@ -921,13 +921,13 @@ Merci à tous ceux qui ont testé les différentes versions béta : `Alex25`, `d
 
 - Nouvelle présentation plus claire de la procédure de connexion au compte tesla.com. Le formulaire de connexion présente les habituels `e-mail` / `mot de passe` et `code secret` (ce dernier est requis si l'authentification multifacteur est activée) ainsi qu'un lien pour basculer sur l'authentifaction par token.
 - Une fois connecté, le plugin affiche le panneau de configuration complet, ainsi qu'un bouton pour se déconnecter.
-- Si l'authentification a été faite à l'aide de l'adresse e-mail et du mot de passe, un token de rafraichissement est envoyé par Tesla. Il permet de mettre à jour le jeton d'authentification quand celui-ci arrive a échéance, garantissant ainsi une utilisation sans interuption du plugin.
+- Si l'authentification a été faite à l'aide de l'adresse e-mail et du mot de passe, un token de rafraîchissement est envoyé par Tesla. Il permet de mettre à jour le jeton d'authentification quand celui-ci arrive a échéance, garantissant ainsi une utilisation sans interuption du plugin.
 
 > Notes
 >
-> - Après la première connexion, il est nécessaire de cliquer sur `Synchroniser mes véhicules` pour scanner les voitures de votre compte Tesla et créer les équipements Jeedom associés à chacunes d'elles. Aussi suite à la mise à jour du plugin, `Synchroniser mes véhicules` permettra d'ajouter les eventuelles nouvelles fonctionalités sur vos équipements Tesla déclarés dans Jeedom.
+> - Après la première connexion, il est nécessaire de cliquer sur `Synchroniser mes véhicules` pour scanner les voitures de votre compte Tesla et créer les équipements Jeedom associés à chacunes d'elles. Aussi suite à la mise à jour du plugin, `Synchroniser mes véhicules` permettra d'ajouter les eventuelles nouvelles fonctionnalités sur vos équipements Tesla déclarés dans Jeedom.
 >
-> - Lors de la deconnexion, les jetons d'accès et de rafraichissement sont révoqués (ils deviennent inutilisables) et les identifiants sont effacés. Le panneau de configuration bascule sur le formulaire de connexion.
+> - Lors de la deconnexion, les jetons d'accès et de rafraîchissement sont révoqués (ils deviennent inutilisables) et les identifiants sont effacés. Le panneau de configuration bascule sur le formulaire de connexion.
 >
 > - Le bouton de test ajouté en v2.3.2 a été supprimé : le test de validité du token est automatiquement effectué pour afficher le cas échéant le panneau de configuration du plugin.
 
@@ -945,7 +945,7 @@ Merci à tous ceux qui ont testé les différentes versions béta : `Alex25`, `d
 
 ### Améliorations
 
-- Lors de la phase d'authentification, jusqu'à 6 accès différents aux serveurs Tesla doivent être effectués. Si l'un d'eux échoue un mecanisme de ré-essai a été ajouté (jusqu'à 5 tentatives).
+- Lors de la phase d'authentification, jusqu'à 6 accès différents aux serveurs Tesla doivent être effectués. Si l'un d'eux échoue un mécanisme de ré-essai a été ajouté (jusqu'à 5 tentatives).
 - Le jeton d'authentification était effacé à l'installation d'une mise à jour. Il n'est maintenant supprimé que s'il a été généré avant fin février 2021.
 
 <a name="v2.3.0"></a>
@@ -1009,9 +1009,9 @@ Un grand **merci** à `gpaumat`, `dramces`, `nicothum`, `3.14R`, `Tonio16` et `1
 
 - Problème de mise à jour de 'Info recharge'. Corrigé.
 - [**Widget**] résolution du problème d'affichage du curseur de recharge après installation d'un widget "batterie".
-- réglage d'un possible effet de bord du rafraichissement de "Info réveillée".
+- réglage d'un possible effet de bord du rafraîchissement de "Info réveillée".
 - Typo sur des log de type Info corrigé (Klaxon actionné, Phares actionnés).
-- L'icone Lune n'était pas visible sur Jeeodm V4. Corrigé.
+- L'icone Lune n'était pas visible sur Jeedom V4. Corrigé.
 - Le retour d'état "online/offline" pouvait être erroné quand plus d'une Tesla est suivie par le plugin. Corrigé.
 
 <a name="v2.1.1"></a>
@@ -1068,7 +1068,7 @@ Un grand **merci** à `gpaumat`, `dramces`, `nicothum`, `3.14R`, `Tonio16` et `1
 - [**Widget**] Lorsque une commande du widget est exécutée (clic d'un bouton pour allumer la climatisation, ouvrir un coffre, ...) le plugin commence par réveiller la voiture si elle est hors ligne.
 - Ajout de la version du software Tesla dans les données acquises lors du tracking. Pour une future exploitation.
 - [**Widget**] Les info/action ajoutées pour personaliser le widget sont conservées lors de la mise à jour du plugin (ainsi que le fait qu'une commande de type info soit historisée).
-- [**Geolocalisation**] La détection d'un favori est faite du plus petit cercle au plus grand cercle. Quand la voiture est dans la zone d'un grand cercle et qu'elle entre dans la zone d'un petit cercle, l'évennement `Info s'approche de` prend la valeur du nom du petit cercle.
+- [**Géolocalisation**] La détection d'un favori est faite du plus petit cercle au plus grand cercle. Quand la voiture est dans la zone d'un grand cercle et qu'elle entre dans la zone d'un petit cercle, l'évènement `Info s'approche de` prend la valeur du nom du petit cercle.
 - Possibilité d'uploader une image (png/gif/jpeg) pour changer le visuel de la voiture affichée sur le widget par une image téléchargée.
 - De bien meilleures traductions espagnoles.
 
@@ -1150,7 +1150,7 @@ Voici la liste des principales nouveautés que vous pouvez retrouver sur la [pag
   - Un marqueur `parking` peut être transformé en marqueur `favori`. Un nom court peut lui être donné, ainsi qu'un rayon d'action (en m).
   - Un clic sur la ligne du trajet permet de suivre l'évolution de la voiture depuis son point de départ jusqu'à son point d'arrivée.
   - Ajout de colonnes dans le tableau du tracking pour indiquer les lieux de départ et d'arrivée.
-  - Lorsque la voiture entre ou sort d'un `favori`, un évennement est émis qui peut servir de déclencheur pour un scenario (Homelink, ...). Le plugin met à jour deux nouvelles commandes de type Info qui peuvent être utilisées dans des scénarios : `Info s'approche de`, `Info s'éloigne de` et `Info date dernier franchissement`.
+  - Lorsque la voiture entre ou sort d'un `favori`, un évènement est émis qui peut servir de déclencheur pour un scenario (Homelink, ...). Le plugin met à jour deux nouvelles commandes de type Info qui peuvent être utilisées dans des scénarios : `Info s'approche de`, `Info s'éloigne de` et `Info date dernier franchissement`.
   - La pastille qui materialise la position de la voiture sur la carte change de couleur en fonction de son état (online, offline, conduite, charge)
 
 * La légende du tracking n'est plus affichée en permanence. Après clic sur le bouton "Légende", on peut activer/désactiver l'affichage d'une courbe en cliquant sur son titre.
@@ -1191,7 +1191,7 @@ Voici la liste des principales nouveautés que vous pouvez retrouver sur la [pag
 ### Correctifs
 
 - En mode "Energie", la courbe de l'autonomie arborait une verticale à droite. Corrigé
-- [**Tracking**] Lorsque la voiture est à l'arret en veille et qu'elle part, le tracking peut mettre un certain temps pour détecter ce nouvel état (driving). Cela se traduit par une phase de parking qui indique un kilométrage non nul. Comme il est impossible de déterminer l'heure exacte du départ, les statistiques liées a cette phase ne sont pas pertinentes. Ces trajets fantômes sont ignorés et retirés du tableau.
+- [**Tracking**] Lorsque la voiture est à l'arrêt en veille et qu'elle part, le tracking peut mettre un certain temps pour détecter ce nouvel état (driving). Cela se traduit par une phase de parking qui indique un kilométrage non nul. Comme il est impossible de déterminer l'heure exacte du départ, les statistiques liées a cette phase ne sont pas pertinentes. Ces trajets fantômes sont ignorés et retirés du tableau.
 - [**Tracking**] Le mode Sentinelle est à nouveau visible sur le tableau (point rouge sur l'icone) et sur le graph (qui passe en rouge lorsque le mode Sentinelle est activé)
 - Les favoris edités sur Safari sont maintenant bien pris en compte. Réglage d'un problème de cache.
 - Les informations du véhicule n'étaient pas mises à jour sur le widget. Corrigé.
@@ -1259,7 +1259,7 @@ Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé
 
 <a name="v1.9.4"></a>
 
-# 1.9.4 - 2020-01-09
+# 1.9.4 (2020-01-09)
 
 ### Correctif
 
@@ -1267,7 +1267,7 @@ Un grand merci à tous ceux qui ont testé la version béta et qui m'ont envoyé
 
 <a name="v1.9.3"></a>
 
-# 1.9.3 - 2020-01-08
+# 1.9.3 (2020-01-08)
 
 ### Améliorations
 
@@ -1292,7 +1292,7 @@ Exemple:
 
 <a name="v1.9.2"></a>
 
-# 1.9.2 - 2019-12-02
+# 1.9.2 (2019-12-02)
 
 ### Correctifs
 
@@ -1300,7 +1300,7 @@ Exemple:
 
 <a name="v1.9.1"></a>
 
-# 1.9.1 - 2019-11-15
+# 1.9.1 (2019-11-15)
 
 ### Correctifs
 
@@ -1309,16 +1309,16 @@ Exemple:
 
 <a name="v1.9.0"></a>
 
-# 1.9.0 - 2019-11-07
+# 1.9.0 (2019-11-07)
 
-### Highlights
+### Nouveautés
 
 - Compatibilité Debian 10, et Freebox Delta
 - Meilleure prise en charge des periodes de veille du véhicule
 
 ### Nouveautés
 
-- [**Range Tracking**] Refonte du mécanisme du tracking et son affichage. Après une durée d'attente au parking de 10 minutes, le tracking effectue un appel `data` toutes les 15 minutes, permettant ainsi à la voiture de se mettre en veille. Une fois en veille, le tracking surveille l'état de la voiture et se remet en mode NORMAL dès que celle-ci sort de sa veille. Les périodes de veille sont matérialisées par un trait pointillé noir sur le graph du suivi d'autonomie et le bouton du tracking se transforme en 'Lune qui ronfle". Un clic sur ce bouton permet de forcer manuellement le tracking en mode NORMAL. Lors des phases de veille le tracking ne fait que des appels "vehicle" pour surveiller le prochain réveil, ce qui garanti ZERO interaction avec la voiture. Le tracking est entièrement configurable via le panneau de configuration du plugin.
+- [**Range Tracking**] Refonte du mécanisme du tracking et son affichage. Après une durée d'attente au parking de 10 minutes, le tracking effectue un appel `data` toutes les 15 minutes, permettant ainsi à la voiture de se mettre en veille. Une fois en veille, le tracking surveille l'état de la voiture et se remet en mode NORMAL dès que celle-ci sort de sa veille. Les périodes de veille sont matérialisées par un trait pointillé noir sur le graph du suivi d'autonomie et le bouton du tracking se transforme en 'Lune qui ronfle". Un clic sur ce bouton permet de forcer manuellement le tracking en mode NORMAL. Lors des phases de veille le tracking ne fait que des appels "vehicle" pour surveiller le prochain réveil, ce qui garantit ZERO interaction avec la voiture. Le tracking est entièrement configurable via le panneau de configuration du plugin.
 - [**Range Tracking**] Ajout d'un mode `Live AUTO` qui permute automatiquement le graph entre la vue globale de la journée lors des phases de parking et la vue qui n'affiche que les 5 dernières minutes pendant la conduite
 - [**Range Tracking**] Ajout d'informations pertinentes sur le haut du graph. Le temps de conduite, la durée du parking ou le temps de recharge est indiqué, ainsi que le nombre de périodes de offline, le nombre de periodes de recharge.
 
@@ -1331,14 +1331,14 @@ Exemple:
 - Sur Model X, l'affichage de la troisième rangée de sièges n'était pas visible. Problème corrigé.
 - La mise en marche du chauffage des sièges ne marchait pas depuis un scénario. Problème corrigé.
 - Non démarrage de la charge programmable suite à modification de l'API Tesla. Problème corrigé.
-- Suppression du message d'erreur `Highcharts error #15` qui pouvait conduire à un affichage du graph moins véolce. Problème corrigé.
+- Suppression du message d'erreur `Highcharts error #15` qui pouvait conduire à un affichage du graph moins véloce. Problème corrigé.
 - Les erreurs `Incorrect integer value for 'isVisible'`, `class 'object' not found` et `Data too long for column 'name'` qui pouvaient apparaître sur Debian 10, sont maintenant corrigées.
 
 Merci a tous les béta testeurs !
 
 <a name="v1.8.0"></a>
 
-# 1.8.0 - 2019-09-24
+# 1.8.0 (2019-09-24)
 
 ### Nouveautés
 
@@ -1355,7 +1355,7 @@ Merci a tous les béta testeurs !
 
 - [**Santé**] Affichage du bon numéro de version dans le rapport de santé.
 - Suppression de l'affichage du message suivant : `Verification du démon:, {"type":"AJAX","code":42,"message":Unknown error"}`. Ce message sans gravité est remonté par Jeedom et est simplement ignoré.
-- L'ouverture et la fermeture du coffre fonctionnait mais ne rafraichissait pas l'état dans le plugin. Corrigé
+- L'ouverture et la fermeture du coffre fonctionnait mais ne rafraîchissait pas l'état dans le plugin. Corrigé
 
 ### Compatibilité Debian
 
@@ -1365,7 +1365,7 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
 
 <a name="v1.7.3"></a>
 
-# 1.7.3 - 2019-09-09
+# 1.7.3 (2019-09-09)
 
 ### Nouveautés
 
@@ -1381,7 +1381,7 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
 
 <a name="v1.7.2"></a>
 
-# 1.7.2 - 2019-08-27
+# 1.7.2 (2019-08-27)
 
 ### Correctifs
 
@@ -1389,7 +1389,7 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
 
 <a name="v1.7.1"></a>
 
-# 1.7.1 - 2019-25-07
+# 1.7.1 (2019-07-25)
 
 ### Nouveautés
 
@@ -1406,12 +1406,12 @@ Merci à `TheKiller83`, `Tonio16`, `Bob Jouy`... du forum [Automobile Propre](ht
 
 <a name="v1.7.0"></a>
 
-# 1.7.0 - 2019-06-16
+# 1.7.0 (2019-06-16)
 
 ### Nouveautés
 
 - Ajout du choix de la monnaie pour l'affichage (EUR, USD, CHF et GBP)
-- [**Range Tracking**] Ajout d'un mode sommeil qui va réduire la fréquence de mise à jour quand la voiture est arrêtée depuis 8 minutes. le jour la fréquence passe de 1 appel toutes les 5 secondes à 1 appel toutes les 60 secondes. La nuit (de 23h à 5h du matin) la fréquence passe à 1 appel toutes les 10 minutes. Les chiffres 8, 5, 60 et 10 ci-dessus sont modifiable dans le panneau de configuration.
+- [**Range Tracking**] Ajout d'un mode sommeil qui va réduire la fréquence de mise à jour quand la voiture est arrêtée depuis 8 minutes. le jour la fréquence passe de 1 appel toutes les 5 secondes à 1 appel toutes les 60 secondes. La nuit (de 23h à 5h du matin) la fréquence passe à 1 appel toutes les 10 minutes. Les chiffres 8, 5, 60 et 10 ci-dessus sont modifiables dans le panneau de configuration.
 - [**Range Tracking**] Suite à l'ajout du mode sommeil, il est tout à fait possible de laisser Jeedom gérer le démon automatiquement.
 - [**Range Tracking**] Lorsque la voiture est détéctée hors-ligne, le graph de l'autonomie est affiché en pointillé noir.
 
@@ -1423,7 +1423,7 @@ Merci à `matts` du forum [Automobile Propre](https://forums.automobile-propre.c
 
 <a name="v1.6.1"></a>
 
-# 1.6.1 - 2019-05-15
+# 1.6.1 (2019-05-15)
 
 ### Nouveautés
 
@@ -1442,7 +1442,7 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
 
 <a name="v1.6.0"></a>
 
-# 1.6.0 - 2019-05-07
+# 1.6.0 (2019-05-07)
 
 ### Nouveautés
 
@@ -1457,7 +1457,7 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
 
 ### Correctifs
 
-- Correctif mineurs
+- Correctifs mineurs
 
 ### Instructions de mise à jour
 
@@ -1467,36 +1467,36 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
 
 <a name="v1.5.2"></a>
 
-# 1.5.2 - 2019-04-08
+# 1.5.2 (2019-04-08)
 
 ### Améliorations
 
 - [**Range Tracking**] Déplacement des fichiers de tracking dans le répertoire du plugin - migration transparente au moment de l'update du plugin.
-- [**Command**] Meilleure gestion du calcul de l'heure de début de recharge.
+- [**Commande**] Meilleure gestion du calcul de l'heure de début de recharge.
 - Prise en charge de l'heure UTC (donc fuseaux horaires et passages heure été/hiver).
 - Plusieurs tentatives quand le serveur Tesla ne répond pas (Erreur 500) avant d'afficher un log d'erreur.
 - Remise à plat de l'écriture des traces INFO et DEBUG dans le log `tesla`.
-- [**Command**] Ajout de `Info niveau de batterie` qui indique le pourcentage de la batterie.
+- [**Commande**] Ajout de `Info niveau de batterie` qui indique le pourcentage de la batterie.
 
 ### Correctifs
 
 - Pas d'accès aux équipements s'ils sont désactivés ou quand le plugin est lui même désactivé.
-- [**Widget**] Affichage correct des jantes 20" et du pack Performance le cas échéant sur la Model3
+- [**Widget**] Affichage correct des jantes 20" et du pack Performance le cas échéant sur la Model 3
 - [**Widget**] Prise en compte des couleurs de carrosserie de la Model 3.
 - [**Widget**] Sur certains navigateurs web, le curseur de la limite de charge pouvait s'afficher en blanc. Corrigé.
 
 ### Problème connu
 
-- [**Scenario**] La nuit, une trace peut indiquer que la charge est impossible a démarrer, mais elle pourra être démarrer en asynchrone par le serveur. Il est recommandé d'ajouter dans le scénario une commande de réveil de la voiture.
+- [**Scénario**] La nuit, une trace peut indiquer que la charge est impossible a démarrer, mais elle pourra être démarrer en asynchrone par le serveur. Il est recommandé d'ajouter dans le scénario une commande de réveil de la voiture.
 
 <a name="v1.5.1"></a>
 
-# 1.5.1 - 2019-03-20
+# 1.5.1 (2019-03-20)
 
 ### Améliorations
 
 - [**Suivi de l'Autonomie**] Amélioration des performances lors de l'affichage du graph.
-- [**Command**] "Info Recharge" retourne 'Driving' quand la voiture se déplace.
+- [**Commande**] "Info Recharge" retourne 'Driving' quand la voiture se déplace.
 
 ### Correctifs
 
@@ -1505,7 +1505,7 @@ Merci à `J0kers` du forum [Automobile Propre](https://forums.automobile-propre.
 
 <a name="v1.5.0"></a>
 
-# 1.5.0 - 2019-03-14
+# 1.5.0 (2019-03-14)
 
 ### Nouveautés
 
@@ -1537,7 +1537,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 <a name="v1.4.2"></a>
 
-# 1.4.2 - 2019-02-14
+# 1.4.2 (2019-02-14)
 
 ### Améliorations
 
@@ -1550,23 +1550,23 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 <a name="v1.4.1"></a>
 
-# 1.4.1 - 2019-02-08
+# 1.4.1 (2019-02-08)
 
 ### Améliorations
 
-- [**Scenario**] La commande 'Contrôle de la recharge' admet un nouvel argument 'Estimer' qui va: démarrer une charge, attendre 2 minutes, calculer l'heure de départ et arréter la charge. Note: le scénario de départ de charge est simplifié.
+- [**Scénario**] La commande 'Contrôle de la recharge' admet un nouvel argument 'Estimer' qui va: démarrer une charge, attendre 2 minutes, calculer l'heure de départ et arréter la charge. Note: le scénario de départ de charge est simplifié.
 
 <a name="v1.4.0"></a>
 
-# 1.4.0 - 2019-02-04
+# 1.4.0 (2019-02-04)
 
 ### Nouveautés
 
-- [**Scenario**] Ajout de la commande qui va retourner l'heure de départ de la charge, pour qu'elle soit chargée à x% à une heure donnée. Utilisable dans un scénario Jeedom (cf documentation).
+- [**Scénario**] Ajout de la commande qui va retourner l'heure de départ de la charge, pour qu'elle soit chargée à x% à une heure donnée. Utilisable dans un scénario Jeedom (cf documentation).
 
 <a name="v1.3.1"></a>
 
-# 1.3.1 - 2019-01-30
+# 1.3.1 (2019-01-30)
 
 ### Améliorations
 
@@ -1580,7 +1580,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 <a name="v1.3.0"></a>
 
-# 1.3.0 - 2019-01-23
+# 1.3.0 (2019-01-23)
 
 ### Nouveautés
 
@@ -1592,7 +1592,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 <a name="v1.2.2"></a>
 
-# 1.2.2 - 2019-01-07
+# 1.2.2 (2019-01-07)
 
 ### Améliorations
 
@@ -1604,7 +1604,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 <a name="v1.2.1"></a>
 
-# 1.2.1 - 2018-12-22
+# 1.2.1 (2018-12-22)
 
 ### Correctifs
 
@@ -1612,7 +1612,7 @@ Un grand merci à `Bob Jouy` (https://twitter.com/bobjouy) pour ses retours et s
 
 <a name="v1.2.0"></a>
 
-# 1.2.0 - 2018-12-19
+# 1.2.0 (2018-12-19)
 
 ### Nouveautés
 
@@ -1638,7 +1638,7 @@ Un grand merci à `Kim` pour ses retours et suggestions d'améliorations !
 
 <a name="v1.1.0"></a>
 
-# 1.1.0 - 2018-12-10
+# 1.1.0 (2018-12-10)
 
 ### Nouveautés
 
@@ -1659,18 +1659,18 @@ Un grand merci à `Kim` pour ses retours et suggestions d'améliorations !
 
 <a name="v1.0.0"></a>
 
-# 1.0.0 - 2018-11-29
+# 1.0.0 (2018-11-29)
 
 ### Nouveautés
 
 - Ceci est la première version **stable** publiée sur le Jeedom market !
-- Les prochaines versions ajouteront de nouvelles fonctionalités (contrôle des temperatures, Contrôle de la limite de charge ...) !
+- Les prochaines versions ajouteront de nouvelles fonctionnalités (contrôle des temperatures, Contrôle de la limite de charge ...) !
 
 Un grand merci à l'équipe Jeedom `Loic` and `Alexandre`, et aux béta-testeurs `carfnann` et `philippe` pour leurs tests et commentaires !
 
 <a name="v0.3.0"></a>
 
-# 0.3.0 - 2018-11-23
+# 0.3.0 (2018-11-23)
 
 ### Correctifs
 
@@ -1682,7 +1682,7 @@ Un grand merci à l'équipe Jeedom `Loic` and `Alexandre`, et aux béta-testeurs
 
 <a name="v0.2.0"></a>
 
-# 0.2.0 - 2018-11-18
+# 0.2.0 (2018-11-18)
 
 ### Nouveautés
 
@@ -1691,7 +1691,7 @@ Un grand merci à l'équipe Jeedom `Loic` and `Alexandre`, et aux béta-testeurs
 
 <a name="v0.1.0"></a>
 
-# 0.1.0 - 2018-11-10
+# 0.1.0 (2018-11-10)
 
 **Ceci est la première version **béta** publiée sur le market de Jeedom**
 
