@@ -222,11 +222,10 @@ Pour configurer le véhicule, cliquez sur son image. Vous pouvez alors l'activer
 
  * __Vehicle Identification Number (VIN)__ : champ obligatoire, qui identifie de manière unique votre véhicule auprès des serveurs Tesla.
  * __Capacité batterie__ : la capacité "commerciale" de la batterie en kWh.
- * __Autonomie__ : le nombre de kilomètres parcourus avec 100% d'autonomie. Cochez "estimer" pour laisser le plugin l'estimer.
+ * __Autonomie__ : le nombre de kilomètres parcourus avec 100% d'autonomie. Cochez "Estimée" pour que le plugin la déduise des données de la voiture.
  * __Consommation typique__ : en théorie, `Capacité batterie x 1000 / Autonomie`. Ajustable selon vos propres constatations.
- * __Affichage__ : l'affichage par défaut du suivi de l'autonomie, `Energie` ou `Distance`.
 
-Vous pouvez également choisir une image pour votre voiture.
+Pour changer l'image de votre voiture, choisissez le modèle et la couleur dans la liste "Modèle", puis cliquez sur l'image pour changer le visuel des roues.
 
 
 # Le widget {#le-widget}
@@ -476,7 +475,7 @@ L'**encours estimé** peut aussi être saisi depuis cette fenêtre (voir [param�
 > - L'estimation ne tient pas compte de la remise mensuelle de 10€ accordée par Tesla.
 > - Le coût réel est consultable sur votre [Dashboard Tesla](https://developer.tesla.com/fr_FR/dashboard). Ajustez l'encours en conséquence.
 
-## Recharges
+## Recharges {#recharges}
 
 La fenêtre **Recharges** liste vos sessions de recharge aux Superchargeurs Tesla :
 
@@ -731,7 +730,7 @@ Consultez votre [Dashboard Tesla](https://developer.tesla.com/fr_FR/dashboard) p
 
 # Liens utiles et soutien
 
- - Le site officiel du plugin : [Tesla Jeedom](http://tesla.jeedom.free.fr/documentation)
+ - Le site officiel du plugin : [Tesla Jeedom](http://tesla.jeedom.free.fr)
  - Les notes de mise à jour : [ChangeLog](http://tesla.jeedom.free.fr/changelog)
  - Le forum officiel du plugin : [Forum Community de Jeedom](https://community.jeedom.com/tags/plugin-tesla)
  - Une mine d'info sur le [Forum Automobile Propre](https://forums.automobile-propre.com/topic/piloter-sa-tesla-avec-jeedom-13412)
