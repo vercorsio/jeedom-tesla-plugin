@@ -344,7 +344,7 @@ In this mode, the <b style="color:#00FF00">green</b>/<b style="color:#FFA500">or
  * <b style="color:#FFA500">underconsumption</b>
  * <b style="color:#00FF00">production</b> when accumulated energy is negative.
 
-![tracking-graph](../images/tracking-graph-wh.png)
+![tracking-graph](../images/tracking-graph-Wh.png)
 
 The table describe info about energy:  in <b style="color:darkgreen">green</b> when average consumption of the trip was lower than typical range and <b style="color:#FF0000">red</b> otherwise.
 
