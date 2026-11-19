@@ -1,3 +1,17 @@
+<a name="v3.4.1"></a>
+
+# 3.4.1 (en cours)
+
+### Nouveautés
+ - Connexion au compte Tesla sans copier-coller : en mode **automatique**, Tesla renvoie directement vers votre Jeedom (`https://<votre domaine>/plugins/tesla/redirect/`), qui récupère le code d'authentification et termine la connexion. Le panneau de configuration se met à jour tout seul. Ajoutez cette URI aux "URI de redirection autorisé(s)" de votre application sur [developer.tesla.com](https://developer.tesla.com/fr_FR/dashboard). Voir [Connecter le plugin](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/#connecter-plugin).
+ - Le mode **manuel** (page `jeedomteslaplugin.firebaseapp.com` et code à copier) reste disponible. C'est le mode conservé lors de la mise à jour : rien ne change tant que vous ne choisissez pas le mode automatique.
+
+### Améliorations
+ - La demande de connexion utilise désormais un identifiant (`state`) aléatoire et à usage unique.
+
+### Correctifs
+ - Le serveur proxy Tesla (`tesla-http-proxy`) n'est plus lancé en mode verbeux : les logs du proxy sont nettement allégés.
+
 <a name="v3.4.0"></a>
 
 # 3.4.0 (2026-10-12)

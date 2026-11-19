@@ -48,8 +48,12 @@ Depuis votre compte Tesla, créez un compte "API Fleet" sur [https://developer.t
 **Étape 2 – Informations du client** : cochez *"Code d'autorisation et accès de machine à machine"* et renseignez les deux premières URLs :
 
  - la première est le domaine qui héberge votre Jeedom. La page de connexion du plugin vous l'indique ;
- - la seconde est la page qui vous permettra de récupérer le code d'accès : `https://jeedomteslaplugin.firebaseapp.com/redirect/` ;
+ - la seconde liste les pages vers lesquelles Tesla renvoie le code d'accès. Ajoutez les deux URI suivantes :
+   - `https://<votre domaine>/plugins/tesla/redirect/` (par exemple `https://monjeedom.freeboxos.fr/plugins/tesla/redirect/`) : votre Jeedom récupère le code et termine la connexion tout seul ([mode automatique](#connecter-plugin)). La page de connexion du plugin vous indique l'URI exacte ;
+   - `https://jeedomteslaplugin.firebaseapp.com/redirect/` : une page affiche le code, que vous copiez dans le plugin ([mode manuel](#connecter-plugin), en secours) ;
  - la troisième est optionnelle et inutile dans notre cas.
+
+> Tesla compare ces URI caractère par caractère : n'oubliez pas le `/` final. Après une modification, Tesla peut mettre quelques minutes à la prendre en compte.
 
 <img src="../images/Fleet_Create2.png" alt="cnx"  style="border-radius:8px;"/>
 
@@ -81,11 +85,16 @@ Vous recevrez ensuite un mail de Tesla vous indiquant que votre "application" es
 
 > Ces trois données ne doivent en aucun cas être transmises à un tiers.
 
-Le bouton **Récupérer mon code d'authentification** devient alors accessible, dans la section "Connexion" du panneau.
+**Choisir le mode de récupération du code.** Dans la section "Connexion" du panneau, le menu **Récupération du code** propose deux modes. Il affiche aussi l'URI de redirection à déclarer chez Tesla pour le mode choisi :
+
+ - **Automatique** : Tesla renvoie vers votre Jeedom, qui récupère le code d'authentification et termine la connexion. Il n'y a rien à copier. C'est le mode par défaut des nouvelles installations ;
+ - **Manuelle** : une page dédiée affiche le code, que vous copiez dans le plugin. C'est le mode conservé lors d'une mise à jour du plugin.
+
+> Le mode automatique nécessite que votre Jeedom soit joignable depuis votre navigateur à l'adresse `https://<votre domaine>/plugins/tesla/redirect/`. Si votre reverse proxy n'expose que `/.well-known/`, ou si le domaine déclaré n'est pas celui de votre Jeedom, utilisez le mode manuel.
 
 ![config](../images/configPlugin-1.png)
 
-**Autoriser le plugin.** Pour interagir avec votre Tesla, le plugin a besoin d'un **code d'authentification**, fourni exclusivement par Tesla. Le bouton **Récupérer mon code d'authentification** vous amène sur le site auth.tesla.com, où vous vous identifiez sur votre compte Tesla :
+**Autoriser le plugin.** Pour interagir avec votre Tesla, le plugin a besoin d'un **code d'authentification**, fourni exclusivement par Tesla. Le bouton **Connecter mon compte Tesla** (mode automatique) ou **Récupération du code** (mode manuel) vous amène sur le site auth.tesla.com, où vous vous identifiez sur votre compte Tesla :
 
 <img src="../images/tesla_cnx1.png" alt="drawing"  style="border-radius:8px;"/>
 
@@ -95,13 +104,15 @@ Accordez au plugin Tesla de Jeedom l'accès à vos informations de profil, de v�
 
 <img src="../images/tesla_rights.png" alt="drawing"  style="border-radius:8px;"/>
 
-**Copier le code.** Le code d'authentification s'affiche sur une page dédiée. Copiez-le (icône à droite du code) et collez-le dans le panneau de configuration du plugin.
+**En mode automatique**, Tesla renvoie vers votre Jeedom, qui affiche "Connexion réussie". Fermez cet onglet : le panneau de configuration du plugin se met à jour tout seul. Passez directement au paragraphe suivant les jetons.
+
+**En mode manuel, copier le code.** Le code d'authentification s'affiche sur une page dédiée. Copiez-le (icône à droite du code) et collez-le dans le panneau de configuration du plugin.
 
 > Ce code est à usage unique. Il est inutile de le conserver : le plugin ne l'enregistre pas, il sert simplement à obtenir les premiers jetons d'authentification.
 
 <img src="../images/tesla_code.png" alt="drawing"  style="border-radius:8px;"/>
 
-**Se connecter.** Cliquez sur "CONNEXION". Le plugin obtient deux jetons :
+**En mode manuel, se connecter.** Cliquez sur "Connecter mon compte Tesla". Dans les deux modes, le plugin obtient deux jetons :
 
   * le **jeton d'accès**, utilisé dans les échanges avec les serveurs Tesla. Il est valide 8 heures ;
   * le **jeton de rafraichissement**, qui permet au plugin de remplacer automatiquement le jeton d'accès quand il expire.
@@ -146,7 +157,7 @@ Le diagramme ci-dessous provient de la documentation du [Serveur Proxy](https://
 
 ## Déconnexion
 
-Une fois connecté, le plugin affiche un bouton de déconnexion. Les jetons d'accès sont alors révoqués auprès des serveurs Tesla et le plugin n'est plus fonctionnel. Pour vous reconnecter, il faudra à nouveau [récupérer un code d'authentification](#connecter-plugin).
+Une fois connecté, le plugin affiche un bouton de déconnexion. Les jetons d'accès sont alors révoqués auprès des serveurs Tesla et le plugin n'est plus fonctionnel. Pour vous reconnecter, il faudra à nouveau [connecter le plugin](#connecter-plugin).
 
 ## Essayer sans Tesla {#tesla-virtuelles}
 
