@@ -11,6 +11,7 @@
 ### Améliorations
  - La demande de connexion utilise désormais un identifiant (`state`) aléatoire et à usage unique.
  - Le redémarrage périodique du démon (toutes les 4 heures) est fait par le plugin, chaque heure, au lieu d'attendre l'ouverture de la page **Tracking**. Ouvrir le Tracking ne redémarre plus le démon et ne réactive plus la gestion automatique si vous l'avez désactivée.
+ - Tracking, performances de la carte : chaque rafraîchissement de la carte libère désormais les tracés, les données et les gestionnaires de clic de l'affichage précédent. Jusqu'ici, ils s'accumulaient, surtout sur la journée en cours, rafraîchie toutes les quelques secondes, et la carte pouvait ralentir quand la page restait ouverte longtemps.
 
 ### Correctifs
  - Sécurité : la page **Tracking** n'envoie plus aucune clé API au navigateur. Jusqu'ici, la clé API de Jeedom et celle du plugin étaient écrites dans la page et conservées dans le navigateur de tout utilisateur connecté, y compris un utilisateur aux droits limités. Elles donnaient accès à l'API de Jeedom (commandes, équipements, configuration du plugin). Le Tracking utilise désormais la session Jeedom et ne lit plus que les informations dont il a besoin. Si plusieurs personnes ont un compte sur votre Jeedom, régénérez simplement et par précaution la clé API de Jeedom et celle du plugin Tesla (Réglages → Système → Configuration → API).
