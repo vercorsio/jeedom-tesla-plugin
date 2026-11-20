@@ -11,6 +11,7 @@
 ### Améliorations
  - La demande de connexion utilise désormais un identifiant (`state`) aléatoire et à usage unique.
  - Le redémarrage périodique du démon (toutes les 4 heures) est fait par le plugin, chaque heure, au lieu d'attendre l'ouverture de la page **Tracking**. Ouvrir le Tracking ne redémarre plus le démon et ne réactive plus la gestion automatique si vous l'avez désactivée.
+ - Tracking en temps réel : le plugin prévient le Tracking dès qu'un nouveau point est enregistré, et la page s'actualise environ une seconde plus tard. Elle n'interroge plus Jeedom en continu pour savoir s'il y a du nouveau : la charge sur la box baisse nettement quand la page reste ouverte. Le coût mensuel est relu au plus une fois par minute.
  - Tracking, performances de la carte : chaque rafraîchissement de la carte libère désormais les tracés, les données et les gestionnaires de clic de l'affichage précédent. Jusqu'ici, ils s'accumulaient, surtout sur la journée en cours, rafraîchie toutes les quelques secondes, et la carte pouvait ralentir quand la page restait ouverte longtemps.
 
 ### Correctifs
