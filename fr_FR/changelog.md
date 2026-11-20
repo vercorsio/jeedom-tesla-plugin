@@ -13,6 +13,7 @@
  - Le redémarrage périodique du démon (toutes les 4 heures) est fait par le plugin, chaque heure, au lieu d'attendre l'ouverture de la page **Tracking**. Ouvrir le Tracking ne redémarre plus le démon et ne réactive plus la gestion automatique si vous l'avez désactivée.
  - Tracking en temps réel : le plugin prévient le Tracking dès qu'un nouveau point est enregistré, et la page s'actualise environ une seconde plus tard. Elle n'interroge plus Jeedom en continu pour savoir s'il y a du nouveau : la charge sur la box baisse nettement quand la page reste ouverte. Le coût mensuel est relu au plus une fois par minute.
  - Tracking, performances de la carte : chaque rafraîchissement de la carte libère désormais les tracés, les données et les gestionnaires de clic de l'affichage précédent. Jusqu'ici, ils s'accumulaient, surtout sur la journée en cours, rafraîchie toutes les quelques secondes, et la carte pouvait ralentir quand la page restait ouverte longtemps.
+ - Tracking : moins de requêtes vers Jeedom. À l'ouverture de la page, les trajets du jour sont chargés deux fois moins souvent, et les points du graphique une seule fois au lieu de quatre. Chaque nouveau point déclenche aussi moins de rechargements.
  - Tracking après une mise à jour du plugin : le navigateur charge directement la nouvelle version de la page. Jusqu'ici, il pouvait garder l'ancienne en cache, et la page restait vide ou incomplète tant que le cache n'était pas vidé. Les fichiers de la page sont aussi gardés en cache plus longtemps : elle s'ouvre plus vite.
 
 ### Correctifs
@@ -20,6 +21,7 @@
  - Tracking sur Safari (iPhone, iPad, Mac) : les statistiques du jour se mettent de nouveau à jour pendant la journée au lieu de rester figées, et les dates des rapports journaliers et mensuels s'affichent et se trient correctement.
  - Tracking : la page démarre même quand les préférences enregistrées dans le navigateur sont illisibles ou que le navigateur bloque leur accès (navigation privée, données de site désactivées). Les préférences reprennent alors leurs valeurs par défaut.
  - Tracking : quand les données de la voiture sont incomplètes (voiture endormie, réponse partielle de Tesla), la barre du haut et le panneau « en cours » s'affichent avec les informations disponibles au lieu de planter. Une température de 0 °C s'affiche de nouveau, au lieu de « - - ».
+ - Tracking, graphique de la journée : une zone noire (voiture en veille) pouvait apparaître à tort à minuit, après un changement de date ou un rafraîchissement du graphique. Corrigé.
  - Tracking, rapport mensuel : de janvier à septembre, les jours avec des trajets mais sans statistiques calculées apparaissent de nouveau dans la liste.
  - Les clés du serveur proxy ne sont plus supprimées à la déconnexion, ni régénérées à chaque clic sur **SUIVANT** dans la page de connexion. Jusqu'ici, une déconnexion suivie d'une reconnexion faisait perdre l'appairage de la voiture : les commandes étaient refusées tant que la voiture n'était pas appairée de nouveau.
  - La clé publique `/.well-known/appspecific/com.tesla.3p.public-key.pem` n'est plus écrasée à chaque installation ou mise à jour du plugin.
