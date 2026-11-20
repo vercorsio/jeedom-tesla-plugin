@@ -14,6 +14,8 @@
 ### Correctifs
  - Les clés du serveur proxy ne sont plus supprimées à la déconnexion, ni régénérées à chaque clic sur **SUIVANT** dans la page de connexion. Jusqu'ici, une déconnexion suivie d'une reconnexion faisait perdre l'appairage de la voiture : les commandes étaient refusées tant que la voiture n'était pas appairée de nouveau.
  - La clé publique `/.well-known/appspecific/com.tesla.3p.public-key.pem` n'est plus écrasée à chaque installation ou mise à jour du plugin.
+ - Installation des dépendances : sur les box ARM 64 bits (Jeedom Atlas, Raspberry Pi en 64 bits…), le serveur proxy `tesla-http-proxy` est de nouveau compilé correctement. Le script choisissait la version 32 bits de Go, ce qui faisait échouer la compilation (`gcc: error: unrecognized command-line option '-marm'`).
+ - Installation des dépendances : quand la compilation de `tesla-http-proxy` échoue, le plugin peut de nouveau télécharger une version déjà compilée depuis le site du plugin. Ces fichiers n'étaient plus disponibles depuis la refonte du site http://tesla.jeedom.free.fr 
  - Le serveur proxy Tesla (`tesla-http-proxy`) n'est plus lancé en mode verbeux : les logs du proxy sont nettement allégés.
  - Une commande acceptée par Tesla (réponse HTTP 200 sans contenu) n'est plus signalée en erreur (« Invalid JSON response from API »).
  - Le lien pour noter le plugin pointe vers la page actuelle du market Jeedom. N'hésitez pas à laisser un avis ! [⭐⭐⭐⭐⭐](https://market.jeedom.com/index.php?v=d&p=market_display&id=3486)
