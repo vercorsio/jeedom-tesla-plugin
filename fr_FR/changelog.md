@@ -5,12 +5,18 @@
 ### Nouveautés
  - Connexion au compte Tesla sans copier-coller : en mode **automatique**, Tesla renvoie directement vers votre Jeedom (`https://<votre domaine>/plugins/tesla/redirect/`), qui récupère le code d'authentification et termine la connexion. Le panneau de configuration se met à jour tout seul. Ajoutez cette URI aux "URI de redirection autorisé(s)" de votre application sur [developer.tesla.com](https://developer.tesla.com/fr_FR/dashboard). Voir [Connecter le plugin](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/#connecter-plugin).
  - Le mode **manuel** (page `jeedomteslaplugin.firebaseapp.com` et code à copier) reste disponible. C'est le mode conservé lors de la mise à jour : rien ne change tant que vous ne choisissez pas le mode automatique.
+ - Bouton **Régénérer les clés** dans la configuration avancée du plugin (section Connexion) : il crée une nouvelle paire de clés pour le serveur proxy. Il faut ensuite refaire l'appairage de vos Tesla.
+ - Nouveau guide pour héberger la clé publique sur un site Firebase gratuit quand Tesla refuse le domaine de votre Jeedom. Voir [Héberger la clé publique sur Firebase](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/cle-firebase).
 
 ### Améliorations
  - La demande de connexion utilise désormais un identifiant (`state`) aléatoire et à usage unique.
 
 ### Correctifs
+ - Les clés du serveur proxy ne sont plus supprimées à la déconnexion, ni régénérées à chaque clic sur **SUIVANT** dans la page de connexion. Jusqu'ici, une déconnexion suivie d'une reconnexion faisait perdre l'appairage de la voiture : les commandes étaient refusées tant que la voiture n'était pas appairée de nouveau.
+ - La clé publique `/.well-known/appspecific/com.tesla.3p.public-key.pem` n'est plus écrasée à chaque installation ou mise à jour du plugin.
  - Le serveur proxy Tesla (`tesla-http-proxy`) n'est plus lancé en mode verbeux : les logs du proxy sont nettement allégés.
+ - Une commande acceptée par Tesla (réponse HTTP 200 sans contenu) n'est plus signalée en erreur (« Invalid JSON response from API »).
+ - Le lien pour noter le plugin pointe vers la page actuelle du market Jeedom. N'hésitez pas à laisser un avis ! [⭐⭐⭐⭐⭐](https://market.jeedom.com/index.php?v=d&p=market_display&id=3486)
 
 <a name="v3.4.0"></a>
 

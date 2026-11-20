@@ -47,7 +47,7 @@ Depuis votre compte Tesla, créez un compte "API Fleet" sur [https://developer.t
 
 **Étape 2 – Informations du client** : cochez *"Code d'autorisation et accès de machine à machine"* et renseignez les deux premières URLs :
 
- - la première est le domaine qui héberge votre Jeedom. La page de connexion du plugin vous l'indique ;
+ - la première est le domaine qui héberge votre Jeedom. La page de connexion du plugin vous l'indique. Si Tesla refuse ce domaine, hébergez la clé publique sur un site Firebase et déclarez ce site à la place (voir [Héberger la clé publique sur Firebase](cle-firebase)) ;
  - la seconde liste les pages vers lesquelles Tesla renvoie le code d'accès. Ajoutez les deux URI suivantes :
    - `https://<votre domaine>/plugins/tesla/redirect/` (par exemple `https://monjeedom.freeboxos.fr/plugins/tesla/redirect/`) : votre Jeedom récupère le code et termine la connexion tout seul ([mode automatique](#connecter-plugin)). La page de connexion du plugin vous indique l'URI exacte ;
    - `https://jeedomteslaplugin.firebaseapp.com/redirect/` : une page affiche le code, que vous copiez dans le plugin ([mode manuel](#connecter-plugin), en secours) ;
