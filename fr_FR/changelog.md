@@ -10,6 +10,7 @@
 
 ### Améliorations
  - La demande de connexion utilise désormais un identifiant (`state`) aléatoire et à usage unique.
+ - Le redémarrage périodique du démon (toutes les 4 heures) est fait par le plugin, chaque heure, au lieu d'attendre l'ouverture de la page **Tracking**. Ouvrir le Tracking ne redémarre plus le démon et ne réactive plus la gestion automatique si vous l'avez désactivée.
 
 ### Correctifs
  - Les clés du serveur proxy ne sont plus supprimées à la déconnexion, ni régénérées à chaque clic sur **SUIVANT** dans la page de connexion. Jusqu'ici, une déconnexion suivie d'une reconnexion faisait perdre l'appairage de la voiture : les commandes étaient refusées tant que la voiture n'était pas appairée de nouveau.
