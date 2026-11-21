@@ -58,6 +58,7 @@
  - Page des plannings : quand l'adresse d'un planning est introuvable, ses coordonnées s'affichent à la place.
  - Page des plannings avec plusieurs Tesla : une voiture endormie n'empêche plus d'afficher les plannings des autres. Un message indique seulement les voitures à réveiller.
  - Le démon n'est plus arrêté net quand le fichier de suivi du jour ne peut pas être ouvert : le point est perdu et une erreur est écrite dans le log du plugin.
+ - Tracking : les tracés et les courbes (autonomie, odomètre, températures…) des trajets enregistrés en base sont désormais fidèles. De petites erreurs d'arrondi s'additionnaient tout au long d'un trajet : un long trajet pouvait finir à près de 100 m de sa vraie position sur la carte, et l'autonomie dériver de plusieurs kilomètres sur une journée. Sur les box 32 bits (Raspberry Pi), un grand écart d'odomètre entre deux points (après une période hors ligne) était aussi mal enregistré. Les trajets déjà enregistrés sont corrigés quand ils sont recalculés.
 
 <a name="v3.4.0"></a>
 
