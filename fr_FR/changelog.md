@@ -53,6 +53,11 @@
  - Sécurité : seuls les administrateurs de Jeedom peuvent désormais modifier la configuration du plugin, la connexion au compte Tesla, les clés et le serveur proxy, ajouter ou supprimer des véhicules et gérer les plannings. Les autres utilisateurs gardent l'accès au **Tracking**, mais pas à l'écran des logs du Tracking.
  - Sécurité : les actions qui modifient quelque chose (mode de suivi, parkings, rafraîchissement forcé, configuration…) ne sont plus acceptées dans une simple adresse web (requête GET). Seules les lectures du Tracking le sont encore.
  - Deux messages étaient vides dans les logs : « Relancer l'installation des dépendances » quand le serveur proxy est absent, et « Le plugin n'est pas connecté » quand le suivi ne peut pas lire les données de la voiture. Ils s'affichent de nouveau.
+ - Sécurité : la page des plannings affiche le nom d'un parking favori comme du texte. Un nom contenant du code HTML pouvait jusqu'ici s'exécuter dans la page de l'administrateur.
+ - Tracking : quand une adresse ne peut pas être trouvée (clé de géocodage absente, service indisponible ou trop sollicité, position inconnue), les trajets du jour s'affichent quand même. Jusqu'ici, la page pouvait rester vide sur une erreur du plugin, ou un parking sans adresse était créé. Le plugin n'interroge plus le service pour une position 0,0, et une page du Tracking n'attend plus jusqu'à 8 secondes quand le service est trop sollicité.
+ - Page des plannings : quand l'adresse d'un planning est introuvable, ses coordonnées s'affichent à la place.
+ - Page des plannings avec plusieurs Tesla : une voiture endormie n'empêche plus d'afficher les plannings des autres. Un message indique seulement les voitures à réveiller.
+ - Le démon n'est plus arrêté net quand le fichier de suivi du jour ne peut pas être ouvert : le point est perdu et une erreur est écrite dans le log du plugin.
 
 <a name="v3.4.0"></a>
 
