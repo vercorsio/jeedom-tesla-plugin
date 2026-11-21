@@ -47,6 +47,7 @@
  - Le serveur proxy Tesla (`tesla-http-proxy`) n'est plus lancé en mode verbeux : les logs du proxy sont nettement allégés.
  - Une commande acceptée par Tesla (réponse HTTP 200 sans contenu) n'est plus signalée en erreur (« Invalid JSON response from API »).
  - Le lien pour noter le plugin pointe vers la page actuelle du market Jeedom. N'hésitez pas à laisser un avis ! [⭐⭐⭐⭐⭐](https://market.jeedom.com/index.php?v=d&p=market_display&id=3486)
+ - Sécurité : le port du serveur proxy est désormais vérifié avant chaque démarrage, arrêt ou contrôle du proxy. Une valeur qui n'est pas un nombre entre 400 et 65535 est remplacée par 4443. Jusqu'ici, un utilisateur connecté à Jeedom, même aux droits limités, pouvait faire exécuter des commandes sur la box avec les droits administrateur du système. Mettez à jour le plugin si plusieurs personnes ont un compte sur votre Jeedom.
  - Deux messages étaient vides dans les logs : « Relancer l'installation des dépendances » quand le serveur proxy est absent, et « Le plugin n'est pas connecté » quand le suivi ne peut pas lire les données de la voiture. Ils s'affichent de nouveau.
 
 <a name="v3.4.0"></a>
