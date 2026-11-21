@@ -51,6 +51,7 @@
  - Sécurité : les paramètres de la liste des parkings et de la liste des derniers passages à un parking (fenêtre d'un parking sur la carte du Tracking) ne peuvent plus modifier la requête envoyée à la base de données. Un utilisateur connecté pouvait s'en servir pour lire d'autres tables de Jeedom, dont la configuration du plugin et ses jetons Tesla.
  - Sécurité : les pages du plugin ne peuvent plus interroger que les six services de l'API Tesla dont elles ont besoin (liste des véhicules, état, options, notes de version, état des clés…). Un utilisateur connecté pouvait jusqu'ici lire n'importe quelle donnée du compte Tesla ou appeler un service facturé.
  - Sécurité : seuls les administrateurs de Jeedom peuvent désormais modifier la configuration du plugin, la connexion au compte Tesla, les clés et le serveur proxy, ajouter ou supprimer des véhicules et gérer les plannings. Les autres utilisateurs gardent l'accès au **Tracking**, mais pas à l'écran des logs du Tracking.
+ - Sécurité : les actions qui modifient quelque chose (mode de suivi, parkings, rafraîchissement forcé, configuration…) ne sont plus acceptées dans une simple adresse web (requête GET). Seules les lectures du Tracking le sont encore.
  - Deux messages étaient vides dans les logs : « Relancer l'installation des dépendances » quand le serveur proxy est absent, et « Le plugin n'est pas connecté » quand le suivi ne peut pas lire les données de la voiture. Ils s'affichent de nouveau.
 
 <a name="v3.4.0"></a>
