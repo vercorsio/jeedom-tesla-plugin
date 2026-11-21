@@ -49,6 +49,7 @@
  - Le lien pour noter le plugin pointe vers la page actuelle du market Jeedom. N'hésitez pas à laisser un avis ! [⭐⭐⭐⭐⭐](https://market.jeedom.com/index.php?v=d&p=market_display&id=3486)
  - Sécurité : le port du serveur proxy est désormais vérifié avant chaque démarrage, arrêt ou contrôle du proxy. Une valeur qui n'est pas un nombre entre 400 et 65535 est remplacée par 4443. Jusqu'ici, un utilisateur connecté à Jeedom, même aux droits limités, pouvait faire exécuter des commandes sur la box avec les droits administrateur du système. Mettez à jour le plugin si plusieurs personnes ont un compte sur votre Jeedom.
  - Sécurité : les paramètres de la liste des parkings et de la liste des derniers passages à un parking (fenêtre d'un parking sur la carte du Tracking) ne peuvent plus modifier la requête envoyée à la base de données. Un utilisateur connecté pouvait s'en servir pour lire d'autres tables de Jeedom, dont la configuration du plugin et ses jetons Tesla.
+ - Sécurité : les pages du plugin ne peuvent plus interroger que les six services de l'API Tesla dont elles ont besoin (liste des véhicules, état, options, notes de version, état des clés…). Un utilisateur connecté pouvait jusqu'ici lire n'importe quelle donnée du compte Tesla ou appeler un service facturé.
  - Deux messages étaient vides dans les logs : « Relancer l'installation des dépendances » quand le serveur proxy est absent, et « Le plugin n'est pas connecté » quand le suivi ne peut pas lire les données de la voiture. Ils s'affichent de nouveau.
 
 <a name="v3.4.0"></a>
