@@ -2,6 +2,8 @@
 
 # 3.5.0 (en cours)
 
+Pour stabiliser le plugin et son **Tracking**, une revue complète de leur code a été demandée à Claude, l'IA d'Anthropic : performance, sécurité et facilité d'utilisation. Cette version rassemble les corrections et améliorations qui en sont issues. Le plan de test a été élargi : les tests automatiques couvrent désormais la sécurité, la base de données, le calcul des trajets et des parkings, et chaque correction touchant aux données a été vérifiée sur une installation réelle. Il est conseillé d'installer cette version, qui corrige plusieurs failles de sécurité et n'apporte aucune régression connue.
+
 ### Améliorations
  - Le redémarrage périodique du démon (toutes les 4 heures) est fait par le plugin, chaque heure, au lieu d'attendre l'ouverture de la page **Tracking**. Ouvrir le Tracking ne redémarre plus le démon et ne réactive plus la gestion automatique si vous l'avez désactivée.
  - Tracking en temps réel : le plugin prévient le Tracking dès qu'un nouveau point est enregistré, et la page s'actualise environ une seconde plus tard. Elle n'interroge plus Jeedom en continu pour savoir s'il y a du nouveau : la charge sur la box baisse nettement quand la page reste ouverte. Le coût mensuel est relu au plus une fois par minute.
