@@ -1,15 +1,8 @@
-<a name="v3.4.1"></a>
+<a name="v3.5.0"></a>
 
-# 3.4.1 (en cours)
-
-### Nouveautés
- - Connexion au compte Tesla sans copier-coller : en mode **automatique**, Tesla renvoie directement vers votre Jeedom (`https://<votre domaine>/plugins/tesla/redirect/`), qui récupère le code d'authentification et termine la connexion. Le panneau de configuration se met à jour tout seul. Ajoutez cette URI aux "URI de redirection autorisé(s)" de votre application sur [developer.tesla.com](https://developer.tesla.com/fr_FR/dashboard). Voir [Connecter le plugin](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/#connecter-plugin).
- - Le mode **manuel** (page `jeedomteslaplugin.firebaseapp.com` et code à copier) reste disponible. C'est le mode conservé lors de la mise à jour : rien ne change tant que vous ne choisissez pas le mode automatique.
- - Bouton **Régénérer les clés** dans la configuration avancée du plugin (section Connexion) : il crée une nouvelle paire de clés pour le serveur proxy. Il faut ensuite refaire l'appairage de vos Tesla.
- - Nouveau guide pour héberger la clé publique sur un site Firebase gratuit quand Tesla refuse le domaine de votre Jeedom. Voir [Héberger la clé publique sur Firebase](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/cle-firebase).
+# 3.5.0 (en cours)
 
 ### Améliorations
- - La demande de connexion utilise désormais un identifiant (`state`) aléatoire et à usage unique.
  - Le redémarrage périodique du démon (toutes les 4 heures) est fait par le plugin, chaque heure, au lieu d'attendre l'ouverture de la page **Tracking**. Ouvrir le Tracking ne redémarre plus le démon et ne réactive plus la gestion automatique si vous l'avez désactivée.
  - Tracking en temps réel : le plugin prévient le Tracking dès qu'un nouveau point est enregistré, et la page s'actualise environ une seconde plus tard. Elle n'interroge plus Jeedom en continu pour savoir s'il y a du nouveau : la charge sur la box baisse nettement quand la page reste ouverte. Le coût mensuel est relu au plus une fois par minute.
  - Tracking, performances de la carte : chaque rafraîchissement de la carte libère désormais les tracés, les données et les gestionnaires de clic de l'affichage précédent. Jusqu'ici, ils s'accumulaient, surtout sur la journée en cours, rafraîchie toutes les quelques secondes, et la carte pouvait ralentir quand la page restait ouverte longtemps.
@@ -44,13 +37,6 @@
  - Tracking, rapports mensuel et annuel : la barre « Temps passé » de la ligne « Total » montre de nouveau la part de chaque état (trajet, stationnement, veille, recharge, sans données), au lieu de cinq parts égales. Dans le rapport annuel, la barre du mois en cours n'est plus déformée : le mois compte les jours écoulés jusqu'à aujourd'hui.
  - Tracking, rapports mensuel et annuel : la consommation moyenne de la ligne « Total » est de nouveau celle de toute la période (énergie consommée en roulant divisée par la distance parcourue). Le rapport annuel affichait la somme des moyennes de chaque mois (par exemple 2 161 Wh/km au lieu de 232), et le rapport mensuel l'énergie rechargée par kilomètre au lieu de l'énergie consommée.
  - Tracking, édition des parkings favoris : après avoir centré la carte sur un favori de la liste, sélectionner un autre parking sur la carte ne provoque plus d'erreur.
- - Les clés du serveur proxy ne sont plus supprimées à la déconnexion, ni régénérées à chaque clic sur **SUIVANT** dans la page de connexion. Jusqu'ici, une déconnexion suivie d'une reconnexion faisait perdre l'appairage de la voiture : les commandes étaient refusées tant que la voiture n'était pas appairée de nouveau.
- - La clé publique `/.well-known/appspecific/com.tesla.3p.public-key.pem` n'est plus écrasée à chaque installation ou mise à jour du plugin.
- - Installation des dépendances : sur les box ARM 64 bits (Jeedom Atlas, Raspberry Pi en 64 bits…), le serveur proxy `tesla-http-proxy` est de nouveau compilé correctement. Le script choisissait la version 32 bits de Go, ce qui faisait échouer la compilation (`gcc: error: unrecognized command-line option '-marm'`).
- - Installation des dépendances : quand la compilation de `tesla-http-proxy` échoue, le plugin peut de nouveau télécharger une version déjà compilée depuis le site du plugin. Ces fichiers n'étaient plus disponibles depuis la refonte du site http://tesla.jeedom.free.fr 
- - Le serveur proxy Tesla (`tesla-http-proxy`) n'est plus lancé en mode verbeux : les logs du proxy sont nettement allégés.
- - Une commande acceptée par Tesla (réponse HTTP 200 sans contenu) n'est plus signalée en erreur (« Invalid JSON response from API »).
- - Le lien pour noter le plugin pointe vers la page actuelle du market Jeedom. N'hésitez pas à laisser un avis ! [⭐⭐⭐⭐⭐](https://market.jeedom.com/index.php?v=d&p=market_display&id=3486)
  - Sécurité : le port du serveur proxy est désormais vérifié avant chaque démarrage, arrêt ou contrôle du proxy. Une valeur qui n'est pas un nombre entre 400 et 65535 est remplacée par 4443. Jusqu'ici, un utilisateur connecté à Jeedom, même aux droits limités, pouvait faire exécuter des commandes sur la box avec les droits administrateur du système. Mettez à jour le plugin si plusieurs personnes ont un compte sur votre Jeedom.
  - Sécurité : les paramètres de la liste des parkings et de la liste des derniers passages à un parking (fenêtre d'un parking sur la carte du Tracking) ne peuvent plus modifier la requête envoyée à la base de données. Un utilisateur connecté pouvait s'en servir pour lire d'autres tables de Jeedom, dont la configuration du plugin et ses jetons Tesla.
  - Sécurité : les pages du plugin ne peuvent plus interroger que les six services de l'API Tesla dont elles ont besoin (liste des véhicules, état, options, notes de version, état des clés…). Un utilisateur connecté pouvait jusqu'ici lire n'importe quelle donnée du compte Tesla ou appeler un service facturé.
@@ -68,6 +54,28 @@
  - Page des plannings avec plusieurs Tesla : une voiture endormie n'empêche plus d'afficher les plannings des autres. Un message indique seulement les voitures à réveiller.
  - Le démon n'est plus arrêté net quand le fichier de suivi du jour ne peut pas être ouvert : le point est perdu et une erreur est écrite dans le log du plugin.
  - Tracking : les tracés et les courbes (autonomie, odomètre, températures…) des trajets enregistrés en base sont désormais fidèles. De petites erreurs d'arrondi s'additionnaient tout au long d'un trajet : un long trajet pouvait finir à près de 100 m de sa vraie position sur la carte, et l'autonomie dériver de plusieurs kilomètres sur une journée. Sur les box 32 bits (Raspberry Pi), un grand écart d'odomètre entre deux points (après une période hors ligne) était aussi mal enregistré. Les trajets déjà enregistrés sont corrigés quand ils sont recalculés.
+
+<a name="v3.4.1"></a>
+
+# 3.4.1 (2026-11-20)
+
+### Nouveautés
+ - Connexion au compte Tesla sans copier-coller : en mode **automatique**, Tesla renvoie directement vers votre Jeedom (`https://<votre domaine>/plugins/tesla/redirect/`), qui récupère le code d'authentification et termine la connexion. Le panneau de configuration se met à jour tout seul. Ajoutez cette URI aux "URI de redirection autorisé(s)" de votre application sur [developer.tesla.com](https://developer.tesla.com/fr_FR/dashboard). Voir [Connecter le plugin](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/#connecter-plugin).
+ - Le mode **manuel** (page `jeedomteslaplugin.firebaseapp.com` et code à copier) reste disponible. C'est le mode conservé lors de la mise à jour : rien ne change tant que vous ne choisissez pas le mode automatique.
+ - Bouton **Régénérer les clés** dans la configuration avancée du plugin (section Connexion) : il crée une nouvelle paire de clés pour le serveur proxy. Il faut ensuite refaire l'appairage de vos Tesla.
+ - Nouveau guide pour héberger la clé publique sur un site Firebase gratuit quand Tesla refuse le domaine de votre Jeedom. Voir [Héberger la clé publique sur Firebase](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/cle-firebase).
+
+### Améliorations
+ - La demande de connexion utilise désormais un identifiant (`state`) aléatoire et à usage unique.
+
+### Correctifs
+ - Les clés du serveur proxy ne sont plus supprimées à la déconnexion, ni régénérées à chaque clic sur **SUIVANT** dans la page de connexion. Jusqu'ici, une déconnexion suivie d'une reconnexion faisait perdre l'appairage de la voiture : les commandes étaient refusées tant que la voiture n'était pas appairée de nouveau.
+ - La clé publique `/.well-known/appspecific/com.tesla.3p.public-key.pem` n'est plus écrasée à chaque installation ou mise à jour du plugin.
+ - Installation des dépendances : sur les box ARM 64 bits (Jeedom Atlas, Raspberry Pi en 64 bits…), le serveur proxy `tesla-http-proxy` est de nouveau compilé correctement. Le script choisissait la version 32 bits de Go, ce qui faisait échouer la compilation (`gcc: error: unrecognized command-line option '-marm'`).
+ - Installation des dépendances : quand la compilation de `tesla-http-proxy` échoue, le plugin peut de nouveau télécharger une version déjà compilée depuis le site du plugin. Ces fichiers n'étaient plus disponibles depuis la refonte du site http://tesla.jeedom.free.fr 
+ - Le serveur proxy Tesla (`tesla-http-proxy`) n'est plus lancé en mode verbeux : les logs du proxy sont nettement allégés.
+ - Une commande acceptée par Tesla (réponse HTTP 200 sans contenu) n'est plus signalée en erreur (« Invalid JSON response from API »).
+ - Le lien pour noter le plugin pointe vers la page actuelle du market Jeedom. N'hésitez pas à laisser un avis ! [⭐⭐⭐⭐⭐](https://market.jeedom.com/index.php?v=d&p=market_display&id=3486)
 
 <a name="v3.4.0"></a>
 
