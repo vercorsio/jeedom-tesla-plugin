@@ -31,6 +31,7 @@ Pour stabiliser le plugin et son **Tracking**, une revue complète de leur code 
 
 #### Plugin
  - **Redémarrage périodique du démon** (toutes les 4 heures) : il est fait par le plugin. Ouvrir le Tracking ne redémarre plus le démon et ne réactive plus la gestion automatique si vous l'avez désactivée.
+ - **Moins d'appels payants quand la voiture se réveille au parking** : beaucoup de voitures sortent seules de veille, certaines toutes les heures. Si la voiture est toujours garée à son réveil, le suivi l'interroge toutes les 3 minutes au lieu de toutes les 60 secondes pendant le temps d'attente au parking : environ 4 appels par réveil au lieu de 10. Un départ est détecté au plus 3 minutes après. Voir [Modes et consommation](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/#tracking-modes).
  - **Suivi** : le plugin ne lance plus `sudo chmod` à chaque point enregistré, seulement à la création du fichier du jour. La charge sur la box baisse pendant la conduite et les recharges.
 
 ### Correctifs
@@ -71,6 +72,7 @@ Pour stabiliser le plugin et son **Tracking**, une revue complète de leur code 
 #### Plugin
  - **Plannings** : quand l'adresse est introuvable, les coordonnées s'affichent. Avec plusieurs Tesla, une voiture endormie n'empêche plus d'afficher les plannings des autres.
  - **Démon** : il n'est plus arrêté net quand le fichier de suivi du jour ne peut pas être ouvert. Le point est perdu et une erreur est écrite dans le log.
+ - **Suivi** : au réveil de la voiture et à chaque début ou fin de trajet, les données ne sont plus demandées plusieurs fois de suite à Tesla (jusqu'à 4 requêtes payantes en 3 secondes au départ d'un trajet). Les points sont de nouveau enregistrés dans l'ordre, et le début d'un trajet n'est plus noté deux fois.
  - **Logs** : les messages « Relancer l'installation des dépendances » et « Le plugin n'est pas connecté » ne sont plus vides.
 
 <a name="v3.4.1"></a>

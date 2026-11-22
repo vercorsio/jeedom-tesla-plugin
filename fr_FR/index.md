@@ -368,6 +368,7 @@ Quand le véhicule roule ou charge, les graphes donnent une idée très précise
 | Mode | Quand | Intervalle par défaut |
 | --- | --- | --- |
 | `NORMAL` | La voiture roule ou charge | 60 s en conduite, 180 s en recharge |
+| `NORMAL` après un réveil au parking | La voiture sort de veille sans rouler ni charger | 3 min, pendant le `temps d'attente au parking` |
 | `SOMMEIL JOUR` | Au parking, après le `temps d'attente au parking` (10 min) | 15 min |
 | `SOMMEIL NUIT` | Au parking, pendant la période de nuit (23h–5h) | 30 min |
 
@@ -386,7 +387,7 @@ Avant chaque appel `data`, le tracking effectue un appel `vehicle`. Si la voitur
   - La voiture se gare : le tracking reste en mode NORMAL pendant 10 minutes, prêt à enregistrer le prochain trajet.
   - Passées ces 10 minutes, le tracking passe en mode SOMMEIL et n'interroge plus la voiture que toutes les 15 minutes, lui laissant la possibilité de se mettre en veille.
   - Dès que la voiture est en veille, le tracking le détecte, arrête tout enregistrement et surveille simplement son état (appel `vehicle`), qui reste `offline` pendant toute la veille.
-  - Quand l'état repasse `online`, le tracking repasse en mode NORMAL, prêt à enregistrer un trajet ou à commencer une nouvelle attente de 10 minutes.
+  - Quand l'état repasse `online`, le tracking repasse en mode NORMAL, prêt à enregistrer un trajet ou à commencer une nouvelle attente de 10 minutes. Si la voiture est toujours garée à son réveil, il ne l'interroge que toutes les 3 minutes pendant cette attente : beaucoup de voitures sortent seules de veille (certaines toutes les heures), et chaque appel `data` est payant. Un départ est alors détecté au plus 3 minutes après.
 
 > **Notes**
 >
