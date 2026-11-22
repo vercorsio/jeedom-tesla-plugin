@@ -72,6 +72,10 @@ Pour stabiliser le plugin et son **Tracking**, une revue complète de leur code 
 #### Plugin
  - **Plannings** : quand l'adresse est introuvable, les coordonnées s'affichent. Avec plusieurs Tesla, une voiture endormie n'empêche plus d'afficher les plannings des autres.
  - **Démon** : il n'est plus arrêté net quand le fichier de suivi du jour ne peut pas être ouvert. Le point est perdu et une erreur est écrite dans le log.
+ - **Connexion à Tesla** :
+   - le jeton d'accès est de nouveau renouvelé avant son expiration. Le renouvellement prévu 5 minutes avant le jugeait encore valide et ne faisait rien : le jeton expirait, et la requête suivante échouait (« Impossible de récupérer l'état de la voiture »).
+   - quand une requête échoue (voiture injoignable, serveur Tesla indisponible, jeton expiré), elle est de nouveau retentée telle quelle. Les nouvelles tentatives étaient toujours envoyées en POST : une lecture d'état ou de données échouait alors avec « The requested resource does not exist », et pouvait même aller jusqu'à déconnecter le plugin du compte Tesla.
+   - « Le jeton d'accès a été rafraichi » n'est plus écrit dans le log quand le jeton était encore valide et n'a pas été renouvelé.
  - **Suivi** : au réveil de la voiture et à chaque début ou fin de trajet, les données ne sont plus demandées plusieurs fois de suite à Tesla (jusqu'à 4 requêtes payantes en 3 secondes au départ d'un trajet). Les points sont de nouveau enregistrés dans l'ordre, et le début d'un trajet n'est plus noté deux fois.
  - **Logs** : les messages « Relancer l'installation des dépendances » et « Le plugin n'est pas connecté » ne sont plus vides.
 
