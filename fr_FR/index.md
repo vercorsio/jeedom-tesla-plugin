@@ -374,12 +374,15 @@ Quand le véhicule roule ou charge, les graphes donnent une idée très précise
 
 Ces intervalles sont configurables, tout comme les heures de début et de fin du `SOMMEIL NUIT`. En mode SOMMEIL, les appels espacés laissent à la voiture la possibilité de se mettre en veille. Quand elle se remet à rouler ou à charger, le prochain appel détecte ce changement et repasse le tracking en mode `NORMAL`.
 
-**Les deux appels de l'API Tesla.** Le tracking utilise deux appels pour interroger le véhicule :
+**Les appels de l'API Tesla.** Le tracking utilise trois appels pour interroger le véhicule :
 
  - `vehicle` indique seulement l'état de la voiture : `online`, `offline`, `asleep`, `waking` ou `unknown`. Cet appel n'est pas intrusif : il n'entre pas en contact avec la voiture. `online` signifie que la voiture roule, charge, télécharge une mise à jour, effectue une opération interne... mais elle peut aussi être `online` au parking, en attendant de s'endormir (`offline`/`asleep`). Hélas, cet appel ne distingue pas un `online "actif"` (roulage, charge) d'un `online "inactif"` (au parking avant le sommeil).
- - `data` remonte toutes les données à jour du véhicule. Il n'est possible que si la voiture est `online`, et le solliciter trop souvent l'empêche de passer `offline`.
+ - `data` remonte toutes les données à jour du véhicule. Il n'est possible que si la voiture est `online`, et le solliciter trop souvent l'empêche de passer `offline`. C'est le seul appel payant.
+ - `données en cache` (`vehicle_data_cached`) renvoie les dernières données que la voiture a envoyées à Tesla : verrouillage, portes, câble, état de la charge, batterie... mais ni position, ni rapport engagé. Il est gratuit et ne réveille jamais la voiture. La voiture les met à jour lors de certains événements : branchement, début ou fin de charge, et parfois ouverture ou verrouillage. Pas pendant la conduite, ni pendant une charge.
 
 Avant chaque appel `data`, le tracking effectue un appel `vehicle`. Si la voiture est `offline` ou `asleep`, le tracking la laisse dormir et n'effectue pas d'appel `data`. Sinon, il effectue l'appel `data` et stocke un nouveau jeu de données pour les graphes et les statistiques.
+
+Quand la voiture est éveillée sans rouler (au parking ou en charge), le tracking lit aussi les données en cache, toutes les minutes. Dès qu'elles montrent une action humaine (voiture déverrouillée, porte ou coffre ouvert, câble branché ou débranché, charge qui démarre ou s'arrête), il effectue tout de suite un appel `data` et repasse en mode `NORMAL`. Seuls les changements comptent : une voiture laissée déverrouillée au garage ne déclenche rien.
 
 **Exemple d'une journée type** :
 
@@ -392,7 +395,7 @@ Avant chaque appel `data`, le tracking effectue un appel `vehicle`. Si la voitur
 > **Notes**
 >
 > - La voiture décide seule de se mettre en veille, après 15 à 20 minutes sans sollicitation : le plugin ne peut pas le lui demander. Elle en sort quand elle est ouverte, conduite, mise en charge, sollicitée par une application (y compris l'app officielle Tesla ou le widget iOS), ou pour des besoins internes (températures extrêmes, mise à jour, ...).
-> - En mode SOMMEIL, un départ entre deux appels n'est pas détecté : on peut "perdre" jusqu'à 14 minutes de trajet. Un clic sur l'icône orange du tracking le remet manuellement en mode NORMAL.
+> - En mode SOMMEIL, un début de charge est détecté en moins d'une minute grâce aux données en cache, si votre voiture les fournit. Pour un départ, la voiture n'envoie pas toujours ses données à Tesla au déverrouillage : un départ entre deux appels peut ne pas être détecté, et on peut "perdre" jusqu'à 14 minutes de trajet. Un clic sur l'icône orange du tracking le remet manuellement en mode NORMAL.
 > - Activer le tracking en continu peut entraîner une consommation d'énergie non souhaitée.
 
 ## Lire le graphe en mode distance
