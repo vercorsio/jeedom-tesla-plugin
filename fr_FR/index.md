@@ -207,7 +207,8 @@ Après rechargement de la page, un sous-menu "Tesla" apparaît dans le menu "Acc
 
 | Paramètre | Description |
 | --- | --- |
-| **Clé API Maptiler** | Nécessaire pour traduire les lieux de parking en adresses et afficher les cartes (tracking, fenêtre Planifier). |
+| **Clé API MapTiler** (facultative) | Sans clé, les cartes (tracking, fenêtre Planifier) utilisent OpenFreeMap et les adresses des lieux de parking viennent d'OpenStreetMap (Nominatim), gratuitement. Votre propre clé [MapTiler](https://www.maptiler.com/) (compte gratuit) ajoute la vue **Satellite** et donne des adresses plus précises, avec le numéro dans la rue, OpenStreetMap restant en secours. Le plugin l'utilise aussi depuis Jeedom pour les adresses : ne la restreignez pas à votre domaine dans votre compte MapTiler. |
+| **Service d'adresses** | Adresse du service Nominatim qui traduit les lieux de parking en adresses. Par défaut, le service public d'OpenStreetMap (`https://nominatim.openstreetmap.org`). |
 | **Pays par défaut** | Sur les adresses résolues, le pays n'est affiché que s'il est différent de cette valeur. |
 | **Thème sombre** | Active un thème sombre pour le panneau de tracking, séparément en Desktop et en Mobile. |
 
@@ -450,7 +451,9 @@ La cartographie permet :
  - de suivre la voiture sur la carte pendant ses déplacements ;
  - de rejouer un trajet en suivant la pastille sur la carte et sur le graphe d'autonomie.
 
-> La traduction en adresses nécessite une [clé API Maptiler](#autres-parametres).
+Les cartes et les adresses fonctionnent sans clé : fonds de carte [OpenFreeMap](https://openfreemap.org/), adresses [OpenStreetMap](https://www.openstreetmap.org/copyright). Le menu de la carte propose deux fonds, **Standard** et **Épuré** (plus sobre, il fait ressortir les trajets et les parkings), en version claire ou sombre selon le thème.
+
+> Avec votre propre [clé API MapTiler](#parametres-carte) (facultative), le menu propose aussi la vue **Satellite**, et les adresses deviennent plus précises.
 
 ## Éditer un favori
 
