@@ -2,7 +2,7 @@
 
 # 3.5.0 (en cours)
 
-Pour stabiliser le plugin et son **Tracking**, une revue complète de leur code a été demandée à Claude, l'IA d'Anthropic : performance, sécurité et facilité d'utilisation. Cette version rassemble les corrections et améliorations qui en sont issues. Les tests automatiques couvrent désormais la sécurité, la base de données, le calcul des trajets et des parkings, et chaque correction touchant aux données a été vérifiée sur une installation réelle. Cette version corrige plusieurs failles de sécurité : il est conseillé de l'installer.
+Pour stabiliser le plugin et son **Tracking**, une revue complète de leur code a été effectuée avec l'appui de Claude, l'IA d'Anthropic : performance, sécurité et facilité d'utilisation. Cette version rassemble les corrections et améliorations qui en sont issues. Les tests automatiques couvrent désormais la sécurité, la base de données, le calcul des trajets et des parkings, et chaque correction touchant aux données a été vérifiée sur une installation réelle. Cette version corrige plusieurs failles de sécurité : il est conseillé de l'installer.
 
 > **À faire si plusieurs personnes ont un compte sur votre Jeedom** : par précaution, régénérez la clé API de Jeedom et celle du plugin Tesla (Réglages → Système → Configuration → API). Les versions précédentes les envoyaient au navigateur de tout utilisateur connecté (voir Sécurité ci-dessous).
 
@@ -48,6 +48,7 @@ Pour stabiliser le plugin et son **Tracking**, une revue complète de leur code 
  - **Logs** : les réponses des serveurs Tesla ne sont plus écrites dans les logs de Jeedom. Chaque appel, y compris la vérification de l'état toutes les minutes, y laissait la position de la voiture, les plannings de charge et leurs adresses (plusieurs Mo dans `cron_execution`, réécrits en permanence sur la carte SD). Seules les requêtes en erreur sont encore notées, avec un court extrait.
 
 #### Trajets, parkings et base de données
+ - **Faux trajets** : une veille n'apparaît plus comme un long trajet de quelques mètres (par exemple 99 minutes pour 30 m). Après un redémarrage du suivi, la mise en veille de la voiture était ignorée, et une voiture déplacée de quelques mètres pendant sa veille transformait toute la période en trajet. De même, une voiture qui sortait de veille en roulant déjà comptait toute sa veille comme un trajet. Une journée déjà calculée est corrigée quand elle est recalculée.
  - **Tracés et courbes fidèles** : de petites erreurs d'arrondi s'additionnaient le long des trajets enregistrés (jusqu'à 100 m d'écart sur la carte, plusieurs kilomètres d'autonomie sur une journée). Sur les box 32 bits, un grand écart d'odomètre était aussi mal enregistré. Les trajets sont corrigés quand ils sont recalculés.
  - **Changement d'heure** : consultée en hiver, une journée d'été s'affichait au jour précédent (le 7 octobre devenait le 6) et ses heures de trajet étaient décalées d'une heure.
  - **Parkings qui se chevauchent** : un parking inclus dans un autre l'emporte toujours (« Maison » dans « Mon département »). Quand deux cercles se chevauchent en partie, le parking que vous avez modifié (favori, nommé, lieu de recharge) passe avant une adresse trouvée automatiquement, puis le plus proche. Un grand cercle (plus d'une dizaine de kilomètres) est reconnu sur toute sa surface.
