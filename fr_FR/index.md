@@ -600,7 +600,8 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | **Info niveau de batterie** | Pourcentage de la batterie. |
 | **Détail autonomie** | Affiche un graphe de la batterie. |
 | **Info recharge** | État de la charge : `Charging`, `Stopped`, `Disconnected`, `Complete`, `Scheduled` ou `Driving`. |
-| **Info cable connecté** | Indique si le câble de recharge est connecté. |
+| **Info cable connecté** | Indique si le câble de recharge est connecté (1) ou non (0). |
+| **Info loquet de recharge** | État du loquet de la prise : `Engaged` (câble branché et verrouillé), `Disengaged` (câble branché mais déverrouillé, prêt à être retiré) ou `Blocking` (pas de câble). |
 | **Info trappe de recharge** | Indique si la trappe de recharge est ouverte (1) ou fermée (0). |
 | **Info limite de recharge** | Pourcentage à atteindre à la fin d'une recharge. |
 | **Info puissance de recharge** | Puissance de recharge (en kW). |
