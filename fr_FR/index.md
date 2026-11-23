@@ -623,6 +623,7 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | **Info préconditionnement** | Indique si la voiture est en cours de préconditionnement. |
 | **Info mode Chien / Camping** | Mode de climatisation maintenue : `off` (arrêté), `on` (Maintien), `dog` (Chien) ou `camp` (Camping). |
 | **Info ventilation du siège conducteur** / **passager** | Niveau de ventilation du siège avant, de 0 (arrêtée) à 3. _(si équipé)_ |
+| **Info HomeLink à proximité** | Indique si la voiture est près d'un appareil HomeLink programmé. _(si équipé)_ |
 | **Info protection surchauffe** | Protection contre la surchauffe de l'habitacle : `Off`, `On` (avec climatisation) ou `FanOnly` (ventilation seule). |
 | **Info seuil de protection surchauffe** | Température à partir de laquelle la protection se déclenche : `Low` (30 °C), `Medium` (35 °C) ou `High` (40 °C). |
 | **Info température habitacle** | Température à l'intérieur du véhicule. |
@@ -706,6 +707,7 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | **Contrôler le toît ouvrant** | Entrouvre ou ferme le toit panoramique. `Permuter` le ferme s'il est ouvert, et l'entrouvre sinon. Ne fonctionne pas sur les voitures qui exigent des commandes signées : le proxy de Tesla ne prend pas en charge le toit ouvrant. _(si équipé)_ |
 | **Contrôler le mode sentinelle** | Démarre ou arrête le mode sentinelle. _(si équipé)_ |
 | **Actionner les phares** | Fait clignoter les phares. |
+| **Actionner le HomeLink** | Ouvre ou ferme le portail ou la porte de garage programmé dans la voiture (HomeLink), comme le bouton de l'écran. La voiture doit être près du portail. Commande masquée par défaut. _(si un appareil HomeLink est programmé)_ |
 | **Actionner le klaxon** | Actionne l'avertisseur sonore. |
 
 ### Tracking et divers

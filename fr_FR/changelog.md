@@ -8,6 +8,7 @@
  - **Modes Chien et Camping** : nouvelle action **Contrôler le mode Chien / Camping** (`Arrêt`, `Maintien`, `Chien`, `Camping`) et nouvelle info **Info mode Chien / Camping**, par exemple pour garder la voiture fraîche pendant les courses avec le chien. L'action est masquée par défaut.
  - **Protection contre la surchauffe de l'habitacle** : nouvelles actions **Contrôler la protection surchauffe** (`Arrêt`, `Avec climatisation`, `Ventilation seule`) et **Contrôler le seuil de protection surchauffe** (`30 °C`, `35 °C`, `40 °C`), avec les infos correspondantes, pour les scénarios d'été. Les actions sont masquées par défaut.
  - **Sièges ventilés** : nouvelles actions **Contrôler la ventilation du siège conducteur** et **passager** (`Arrêter`, `Faible`, `Moyen`, `Fort`) et leurs infos, sur les voitures équipées. La climatisation doit être allumée.
+ - **HomeLink** : nouvelle action **Actionner le HomeLink** pour ouvrir ou fermer depuis Jeedom le portail ou la porte de garage programmé dans la voiture, et nouvelle info **Info HomeLink à proximité**. Les commandes sont créées quand un appareil HomeLink est programmé dans la voiture ; l'action est masquée par défaut.
 
 ### Améliorations
 
