@@ -2,6 +2,13 @@
 
 # 3.5.0-beta.XXX.YYY
 
+### Améliorations
+
+ - **Commandes moins coûteuses** : une commande ne s'accompagne plus de deux lectures payantes des données de la voiture, l'une avant pour connaître son état, l'autre après pour l'afficher.
+   - La limite de recharge et l'ampérage sont envoyés directement.
+   - Pour les choix « Permuter » (verrouillage, trappe de recharge, recharge, mode sentinelle, climatisation, toit ouvrant, fenêtres) et les coffres, le plugin utilise l'état connu s'il a moins de 2 minutes : le résultat d'une commande précédente, les données en cache chez Tesla (gratuites) ou le dernier relevé du suivi. Sinon, il relit l'état de la voiture comme avant.
+   - Après le verrouillage, la trappe de recharge, la recharge, le mode sentinelle, la climatisation, la limite et l'ampérage, le widget affiche directement le résultat de la commande ; le suivi le confirme au relevé suivant.
+
 ### Correctifs
 
  - **Volant et sièges chauffants** : « Contrôler le chauffage du volant » allume de nouveau le volant (la commande l'éteignait toujours, quel que soit le choix). Dans le panneau des sièges du widget, le volant et les sièges se règlent de nouveau, et chaque siège arrière ou de 3ᵉ rangée est bien celui choisi : le siège arrière gauche réglait celui du conducteur, et les commandes des sièges arrière centre, arrière droit et de 3ᵉ rangée chauffaient un autre siège. Merci à @dcat d'avoir signalé et analysé le problème !
