@@ -621,6 +621,8 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | **Info dégivrage** | Indique si le dégivrage du pare-brise est en marche. |
 | **Info préconditionnement** | Indique si la voiture est en cours de préconditionnement. |
 | **Info mode Chien / Camping** | Mode de climatisation maintenue : `off` (arrêté), `on` (Maintien), `dog` (Chien) ou `camp` (Camping). |
+| **Info protection surchauffe** | Protection contre la surchauffe de l'habitacle : `Off`, `On` (avec climatisation) ou `FanOnly` (ventilation seule). |
+| **Info seuil de protection surchauffe** | Température à partir de laquelle la protection se déclenche : `Low` (30 °C), `Medium` (35 °C) ou `High` (40 °C). |
 | **Info température habitacle** | Température à l'intérieur du véhicule. |
 | **Détail de la climatisation** | Affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur). |
 
@@ -682,6 +684,8 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | **Contrôler la climatisation** | Allume ou arrête la climatisation. |
 | **Contrôler le dégivrage** | Démarre ou arrête le dégivrage, comme le bouton « Dégivrage » de l'application Tesla : désembuage maximal et chauffage de l'habitacle. `Permuter` l'arrête s'il est en marche, et le démarre sinon. Valeurs : `Arrêter`, `Démarrer`, `Permuter`. Commande masquée par défaut, utilisable dans les scénarios. |
 | **Contrôler le mode Chien / Camping** | Garde la climatisation allumée voiture garée : `Maintien`, `Chien` (affiche un message aux passants), `Camping` (garde aussi l'écran et les prises). `Arrêt` l'arrête. Commande masquée par défaut, utilisable dans les scénarios. |
+| **Contrôler la protection surchauffe** | Protège l'habitacle de la chaleur quand la voiture est garée au soleil : `Arrêt`, `Avec climatisation` ou `Ventilation seule`. Commande masquée par défaut. |
+| **Contrôler le seuil de protection surchauffe** | Température de déclenchement de la protection : `30 °C`, `35 °C` ou `40 °C`. Ne l'active pas. Commande masquée par défaut. |
 | **Contrôler la température** | Définit la température de l'habitacle (conducteur/passager). |
 | **Contrôler le chauffage du siège conducteur** / **passager** | Règle le chauffage du siège : `Arrêter`, `Faible`, `Moyen`, `Fort`. _(si équipé)_ |
 | **Contrôler le chauffage du siège arr gauche** / **arr central** / **arr droit** | Idem pour les sièges arrière. _(si équipé)_ |
