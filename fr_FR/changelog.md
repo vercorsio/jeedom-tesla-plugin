@@ -2,6 +2,10 @@
 
 # 3.5.0-beta.XXX.YYY
 
+### Nouveautés
+
+ - **Dégivrage** : nouvelle action **Contrôler le dégivrage** (`Arrêter`, `Démarrer`, `Permuter`), comme le bouton « Dégivrage » de l'application Tesla, pour les départs d'hiver dans un scénario. Nouvelles infos **Info dégivrage** et **Info préconditionnement**. Les commandes apparaissent après la mise à jour du plugin ; l'action est masquée par défaut. Merci à @dcat pour la suggestion !
+
 ### Améliorations
 
  - **Commandes moins coûteuses** : une commande ne s'accompagne plus de deux lectures payantes des données de la voiture, l'une avant pour connaître son état, l'autre après pour l'afficher.

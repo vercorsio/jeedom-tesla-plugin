@@ -618,6 +618,8 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | Commande | Description |
 | --- | --- |
 | **Info climatisation** | Indique si la climatisation est allumée ou éteinte. |
+| **Info dégivrage** | Indique si le dégivrage du pare-brise est en marche. |
+| **Info préconditionnement** | Indique si la voiture est en cours de préconditionnement. |
 | **Info température habitacle** | Température à l'intérieur du véhicule. |
 | **Détail de la climatisation** | Affiche les paramètres de climatisation (conducteur, passager, intérieur et extérieur). |
 
@@ -677,6 +679,7 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | Commande | Description |
 | --- | --- |
 | **Contrôler la climatisation** | Allume ou arrête la climatisation. |
+| **Contrôler le dégivrage** | Démarre ou arrête le dégivrage, comme le bouton « Dégivrage » de l'application Tesla : désembuage maximal et chauffage de l'habitacle. `Permuter` l'arrête s'il est en marche, et le démarre sinon. Valeurs : `Arrêter`, `Démarrer`, `Permuter`. Commande masquée par défaut, utilisable dans les scénarios. |
 | **Contrôler la température** | Définit la température de l'habitacle (conducteur/passager). |
 | **Contrôler le chauffage du siège conducteur** / **passager** | Règle le chauffage du siège : `Arrêter`, `Faible`, `Moyen`, `Fort`. _(si équipé)_ |
 | **Contrôler le chauffage du siège arr gauche** / **arr central** / **arr droit** | Idem pour les sièges arrière. _(si équipé)_ |
