@@ -1,6 +1,14 @@
-<a name="v3.5.0"></a>
+<a name="v3.5.0-beta.XXX.YYY"></a>
 
-# 3.5.0 (en cours)
+# 3.5.0-beta.XXX.YYY
+
+### Correctifs
+
+ - **Volant et sièges chauffants** : « Contrôler le chauffage du volant » allume de nouveau le volant (la commande l'éteignait toujours, quel que soit le choix). Dans le panneau des sièges du widget, le volant et les sièges se règlent de nouveau, et chaque siège arrière ou de 3ᵉ rangée est bien celui choisi : le siège arrière gauche réglait celui du conducteur, et les commandes des sièges arrière centre, arrière droit et de 3ᵉ rangée chauffaient un autre siège. Merci à @dcat d'avoir signalé et analysé le problème !
+
+<a name="v3.5.0-beta.139.332"></a>
+
+# 3.5.0-beta.139.332
 
 Une grosse version, consacrée à la solidité du plugin et de son **Tracking**. Leur code a été entièrement passé en revue, avec l'appui de Claude, l'IA d'Anthropic : performance, sécurité et facilité d'utilisation. Les tests automatiques couvrent désormais la sécurité, la base de données, le calcul des trajets et des parkings, et chaque correction touchant à vos données a été vérifiée sur une vraie installation. Elle corrige aussi plusieurs failles de sécurité : **nous vous conseillons de l'installer**.
 
