@@ -6,6 +6,10 @@ Pour stabiliser le plugin et son **Tracking**, une revue complète de leur code 
 
 > **À faire si plusieurs personnes ont un compte sur votre Jeedom** : par précaution, régénérez la clé API de Jeedom et celle du plugin Tesla (Réglages → Système → Configuration → API). Les versions précédentes les envoyaient au navigateur de tout utilisateur connecté (voir Sécurité ci-dessous).
 
+### Nouveautés
+
+ - **Altitude des trajets** : le graphique de la journée affiche une courbe d'**altitude** pendant les trajets, sur son propre axe en mètres, mise à jour en direct pendant la conduite. Tesla ne fournit pas l'altitude : le plugin la calcule à partir de la position de la voiture, avec un modèle de terrain mondial gratuit (environ 30 m de résolution), téléchargé par morceaux à la demande et gardé en cache sur votre Jeedom (20 Mo au plus). Les trajets déjà enregistrés reçoivent leur altitude quand leur journée est recalculée.
+
 ### Améliorations
 
 #### Tracking : temps réel et rapidité

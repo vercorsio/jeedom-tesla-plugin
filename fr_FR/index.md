@@ -414,6 +414,7 @@ L'exemple ci-dessous retrace un trajet réel effectué le 5 janvier 2019, en 4 s
 - En ordonnée à gauche en <b>noir</b>, le kilométrage parcouru. La pente de la courbe est proportionnelle à la vitesse.
 - En ordonnée à gauche en <b style='color:#22C4FF'>bleu</b>, l'autonomie de départ en <b style="color:#3355FF">pointillé</b>, et l'évolution de l'autonomie en <b style='color:#22C4FF'>bleu</b>. Quand la climatisation est allumée, le trait est <b style='color:blueviolet'>violet</b>.
 - En ordonnée à droite, la différence entre l'<b style="color:#3355FF">autonomie initiale</b> et l'<b style='color:#22C4FF'>autonomie réelle</b> compte tenu des <b>kilomètres parcourus</b> : courbe <b style="color:#00FF00">verte</b> en cas de gain, <b style="color:#FFA500">orange</b> en cas de perte. Pendant une recharge, la courbe affiche la <b style="color:#E74C3C">puissance de charge</b>.
+- Pendant les trajets, la courbe <b style="color:#8D6E63">brune</b> donne l'**altitude**, sur son propre axe en mètres. Tesla ne la fournit pas : le plugin la calcule à partir de la position de la voiture, avec un modèle de terrain d'environ 30 m de résolution, à quelques mètres près (davantage en montagne).
 
 Un tableau récapitulatif de la journée permet, en sélectionnant une ligne, de zoomer sur la partie correspondante du graphe. Un clic sur la ligne "Total" affiche la journée complète.
 
