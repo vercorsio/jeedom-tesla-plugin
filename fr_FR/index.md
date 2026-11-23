@@ -621,6 +621,7 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | **Info dégivrage** | Indique si le dégivrage du pare-brise est en marche. |
 | **Info préconditionnement** | Indique si la voiture est en cours de préconditionnement. |
 | **Info mode Chien / Camping** | Mode de climatisation maintenue : `off` (arrêté), `on` (Maintien), `dog` (Chien) ou `camp` (Camping). |
+| **Info ventilation du siège conducteur** / **passager** | Niveau de ventilation du siège avant, de 0 (arrêtée) à 3. _(si équipé)_ |
 | **Info protection surchauffe** | Protection contre la surchauffe de l'habitacle : `Off`, `On` (avec climatisation) ou `FanOnly` (ventilation seule). |
 | **Info seuil de protection surchauffe** | Température à partir de laquelle la protection se déclenche : `Low` (30 °C), `Medium` (35 °C) ou `High` (40 °C). |
 | **Info température habitacle** | Température à l'intérieur du véhicule. |
@@ -691,6 +692,7 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | **Contrôler le chauffage du siège arr gauche** / **arr central** / **arr droit** | Idem pour les sièges arrière. _(si équipé)_ |
 | **Contrôler le chauffage du siège coffre gauche** / **coffre droit** | Idem pour la troisième rangée. _(si équipé)_ |
 | **Contrôler le chauffage du volant** | Allume ou éteint le volant chauffant. _(si équipé)_ |
+| **Contrôler la ventilation du siège conducteur** / **passager** | Règle la ventilation du siège avant : `Arrêter`, `Faible`, `Moyen`, `Fort`. La climatisation doit être allumée. _(si équipé)_ |
 
 ### Ouvrants et sécurité
 
