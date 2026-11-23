@@ -731,6 +731,10 @@ Dans le panneau de configuration du plugin, augmentez `Nombre de tentatives pour
 
 Oui, le plugin cherche à favoriser la mise en veille dès que possible : au parking, il espace ses appels pour laisser la voiture s'endormir. Le détail est dans [Modes et consommation](#tracking-modes).
 
+### Que contient la sauvegarde Jeedom pour le plugin Tesla ?
+
+La sauvegarde de Jeedom emporte l'historique du suivi (dossier `tracking`), le cache des adresses et la clé privée qui sert à l'[appairage](#appairage) (dossier `proxy/teslaKeys`) : après une restauration, ni l'historique ni l'appairage ne sont perdus. Elle laisse de côté ce qui se recrée tout seul : le cache des tuiles d'altitude, et le serveur proxy compilé pour votre box. Après une restauration, Jeedom réinstalle ce dernier avec les dépendances du plugin (automatiquement si la gestion automatique des dépendances est activée) ; les commandes signées fonctionnent de nouveau une fois cette installation terminée.
+
 ### Est-il possible de régler l'intensité de charge depuis le plugin ?
 
 Oui ! La commande **Contrôler l'ampérage de la recharge** permet ce réglage, très utile pour augmenter ou diminuer la vitesse de charge dans un scénario, par exemple selon votre production photovoltaïque.
