@@ -5,6 +5,7 @@
 ### Nouveautés
 
  - **Dégivrage** : nouvelle action **Contrôler le dégivrage** (`Arrêter`, `Démarrer`, `Permuter`), comme le bouton « Dégivrage » de l'application Tesla, pour les départs d'hiver dans un scénario. Nouvelles infos **Info dégivrage** et **Info préconditionnement**. Les commandes apparaissent après la mise à jour du plugin ; l'action est masquée par défaut. Merci à @dcat pour la suggestion !
+ - **Modes Chien et Camping** : nouvelle action **Contrôler le mode Chien / Camping** (`Arrêt`, `Maintien`, `Chien`, `Camping`) et nouvelle info **Info mode Chien / Camping**, par exemple pour garder la voiture fraîche pendant les courses avec le chien. L'action est masquée par défaut.
 
 ### Améliorations
 
