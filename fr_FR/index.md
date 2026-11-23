@@ -708,6 +708,7 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | **Contrôler le mode sentinelle** | Démarre ou arrête le mode sentinelle. _(si équipé)_ |
 | **Actionner les phares** | Fait clignoter les phares. |
 | **Actionner le HomeLink** | Ouvre ou ferme le portail ou la porte de garage programmé dans la voiture (HomeLink), comme le bouton de l'écran. La voiture doit être près du portail. Commande masquée par défaut. _(si un appareil HomeLink est programmé)_ |
+| **Envoyer une destination** | Envoie une destination au GPS de la voiture : une adresse (`Place Grenette, Grenoble`) ou un lien de partage d'une application de cartes, dans le message de la commande. Commande de type message, masquée par défaut, utilisable dans les scénarios. |
 | **Actionner le klaxon** | Actionne l'avertisseur sonore. |
 
 ### Tracking et divers
