@@ -2,74 +2,83 @@
 
 # 3.5.0 (en cours)
 
-Pour stabiliser le plugin et son **Tracking**, une revue complète de leur code a été effectuée avec l'appui de Claude, l'IA d'Anthropic : performance, sécurité et facilité d'utilisation. Cette version rassemble les corrections et améliorations qui en sont issues. Les tests automatiques couvrent désormais la sécurité, la base de données, le calcul des trajets et des parkings, et chaque correction touchant aux données a été vérifiée sur une installation réelle. Cette version corrige plusieurs failles de sécurité : il est conseillé de l'installer.
+Une grosse version, consacrée à la solidité du plugin et de son **Tracking**. Leur code a été entièrement passé en revue, avec l'appui de Claude, l'IA d'Anthropic : performance, sécurité et facilité d'utilisation. Les tests automatiques couvrent désormais la sécurité, la base de données, le calcul des trajets et des parkings, et chaque correction touchant à vos données a été vérifiée sur une vraie installation. Elle corrige aussi plusieurs failles de sécurité : **nous vous conseillons de l'installer**.
 
 > **À faire si plusieurs personnes ont un compte sur votre Jeedom** : par précaution, régénérez la clé API de Jeedom et celle du plugin Tesla (Réglages → Système → Configuration → API). Les versions précédentes les envoyaient au navigateur de tout utilisateur connecté (voir Sécurité ci-dessous).
 
+**En bref**
+
+ - ⛰️ **L'altitude de vos trajets** s'affiche dans le graphique, en direct pendant la conduite.
+ - 🗺️ **Cartes et adresses sans aucune clé à saisir**, et un nouveau fond de carte **Épuré**.
+ - ⚡ **Un Tracking en temps réel**, plus rapide, et plus léger pour votre box.
+ - 💶 **Une facture Tesla allégée** : moins d'appels payants quand la voiture se réveille seule au parking, et des recharges repérées gratuitement.
+ - 🔒 **Plusieurs failles de sécurité corrigées.**
+ - ✅ **Des trajets plus justes** : fini les faux trajets de quelques mètres et les tracés qui dérivent.
+
 ### Nouveautés
 
- - **Altitude des trajets** : le graphique de la journée affiche une courbe d'**altitude** pendant les trajets, sur son propre axe en mètres, mise à jour en direct pendant la conduite. Tesla ne fournit pas l'altitude : le plugin la calcule à partir de la position de la voiture, avec un modèle de terrain mondial gratuit (environ 30 m de résolution), téléchargé par morceaux à la demande et gardé en cache sur votre Jeedom (20 Mo au plus). Les trajets déjà enregistrés reçoivent leur altitude quand leur journée est recalculée.
+ - **L'altitude de vos trajets** : le graphique de la journée trace une courbe d'**altitude** pendant les trajets, sur son propre axe en mètres, et la met à jour en direct pendant que vous roulez. Tesla ne fournit pas l'altitude : le plugin la calcule à partir de la position de la voiture, avec un modèle de terrain mondial gratuit (environ 30 m de précision au sol), téléchargé par morceaux selon vos trajets et gardé en cache sur votre Jeedom (20 Mo au plus). Vos anciens trajets reçoivent aussi leur altitude quand leur journée est recalculée.
 
 ### Améliorations
 
-#### Tracking : temps réel et rapidité
- - **Mise à jour en direct** : le plugin prévient le Tracking dès qu'un point est enregistré, et la page s'actualise environ une seconde plus tard. Elle n'interroge plus Jeedom en continu : la charge sur la box baisse nettement quand la page reste ouverte.
+#### Tracking : en direct et plus rapide
+ - **En direct** : dès que le plugin enregistre un point, le Tracking le sait et s'actualise environ une seconde plus tard. Il n'a plus besoin d'interroger Jeedom en continu : votre box souffle quand la page reste ouverte.
  - **Moins de requêtes** : à l'ouverture, les trajets du jour sont chargés deux fois moins souvent et les points du graphique une seule fois au lieu de quatre. Le coût mensuel est relu au plus une fois par minute.
- - **Calcul de la journée plus rapide**, surtout sur Raspberry Pi : les parkings sont lus une seule fois, les trajets sont enregistrés avec deux fois moins de requêtes et en une seule transaction, et le nettoyage de la base ne tourne plus qu'une fois par jour. Le recalcul de la journée est environ trois fois plus rapide.
- - **Carte** : chaque rafraîchissement libère les tracés de l'affichage précédent. La carte ne ralentit plus quand la page reste ouverte longtemps.
- - **Après une mise à jour du plugin**, le navigateur charge directement la nouvelle version de la page, au lieu d'afficher une page vide ou incomplète tant que le cache n'était pas vidé. La page s'ouvre aussi plus vite.
+ - **Une journée calculée environ trois fois plus vite**, surtout sur Raspberry Pi : les parkings sont lus une seule fois, les trajets enregistrés avec deux fois moins d'accès à la base, et le grand ménage de la base ne se fait plus qu'une fois par jour.
+ - **Une carte qui ne s'essouffle plus** quand la page reste ouverte longtemps : chaque rafraîchissement libère les tracés précédents.
+ - **Après une mise à jour du plugin**, la nouvelle version de la page s'affiche tout de suite, sans page blanche ni cache à vider, et elle s'ouvre plus vite.
 
-#### Tracking : interface
- - **Carte** : nouveau fond **Épuré**, plus sobre, qui fait ressortir les trajets et les parkings, en version claire ou sombre. Le fond choisi suit désormais le changement de thème, et les cercles des parkings favoris restent affichés après un changement de fond.
- - **Graphique de la journée** : nouveau moteur (Apache ECharts, libre). Le contenu ne change pas, les heures sont lisibles en thème sombre, et un clic sur un trajet de la frise zoome de nouveau sur ce trajet.
- - **Barre du bas** : les boutons des panneaux montrent clairement s'ils sont affichés ou masqués, et leur infobulle dit ce qu'ils font (« Masquer la carte »…). Quand tous les panneaux sont masqués, un écran les décrit et propose un bouton **Tout afficher**. Les panneaux « Suivi » et « Trajets » s'appellent désormais « Graphique » et « Feuille de route ».
- - **Statistiques** : le panneau s'ouvre comme un tiroir au-dessus de la barre du bas, sans la chevaucher.
- - **Carte** : les fenêtres d'un trajet et d'un parking ont la même présentation. Les dates des derniers passages ne chevauchent plus le texte, et un lieu trop long est coupé par « … ».
- - **Lisibilité** : « Détails » est de nouveau lisible en thème sombre, le nom de la voiture, le titre de la feuille de route et la durée entre deux trajets sont plus contrastés, et les icônes des trajets sont plus grandes.
- - **Libellés en français** :
-   - « Ext. / Int. » au lieu de « OUT / IN », « À l'arrêt », « Énergie » et « Évolution » avec leur accent ;
+#### Tracking : plus agréable
+ - **Carte** : nouveau fond **Épuré**, plus sobre, qui fait ressortir vos trajets et vos parkings, en clair comme en sombre. Le fond choisi suit le changement de thème, et les cercles de vos favoris restent affichés quand vous changez de fond.
+ - **Carte** : les fenêtres d'un trajet et d'un parking ont la même présentation. Les dates des derniers passages ne chevauchent plus le texte, et un lieu trop long est coupé proprement par « … ».
+ - **Graphique de la journée** : nouveau moteur, libre (Apache ECharts). Vous retrouvez les mêmes courbes, les heures sont lisibles en thème sombre, et un clic sur un trajet de la frise zoome de nouveau dessus.
+ - **Barre du bas** : chaque bouton montre clairement si son panneau est affiché ou masqué, et son infobulle dit ce qu'il fait (« Masquer la carte »…). Si vous masquez tout, un écran présente les panneaux et propose **Tout afficher**. Les panneaux « Suivi » et « Trajets » s'appellent désormais « Graphique » et « Feuille de route ».
+ - **Statistiques** : le panneau s'ouvre comme un tiroir, au-dessus de la barre du bas, sans la chevaucher.
+ - **Lisibilité** : « Détails » est de nouveau lisible en thème sombre ; le nom de la voiture, le titre de la feuille de route et la durée entre deux trajets sont plus contrastés, et les icônes des trajets plus grandes.
+ - **Un Tracking qui parle mieux français** :
+   - « Ext. / Int. » au lieu de « OUT / IN », et « À l'arrêt », « Énergie », « Évolution » avec leur accent ;
    - « Consommation » au lieu de « Energie » pour la consommation moyenne (Wh/km) et sa courbe, « Gains/Pertes (%) » au lieu de « Efficiency » ;
-   - vitesse de recharge précédée d'un « + » (« +35,6 km/h »), pour ne pas la confondre avec une vitesse de conduite ;
-   - adresses en typographie française (« 528 route des Alpes ») et dates abrégées partout de la même façon (« le 17 nov. à 17:56 », « lun. 16 nov. 2026 ») ;
-   - températures sans décimale (« 9 °C »).
- - **Composants à jour** : Angular 22 et MapLibre 6, qui corrige une faille critique de la version précédente. Les dépendances du Tracking n'ont plus aucune vulnérabilité connue.
+   - une vitesse de recharge précédée d'un « + » (« +35,6 km/h »), pour ne pas la confondre avec une vitesse de conduite ;
+   - des adresses en typographie française (« 528 route des Alpes ») et des dates abrégées partout de la même façon (« le 17 nov. à 17:56 », « lun. 16 nov. 2026 ») ;
+   - des températures sans décimale (« 9 °C »).
+ - **Composants à jour** (Angular 22, MapLibre 6) : la faille critique de l'ancienne version de MapLibre est corrigée, et le Tracking ne dépend plus d'aucun composant présentant une vulnérabilité connue.
 
 #### Plugin
- - **Cartes et adresses sans clé** : les cartes utilisent OpenFreeMap et les adresses des lieux de parking OpenStreetMap, gratuitement et sans aucune clé à saisir. Jusqu'ici, le plugin attribuait à chaque installation l'une de quelques clés Jawg et MapTiler partagées, réécrites à chaque mise à jour, et la carte restait vide sans clé. Votre propre clé MapTiler devient facultative : elle ajoute la vue **Satellite** et donne des adresses plus précises (numéro dans la rue). À la mise à jour, une ancienne clé partagée est retirée, une clé personnelle est conservée. Voir [Carte et affichage](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/#parametres-carte).
- - **Redémarrage périodique du démon** (toutes les 4 heures) : il est fait par le plugin. Ouvrir le Tracking ne redémarre plus le démon et ne réactive plus la gestion automatique si vous l'avez désactivée.
- - **Moins d'appels payants quand la voiture se réveille au parking** : beaucoup de voitures sortent seules de veille, certaines toutes les heures. Si la voiture est toujours garée à son réveil, le suivi l'interroge toutes les 3 minutes au lieu de toutes les 60 secondes pendant le temps d'attente au parking : environ 4 appels par réveil au lieu de 10. Un départ est détecté au plus 3 minutes après. Voir [Modes et consommation](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/#tracking-modes).
- - **Débuts et fins de charge détectés en moins d'une minute au parking** : le suivi lit toutes les minutes les données en cache de Tesla, gratuites et qui ne réveillent jamais la voiture. Dès qu'un câble est branché ou débranché, qu'une charge démarre ou s'arrête, il interroge aussitôt la voiture et repasse en mode NORMAL. Jusqu'ici, un début de charge au parking pouvait n'être vu que 15 minutes plus tard (30 minutes la nuit). Une porte ouverte ou un déverrouillage a le même effet, mais seulement quand la voiture envoie ses données à Tesla, ce qu'elle ne fait pas toujours tout de suite : un départ n'est donc pas forcément détecté plus tôt. Voir [Modes et consommation](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/#tracking-modes).
- - **Sauvegardes Jeedom plus légères** : elles n'emportent plus le cache des tuiles d'altitude, ni le serveur proxy compilé pour votre box (13,7 Mo, propre à son architecture : il est réinstallé automatiquement avec les dépendances après une restauration), ni les fichiers temporaires du proxy et de l'installation. L'historique du suivi, le cache des adresses et la clé privée de l'appairage restent sauvegardés.
- - **Suivi** : le plugin ne lance plus `sudo chmod` à chaque point enregistré, seulement à la création du fichier du jour. La charge sur la box baisse pendant la conduite et les recharges.
+ - **Cartes et adresses sans clé** : les cartes utilisent OpenFreeMap et les adresses de vos parkings viennent d'OpenStreetMap, gratuitement et sans rien à configurer. Jusqu'ici, chaque installation recevait l'une de quelques clés Jawg et MapTiler partagées, réécrites à chaque mise à jour, et la carte restait vide sans clé. Votre propre clé MapTiler devient facultative : elle ajoute la vue **Satellite** et des adresses plus précises (avec le numéro dans la rue). À la mise à jour, une ancienne clé partagée est retirée ; votre clé personnelle, elle, est conservée. Voir [Carte et affichage](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/#parametres-carte).
+ - **Moins d'appels payants quand la voiture se réveille seule au parking** : beaucoup de voitures sortent de veille d'elles-mêmes, certaines toutes les heures. Si la voiture est toujours garée à son réveil, le suivi ne l'interroge plus que toutes les 3 minutes au lieu de toutes les 60 secondes pendant l'attente au parking : environ 4 appels par réveil au lieu de 10. Un départ est vu au plus 3 minutes après. Voir [Modes et consommation](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/#tracking-modes).
+ - **Recharges repérées en moins d'une minute, gratuitement** : au parking, le suivi consulte chaque minute les données en cache de Tesla, gratuites et qui ne réveillent jamais la voiture. Dès que vous branchez ou débranchez le câble, ou qu'une recharge démarre ou s'arrête, il interroge aussitôt la voiture. Jusqu'ici, un début de recharge pouvait n'être vu que 15 minutes plus tard (30 la nuit). Une porte ouverte ou un déverrouillage ont le même effet, mais seulement quand la voiture prévient Tesla, ce qu'elle ne fait pas toujours tout de suite : un départ n'est donc pas forcément vu plus tôt. Voir [Modes et consommation](https://vercorsio.github.io/jeedom-tesla-plugin/fr_FR/#tracking-modes).
+ - **Redémarrage périodique du démon** (toutes les 4 heures) : c'est désormais le plugin qui s'en charge. Ouvrir le Tracking ne redémarre plus le démon, et ne réactive plus la gestion automatique si vous l'aviez désactivée.
+ - **Des sauvegardes Jeedom plus légères** : elles n'emportent plus le cache de l'altitude, ni le serveur proxy compilé pour votre box (13,7 Mo, propre à son architecture et réinstallé automatiquement avec les dépendances après une restauration), ni les fichiers temporaires du proxy et de l'installation. Votre historique de suivi, le cache des adresses et la clé privée de l'appairage restent bien sauvegardés.
+ - **Moins de travail pour la box** pendant la conduite et les recharges : les droits du fichier de suivi ne sont plus réglés à chaque point enregistré, seulement à la création du fichier du jour.
 
 ### Correctifs
 
 #### Sécurité
- - **Clés API** : la page **Tracking** n'envoie plus aucune clé API au navigateur. Les clés de Jeedom et du plugin étaient conservées dans le navigateur de tout utilisateur connecté, même aux droits limités, et donnaient accès à l'API de Jeedom. Le Tracking utilise désormais la session Jeedom (voir l'encadré plus haut).
+ - **Clés API** : la page **Tracking** n'envoie plus aucune clé API au navigateur. Les clés de Jeedom et du plugin y étaient conservées pour tout utilisateur connecté, même aux droits limités, et donnaient accès à l'API de Jeedom. Le Tracking utilise désormais votre session Jeedom (voir l'encadré plus haut).
  - **Serveur proxy** : son port est vérifié avant chaque démarrage, arrêt ou contrôle (un nombre entre 400 et 65535, sinon 4443). Un utilisateur connecté pouvait jusqu'ici faire exécuter des commandes sur la box avec les droits administrateur du système.
  - **Base de données** : les paramètres de la liste des parkings et des derniers passages ne peuvent plus modifier la requête envoyée à la base. Un utilisateur connecté pouvait lire d'autres tables de Jeedom, dont les jetons Tesla du plugin.
- - **API Tesla** : les pages du plugin ne peuvent plus appeler que les six services dont elles ont besoin, au lieu de n'importe quel service du compte Tesla, y compris les services facturés.
+ - **API Tesla** : les pages du plugin ne peuvent plus appeler que les six services dont elles ont besoin, et non plus n'importe quel service de votre compte Tesla, y compris les services facturés.
  - **Droits** : seuls les administrateurs peuvent modifier la configuration du plugin, la connexion au compte Tesla, les clés et le proxy, ajouter ou supprimer des véhicules et gérer les plannings. Les autres utilisateurs gardent le **Tracking**, sans l'écran de ses logs.
- - **Requêtes GET** : une action qui modifie quelque chose (mode de suivi, parkings, rafraîchissement forcé…) n'est plus acceptée dans une simple adresse web.
- - **Page des plannings** : le nom d'un parking favori s'affiche comme du texte. Un nom contenant du code HTML pouvait s'exécuter dans la page de l'administrateur.
- - **Logs** : les réponses des serveurs Tesla ne sont plus écrites dans les logs de Jeedom. Chaque appel, y compris la vérification de l'état toutes les minutes, y laissait la position de la voiture, les plannings de charge et leurs adresses (plusieurs Mo dans `cron_execution`, réécrits en permanence sur la carte SD). Seules les requêtes en erreur sont encore notées, avec un court extrait.
+ - **Adresses web** : une action qui modifie quelque chose (mode de suivi, parkings, rafraîchissement forcé…) ne peut plus être déclenchée par une simple adresse web.
+ - **Page des plannings** : le nom d'un parking favori s'affiche comme du simple texte. Un nom contenant du code HTML pouvait s'exécuter dans la page de l'administrateur.
+ - **Logs** : les réponses des serveurs Tesla ne sont plus écrites dans les logs de Jeedom. Chaque appel, y compris la vérification de l'état toutes les minutes, y laissait la position de la voiture et vos plannings de recharge avec leurs adresses : plusieurs Mo, réécrits en permanence sur la carte SD. Seules les erreurs sont encore notées, avec un court extrait.
 
 #### Trajets, parkings et base de données
- - **Faux trajets** : une veille n'apparaît plus comme un long trajet de quelques mètres (par exemple 99 minutes pour 30 m). Après un redémarrage du suivi, la mise en veille de la voiture était ignorée, et une voiture déplacée de quelques mètres pendant sa veille transformait toute la période en trajet. De même, une voiture qui sortait de veille en roulant déjà comptait toute sa veille comme un trajet. Une journée déjà calculée est corrigée quand elle est recalculée.
- - **Tracés et courbes fidèles** : de petites erreurs d'arrondi s'additionnaient le long des trajets enregistrés (jusqu'à 100 m d'écart sur la carte, plusieurs kilomètres d'autonomie sur une journée). Sur les box 32 bits, un grand écart d'odomètre était aussi mal enregistré. Les trajets sont corrigés quand ils sont recalculés.
- - **Changement d'heure** : consultée en hiver, une journée d'été s'affichait au jour précédent (le 7 octobre devenait le 6) et ses heures de trajet étaient décalées d'une heure.
- - **Parkings qui se chevauchent** : un parking inclus dans un autre l'emporte toujours (« Maison » dans « Mon département »). Quand deux cercles se chevauchent en partie, le parking que vous avez modifié (favori, nommé, lieu de recharge) passe avant une adresse trouvée automatiquement, puis le plus proche. Un grand cercle (plus d'une dizaine de kilomètres) est reconnu sur toute sa surface.
- - **Enregistrement des parkings** : un tarif supérieur à 9,999 (couronnes tchèques, forints…), une adresse de plus de 80 caractères ou un emoji dans le nom empêchaient d'enregistrer. Tarifs jusqu'à 9 999,9999, textes jusqu'à 255 caractères, emojis acceptés.
- - **Adresse introuvable** (clé de géocodage absente, service indisponible ou saturé) : les trajets du jour s'affichent quand même, sans parking vide d'adresse, et la page n'attend plus jusqu'à 8 secondes.
+ - **Fini les faux trajets** : une veille n'apparaît plus comme un long trajet de quelques mètres (par exemple 99 minutes pour 30 m). Après un redémarrage du suivi, la mise en veille de la voiture passait inaperçue, et quelques mètres de manœuvre pendant la veille transformaient toute la période en trajet. De même, une voiture qui sortait de veille en roulant déjà comptait toute sa veille comme un trajet. Une journée déjà calculée est corrigée quand elle est recalculée.
+ - **Des tracés et des courbes fidèles** : de petites erreurs d'arrondi s'additionnaient le long des trajets (jusqu'à 100 m d'écart sur la carte, plusieurs kilomètres d'autonomie sur une journée). Sur les box 32 bits, un grand écart d'odomètre était aussi mal enregistré. Les trajets sont corrigés quand ils sont recalculés.
+ - **Changement d'heure** : consultée en hiver, une journée d'été s'affichait au jour précédent (le 7 octobre devenait le 6), avec des heures de trajet décalées d'une heure.
+ - **Parkings qui se chevauchent** : un parking inclus dans un autre l'emporte toujours (« Maison » dans « Mon département »). Quand deux cercles se recouvrent en partie, le parking que vous avez personnalisé (favori, nommé, lieu de recharge) passe avant une adresse trouvée automatiquement, puis vient le plus proche. Un grand cercle (plus d'une dizaine de kilomètres) est reconnu sur toute sa surface.
+ - **Enregistrement des parkings** : un tarif supérieur à 9,999 (couronnes tchèques, forints…), une adresse de plus de 80 caractères ou un emoji dans le nom empêchaient d'enregistrer. Place désormais aux tarifs jusqu'à 9 999,9999, aux textes jusqu'à 255 caractères et aux emojis 🏠.
+ - **Adresse introuvable** (service indisponible ou saturé) : les trajets du jour s'affichent quand même, sans parking vide d'adresse, et la page n'attend plus jusqu'à 8 secondes.
  - **Nettoyage de la base** : les points inutiles sont de nouveau supprimés (ils s'accumulaient), et les parkings que vous avez modifiés ne sont plus jamais supprimés, même sans trajet.
- - **Mise à jour du plugin** : toutes les modifications de la base s'appliquent de nouveau (dès la deuxième mise à jour, elles se bloquaient). Les index et clés en double sont supprimés.
+ - **Mise à jour du plugin** : toutes les évolutions de la base s'appliquent de nouveau (elles se bloquaient dès la deuxième mise à jour), et les index et clés en double sont supprimés.
  - **Historique des recharges** : une recharge gratuite s'enregistre (montant à zéro), et un « | » dans le nom d'une station ne fait plus redemander tout l'historique à Tesla.
 
 #### Affichage du Tracking
  - **Safari** (iPhone, iPad, Mac) : les statistiques du jour se mettent à jour, et les dates des rapports s'affichent et se trient correctement.
- - **Démarrage** : la page démarre même si les préférences du navigateur sont illisibles ou bloquées (navigation privée). Elles reprennent leurs valeurs par défaut.
- - **Données incomplètes** (voiture endormie, réponse partielle de Tesla) : la barre du haut et le panneau « en cours » affichent ce qui est disponible au lieu de planter. 0 °C s'affiche de nouveau, au lieu de « - - ».
- - **Barre du haut** : plus de « undefined » dans les durées (« 3 min » au lieu de « 3 min undefined s ») ni sans mise à jour logicielle en attente.
+ - **Démarrage** : la page démarre même si les préférences du navigateur sont illisibles ou bloquées (navigation privée) ; elles reprennent alors leurs valeurs par défaut.
+ - **Données incomplètes** (voiture endormie, réponse partielle de Tesla) : la barre du haut et le panneau « en cours » affichent ce qui est disponible au lieu de planter. Et 0 °C s'affiche de nouveau, au lieu de « - - ».
+ - **Barre du haut** : plus de « undefined » dans les durées (« 3 min » au lieu de « 3 min undefined s »), ni quand aucune mise à jour logicielle n'est en attente.
  - **Graphique** : plus de fausse zone noire (veille) à minuit.
  - **Carte** :
    - elle réapparaît quand on la réaffiche à côté du graphique ;
@@ -77,18 +86,21 @@ Pour stabiliser le plugin et son **Tracking**, une revue complète de leur code 
    - afficher un jour passé pendant que la voiture roule ne bloque plus la carte ;
    - un trajet dont le parking de départ a été supprimé ne provoque plus d'erreur ;
    - choisir un parking après avoir centré la carte sur un favori ne provoque plus d'erreur.
- - **Rapports mensuel et annuel** : la ligne « Total » montre de nouveau la vraie répartition du « Temps passé » et la vraie consommation moyenne (le rapport annuel affichait par exemple 2 161 Wh/km au lieu de 232). Les jours de janvier à septembre sans statistiques réapparaissent dans le rapport mensuel.
+ - **Rapports mensuel et annuel** : la ligne « Total » retrouve la vraie répartition du « Temps passé » et la vraie consommation moyenne (le rapport annuel affichait par exemple 2 161 Wh/km au lieu de 232). Les jours de janvier à septembre sans statistiques réapparaissent dans le rapport mensuel.
 
 #### Plugin
- - **Plannings** : quand l'adresse est introuvable, les coordonnées s'affichent. Avec plusieurs Tesla, une voiture endormie n'empêche plus d'afficher les plannings des autres.
- - **Démon** : il n'est plus arrêté net quand le fichier de suivi du jour ne peut pas être ouvert. Le point est perdu et une erreur est écrite dans le log.
- - **Redémarrage périodique du démon** : il ne coupe plus le suivi pendant 5 minutes. Toutes les 4 heures, le redémarrage croisait la vérification automatique des démons de Jeedom, et le démon restait arrêté jusqu'à la vérification suivante, avec l'erreur « Vous devez attendre au moins 45 secondes entre deux lancements du démon » dans le log.
  - **Connexion à Tesla** :
-   - le jeton d'accès est de nouveau renouvelé avant son expiration. Le renouvellement prévu 5 minutes avant le jugeait encore valide et ne faisait rien : le jeton expirait, et la requête suivante échouait (« Impossible de récupérer l'état de la voiture »).
-   - quand une requête échoue (voiture injoignable, serveur Tesla indisponible, jeton expiré), elle est de nouveau retentée telle quelle. Les nouvelles tentatives étaient toujours envoyées en POST : une lecture d'état ou de données échouait alors avec « The requested resource does not exist », et pouvait même aller jusqu'à déconnecter le plugin du compte Tesla.
-   - « Le jeton d'accès a été rafraichi » n'est plus écrit dans le log quand le jeton était encore valide et n'a pas été renouvelé.
+   - le jeton d'accès est de nouveau renouvelé à temps. Le renouvellement prévu 5 minutes avant l'expiration le jugeait encore valide et ne faisait rien : le jeton expirait, et la requête suivante échouait (« Impossible de récupérer l'état de la voiture ») ;
+   - une requête qui échoue (voiture injoignable, serveur Tesla indisponible, jeton expiré) est de nouveau retentée correctement. Les nouvelles tentatives partaient sous une mauvaise forme : elles échouaient (« The requested resource does not exist ») et pouvaient aller jusqu'à déconnecter le plugin de votre compte Tesla ;
+   - « Le jeton d'accès a été rafraichi » n'apparaît plus dans le log quand rien n'a été renouvelé.
  - **Suivi** : au réveil de la voiture et à chaque début ou fin de trajet, les données ne sont plus demandées plusieurs fois de suite à Tesla (jusqu'à 4 requêtes payantes en 3 secondes au départ d'un trajet). Les points sont de nouveau enregistrés dans l'ordre, et le début d'un trajet n'est plus noté deux fois.
+ - **Redémarrage périodique du démon** : il ne coupe plus le suivi pendant 5 minutes. Toutes les 4 heures, il croisait la vérification automatique des démons de Jeedom : le démon restait arrêté jusqu'à la vérification suivante, avec l'erreur « Vous devez attendre au moins 45 secondes entre deux lancements du démon » dans le log.
+ - **Démon** : il ne s'arrête plus net quand le fichier de suivi du jour ne peut pas être ouvert. Le point est perdu, et une erreur l'explique dans le log.
+ - **Plannings** : quand l'adresse est introuvable, les coordonnées s'affichent. Avec plusieurs Tesla, une voiture endormie n'empêche plus d'afficher les plannings des autres.
  - **Logs** : les messages « Relancer l'installation des dépendances » et « Le plugin n'est pas connecté » ne sont plus vides.
+
+Merci à tous ceux qui utilisent le plugin et font remonter leurs remarques ! Un avis sur le market fait toujours plaisir : [⭐⭐⭐⭐⭐](https://market.jeedom.com/index.php?v=d&p=market_display&id=3486)
+
 
 <a name="v3.4.1"></a>
 
