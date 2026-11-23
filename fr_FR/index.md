@@ -709,6 +709,11 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | **Actionner les phares** | Fait clignoter les phares. |
 | **Actionner le HomeLink** | Ouvre ou ferme le portail ou la porte de garage programmé dans la voiture (HomeLink), comme le bouton de l'écran. La voiture doit être près du portail. Commande masquée par défaut. _(si un appareil HomeLink est programmé)_ |
 | **Envoyer une destination** | Envoie une destination au GPS de la voiture : une adresse (`Place Grenette, Grenoble`) ou un lien de partage d'une application de cartes, dans le message de la commande. Commande de type message, masquée par défaut, utilisable dans les scénarios. |
+| **Jouer le son de localisation** | Joue le son de localisation par le haut-parleur extérieur, pour retrouver la voiture sur un parking. Commande masquée par défaut. _(voitures avec haut-parleur extérieur)_ |
+| **Contrôler le média** | `Lecture / pause`, `Piste suivante`, `Piste précédente`. Commande masquée par défaut. |
+| **Contrôler le volume** | Règle le volume du média, de 0 à 11. Tesla ne l'accepte que si quelqu'un est dans la voiture. Commande masquée par défaut. |
+| **Contrôler le mode invité** | Active ou désactive le mode invité, avant de prêter la voiture. Commande masquée par défaut. |
+| **Contrôler la mise à jour logicielle** | Programme l'installation d'une mise à jour déjà téléchargée (`Installer dans 2 minutes`, `Installer cette nuit (3h)`) ou annule la programmation. Commande masquée par défaut. |
 | **Actionner le klaxon** | Actionne l'avertisseur sonore. |
 
 ### Tracking et divers

@@ -10,6 +10,7 @@
  - **Sièges ventilés** : nouvelles actions **Contrôler la ventilation du siège conducteur** et **passager** (`Arrêter`, `Faible`, `Moyen`, `Fort`) et leurs infos, sur les voitures équipées. La climatisation doit être allumée.
  - **HomeLink** : nouvelle action **Actionner le HomeLink** pour ouvrir ou fermer depuis Jeedom le portail ou la porte de garage programmé dans la voiture, et nouvelle info **Info HomeLink à proximité**. Les commandes sont créées quand un appareil HomeLink est programmé dans la voiture ; l'action est masquée par défaut.
  - **Envoyer une destination** : nouvelle action de type message qui envoie une adresse (ou un lien de partage d'une application de cartes) au GPS de la voiture, par exemple depuis un scénario d'agenda. L'action est masquée par défaut.
+ - **Petites commandes** : nouvelles actions **Jouer le son de localisation** (pour retrouver la voiture sur un parking), **Contrôler le média** (lecture / pause, piste suivante ou précédente), **Contrôler le volume**, **Contrôler le mode invité** et **Contrôler la mise à jour logicielle** (installer dans 2 minutes ou cette nuit à 3h, ou annuler). Elles sont masquées par défaut.
 
 ### Améliorations
 
