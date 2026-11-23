@@ -31,6 +31,7 @@ Une grosse version, consacrée à la solidité du plugin et de son **Tracking**.
 #### Tracking : plus agréable
  - **Carte** : nouveau fond **Épuré**, plus sobre, qui fait ressortir vos trajets et vos parkings, en clair comme en sombre. Le fond choisi suit le changement de thème, et les cercles de vos favoris restent affichés quand vous changez de fond.
  - **Carte** : les fenêtres d'un trajet et d'un parking ont la même présentation. Les dates des derniers passages ne chevauchent plus le texte, et un lieu trop long est coupé proprement par « … ».
+ - **Zoom à la souris sur le graphique** : cliquez et faites glisser sur une période pour zoomer dessus, double-cliquez pour revenir à la journée entière.
  - **Graphique de la journée** : nouveau moteur, libre (Apache ECharts). Vous retrouvez les mêmes courbes, les heures sont lisibles en thème sombre, et un clic sur un trajet de la frise zoome de nouveau dessus.
  - **Barre du bas** : chaque bouton montre clairement si son panneau est affiché ou masqué, et son infobulle dit ce qu'il fait (« Masquer la carte »…). Si vous masquez tout, un écran présente les panneaux et propose **Tout afficher**. Les panneaux « Suivi » et « Trajets » s'appellent désormais « Graphique » et « Feuille de route ».
  - **Statistiques** : le panneau s'ouvre comme un tiroir, au-dessus de la barre du bas, sans la chevaucher.

@@ -418,6 +418,8 @@ L'exemple ci-dessous retrace un trajet réel effectué le 5 janvier 2019, en 4 s
 
 Sous le graphique, la **chronologie** montre les étapes de la journée (trajets, recharges, parkings, veilles). Un clic sur un trajet zoome le graphique sur ce trajet.
 
+Pour zoomer sur une autre période, cliquez dans le graphique et faites glisser la souris jusqu'à la fin de la période voulue : le graphique zoome sur cette plage dès que vous relâchez. Un **double-clic** affiche de nouveau la journée entière. (Sur un écran tactile, le glisser continue de faire défiler la page.)
+
 > **Note**
 >
 > En dehors des trajets, le graphique affiche l'évolution de l'autonomie à l'arrêt : il permet par exemple de tracer les pertes de type <i>"vampire drain"</i> et de voir les courbes lors des recharges.
