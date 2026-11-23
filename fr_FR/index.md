@@ -691,7 +691,7 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | **Contrôler le coffre avant** | Ouvre le coffre avant (frunk). |
 | **Contrôler le coffre arrière** | Ouvre ou ferme le coffre arrière (trunk). |
 | **Contrôler les fenêtres** | Entrouvre ou ferme les fenêtres. `Permuter` les ferme si elles sont toutes entrouvertes (`PPPP`), et les entrouvre sinon. _(si équipé)_ |
-| **Contrôler le toît ouvrant** | Entrouvre ou ferme le toit panoramique. _(si équipé)_ |
+| **Contrôler le toît ouvrant** | Entrouvre ou ferme le toit panoramique. `Permuter` le ferme s'il est ouvert, et l'entrouvre sinon. Ne fonctionne pas sur les voitures qui exigent des commandes signées : le proxy de Tesla ne prend pas en charge le toit ouvrant. _(si équipé)_ |
 | **Contrôler le mode sentinelle** | Démarre ou arrête le mode sentinelle. _(si équipé)_ |
 | **Actionner les phares** | Fait clignoter les phares. |
 | **Actionner le klaxon** | Actionne l'avertisseur sonore. |

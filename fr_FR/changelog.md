@@ -11,6 +11,7 @@
 
 ### Correctifs
 
+ - **Toit ouvrant** : `Permuter` ferme de nouveau le toit quand il est ouvert (il l'entrouvrait toujours, la position du toit étant lue à 0). Quand la position est inconnue, rien n'est envoyé et le log l'explique. Sur les voitures qui exigent des commandes signées, le log indique que le toit ne peut pas être commandé (le proxy de Tesla ne le prend pas en charge), au lieu d'une erreur.
  - **Volant et sièges chauffants** : « Contrôler le chauffage du volant » allume de nouveau le volant (la commande l'éteignait toujours, quel que soit le choix). Dans le panneau des sièges du widget, le volant et les sièges se règlent de nouveau, et chaque siège arrière ou de 3ᵉ rangée est bien celui choisi : le siège arrière gauche réglait celui du conducteur, et les commandes des sièges arrière centre, arrière droit et de 3ᵉ rangée chauffaient un autre siège. Merci à @dcat d'avoir signalé et analysé le problème !
 
 <a name="v3.5.0-beta.139.332"></a>
