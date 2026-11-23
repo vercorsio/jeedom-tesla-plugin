@@ -8,6 +8,7 @@
    - La limite de recharge et l'ampérage sont envoyés directement.
    - Pour les choix « Permuter » (verrouillage, trappe de recharge, recharge, mode sentinelle, climatisation, toit ouvrant, fenêtres) et les coffres, le plugin utilise l'état connu s'il a moins de 2 minutes : le résultat d'une commande précédente, les données en cache chez Tesla (gratuites) ou le dernier relevé du suivi. Sinon, il relit l'état de la voiture comme avant.
    - Après le verrouillage, la trappe de recharge, la recharge, le mode sentinelle, la climatisation, la limite et l'ampérage, le widget affiche directement le résultat de la commande ; le suivi le confirme au relevé suivant.
+ - **Estimer** (contrôle de la recharge) : quand la voiture charge déjà, l'heure de début de recharge est estimée tout de suite, sans lancer la courte charge de 2 minutes.
 
 ### Correctifs
 

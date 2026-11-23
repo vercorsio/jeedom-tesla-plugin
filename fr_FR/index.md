@@ -547,7 +547,7 @@ Chaque commande d'action peut être utilisée dans un scénario Jeedom. Quelques
 
 > **Note**
 >
-> Pour connaître l'heure de début de la recharge, démarrez la charge avec l'action `Estimer` : elle lance une courte charge pour estimer le temps nécessaire.
+> Pour connaître l'heure de début de la recharge, démarrez la charge avec l'action `Estimer` : elle lance une courte charge d'environ 2 minutes pour estimer le temps nécessaire (deux commandes envoyées à la voiture). Si la voiture charge déjà, l'estimation est immédiate, sans courte charge.
 >
 > - Si la voiture n'est pas prête pour la charge, **Info heure de départ de recharge** retourne `N/A`.
 > - Si le temps estimé est inférieur au temps restant avant l'heure de fin de recharge, **Info heure de départ de recharge** retourne l'heure de départ au format `Hmm`.
