@@ -10,7 +10,7 @@ Le plugin propose également un panneau pour suivre sur un graphique l'évolutio
 
 ![tracking-graph](../images/consoLow480.gif)
 
-Sur ce même panneau, un tableau récapitule les étapes de la journée (conduite, charge, parking) : durées, consommation, vitesse, ... Les colonnes sont modifiables et peuvent être triées.
+Sur ce même panneau, une feuille de route récapitule les étapes de la journée (conduite, charge, parking) : durées, consommation, vitesse, ... En mode détaillé, elle devient un tableau dont les colonnes sont modifiables et peuvent être triées.
 
 Une carte permet aussi de retracer l'ensemble des trajets d'une journée, de définir des favoris, et de suivre votre voiture à la trace depuis l'écran de votre Tesla !
 
@@ -193,14 +193,14 @@ Après rechargement de la page, un sous-menu "Tesla" apparaît dans le menu "Acc
 | **Client ID** / **Client Secret** | Les deux clefs personnelles de votre "application" créée sur [developer.tesla.com](https://developer.tesla.com) (voir [Créer une application Fleet API](#creer-application)). Elles ne doivent jamais être partagées. |
 | **Région** | Le serveur Tesla régional utilisé (Amérique du Nord/Asie, Europe/Moyen-Orient/Afrique, Chine). Mis à jour automatiquement à la connexion. À modifier uniquement si l'erreur _Account must be registered in the current region_ apparaît dans les logs. |
 | **Nombre de tentatives pour réveiller le véhicule** / **Nombre de secondes entre deux tentatives** | 3 tentatives espacées de 5 secondes par défaut. Utilisés par la commande **Réveiller** et par le réveil automatique avant l'envoi d'une commande. |
-| **cronHourly** | S'il est activé, le plugin met à jour les données du widget une fois par heure. Quand le tracking est actif, elles sont mises à jour au fil de l'eau. |
+| **cronHourly** | S'il est activé, le plugin met à jour les données du widget une fois par heure (quand le tracking est actif, elles sont mises à jour au fil de l'eau). Il vérifie aussi le jeton d'accès et redémarre le démon toutes les 4 heures : laissez-le activé. |
 
 #### Coûts {#parametres-couts}
 
 | Paramètre | Description |
 | --- | --- |
 | **Coût du kWh** et **devise** | Prix du kWh (`0.14` par défaut) et devise associée. Sert à estimer le coût d'une charge, le prix pour parcourir 100km et le nombre de km parcourus avec 1 euro. |
-| **Coût mensuel** (API Fleet) | Le montant maximal que vous acceptez que Tesla facture chaque mois pour l'usage de ses serveurs. Quand le coût estimé atteint ce seuil, **Info seuil mensuel atteint** passe à `1` et le plugin ne contacte plus les serveurs Tesla jusqu'à la fin du mois. Voir aussi la fenêtre [Fleet API](#fleet-api). |
+| **Coût mensuel** (API Fleet) | Le montant maximal que vous acceptez que Tesla facture chaque mois pour l'usage de ses serveurs. Quand le coût estimé atteint ce seuil, **Info seuil mensuel atteint** passe à `1` et le plugin ne fait plus aucun appel payant jusqu'à la fin du mois : il continue seulement de vérifier l'état de la voiture (en ligne ou en veille), un appel gratuit. Voir aussi la fenêtre [Fleet API](#fleet-api). |
 | **Encours estimé** | L'encours du mois relevé sur votre [Dashboard Tesla](https://developer.tesla.com/fr_FR/dashboard), à une date et une heure données. Le coût estimé part de cet encours et ignore les appels enregistrés avant cette date. **Effacer l'encours** le remet à zéro. |
 
 #### Carte et affichage {#parametres-carte}
@@ -399,7 +399,7 @@ Quand la voiture est éveillée sans rouler (au parking ou en charge), le tracki
 > - En mode SOMMEIL, un début de charge est détecté en moins d'une minute grâce aux données en cache, si votre voiture les fournit. Pour un départ, la voiture n'envoie pas toujours ses données à Tesla au déverrouillage : un départ entre deux appels peut ne pas être détecté, et on peut "perdre" jusqu'à 14 minutes de trajet. Un clic sur l'icône orange du tracking le remet manuellement en mode NORMAL.
 > - Activer le tracking en continu peut entraîner une consommation d'énergie non souhaitée.
 
-## Lire le graphe en mode distance
+## Lire le graphe {#lire-graphe}
 
 L'exemple ci-dessous retrace un trajet réel effectué le 5 janvier 2019, en 4 segments :
 
@@ -416,28 +416,26 @@ L'exemple ci-dessous retrace un trajet réel effectué le 5 janvier 2019, en 4 s
 - En ordonnée à droite, la différence entre l'<b style="color:#3355FF">autonomie initiale</b> et l'<b style='color:#22C4FF'>autonomie réelle</b> compte tenu des <b>kilomètres parcourus</b> : courbe <b style="color:#00FF00">verte</b> en cas de gain, <b style="color:#FFA500">orange</b> en cas de perte. Pendant une recharge, la courbe affiche la <b style="color:#E74C3C">puissance de charge</b>.
 - Pendant les trajets, la courbe <b style="color:#8D6E63">brune</b> donne l'**altitude**, sur son propre axe en mètres. Tesla ne la fournit pas : le plugin la calcule à partir de la position de la voiture, avec un modèle de terrain d'environ 30 m de résolution, à quelques mètres près (davantage en montagne).
 
-Un tableau récapitulatif de la journée permet, en sélectionnant une ligne, de zoomer sur la partie correspondante du graphe. Un clic sur la ligne "Total" affiche la journée complète.
-
-<img src="../images/tracking-table.png" alt="tracking table" width="804" style="border-radius:8px;"/>
-
-- L'`efficience` est le pourcentage de km gagnés/perdus par rapport à la longueur du trajet, ce qui permet de pondérer les résultats. Les petits trajets sont 'énergivores'.
-- Les trois boutons en haut à droite du tableau filtrent par type d'étape, pour calculer par exemple les pertes liées aux seules étapes de type `parking`.
-
-## Lire le graphe en mode énergie
-
-Le sélecteur permet de basculer entre les modes `distance` et `énergie`. En mode énergie, la courbe <b style="color:#00FF00">verte</b>/<b style="color:#FFA500">orange</b> laisse place au cumul de l'énergie consommée/produite, avec trois zones :
-
-* la <b style="color:#FF0000">sur-consommation</b>, au-delà de la consommation typique (ici `220Wh/km`) ;
-* la <b style="color:#FFA500">sous-consommation</b> ;
-* la <b style="color:#00FF00">production</b>, lorsque le cumul de l'énergie est négatif.
-
-![tracking-graph](../images/tracking-graph-Wh.png)
-
-Le tableau affiche les informations d'énergie : en <b style="color:darkgreen">vert</b> lorsque le trajet a consommé en moyenne moins que le typique, en <b style="color:#FF0000">rouge</b> sinon.
+Sous le graphique, la **chronologie** montre les étapes de la journée (trajets, recharges, parkings, veilles). Un clic sur un trajet zoome le graphique sur ce trajet.
 
 > **Note**
 >
 > En dehors des trajets, le graphique affiche l'évolution de l'autonomie à l'arrêt : il permet par exemple de tracer les pertes de type <i>"vampire drain"</i> et de voir les courbes lors des recharges.
+
+## La feuille de route
+
+La **feuille de route** liste les étapes de la journée : trajets et recharges, avec leurs lieux, durées, distances, vitesses et consommations. Le bouton **Détails** la transforme en tableau :
+
+- un clic sur une ligne zoome le graphique sur l'étape correspondante ;
+- la ligne **Total** récapitule la journée ;
+- les boutons en haut du tableau filtrent par type d'étape (trajets, recharges, parkings, veilles), pour calculer par exemple les pertes liées aux seules étapes de type `parking` ;
+- le menu du tableau permet de trier les colonnes et d'en ajouter ou d'en enlever.
+
+<img src="../images/tracking-table.png" alt="tracking table" width="804" style="border-radius:8px;"/>
+
+- **Gains/Pertes (%)** est le pourcentage de km gagnés ou perdus par rapport à la longueur du trajet, ce qui permet de pondérer les résultats. Les petits trajets sont 'énergivores'.
+
+**Mode Énergie.** Le menu du tableau permet aussi de passer du **Mode Distance** (autonomie en km) au **Mode Énergie** : le tableau affiche alors l'énergie consommée ou récupérée de chaque étape, en <b style="color:darkgreen">vert</b> lorsque le trajet a consommé en moyenne moins que la consommation typique du véhicule (voir [Configuration du véhicule](#configuration-vehicule)), en <b style="color:#FF0000">rouge</b> sinon.
 
 
 # Cartographie {#cartographie}
@@ -445,7 +443,7 @@ Le tableau affiche les informations d'énergie : en <b style="color:darkgreen">v
 La cartographie permet :
 
  - de traduire les lieux de parking en adresses physiques ;
- - d'afficher sur le tableau du tracking les lieux de départ et d'arrivée ;
+ - d'afficher dans la feuille de route les lieux de départ et d'arrivée ;
  - de définir un lieu de parking en favori ;
  - d'utiliser, dans un scénario, les événements émis lorsque la voiture entre ou sort d'un favori ;
  - d'afficher les trajets sur une carte, chacun d'une couleur différente ;
@@ -460,7 +458,7 @@ Les cartes et les adresses fonctionnent sans clé : fonds de carte [OpenFreeMap]
 
 Le menu en haut à droite affiche sur la carte tous les lieux de parking et/ou ceux transformés en favori.
 
-Le marqueur d'un parking peut être déplacé pour le positionner au bon endroit. Un clic sur ce marqueur, puis sur le "coeur", le transforme en favori.
+Le marqueur d'un parking peut être déplacé pour le positionner au bon endroit. Un clic sur ce marqueur, puis sur **MODIFIER**, ouvre sa fiche : cochez **Lieu favori**, donnez-lui un nom et un rayon d'action, puis **ENREGISTRER**. La même fiche permet de le déclarer **Lieu de recharge**, avec le type de borne et le prix du kWh.
 
 Sur la carte ci-dessous, un arrêt a été fait au Col du Lautaret (trajet rouge puis trajet vert). Ce lieu peut être défini comme favori, avec un rayon d'action. La prochaine fois que la voiture entrera ou sortira de cette 'bulle', un événement Jeedom sera émis, qui peut déclencher un scénario (ouverture de portail, éclairage, ...).
 
@@ -657,7 +655,7 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 | --- | --- |
 | **Info suivi d'autonomie** | Indique si le tracking est démarré (1) ou arrêté (0). |
 | **Info mode du tracking** | Mode actuel du tracking : `NORMAL`, `ADJUST`, `PARKING_DAY` (SOMMEIL JOUR), `PARKING_NIGHT` (SOMMEIL NUIT), `DATA` (voiture hors ligne), `SYNC`, `OFF`, ou `REACHED` quand le seuil mensuel de coût de l'API est atteint. |
-| **Info seuil mensuel atteint** | Passe de `0` à `1` quand le coût estimé de l'API Fleet atteint le seuil mensuel configuré. Le plugin ne contacte alors plus les serveurs Tesla jusqu'à la fin du mois. |
+| **Info seuil mensuel atteint** | Passe de `0` à `1` quand le coût estimé de l'API Fleet atteint le seuil mensuel configuré. Le plugin ne fait alors plus d'appel payant jusqu'à la fin du mois : il vérifie seulement l'état de la voiture, gratuitement. |
 | **Détail data** | Pour le debug : buffer encodé en base64, débarrassé de toute info personnelle (VIN/id/GPS/...). Renseigné uniquement quand les logs du plugin sont en niveau `debug`. |
 
 ## Commandes de type action
@@ -711,7 +709,7 @@ Les commandes marquées _(si équipé)_ ne sont créées que pour les véhicules
 
 ## Santé
 
-L'écran **Santé** (menu Analyse / Santé) lance un ensemble de vérifications pour s'assurer que le plugin Tesla est bien configuré. Si un problème de permission est détecté, il est corrigé.
+L'écran **Santé** (menu Analyse / Santé) lance un ensemble de vérifications pour s'assurer que le plugin Tesla est bien configuré : démon, fichiers de suivi, jetons d'accès, connexion aux serveurs Tesla, voitures du compte, et fournisseurs des **Cartes** (OpenFreeMap ou MapTiler) et des **Adresses** (OpenStreetMap, MapTiler avec votre clé). Si un problème de permission est détecté, il est corrigé.
 
 ![sante](../images/sante.png)
 
