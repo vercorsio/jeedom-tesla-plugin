@@ -77,6 +77,7 @@ Pour stabiliser le plugin et son **Tracking**, une revue complète de leur code 
 #### Plugin
  - **Plannings** : quand l'adresse est introuvable, les coordonnées s'affichent. Avec plusieurs Tesla, une voiture endormie n'empêche plus d'afficher les plannings des autres.
  - **Démon** : il n'est plus arrêté net quand le fichier de suivi du jour ne peut pas être ouvert. Le point est perdu et une erreur est écrite dans le log.
+ - **Redémarrage périodique du démon** : il ne coupe plus le suivi pendant 5 minutes. Toutes les 4 heures, le redémarrage croisait la vérification automatique des démons de Jeedom, et le démon restait arrêté jusqu'à la vérification suivante, avec l'erreur « Vous devez attendre au moins 45 secondes entre deux lancements du démon » dans le log.
  - **Connexion à Tesla** :
    - le jeton d'accès est de nouveau renouvelé avant son expiration. Le renouvellement prévu 5 minutes avant le jugeait encore valide et ne faisait rien : le jeton expirait, et la requête suivante échouait (« Impossible de récupérer l'état de la voiture »).
    - quand une requête échoue (voiture injoignable, serveur Tesla indisponible, jeton expiré), elle est de nouveau retentée telle quelle. Les nouvelles tentatives étaient toujours envoyées en POST : une lecture d'état ou de données échouait alors avec « The requested resource does not exist », et pouvait même aller jusqu'à déconnecter le plugin du compte Tesla.
