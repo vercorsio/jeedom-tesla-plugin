@@ -239,6 +239,13 @@ Pour configurer le véhicule, cliquez sur son image. Vous pouvez alors l'activer
 
 Pour changer l'image de votre voiture, choisissez le modèle et la couleur dans la liste "Modèle", puis cliquez sur l'image pour changer le visuel des roues.
 
+Sous l'image, deux boutons :
+
+ * __Notes de mise à jour__ : les nouveautés de la version du logiciel installée, et de celle en attente s'il y en a une.
+ * __Alertes récentes__ : les dernières alertes affichées par la voiture (par exemple « Autosteer temporarily unavailable »), avec leur date. Les textes viennent de Tesla, en anglais.
+
+Ces deux lectures sont gratuites.
+
 
 # Le widget {#le-widget}
 

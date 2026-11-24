@@ -11,6 +11,7 @@
  - **HomeLink** : nouvelle action **Actionner le HomeLink** pour ouvrir ou fermer depuis Jeedom le portail ou la porte de garage programmé dans la voiture, et nouvelle info **Info HomeLink à proximité**. Les commandes sont créées quand un appareil HomeLink est programmé dans la voiture ; l'action est masquée par défaut.
  - **Envoyer une destination** : nouvelle action de type message qui envoie une adresse (ou un lien de partage d'une application de cartes) au GPS de la voiture, par exemple depuis un scénario d'agenda. L'action est masquée par défaut.
  - **Petites commandes** : nouvelles actions **Jouer le son de localisation** (pour retrouver la voiture sur un parking), **Contrôler le média** (lecture / pause, piste suivante ou précédente), **Contrôler le volume**, **Contrôler le mode invité** et **Contrôler la mise à jour logicielle** (installer dans 2 minutes ou cette nuit à 3h, ou annuler). Elles sont masquées par défaut.
+ - **Alertes récentes** : nouveau bouton **Alertes récentes** dans la page de la voiture, à côté des notes de mise à jour : il affiche les dernières alertes de la voiture avec leur date (lecture gratuite). Les alertes sont en anglais, telles que Tesla les envoie.
 
 ### Améliorations
 
@@ -31,7 +32,10 @@
  - **Équipements de la voiture** : le plugin détecte de nouveau correctement ce dont la voiture est équipée pour créer ses commandes. Depuis la version 3.3.12, le toit ouvrant, la sentinelle et les sièges de 3ᵉ rangée n'étaient plus détectés (les commandes du toit ouvrant étaient même supprimées à chaque sauvegarde de l'équipement), et les sièges arrière chauffants, le volant chauffant et les fenêtres étaient détectés sur toutes les voitures. Pour retrouver les commandes manquantes : attendez que le plugin ait lu les données de la voiture une fois après la mise à jour, puis sauvegardez l'équipement.
  - **Fenêtres** : pour les fermer, le plugin envoie de nouveau une position à quelques mètres de la voiture, comme le demande Tesla. Elle était décalée d'environ 140 m, ce qui pouvait faire refuser la fermeture. Quand la position de la voiture est inconnue, rien n'est envoyé et le log l'explique.
  - **Toit ouvrant** : `Permuter` ferme de nouveau le toit quand il est ouvert (il l'entrouvrait toujours, la position du toit étant lue à 0). Quand la position est inconnue, rien n'est envoyé et le log l'explique. Sur les voitures qui exigent des commandes signées, le log indique que le toit ne peut pas être commandé (le proxy de Tesla ne le prend pas en charge), au lieu d'une erreur.
- - **Volant et sièges chauffants** : « Contrôler le chauffage du volant » allume de nouveau le volant (la commande l'éteignait toujours, quel que soit le choix). Dans le panneau des sièges du widget, le volant et les sièges se règlent de nouveau, et chaque siège arrière ou de 3ᵉ rangée est bien celui choisi : le siège arrière gauche réglait celui du conducteur, et les commandes des sièges arrière centre, arrière droit et de 3ᵉ rangée chauffaient un autre siège. Merci à @dcat d'avoir signalé et analysé le problème !
+ - **Volant et sièges chauffants** : chacun chauffe enfin le bon siège ! Merci à @dcat d'avoir signalé et analysé le problème.
+   - **Contrôler le chauffage du volant** allume de nouveau le volant. Jusqu'ici, la commande l'éteignait quel que soit le choix.
+   - Dans le widget, le panneau des sièges règle de nouveau le volant et les sièges.
+   - Les sièges arrière et de 3ᵉ rangée chauffent le siège choisi. Avant, le siège arrière gauche réglait celui du conducteur, et les sièges arrière centre, arrière droit et de 3ᵉ rangée chauffaient un autre siège.
 
 <a name="v3.5.0-beta.139.332"></a>
 
