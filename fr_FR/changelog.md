@@ -29,6 +29,7 @@
 
 ### Correctifs
 
+ - **Barre du bas** (Tracking) : sur un écran de 768 à 880 pixels de large, comme le navigateur de la Model S, les boutons ne se chevauchent plus (la flèche du jour précédent passait sous l'icône des statistiques). La date y est écrite un peu plus petite et, entre 768 et 800 pixels, le lien vers Jeedom est masqué faute de place.
  - **Données de la voiture** :
    - une valeur que Tesla ne renvoie pas (réponse partielle, voiture qui s'endort) ne passe plus à 0 : **Info verrouillage** n'indique plus une voiture déverrouillée à tort, et il en va de même pour la trappe de recharge, la sentinelle et la climatisation. La dernière valeur connue est gardée ;
    - le widget affiche la vraie heure de début d'une recharge programmée (il affichait toujours « La recharge démarrera à 01:00 »), et « Recharge arrêtée » au lieu de « Recharge planifiée » quand aucune recharge n'est programmée ;
