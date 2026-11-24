@@ -16,6 +16,7 @@
 
 ### Améliorations
 
+ - **Graphique en conduite** (Tracking) : pendant un trajet, le graphique suit la voiture en direct sur la période de votre choix, avec les boutons au-dessus des courbes : **10** ou **30 min**, **Trajet** (depuis le départ) ou **Journée**. Le choix est mémorisé dans le navigateur ; 10 minutes par défaut, comme avant.
  - **Carte du trajet** (Tracking) : la distance et la durée passent en premier, en grand, et la vitesse moyenne en dessous.
  - **Feuille de route** (Tracking) : l'interrupteur **Détails** est plus discret, et indique bien l'affichage choisi après un rechargement de la page. Le curseur devient une main sur les trajets et les recharges : un clic sélectionne la période (le graphique et la carte zooment dessus) et la sélection reste quand la souris s'en va, un deuxième clic l'enlève. Le simple survol ne sélectionne plus. Sous la consommation d'un trajet, l'écart d'autonomie est libellé (« -772 m d'autonomie »), avec une explication au survol. Dans la vue **Détails**, la colonne **Gains/Pertes d'autonomie** affiche son total dans la bonne unité (il était presque toujours en km), et le total de la colonne **Durée** ne compte plus que la conduite, comme la distance et la vitesse.
  - **Seuil atteint** (Tracking) : l'indicateur du plafond mensuel des coûts de l'API Tesla passe du rouge à l'orange, et son survol donne le coût estimé et la reprise du suivi le 1er du mois.
