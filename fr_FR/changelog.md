@@ -31,6 +31,8 @@
 ### Correctifs
 
  - **Barre du bas** (Tracking) : sur un écran de 768 à 880 pixels de large, comme le navigateur de la Model S, les boutons ne se chevauchent plus (la flèche du jour précédent passait sous l'icône des statistiques). La date y est écrite un peu plus petite et, entre 768 et 800 pixels, le lien vers Jeedom est masqué faute de place.
+ - **Feuille de route sur l'écran de la Model S** (Tracking) : sur un écran de 768 à 1023 pixels de large, les chiffres des étapes (distance, durée, énergie, prix) sont plus petits et ne débordent plus sur l'adresse.
+ - **Temps de recharge restant** (Tracking) : l'en-tête indique de nouveau le temps restant d'une recharge en cours (« Il reste 25 min ») au lieu de « Il reste NaN min ». S'il est inconnu, il n'est pas affiché.
  - **Recharge au Superchargeur** (Tracking) : une recharge branchée dans la minute de l'arrivée et débranchée juste avant de repartir apparaît de nouveau dans la feuille de route. Elle était comptée comme un stationnement, et donc masquée. De même, la nuit, une recharge programmée qui réveille la voiture commence bien au réveil : la veille qui précède n'est plus comptée dans la recharge. Les journées déjà enregistrées ne changent pas.
  - **Seuil mensuel atteint** : le plugin ne retente plus une requête payante toutes les minutes tant que la voiture est éveillée (trois lignes dans le log à chaque fois). Il suit son état gratuitement : **Info réveillée** et l'historique du Tracking indiquent de nouveau les réveils et les mises en veille. Le suivi normal reprend tout seul quand le coût repasse sous le seuil (nouveau mois, seuil relevé). La synchronisation horaire ne tente plus non plus de relevé payant.
  - **Données de la voiture** :
