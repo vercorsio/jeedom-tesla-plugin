@@ -1,6 +1,6 @@
-<a name="v3.5.0-beta.XXX.YYY"></a>
+<a name="v3.5.0-beta.173.350"></a>
 
-# 3.5.0-beta.XXX.YYY
+# 3.5.0-beta.173.350
 
 ### Nouveautés
 
