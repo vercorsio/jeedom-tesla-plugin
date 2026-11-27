@@ -41,7 +41,7 @@
  - **Fenêtres et toit ouvrant** : la fermeture des fenêtres n'est plus refusée (position envoyée trop loin de la voiture), et `Permuter` ferme de nouveau le toit.
  - **Seuil mensuel atteint** : plus de tentatives payantes en boucle ; les réveils et mises en veille restent suivis gratuitement, et le suivi reprend seul sous le seuil.
  - **Étapes de la feuille de route** (Tracking) : une recharge au Superchargeur branchée dès l'arrivée, une recharge programmée la nuit ou une recharge suivie d'un départ non vu apparaissent de nouveau ; les Superchargeurs sont reconnus même sans « Supercharger » dans leur adresse. Les journées déjà enregistrées se corrigent avec le bouton ↻.
- - **Tracking** : la courbe de distance ne retombe plus à 0 en rouvrant le Tracking pendant un trajet, le temps de recharge restant ne s'affiche plus « NaN », et les boutons de la barre du bas ne se chevauchent plus sur l'écran de la Model S.
+ - **Tracking** : la courbe de distance ne retombe plus à 0 en rouvrant le Tracking pendant un trajet, le temps de recharge restant ne s'affiche plus « NaN », les boutons de la barre du bas ne se chevauchent plus sur l'écran de la Model S, et le panneau des statistiques en direct, une fois déplacé, reste en place avec sa bordure quand on ferme celui de la journée.
  - **Fenêtre Recharges** : énergie par pays dans la bonne unité (MWh) et tarif moyen pondéré par l'énergie.
 
 <a name="v3.5.0-beta.139.332"></a>
